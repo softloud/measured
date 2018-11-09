@@ -2,6 +2,7 @@ name: "one-time trophy bitch"
 title: "measured."
 description: |
   A one-time trophy bitch screams into the void. 
+base_url: https://fervent-hypatia-7b7343.netlify.com/
 output_dir: "_site"
 navbar:
   right:
@@ -9,4 +10,6 @@ navbar:
       href: index.html
     - text: "about"
       href: about.html
+    - text: "blog"
+      href: blog.html
 output: radix::radix_article
