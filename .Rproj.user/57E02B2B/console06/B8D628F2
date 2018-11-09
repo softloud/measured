@@ -1,129 +1,1 @@
-[1m[7m%[27m[1m[0m                                                                                ]2;cantabile@lappy386: ~/Documents/repos/trophybitch]1;..s/trophybitch[0m[27m[24m[J
-[01;34mDocuments/repos/trophybitch[00m   
-[37m▶ [K[113C[1A  [01;31m[00m[1B[115D[?1h=[?2004heecho "# measured" >> README.md[?1l>[?2004l
-]2;echo "# measured" >> README.md]1;echo[1m[7m%[27m[1m[0m                                                                                                                      ]2;cantabile@lappy386: ~/Documents/repos/trophybitch]1;..s/trophybitch[0m[27m[24m[J
-[01;34mDocuments/repos/trophybitch[00m   
-[37m▶ [K[113C[1A  [01;31m[00m[1B[115D[?1h=[?2004hggit init[?1l>[?2004l
-]2;git init]1;gitInitialized empty Git repository in /home/cantabile/Documents/repos/trophybitch/.git/
-[1m[7m%[27m[1m[0m                                                                                                                      ]2;cantabile@lappy386: ~/Documents/repos/trophybitch]1;..s/trophybitch[0m[27m[24m[J
-[01;34mDocuments/repos/trophybitch[00m  [32mmaster [31m✗[00m[00m 
-[37m▶ [K[111C[1A [37m◒  [01;31m[00m[1B[115D[?1h=[?2004hggit add README.md[?1l>[?2004l
-]2;git add README.md]1;git[1m[7m%[27m[1m[0m                                                                                                                      ]2;cantabile@lappy386: ~/Documents/repos/trophybitch]1;..s/trophybitch[0m[27m[24m[J
-[01;34mDocuments/repos/trophybitch[00m  [32mmaster [31m✗[00m[00m 
-[37m▶ [K[109C[1A [32m✚ [37m◒  [01;31m[00m[1B[115D[?1h=[?2004hggit commit -m "first commit"[?1l>[?2004l
-]2;git commit -m "first commit"]1;git[master (root-commit) 9d52917] first commit
- 1 file changed, 1 insertion(+)
- create mode 100644 README.md
-[1m[7m%[27m[1m[0m                                                                                                                      ]2;cantabile@lappy386: ~/Documents/repos/trophybitch]1;..s/trophybitch[0m[27m[24m[J
-[01;34mDocuments/repos/trophybitch[00m  [32mmaster [31m✗[00m[00m 
-[37m▶ [K[109C[1A[37m0m[00m [37m◒  [01;31m[00m[1B[115D[?1h=[?2004hggit remote add origin git@github.com:softloud/measured.git[?1l>[?2004l
-]2;git remote add origin git@github.com:softloud/measured.git]1;git[1m[7m%[27m[1m[0m                                                                                                                      ]2;cantabile@lappy386: ~/Documents/repos/trophybitch]1;..s/trophybitch[0m[27m[24m[J
-[01;34mDocuments/repos/trophybitch[00m  [32mmaster [31m✗[00m[00m 
-[37m▶ [K[109C[1A[37m0m[00m [37m◒  [01;31m[00m[1B[115D[?1h=[?2004hggit push -u origin master[?1l>[?2004l
-]2;git push -u origin master]1;gitEnumerating objects: 3, done.
-Counting objects:  33% (1/3)   Counting objects:  66% (2/3)   Counting objects: 100% (3/3)   Counting objects: 100% (3/3), done.
-Writing objects:  33% (1/3)   Writing objects:  66% (2/3)   Writing objects: 100% (3/3)   Writing objects: 100% (3/3), 230 bytes | 230.00 KiB/s, done.
-Total 3 (delta 0), reused 0 (delta 0)
-remote: 
-remote: Create a pull request for 'master' on GitHub by visiting:[K
-remote:      https://github.com/softloud/measured/pull/new/master[K
-remote: 
-To github.com:softloud/measured.git
- * [new branch]      master -> master
-Branch 'master' set up to track remote branch 'master' from 'origin'.
-[1m[7m%[27m[1m[0m                                                                                                                      ]2;cantabile@lappy386: ~/Documents/repos/trophybitch]1;..s/trophybitch[0m[27m[24m[J
-[01;34mDocuments/repos/trophybitch[00m  [32mmaster [31m✗[00m[00m 
-[37m▶ [K[109C[1A[37m0m[00m [37m◒  [01;31m[00m[1B[115D[?1h=[?2004hs ggit stta  atus[?1l>[?2004l
-]2;git status]1;gitOn branch master
-Your branch is up to date with 'origin/master'.
-
-Untracked files:
-  (use "git add <file>..." to include in what will be committed)
-
-	[31m.Rproj.user/[m
-	[31m_posts/[m
-	[31m_site.yml[m
-	[31m_site/[m
-	[31mabout.Rmd[m
-	[31mindex.Rmd[m
-	[31mtrophybitch.Rproj[m
-
-nothing added to commit but untracked files present (use "git add" to track)
-[1m[7m%[27m[1m[0m                                                                                                                      ]2;cantabile@lappy386: ~/Documents/repos/trophybitch]1;..s/trophybitch[0m[27m[24m[J
-[01;34mDocuments/repos/trophybitch[00m  [32mmaster [31m✗[00m[00m 
-[37m▶ [K[108C[1A[37m20m[00m [37m◒  [01;31m[00m[1B[115D[?1h=[?2004hggit add .[?1l>[?2004l
-]2;git add .]1;git[1m[7m%[27m[1m[0m                                                                                                                      ]2;cantabile@lappy386: ~/Documents/repos/trophybitch]1;..s/trophybitch[0m[27m[24m[J
-[01;34mDocuments/repos/trophybitch[00m  [32mmaster [31m✗[00m[00m 
-[37m▶ [K[106C[1A[37m20m[00m [33m⚑ [32m✚  [01;31m[00m[1B[115D[?1h=[?2004hggit commit -m ":art: #2 :notes:"[?1l>[?2004l
-]2;git commit -m ":art: #2 :notes:"]1;git[master fc3cc53] :art: #2 :notes:
- 50 files changed, 7965 insertions(+)
- create mode 100644 .Rproj.user/57E02B2B/console06/B8D628F2
- create mode 100644 .Rproj.user/57E02B2B/console06/B8D628F2.env
- create mode 100644 .Rproj.user/57E02B2B/console06/INDEX001
- create mode 100644 .Rproj.user/57E02B2B/sources/prop/187A9306
- create mode 100644 .Rproj.user/57E02B2B/sources/prop/3A49B93E
- create mode 100644 .Rproj.user/57E02B2B/sources/prop/A0056723
- create mode 100644 .Rproj.user/57E02B2B/sources/prop/FC623951
- create mode 100644 .Rproj.user/57E02B2B/sources/prop/INDEX
- create mode 100644 .Rproj.user/57E02B2B/sources/s-424B8F7E/8846CF69
- create mode 100644 .Rproj.user/57E02B2B/sources/s-424B8F7E/8846CF69-contents
- create mode 100644 .Rproj.user/57E02B2B/sources/s-424B8F7E/B791B726
- create mode 100644 .Rproj.user/57E02B2B/sources/s-424B8F7E/B791B726-contents
- create mode 100644 .Rproj.user/57E02B2B/sources/s-424B8F7E/EEA4B45A
- create mode 100644 .Rproj.user/57E02B2B/sources/s-424B8F7E/EEA4B45A-contents
- create mode 100644 .Rproj.user/57E02B2B/sources/s-424B8F7E/F8B21E16
- create mode 100644 .Rproj.user/57E02B2B/sources/s-424B8F7E/F8B21E16-contents
- create mode 100644 .Rproj.user/57E02B2B/sources/s-424B8F7E/lock_file
- create mode 100644 .Rproj.user/shared/notebooks/1DEDBFF4-index/1/57E02B2B424B8F7E/chunks.json
- create mode 100644 .Rproj.user/shared/notebooks/1DEDBFF4-index/1/s/chunks.json
- create mode 100644 .Rproj.user/shared/notebooks/A97F2A6E-about/1/57E02B2B424B8F7E/chunks.json
- create mode 100644 .Rproj.user/shared/notebooks/A97F2A6E-about/1/s/chunks.json
- create mode 100644 .Rproj.user/shared/notebooks/E78E0CCE-welcome/1/57E02B2B424B8F7E/chunks.json
- create mode 100644 .Rproj.user/shared/notebooks/E78E0CCE-welcome/1/s/chunks.json
- create mode 100644 .Rproj.user/shared/notebooks/patch-chunk-names
- create mode 100644 .Rproj.user/shared/notebooks/paths
- create mode 100644 _posts/welcome/welcome.Rmd
- create mode 100644 _posts/welcome/welcome.html
- create mode 100644 _posts/welcome/welcome_files/bowser-1.9.3/bowser.min.js
- create mode 100644 _posts/welcome/welcome_files/distill-2.2.21/template.v2.js
- create mode 100644 _posts/welcome/welcome_files/jquery-1.11.3/jquery.min.js
- create mode 100644 _posts/welcome/welcome_files/webcomponents-2.0.0/webcomponents.js
- create mode 100644 _site.yml
- create mode 100644 _site/about.html
- create mode 100644 _site/index.html
- create mode 100644 _site/posts/posts.json
- create mode 100644 _site/posts/welcome/index.html
- create mode 100644 _site/site_libs/bowser-1.9.3/bowser.min.js
- create mode 100644 _site/site_libs/distill-2.2.21/template.v2.js
- create mode 100644 _site/site_libs/font-awesome-5.0.13/css/fa-svg-with-js.css
- create mode 100644 _site/site_libs/font-awesome-5.0.13/fonts/fa-brands-400.ttf
- create mode 100644 _site/site_libs/font-awesome-5.0.13/fonts/fa-regular-400.ttf
- create mode 100644 _site/site_libs/font-awesome-5.0.13/fonts/fa-solid-900.ttf
- create mode 100644 _site/site_libs/font-awesome-5.0.13/js/fa-v4-shims.min.js
- create mode 100644 _site/site_libs/font-awesome-5.0.13/js/fontawesome-all.min.js
- create mode 100644 _site/site_libs/headroom-0.9.4/headroom.min.js
- create mode 100644 _site/site_libs/jquery-1.11.3/jquery.min.js
- create mode 100644 _site/site_libs/webcomponents-2.0.0/webcomponents.js
- create mode 100644 about.Rmd
- create mode 100644 index.Rmd
- create mode 100644 trophybitch.Rproj
-[1m[7m%[27m[1m[0m                                                                                                                      ]2;cantabile@lappy386: ~/Documents/repos/trophybitch]1;..s/trophybitch[0m[27m[24m[J
-[01;34mDocuments/repos/trophybitch[00m  [32mmaster [31m✗[00m[00m 
-[37m▶ [K[109C[1A[37m0m[00m [33m⚑  [01;31m[00m[1B[115D[?1h=[?2004hggit push -u origin mast            [?1l>[?2004l
-]2;git push]1;gitEnumerating objects: 74, done.
-Counting objects:   1% (1/74)   Counting objects:   2% (2/74)   Counting objects:   4% (3/74)   Counting objects:   5% (4/74)   Counting objects:   6% (5/74)   Counting objects:   8% (6/74)   Counting objects:   9% (7/74)   Counting objects:  10% (8/74)   Counting objects:  12% (9/74)   Counting objects:  13% (10/74)   Counting objects:  14% (11/74)   Counting objects:  16% (12/74)   Counting objects:  17% (13/74)   Counting objects:  18% (14/74)   Counting objects:  20% (15/74)   Counting objects:  21% (16/74)   Counting objects:  22% (17/74)   Counting objects:  24% (18/74)   Counting objects:  25% (19/74)   Counting objects:  27% (20/74)   Counting objects:  28% (21/74)   Counting objects:  29% (22/74)   Counting objects:  31% (23/74)   Counting objects:  32% (24/74)   Counting objects:  33% (25/74)   Counting objects:  35% (26/74)   Counting objects:  36% (27/74)   Counting objects:  37% (28/74)   Counting objects:  39% (29/74)   Counting objects:  40% (30/74)   Counting objects:  41% (31/74)   Counting objects:  43% (32/74)   Counting objects:  44% (33/74)   Counting objects:  45% (34/74)   Counting objects:  47% (35/74)   Counting objects:  48% (36/74)   Counting objects:  50% (37/74)   Counting objects:  51% (38/74)   Counting objects:  52% (39/74)   Counting objects:  54% (40/74)   Counting objects:  55% (41/74)   Counting objects:  56% (42/74)   Counting objects:  58% (43/74)   Counting objects:  59% (44/74)   Counting objects:  60% (45/74)   Counting objects:  62% (46/74)   Counting objects:  63% (47/74)   Counting objects:  64% (48/74)   Counting objects:  66% (49/74)   Counting objects:  67% (50/74)   Counting objects:  68% (51/74)   Counting objects:  70% (52/74)   Counting objects:  71% (53/74)   Counting objects:  72% (54/74)   Counting objects:  74% (55/74)   Counting objects:  75% (56/74)   Counting objects:  77% (57/74)   Counting objects:  78% (58/74)   Counting objects:  79% (59/74)   Counting objects:  81% (60/74)   Counting objects:  82% (61/74)   Counting objects:  83% (62/74)   Counting objects:  85% (63/74)   Counting objects:  86% (64/74)   Counting objects:  87% (65/74)   Counting objects:  89% (66/74)   Counting objects:  90% (67/74)   Counting objects:  91% (68/74)   Counting objects:  93% (69/74)   Counting objects:  94% (70/74)   Counting objects:  95% (71/74)   Counting objects:  97% (72/74)   Counting objects:  98% (73/74)   Counting objects: 100% (74/74)   Counting objects: 100% (74/74), done.
-Delta compression using up to 4 threads
-Compressing objects:   1% (1/57)   Compressing objects:   3% (2/57)   Compressing objects:   5% (3/57)   Compressing objects:   7% (4/57)   Compressing objects:   8% (5/57)   Compressing objects:  10% (6/57)   Compressing objects:  12% (7/57)   Compressing objects:  14% (8/57)   Compressing objects:  15% (9/57)   Compressing objects:  17% (10/57)   Compressing objects:  19% (11/57)   Compressing objects:  21% (12/57)   Compressing objects:  22% (13/57)   Compressing objects:  24% (14/57)   Compressing objects:  26% (15/57)   Compressing objects:  28% (16/57)   Compressing objects:  29% (17/57)   Compressing objects:  31% (18/57)   Compressing objects:  33% (19/57)   Compressing objects:  35% (20/57)   Compressing objects:  36% (21/57)   Compressing objects:  38% (22/57)   Compressing objects:  40% (23/57)   Compressing objects:  42% (24/57)   Compressing objects:  43% (25/57)   Compressing objects:  45% (26/57)   Compressing objects:  47% (27/57)   Compressing objects:  49% (28/57)   Compressing objects:  50% (29/57)   Compressing objects:  52% (30/57)   Compressing objects:  54% (31/57)   Compressing objects:  56% (32/57)   Compressing objects:  57% (33/57)   Compressing objects:  59% (34/57)   Compressing objects:  61% (35/57)   Compressing objects:  63% (36/57)   Compressing objects:  64% (37/57)   Compressing objects:  66% (38/57)   Compressing objects:  68% (39/57)   Compressing objects:  70% (40/57)   Compressing objects:  71% (41/57)   Compressing objects:  73% (42/57)   Compressing objects:  75% (43/57)   Compressing objects:  77% (44/57)   Compressing objects:  78% (45/57)   Compressing objects:  80% (46/57)   Compressing objects:  82% (47/57)   Compressing objects:  84% (48/57)   Compressing objects:  85% (49/57)   Compressing objects:  87% (50/57)   Compressing objects:  89% (51/57)   Compressing objects:  91% (52/57)   Compressing objects:  92% (53/57)   Compressing objects:  94% (54/57)   Compressing objects:  96% (55/57)   Compressing objects:  98% (56/57)   Compressing objects: 100% (57/57)   Compressing objects: 100% (57/57), done.
-Writing objects:   1% (1/73)   Writing objects:   2% (2/73)   Writing objects:   4% (3/73)   Writing objects:   5% (4/73)   Writing objects:   6% (5/73)   Writing objects:   8% (6/73)   Writing objects:   9% (7/73)   Writing objects:  10% (8/73)   Writing objects:  12% (9/73)   Writing objects:  13% (10/73)   Writing objects:  15% (11/73)   Writing objects:  16% (12/73)   Writing objects:  17% (13/73)   Writing objects:  19% (14/73)   Writing objects:  20% (15/73)   Writing objects:  21% (16/73)   Writing objects:  24% (18/73)   Writing objects:  26% (19/73)   Writing objects:  27% (20/73)   Writing objects:  30% (22/73)   Writing objects:  31% (23/73)   Writing objects:  32% (24/73)   Writing objects:  34% (25/73)   Writing objects:  35% (26/73)   Writing objects:  36% (27/73)   Writing objects:  38% (28/73)   Writing objects:  39% (29/73)   Writing objects:  41% (30/73)   Writing objects:  42% (31/73)   Writing objects:  43% (32/73)   Writing objects:  45% (33/73)   Writing objects:  46% (34/73)   Writing objects:  47% (35/73)   Writing objects:  49% (36/73)   Writing objects:  50% (37/73)   Writing objects:  52% (38/73)   Writing objects:  53% (39/73)   Writing objects:  54% (40/73)   Writing objects:  56% (41/73)   Writing objects:  57% (42/73)   Writing objects:  60% (44/73)   Writing objects:  61% (45/73)   Writing objects:  63% (46/73)   Writing objects:  64% (47/73)   Writing objects:  65% (48/73)   Writing objects:  67% (49/73)   Writing objects:  68% (50/73)   Writing objects:  69% (51/73)   Writing objects:  71% (52/73)   Writing objects:  72% (53/73), 104.00 KiB | 125.00 KiB/s   Writing objects:  73% (54/73), 104.00 KiB | 125.00 KiB/s   Writing objects:  75% (55/73), 104.00 KiB | 125.00 KiB/s   Writing objects:  76% (56/73), 104.00 KiB | 125.00 KiB/s   Writing objects:  78% (57/73), 104.00 KiB | 125.00 KiB/s   Writing objects:  79% (58/73), 104.00 KiB | 125.00 KiB/s   Writing objects:  80% (59/73), 104.00 KiB | 125.00 KiB/s   Writing objects:  82% (60/73), 104.00 KiB | 125.00 KiB/s   Writing objects:  83% (61/73), 104.00 KiB | 125.00 KiB/s   Writing objects:  84% (62/73), 104.00 KiB | 125.00 KiB/s   Writing objects:  86% (63/73), 104.00 KiB | 125.00 KiB/s   Writing objects:  87% (64/73), 104.00 KiB | 125.00 KiB/s   Writing objects:  89% (65/73), 104.00 KiB | 125.00 KiB/s   Writing objects:  90% (66/73), 104.00 KiB | 125.00 KiB/s   Writing objects:  91% (67/73), 104.00 KiB | 125.00 KiB/s   Writing objects:  93% (68/73), 104.00 KiB | 125.00 KiB/s   Writing objects:  94% (69/73), 104.00 KiB | 125.00 KiB/s   Writing objects:  95% (70/73), 104.00 KiB | 125.00 KiB/s   Writing objects:  97% (71/73), 104.00 KiB | 125.00 KiB/s   Writing objects:  98% (72/73), 104.00 KiB | 125.00 KiB/s   Writing objects: 100% (73/73), 104.00 KiB | 125.00 KiB/s   Writing objects: 100% (73/73), 576.10 KiB | 659.00 KiB/s, done.
-Total 73 (delta 8), reused 0 (delta 0)
-remote: Resolving deltas:   0% (0/8)   [Kremote: Resolving deltas:  37% (3/8)   [Kremote: Resolving deltas:  50% (4/8)   [Kremote: Resolving deltas:  87% (7/8)   [Kremote: Resolving deltas: 100% (8/8)   [Kremote: Resolving deltas: 100% (8/8), done.[K
-To github.com:softloud/measured.git
-   9d52917..fc3cc53  master -> master
-[1m[7m%[27m[1m[0m                                                                                                                      ]2;cantabile@lappy386: ~/Documents/repos/trophybitch]1;..s/trophybitch[0m[27m[24m[J
-[01;34mDocuments/repos/trophybitch[00m  [32mmaster [31m✗[00m[00m 
-[37m▶ [K[109C[1A[37m0m[00m [33m⚑  [01;31m[00m[1B[115D[?1h=[?2004hggit push[?1l>[?2004l
-]2;git push]1;git^C
-[1m[7m%[27m[1m[0m                                                                                                                      ]2;cantabile@lappy386: ~/Documents/repos/trophybitch]1;..s/trophybitch[0m[27m[24m[J
-[01;34mDocuments/repos/trophybitch[00m  [32mmaster [31m✗[00m[00m 
-[37m▶ [K[103C[1A[37m1h31m[00m [33m⚑ [37m◒  [01;31m⍉[00m[1B[115D[?1h=[?2004hggit add .[?1l>[?2004l
-]2;git add .]1;git
+ggit add .

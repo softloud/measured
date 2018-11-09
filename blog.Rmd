@@ -1,0 +1,6 @@
+---
+title: "blog"
+description: |
+  A one-time trophy bitch screams into the void. 
+listing: posts
+---

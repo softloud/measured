@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" version="1.0">
+  <url>
+    <loc>https://fervent-hypatia-7b7343.netlify.com/about.html</loc>
+    <lastmod>2018-11-09T10:53:33+11:00</lastmod>
+  </url>
+  <url>
+    <loc>https://fervent-hypatia-7b7343.netlify.com/blog.html</loc>
+    <lastmod>2018-11-09T14:08:49+11:00</lastmod>
+  </url>
+  <url>
+    <loc>https://fervent-hypatia-7b7343.netlify.com/</loc>
+    <lastmod>2018-11-09T14:10:13+11:00</lastmod>
+  </url>
+  <url>
+    <loc>https://fervent-hypatia-7b7343.netlify.com/README.html</loc>
+    <lastmod>2018-11-09T13:34:56+11:00</lastmod>
+  </url>
+  <url>
+    <loc>https://fervent-hypatia-7b7343.netlify.com/posts/welcome/</loc>
+    <lastmod>2018-11-09T10:52:29+11:00</lastmod>
+  </url>
+</urlset>
