@@ -1,0 +1,54 @@
+[1m[7m%[27m[1m[0m                                                                                ]2;cantabile@lappy386: ~/Documents/repos/trophybitch]1;..s/trophybitch[0m[27m[24m[J
+[01;34mDocuments/repos/trophybitch[00m   
+[37m▶ [K[113C[1A  [01;31m[00m[1B[115D[?1h=[?2004heecho "# measured" >> README.md[?1l>[?2004l
+]2;echo "# measured" >> README.md]1;echo[1m[7m%[27m[1m[0m                                                                                                                      ]2;cantabile@lappy386: ~/Documents/repos/trophybitch]1;..s/trophybitch[0m[27m[24m[J
+[01;34mDocuments/repos/trophybitch[00m   
+[37m▶ [K[113C[1A  [01;31m[00m[1B[115D[?1h=[?2004hggit init[?1l>[?2004l
+]2;git init]1;gitInitialized empty Git repository in /home/cantabile/Documents/repos/trophybitch/.git/
+[1m[7m%[27m[1m[0m                                                                                                                      ]2;cantabile@lappy386: ~/Documents/repos/trophybitch]1;..s/trophybitch[0m[27m[24m[J
+[01;34mDocuments/repos/trophybitch[00m  [32mmaster [31m✗[00m[00m 
+[37m▶ [K[111C[1A [37m◒  [01;31m[00m[1B[115D[?1h=[?2004hggit add README.md[?1l>[?2004l
+]2;git add README.md]1;git[1m[7m%[27m[1m[0m                                                                                                                      ]2;cantabile@lappy386: ~/Documents/repos/trophybitch]1;..s/trophybitch[0m[27m[24m[J
+[01;34mDocuments/repos/trophybitch[00m  [32mmaster [31m✗[00m[00m 
+[37m▶ [K[109C[1A [32m✚ [37m◒  [01;31m[00m[1B[115D[?1h=[?2004hggit commit -m "first commit"[?1l>[?2004l
+]2;git commit -m "first commit"]1;git[master (root-commit) 9d52917] first commit
+ 1 file changed, 1 insertion(+)
+ create mode 100644 README.md
+[1m[7m%[27m[1m[0m                                                                                                                      ]2;cantabile@lappy386: ~/Documents/repos/trophybitch]1;..s/trophybitch[0m[27m[24m[J
+[01;34mDocuments/repos/trophybitch[00m  [32mmaster [31m✗[00m[00m 
+[37m▶ [K[109C[1A[37m0m[00m [37m◒  [01;31m[00m[1B[115D[?1h=[?2004hggit remote add origin git@github.com:softloud/measured.git[?1l>[?2004l
+]2;git remote add origin git@github.com:softloud/measured.git]1;git[1m[7m%[27m[1m[0m                                                                                                                      ]2;cantabile@lappy386: ~/Documents/repos/trophybitch]1;..s/trophybitch[0m[27m[24m[J
+[01;34mDocuments/repos/trophybitch[00m  [32mmaster [31m✗[00m[00m 
+[37m▶ [K[109C[1A[37m0m[00m [37m◒  [01;31m[00m[1B[115D[?1h=[?2004hggit push -u origin master[?1l>[?2004l
+]2;git push -u origin master]1;gitEnumerating objects: 3, done.
+Counting objects:  33% (1/3)   Counting objects:  66% (2/3)   Counting objects: 100% (3/3)   Counting objects: 100% (3/3), done.
+Writing objects:  33% (1/3)   Writing objects:  66% (2/3)   Writing objects: 100% (3/3)   Writing objects: 100% (3/3), 230 bytes | 230.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+remote: 
+remote: Create a pull request for 'master' on GitHub by visiting:[K
+remote:      https://github.com/softloud/measured/pull/new/master[K
+remote: 
+To github.com:softloud/measured.git
+ * [new branch]      master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+[1m[7m%[27m[1m[0m                                                                                                                      ]2;cantabile@lappy386: ~/Documents/repos/trophybitch]1;..s/trophybitch[0m[27m[24m[J
+[01;34mDocuments/repos/trophybitch[00m  [32mmaster [31m✗[00m[00m 
+[37m▶ [K[109C[1A[37m0m[00m [37m◒  [01;31m[00m[1B[115D[?1h=[?2004hs ggit stta  atus[?1l>[?2004l
+]2;git status]1;gitOn branch master
+Your branch is up to date with 'origin/master'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	[31m.Rproj.user/[m
+	[31m_posts/[m
+	[31m_site.yml[m
+	[31m_site/[m
+	[31mabout.Rmd[m
+	[31mindex.Rmd[m
+	[31mtrophybitch.Rproj[m
+
+nothing added to commit but untracked files present (use "git add" to track)
+[1m[7m%[27m[1m[0m                                                                                                                      ]2;cantabile@lappy386: ~/Documents/repos/trophybitch]1;..s/trophybitch[0m[27m[24m[J
+[01;34mDocuments/repos/trophybitch[00m  [32mmaster [31m✗[00m[00m 
+[37m▶ [K[108C[1A[37m20m[00m [37m◒  [01;31m[00m[1B[115D[?1h=[?2004hggit add .

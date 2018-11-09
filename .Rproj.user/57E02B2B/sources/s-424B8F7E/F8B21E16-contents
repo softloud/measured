@@ -1,0 +1,25 @@
+---
+title: "measured."
+description: |
+  A one-time trophy bitch screams into the void. 
+author:
+  - name: Charles T. Gray 
+    url: cantabile.rbind.io
+    affiliation: R-Ladies Remote
+    affiliation_url: https://rladies.org/
+date: 11-09-2018
+output:
+  radix::radix_article:
+    self_contained: false
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+
+# Learn more about creating blogs with Radix at:
+# https://rstudio.github.io/radix/blog.html
+
+```
+
+
+
