@@ -1,0 +1,21 @@
+---
+title: "a minimal radix workflow"
+description: |
+  A short description of the post.
+author:
+  - name: Charles T. Gray
+    author_url: https://twitter.com/cantabile
+date: 11-09-2018
+output:
+  radix::radix_article:
+    self_contained: false
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+Radix is a publication format for scientific and technical writing, native to the web.
+
+Learn more about using Radix at <https://rstudio.github.io/radix>.
+
