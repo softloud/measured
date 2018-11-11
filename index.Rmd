@@ -1,13 +1,13 @@
 ---
 title: "measured."
 description: |
-  A one-time trophy bitch screams into the void. 
+  A one-time trophy bitch screams into the void.
 site: radix::radix_website
 ---
 
 My newfound role as a math-talking-doing-advocate grrl is an experiment. What if one practices science like music?
 
-My goal is to spend four hours a day on deep work. 
+My goal is to spend four hours a day on deep work.
 
 ```{r}
 
@@ -15,10 +15,10 @@ My goal is to spend four hours a day on deep work.
 
 I use a combination of gtd, pomodoros, and bullet journaling in my productivity system.
 
-And a toy elephant, along with a [digraph](https://en.wikipedia.org/wiki/Directed_graph). 
+And a toy elephant, along with a [digraph](https://en.wikipedia.org/wiki/Directed_graph).
 
-How is my focus tracking over time? Am I improving? 
+How is my focus tracking over time? Am I improving?
 
 ## curent system
 
-> todo 
+> todo

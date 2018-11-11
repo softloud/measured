@@ -1,17 +1,17 @@
 [
   {
-    "path": "posts/welcome/",
-    "title": "measured.",
-    "description": "A one-time trophy bitch screams into the void.",
+    "path": "posts/2018-11-09-a-minimal-radix-workflow/",
+    "title": "a minimal radix workflow",
+    "description": "A short description of the post.",
     "author": [
       {
         "name": "Charles T. Gray",
-        "url": "cantabile.rbind.io"
+        "url": {}
       }
     ],
     "date": "2018-11-09",
     "categories": [],
     "preview": {},
-    "last_modified": "2018-11-09T10:52:29+11:00"
+    "last_modified": "2018-11-09T20:07:33+11:00"
   }
 ]

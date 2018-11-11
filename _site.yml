@@ -4,6 +4,11 @@ description: |
   A one-time trophy bitch screams into the void. 
 base_url: https://fervent-hypatia-7b7343.netlify.com/
 output_dir: "_site"
+collections:
+  posts:
+    feed_items_max: 50
+    disqus: measured
+    share: [twitter, linkedin]
 navbar:
   right:
     - text: "home"
