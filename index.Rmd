@@ -38,7 +38,8 @@ tracker_data <- readr::read_csv("atracker-data-2018-11-12.csv") %>%
 
 ## distribution of deep work hours each day by month
 
-```{r}
+```{r echo=TRUE}
+# plot monthly distributions
 tracker_data %>% 
   filter(category != "Wellness") %>%  # for now, need to join in calendar and munge yoga
   group_by(date, month) %>% 
@@ -52,8 +53,8 @@ tracker_data %>%
 ## distribution of deep work hours by month and category
 
 
-```{r}
-# daily totals
+```{r echo=TRUE}
+# plot monthly by category distributions
 tracker_data %>% 
   group_by(date, category, month) %>% 
   summarise(time = sum(duration) / 3600) %>%

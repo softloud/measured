@@ -1341,10 +1341,28 @@ tracker_data &lt;- readr::read_csv(&quot;atracker-data-2018-11-12.csv&quot;) %&g
 </div>
 <h2 id="distribution-of-deep-work-hours-each-day-by-month">distribution of deep work hours each day by month</h2>
 <div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+# plot monthly distributions
+tracker_data %&gt;% 
+  filter(category != &quot;Wellness&quot;) %&gt;%  # for now, need to join in calendar and munge yoga
+  group_by(date, month) %&gt;% 
+  summarise(time = sum(duration) / 3600) %&gt;%
+  ggplot(aes(x = time)) +
+  geom_histogram(bins = 10) +
+  facet_grid(month ~ .)</code></pre>
 <p><img src="index_files/figure-html5/unnamed-chunk-1-1.png" width="624" /></p>
 </div>
 <h2 id="distribution-of-deep-work-hours-by-month-and-category">distribution of deep work hours by month and category</h2>
 <div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+# plot monthly by category distributions
+tracker_data %&gt;% 
+  group_by(date, category, month) %&gt;% 
+  summarise(time = sum(duration) / 3600) %&gt;%
+  filter(category != &quot;Wellness&quot;) %&gt;%  # for now, need to join in calendar and munge yoga
+  ggplot(aes(x = time)) +
+  geom_histogram(bins = 10) +
+  facet_grid(month ~ category)</code></pre>
 <p><img src="index_files/figure-html5/unnamed-chunk-2-1.png" width="624" /></p>
 </div>
 <p>I use a combination of gtd, pomodoros, and bullet journaling in my productivity system.</p>

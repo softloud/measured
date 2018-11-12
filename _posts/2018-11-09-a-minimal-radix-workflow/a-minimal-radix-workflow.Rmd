@@ -9,6 +9,7 @@ date: 11-09-2018
 output:
   radix::radix_article:
     self_contained: false
+draft: true
 categories:
   - teaching
   - radix
@@ -25,3 +26,6 @@ It's natural that I'm building my thesis in [`radix::`](https://rstudio.github.i
 
 > Radix is a publication format for scientific and technical writing, native to the web. Learn more about using Radix at https://rstudio.github.io/radix.
 
+***
+
+Work in progress. 
