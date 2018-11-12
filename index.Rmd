@@ -66,11 +66,41 @@ tracker_data %>%
 ```
 
 
+## How is my focus tracking over time? 
+
+
+```{r echo=TRUE}
+# plot monthly by category distributions
+tracker_data %>% 
+  filter(category != "Wellness") %>%  # for now, need to join in calendar and munge yoga
+  group_by(day, month) %>% 
+  summarise(time = sum(duration) / 3600) %>% 
+  ggplot(aes(x = day, y = time)) +
+  geom_line(alpha = 0.7) +
+  geom_point(alpha = 0.5) +
+  geom_hline(yintercept = 4, linetype = "dotted") +
+  facet_grid(month ~ .)
+
+# with categories
+tracker_data %>% 
+  filter(category != "Wellness") %>%  # for now, need to join in calendar and munge yoga
+  group_by(day, month, category) %>% 
+  summarise(time = sum(duration) / 3600) %>% 
+  ggplot(aes(x = day, y = time)) +
+  geom_line(alpha = 0.7) +
+  geom_point(alpha = 0.5) +
+  geom_hline(yintercept = 4, linetype = "dotted") +
+  facet_grid(month ~ category)
+
+```
+
+
+## my system
+
 I use a combination of gtd, pomodoros, and bullet journaling in my productivity system.
 
 And a toy elephant, along with a [digraph](https://en.wikipedia.org/wiki/Directed_graph).
 
-How is my focus tracking over time? Am I improving?
 
 ***
 
