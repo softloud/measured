@@ -4,6 +4,9 @@ description: |
   A short description of the post.
 author:
   - name: Charles T. Gray
+    url: https://twitter.com/cantabile
+    affiliation: R-Ladies
+    affiliation_url: https://rladies.org/
 date: 11-06-2018
 output:
   radix::radix_article:

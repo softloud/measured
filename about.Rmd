@@ -1,7 +1,12 @@
 ---
 title: "about"
 description: |
-  A one-time trophy bitch screams into the void. 
+   A one-time trophy bitch screams into the void.
+author: 
+  - name: Charles T. Gray
+    url: https://twitter.com/cantabile
+    affiliation: R-Ladies
+    affiliation_url: https://rladies.org/
 ---
 
 ```{r setup, include=FALSE}

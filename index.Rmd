@@ -2,10 +2,15 @@
 title: "measured."
 description: |
   A one-time trophy bitch screams into the void.
+author: 
+  - name: Charles T. Gray
+    url: https://twitter.com/cantabile
+    affiliation: R-Ladies
+    affiliation_url: https://rladies.org/
 site: radix::radix_website
 ---
 
-My newfound role as a math-talking-doing-advocate grrl is an experiment. What if one practices science like music?
+What if one practices science like music?
 
 My goal is to spend four hours a day on deep work.
 
@@ -66,7 +71,7 @@ tracker_data %>%
 ```
 
 
-## How is my focus tracking over time? 
+## focus and tracking over time 
 
 
 ```{r echo=TRUE}
