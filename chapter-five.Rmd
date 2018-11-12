@@ -3,7 +3,7 @@ title: "statistical rethinking"
 description: |
   chapter five: bookclub notes, work in progress
 author:
-  - name: Nora Jones 
+  - name: Charles T. Gray 
     url: https://example.com/norajones
     affiliation: Spacely Sprockets
     affiliation_url: https://example.com/spacelysprokets

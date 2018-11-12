@@ -1316,15 +1316,42 @@ projects
 <p>My newfound role as a math-talking-doing-advocate grrl is an experiment. What if one practices science like music?</p>
 <p>My goal is to spend four hours a day on deep work.</p>
 <div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+# packages
+library(tidyverse)
 
+# get data
+tracker_data &lt;- readr::read_csv(&quot;atracker-data-2018-11-12.csv&quot;) %&gt;%
+  # tidy up columns
+  rename(start = `Start time`,
+         end = `End time`,
+         duration = Duration,
+         hours = `Duration in hours`,
+         category = Category,
+         project = `Task name`) %&gt;%
+  # drop things unused features
+  select(-`Task description`, -Note) %&gt;% 
+  # convert dates to date objects in R
+  mutate(start = lubridate::dmy_hm(start),
+         end = lubridate::dmy_hm(end),
+         duration = lubridate::as.duration(duration),
+         day = lubridate::day(start),
+         month = lubridate::month(start, label = TRUE),
+         date = lubridate::date(start))</code></pre>
+</div>
+<h2 id="distribution-of-deep-work-hours-each-day-by-month">distribution of deep work hours each day by month</h2>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="index_files/figure-html5/unnamed-chunk-1-1.png" width="624" /></p>
+</div>
+<h2 id="distribution-of-deep-work-hours-by-month-and-category">distribution of deep work hours by month and category</h2>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="index_files/figure-html5/unnamed-chunk-2-1.png" width="624" /></p>
 </div>
 <p>I use a combination of gtd, pomodoros, and bullet journaling in my productivity system.</p>
 <p>And a toy elephant, along with a <a href="https://en.wikipedia.org/wiki/Directed_graph">digraph</a>.</p>
 <p>How is my focus tracking over time? Am I improving?</p>
-<h2 id="curent-system">curent system</h2>
-<blockquote>
-<p>todo</p>
-</blockquote>
+<hr />
+<p><em>Work in progress.</em></p>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>

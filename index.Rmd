@@ -9,9 +9,61 @@ My newfound role as a math-talking-doing-advocate grrl is an experiment. What if
 
 My goal is to spend four hours a day on deep work.
 
-```{r}
+```{r get data, echo=TRUE}
+# packages
+library(tidyverse)
+
+# get data
+tracker_data <- readr::read_csv("atracker-data-2018-11-12.csv") %>%
+  # tidy up columns
+  rename(start = `Start time`,
+         end = `End time`,
+         duration = Duration,
+         hours = `Duration in hours`,
+         category = Category,
+         project = `Task name`) %>%
+  # drop things unused features
+  select(-`Task description`, -Note) %>% 
+  # convert dates to date objects in R
+  mutate(start = lubridate::dmy_hm(start),
+         end = lubridate::dmy_hm(end),
+         duration = lubridate::as.duration(duration),
+         day = lubridate::day(start),
+         month = lubridate::month(start, label = TRUE),
+         date = lubridate::date(start))
+
+
 
 ```
+
+## distribution of deep work hours each day by month
+
+```{r}
+tracker_data %>% 
+  filter(category != "Wellness") %>%  # for now, need to join in calendar and munge yoga
+  group_by(date, month) %>% 
+  summarise(time = sum(duration) / 3600) %>%
+  ggplot(aes(x = time)) +
+  geom_histogram(bins = 10) +
+  facet_grid(month ~ .)
+
+```
+
+## distribution of deep work hours by month and category
+
+
+```{r}
+# daily totals
+tracker_data %>% 
+  group_by(date, category, month) %>% 
+  summarise(time = sum(duration) / 3600) %>%
+  filter(category != "Wellness") %>%  # for now, need to join in calendar and munge yoga
+  ggplot(aes(x = time)) +
+  geom_histogram(bins = 10) +
+  facet_grid(month ~ category)
+
+```
+
 
 I use a combination of gtd, pomodoros, and bullet journaling in my productivity system.
 
@@ -19,6 +71,6 @@ And a toy elephant, along with a [digraph](https://en.wikipedia.org/wiki/Directe
 
 How is my focus tracking over time? Am I improving?
 
-## curent system
+***
 
-> todo
+*Work in progress.*
