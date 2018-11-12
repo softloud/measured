@@ -7,7 +7,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"/>
   <meta name="generator" content="radix" />
-  <link rel="alternate" type="application/rss+xml" href="https://fervent-hypatia-7b7343.netlify.com/blog.xml" />
 
   <style type="text/css">
   /* Hide doc at startup (prevent jankiness while JS renders/transforms) */
@@ -20,370 +19,39 @@
  <!--/radix_placeholder_import_source-->
 
   <!--radix_placeholder_meta_tags-->
-  <title>measured.: blog</title>
+  <title>testing as debugging</title>
   
-  <meta property="description" itemprop="description" content="A one-time trophy bitch screams into the void."/>
+  <meta property="description" itemprop="description" content="A short description of the post."/>
   
   
+  <!--  https://schema.org/Article -->
+  <meta property="article:published" itemprop="datePublished" content="2018-07-01"/>
+  <meta property="article:created" itemprop="dateCreated" content="2018-07-01"/>
+  <meta name="article:author" content="Charles T. Gray"/>
   
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
-  <meta property="og:title" content="measured.: blog"/>
+  <meta property="og:title" content="testing as debugging"/>
   <meta property="og:type" content="article"/>
-  <meta property="og:description" content="A one-time trophy bitch screams into the void."/>
+  <meta property="og:description" content="A short description of the post."/>
   <meta property="og:locale" content="en_US"/>
-  <meta property="og:site_name" content="measured."/>
   
   <!--  https://dev.twitter.com/cards/types/summary -->
   <meta property="twitter:card" content="summary"/>
-  <meta property="twitter:title" content="measured.: blog"/>
-  <meta property="twitter:description" content="A one-time trophy bitch screams into the void."/>
+  <meta property="twitter:title" content="testing as debugging"/>
+  <meta property="twitter:description" content="A short description of the post."/>
   
   <!--/radix_placeholder_meta_tags-->
   <!--radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","listing"]}},"value":[{"type":"character","attributes":{},"value":["blog"]},{"type":"character","attributes":{},"value":["A one-time trophy bitch screams into the void. \n"]},{"type":"character","attributes":{},"value":["posts"]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output"]}},"value":[{"type":"character","attributes":{},"value":["testing as debugging"]},{"type":"character","attributes":{},"value":["A short description of the post.\n"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url"]}},"value":[{"type":"character","attributes":{},"value":["Charles T. Gray"]},{"type":"character","attributes":{},"value":["https://twitter.com/cantabile"]}]}]},{"type":"character","attributes":{},"value":["07-01-2018"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["radix::radix_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
-  <!--radix_placeholder_navigation_in_header-->
   
-  <script type="application/javascript">
-  
-    window.headroom_prevent_pin = false;
-  
-    window.document.addEventListener("DOMContentLoaded", function (event) {
-  
-      // initialize headroom for banner
-      var header = $('header').get(0);
-      var headerHeight = header.offsetHeight;
-      var headroom = new Headroom(header, {
-        onPin : function() {
-          if (window.headroom_prevent_pin) {
-            window.headroom_prevent_pin = false;
-            headroom.unpin();
-          }
-        }
-      });
-      headroom.init();
-      if(window.location.hash)
-        headroom.unpin();
-      $(header).addClass('headroom--transition');
-  
-      // offset scroll location for banner on hash change
-      // (see: https://github.com/WickyNilliams/headroom.js/issues/38)
-      window.addEventListener("hashchange", function(event) {
-        window.scrollTo(0, window.pageYOffset - (headerHeight + 25));
-      });
-  
-      // responsive menu
-      $('.radix-site-header').each(function(i, val) {
-        var topnav = $(this);
-        var toggle = topnav.find('.nav-toggle');
-        toggle.on('click', function() {
-          topnav.toggleClass('responsive');
-        });
-      });
-  
-      // nav dropdowns
-      $('.nav-dropbtn').click(function(e) {
-        $(this).next('.nav-dropdown-content').toggleClass('nav-dropdown-active');
-        $(this).parent().siblings('.nav-dropdown')
-           .children('.nav-dropdown-content').removeClass('nav-dropdown-active');
-      });
-      $("body").click(function(e){
-        $('.nav-dropdown-content').removeClass('nav-dropdown-active');
-      });
-      $(".nav-dropdown").click(function(e){
-        e.stopPropagation();
-      });
-    });
+  <script type="text/json" id="radix-resource-manifest">
+  {"type":"NULL"}
   </script>
-  
-  <style type="text/css">
-  
-  /* Theme (user-documented overrideables for nav appearance) */
-  
-  .radix-site-nav {
-    color: rgba(255, 255, 255, 0.8);
-    background-color: #455a64;
-    font-size: 15px;
-    font-weight: 300;
-  }
-  
-  .radix-site-nav a {
-    color: inherit;
-    text-decoration: none;
-  }
-  
-  .radix-site-nav a:hover {
-    color: white;
-  }
-  
-  @media print {
-    .radix-site-nav {
-      display: none;
-    }
-  }
-  
-  .radix-site-header {
-  
-  }
-  
-  .radix-site-footer {
-  
-  }
-  
-  
-  /* Site Header */
-  
-  .radix-site-header {
-    width: 100%;
-    box-sizing: border-box;
-    z-index: 3;
-  }
-  
-  .radix-site-header .nav-left {
-    display: inline-block;
-    margin-left: 8px;
-  }
-  
-  @media screen and (max-width: 768px) {
-    .radix-site-header .nav-left {
-      margin-left: 0;
-    }
-  }
-  
-  
-  .radix-site-header .nav-right {
-    float: right;
-    margin-right: 8px;
-  }
-  
-  .radix-site-header a,
-  .radix-site-header .title {
-    display: inline-block;
-    text-align: center;
-    padding: 14px 10px 14px 10px;
-  }
-  
-  .radix-site-header .title {
-    font-size: 18px;
-  }
-  
-  .radix-site-header .logo {
-    padding: 0;
-  }
-  
-  .radix-site-header .logo img {
-    display: none;
-    max-height: 20px;
-    width: auto;
-    margin-bottom: -4px;
-  }
-  
-  .radix-site-header .nav-image img {
-    max-height: 18px;
-    width: auto;
-    display: inline-block;
-    margin-bottom: -3px;
-  }
-  
-  
-  
-  @media screen and (min-width: 1000px) {
-    .radix-site-header .logo img {
-      display: inline-block;
-    }
-    .radix-site-header .nav-left {
-      margin-left: 20px;
-    }
-    .radix-site-header .nav-right {
-      margin-right: 20px;
-    }
-    .radix-site-header .title {
-      padding-left: 12px;
-    }
-  }
-  
-  
-  .radix-site-header .nav-toggle {
-    display: none;
-  }
-  
-  .nav-dropdown {
-    display: inline-block;
-    position: relative;
-  }
-  
-  .nav-dropdown .nav-dropbtn {
-    border: none;
-    outline: none;
-    color: rgba(255, 255, 255, 0.8);
-    padding: 16px 10px;
-    background-color: transparent;
-    font-family: inherit;
-    font-size: inherit;
-    font-weight: inherit;
-    margin: 0;
-    margin-top: 1px;
-    z-index: 2;
-  }
-  
-  .nav-dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: white;
-    min-width: 200px;
-    border: 1px solid rgba(0,0,0,0.15);
-    border-radius: 4px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1);
-    z-index: 1;
-    margin-top: 2px;
-    white-space: nowrap;
-    padding-top: 4px;
-    padding-bottom: 4px;
-  }
-  
-  .nav-dropdown-content hr {
-    margin-top: 4px;
-    margin-bottom: 4px;
-    border: none;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  }
-  
-  .nav-dropdown-active {
-    display: block;
-  }
-  
-  .nav-dropdown-content a, .nav-dropdown-content .nav-dropdown-header {
-    color: black;
-    padding: 6px 24px;
-    text-decoration: none;
-    display: block;
-    text-align: left;
-  }
-  
-  .nav-dropdown-content .nav-dropdown-header {
-    display: block;
-    padding: 5px 24px;
-    padding-bottom: 0;
-    text-transform: uppercase;
-    font-size: 14px;
-    color: #999999;
-    white-space: nowrap;
-  }
-  
-  .nav-dropdown:hover .nav-dropbtn {
-    color: white;
-  }
-  
-  .nav-dropdown-content a:hover {
-    background-color: #ddd;
-    color: black;
-  }
-  
-  .nav-right .nav-dropdown-content {
-    margin-left: -45%;
-    right: 0;
-  }
-  
-  @media screen and (max-width: 768px) {
-    .radix-site-header a, .radix-site-header .nav-dropdown  {display: none;}
-    .radix-site-header a.nav-toggle {
-      float: right;
-      display: block;
-    }
-    .radix-site-header .title {
-      margin-left: 0;
-    }
-    .radix-site-header .nav-right {
-      margin-right: 0;
-    }
-    .radix-site-header {
-      overflow: hidden;
-    }
-    .nav-right .nav-dropdown-content {
-      margin-left: 0;
-    }
-  }
-  
-  
-  @media screen and (max-width: 768px) {
-    .radix-site-header.responsive {position: relative;}
-    .radix-site-header.responsive a.nav-toggle {
-      position: absolute;
-      right: 0;
-      top: 0;
-    }
-    .radix-site-header.responsive a,
-    .radix-site-header.responsive .nav-dropdown {
-      display: block;
-      text-align: left;
-    }
-    .radix-site-header.responsive .nav-left,
-    .radix-site-header.responsive .nav-right {
-      width: 100%;
-    }
-    .radix-site-header.responsive .nav-dropdown {float: none;}
-    .radix-site-header.responsive .nav-dropdown-content {position: relative;}
-    .radix-site-header.responsive .nav-dropdown .nav-dropbtn {
-      display: block;
-      width: 100%;
-      text-align: left;
-    }
-  }
-  
-  /* Site Footer */
-  
-  .radix-site-footer {
-    width: 100%;
-    overflow: hidden;
-    box-sizing: border-box;
-    z-index: 3;
-    margin-top: 30px;
-    padding-top: 30px;
-    padding-bottom: 30px;
-    text-align: center;
-  }
-  
-  /* Headroom */
-  
-  d-title {
-    padding-top: 6rem;
-  }
-  
-  @media print {
-    d-title {
-      padding-top: 4rem;
-    }
-  }
-  
-  .headroom {
-    z-index: 1000;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-  }
-  
-  .headroom--transition {
-    transition: all .4s ease-in-out;
-  }
-  
-  .headroom--unpinned {
-    top: -100px;
-  }
-  
-  .headroom--pinned {
-    top: 0;
-  }
-  
-  </style>
-  
-  <link href="site_libs/font-awesome-5.0.13/css/fa-svg-with-js.css" rel="stylesheet"/>
-  <script src="site_libs/font-awesome-5.0.13/js/fontawesome-all.min.js"></script>
-  <script src="site_libs/font-awesome-5.0.13/js/fa-v4-shims.min.js"></script>
-  <script src="site_libs/headroom-0.9.4/headroom.min.js"></script>
+  <!--radix_placeholder_navigation_in_header-->
   <!--/radix_placeholder_navigation_in_header-->
   <!--radix_placeholder_distill-->
   
@@ -1250,522 +918,191 @@
   </script>
   
   <!--/radix_placeholder_distill-->
-  <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
-  <script src="site_libs/bowser-1.9.3/bowser.min.js"></script>
-  <script src="site_libs/webcomponents-2.0.0/webcomponents.js"></script>
-  <script src="site_libs/distill-2.2.21/template.v2.js"></script>
+  <script src="testing-as-debugging_files/jquery-1.11.3/jquery.min.js"></script>
+  <script src="testing-as-debugging_files/bowser-1.9.3/bowser.min.js"></script>
+  <script src="testing-as-debugging_files/webcomponents-2.0.0/webcomponents.js"></script>
+  <script src="testing-as-debugging_files/distill-2.2.21/template.v2.js"></script>
   <!--radix_placeholder_site_in_header-->
   <!--/radix_placeholder_site_in_header-->
 
 
 </head>
 
-<body class="layout-listing">
+<body>
 
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"blog","description":"A one-time trophy bitch screams into the void.","authors":[]}
+{"title":"testing as debugging","description":"A short description of the post.","authors":[{"author":"Charles T. Gray","authorURL":"https://twitter.com/cantabile","affiliation":"&nbsp;","affiliationURL":"#"}],"publishedDate":"2018-07-01T00:00:00.000+10:00","citationText":"Gray, 2018"}
 </script>
 
 <!--/radix_placeholder_front_matter-->
 <!--radix_placeholder_navigation_before_body-->
-<header class="header header--fixed" role="banner">
-<nav class="radix-site-nav radix-site-header">
-<div class="nav-left">
-<a href="index.html" class="title">measured.</a>
-</div>
-<div class="nav-right">
-<a href="index.html">home</a>
-<a href="about.html">about</a>
-<a href="blog.html">blog</a>
-<div class="nav-dropdown">
-<button class="nav-dropbtn">
-talks
- 
-<span class="down-arrow">&#x25BE;</span>
-</button>
-<div class="nav-dropdown-content">
-<a href="talks/replication/talk-nocats.html">unimelb - 2018</a>
-</div>
-</div>
-<div class="nav-dropdown">
-<button class="nav-dropbtn">
-projects
- 
-<span class="down-arrow">&#x25BE;</span>
-</button>
-<div class="nav-dropdown-content">
-<a href="chapter-five.html">chapter five</a>
-</div>
-</div>
-<a href="javascript:void(0);" class="nav-toggle">&#9776;</a>
-</div>
-</nav>
-</header>
 <!--/radix_placeholder_navigation_before_body-->
 <!--radix_placeholder_site_before_body-->
 <!--/radix_placeholder_site_before_body-->
-<!--radix_placeholder_article_listing-->
-
-<style type="text/css">
-
-/* Styles for listing layout (hide title) */
-.layout-listing d-title, .layout-listing .d-title {
-  display: none;
-}
-
-/* Styles for posts lists (not auto-injected) */
-
-
-.posts-with-sidebar {
-  padding-left: 45px;
-  padding-right: 45px;
-}
-
-.posts-list .description h2,
-.posts-list .description p {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
-}
-
-.posts-list .description h2 {
-  font-weight: 700;
-  border-bottom: none;
-  padding-bottom: 0;
-}
-
-.posts-list h2.post-tag {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-  padding-bottom: 12px;
-}
-.posts-list {
-  margin-top: 24px;
-  margin-bottom: 24px;
-}
-
-.posts-list .post-preview {
-  text-decoration: none;
-  overflow: hidden;
-  display: block;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  padding: 24px 0;
-}
-
-.post-preview-last {
-  border-bottom: none !important;
-}
-
-.posts-list .posts-list-caption {
-  grid-column: screen;
-  font-weight: 400;
-}
-
-.posts-list .post-preview h2 {
-  margin: 0 0 6px 0;
-  line-height: 1.2em;
-  font-style: normal;
-  font-size: 24px;
-}
-
-.posts-list .post-preview p {
-  margin: 0 0 12px 0;
-  line-height: 1.4em;
-  font-size: 16px;
-}
-
-.posts-list .post-preview .thumbnail {
-  box-sizing: border-box;
-  margin-bottom: 24px;
-  position: relative;
-  max-width: 500px;
-}
-.posts-list .post-preview img {
-  width: 100%;
-  display: block;
-}
-
-.posts-list .metadata {
-  font-size: 12px;
-  line-height: 1.4em;
-  margin-bottom: 18px;
-}
-
-.posts-list .metadata > * {
-  display: inline-block;
-}
-
-.posts-list .metadata .publishedDate {
-  margin-right: 1em;
-}
-
-.posts-list .metadata .tags {
-  margin-top: 1em;
-}
-
-.posts-list .tags .tag {
-  color: rgba(0,0,0,0.67);
-  padding: 0.3em 0.5em;
-  margin: 0;
-  font-size: 80%;
-  border: 1px solid rgba(0,0,0,0.4);
-  border-radius: 3px;
-  text-transform: uppercase;
-  font-weight: 500;
-}
-
-.posts-list img {
-  opacity: 1;
-}
-
-.posts-list img[data-src] {
-  opacity: 0;
-}
-
-.posts-more {
-  clear: both;
-}
-
-
-.posts-sidebar {
-  font-size: 16px;
-}
-
-.posts-sidebar h3 {
-  font-size: 16px;
-  margin-top: 0;
-  margin-bottom: 0.5em;
-  font-weight: 400;
-  text-transform: uppercase;
-}
-
-.sidebar-section {
-  margin-bottom: 30px;
-}
-
-.categories ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-}
-
-.categories li {
-  color: rgba(0, 0, 0, 0.8);
-  margin-bottom: 0;
-}
-
-.categories li>a {
-  border-bottom: none;
-}
-
-.categories li>a:hover {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.4);
-}
-
-.categories .active {
-  font-weight: 600;
-}
-
-.categories .category-count {
-  color: rgba(0, 0, 0, 0.4);
-}
-
-
-@media(min-width: 768px) {
-  .posts-list .post-preview h2 {
-    font-size: 26px;
-  }
-  .posts-list {
-    margin-top: 60px;
-  }
-  .posts-list .post-preview .thumbnail {
-    float: right;
-    width: 35%;
-    margin-bottom: 0;
-  }
-  .posts-list .post-preview .description {
-    float: left;
-    width: 45%;
-  }
-  .posts-list .post-preview .metadata {
-    float: left;
-    width: 15%;
-    margin-top: 8px;
-  }
-  .posts-list .post-preview p {
-    margin: 0 0 12px 0;
-    line-height: 1.5em;
-    font-size: 16px;
-  }
-  .posts-with-sidebar .posts-list {
-    float: left;
-    width: 72%;
-  }
-  .posts-with-sidebar .posts-sidebar {
-    float: right;
-    width: 20%;
-    margin-top: 60px;
-    padding-top: 24px;
-    padding-bottom: 24px;
-  }
-}
-
-.downlevel .posts-list .post-preview {
-  color: inherit;
-}
-
-</style>
-
-<script type="application/javascript">
-
-function init_posts_list() {
-
-  function load_image(img) {
-    var src = $(img).attr('data-src');
-    if (src) {
-      $(img).attr('src', src);
-      $(img).load(function() {
-        img.removeAttribute('data-src');
-      });
-    }
-  }
-
-  function set_posts_visible(posts, visible) {
-    if (visible) {
-
-      // show bottom border by default
-      $(posts).removeClass('post-preview-last');
-
-      // apply limits if need be
-      var max_posts = 25;
-      var apply_limits = $('.posts-container').hasClass('posts-apply-limit');
-      if (apply_limits && posts.length > max_posts) {
-        posts = $(posts).slice(0, max_posts);
-      } else {
-        $('.posts-more a').addClass('hidden');
-      }
-
-      // apply last style
-      $(posts.slice(-1)[0]).addClass('post-preview-last');
-
-      $(posts).removeClass('hidden');
-      $(posts).find('img[data-src]').each(function(i, img) {
-        load_image(img);
-      });
-    } else {
-      $(posts).addClass('hidden');
-    }
-  }
-
-  function apply_hash_filter() {
-
-    // clear active state
-    $('.categories .active').removeClass('active');
-
-    // mark all posts invisible to start
-    set_posts_visible($('.posts-list').children('a'), false);
-
-    // if we have a hash filter
-    if (window.location.hash) {
-
-      // mark posts that match the category visible
-      var page_category = window.location.hash.replace("#", "");
-      var posts = $('.post-metadata').map(function(idx, script) {
-        var metadata = $.parseJSON($(script).html());
-        var post = null;
-        $.each(metadata.categories, function(idx, category) {
-          category = category.replace(/ /g,"_");
-          if (category == page_category) {
-            post = $(script).parent().get();
-            return false;
-          }
-        });
-        return post;
-      });
-      set_posts_visible(posts, true);
-
-      // mark the hash active
-      $('.categories li>a[href="' + window.location.hash + '"]').addClass('active');
-
-    } else {
-
-      // no hash filter, make all posts visible (subject to max display)
-      set_posts_visible($('.posts-list').children(), true);
-
-    }
-  }
-
-  // more articles
-  function apply_post_limits(apply) {
-    if (apply) {
-      $('.posts-container').addClass('posts-apply-limit');
-      $('.posts-more a').removeClass('hidden');
-    } else {
-      $('.posts-container').removeClass('posts-apply-limit');
-      $('.posts-more a').addClass('hidden');
-    }
-  }
-
-  // hash filter handling
-  apply_hash_filter();
-  $(window).on('hashchange',function() {
-    apply_post_limits(true);
-    apply_hash_filter();
-  });
-
-  // more articles link
-  $('.posts-more a').click(function(e) {
-    e.preventDefault();
-    apply_post_limits(false);
-    apply_hash_filter();
-    return false;
-  });
-
-}
-
-</script>
-
-
-
-<div class="posts-container posts-with-sidebar posts-apply-limit l-screen-inset">
-<div class="posts-list">
-<h1 class="posts-list-caption">blog</h1>
-<a href="posts/2018-11-09-a-minimal-radix-workflow/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":["teaching","radix","thesis"]}</script>
-<div class="metadata">
-<div class="publishedDate">Nov. 9, 2018</div>
-</div>
-<div class="thumbnail">
-<img/>
-</div>
-<div class="description">
-<h2>a minimal radix workflow</h2>
-<p>A short description of the post.</p>
-</div>
-</a>
-<a href="posts/2018-11-12-quack-quack-title/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":["teaching","pseudocode"]}</script>
-<div class="metadata">
-<div class="publishedDate">Nov. 6, 2018</div>
-</div>
-<div class="thumbnail">
-<img/>
-</div>
-<div class="description">
-<h2>&lt;quack quack | title &gt;</h2>
-<p>A short description of the post.</p>
-</div>
-</a>
-<a href="posts/2018-11-12-if-were-really-committed-to-diversity-we-should-privilege-agency/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":["community","grrr..."]}</script>
-<div class="metadata">
-<div class="publishedDate">Sept. 26, 2018</div>
-</div>
-<div class="thumbnail">
-<img/>
-</div>
-<div class="description">
-<h2>if we're really committed to diversity, we should privilege agency</h2>
-<p>A short description of the post.</p>
-</div>
-</a>
-<a href="posts/2018-11-12-am-i-a-man-invited-to-such-things/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":["community"]}</script>
-<div class="metadata">
-<div class="publishedDate">Aug. 25, 2018</div>
-</div>
-<div class="thumbnail">
-<img/>
-</div>
-<div class="description">
-<h2>am I, a man, invited to such things?</h2>
-<p>A short description of the post.</p>
-</div>
-</a>
-<a href="posts/2018-11-12-if-were-really-committed-to-diversity-crying-should-be-okay/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":["community","grrr..."]}</script>
-<div class="metadata">
-<div class="publishedDate">July 18, 2018</div>
-</div>
-<div class="thumbnail">
-<img/>
-</div>
-<div class="description">
-<h2>if we're really committed to diversity, crying should be okay</h2>
-<p>A short description of the post.</p>
-</div>
-</a>
-<a href="posts/2018-11-12-testing-as-debugging/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":[]}</script>
-<div class="metadata">
-<div class="publishedDate">July 1, 2018</div>
-</div>
-<div class="thumbnail">
-<img/>
-</div>
-<div class="description">
-<h2>testing as debugging</h2>
-<p>A short description of the post.</p>
-</div>
-</a>
-<a href="posts/2018-11-12-a-coding-workshop-without-code/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":["teaching","pseudocode"]}</script>
-<div class="metadata">
-<div class="publishedDate">June 17, 2018</div>
-</div>
-<div class="thumbnail">
-<img/>
-</div>
-<div class="description">
-<h2>a coding workshop without code</h2>
-<p>A short description of the post.</p>
-</div>
-</a>
-</div>
-<div class="posts-sidebar">
-<div class="sidebar-section categories">
-<h3>Categories</h3>
-<ul>
-<li>
-<a href="#community">community</a>
-<span class="category-count">(3)</span>
-</li>
-<li>
-<a href="#grrr...">grrr...</a>
-<span class="category-count">(2)</span>
-</li>
-<li>
-<a href="#pseudocode">pseudocode</a>
-<span class="category-count">(2)</span>
-</li>
-<li>
-<a href="#radix">radix</a>
-<span class="category-count">(1)</span>
-</li>
-<li>
-<a href="#teaching">teaching</a>
-<span class="category-count">(3)</span>
-</li>
-<li>
-<a href="#thesis">thesis</a>
-<span class="category-count">(1)</span>
-</li>
-</ul>
-</div>
-</div>
-<div class="posts-more">
-<a href="#">More articles &raquo;</a>
-</div>
-</div>
-<!--/radix_placeholder_article_listing-->
 
 <div class="d-title">
-<h1>blog</h1>
-<p>A one-time trophy bitch screams into the void.</p>
+<h1>testing as debugging</h1>
+<p>A short description of the post.</p>
 </div>
 
+<div class="d-byline">
+  Charles T. Gray <a href="https://twitter.com/cantabile" class="uri">https://twitter.com/cantabile</a> 
+  
+<br/>07-01-2018
+</div>
 
 <div class="d-article">
+<p>I’m writing my first tests at the moment.</p>
+<p>I’ve been rather <a href="https://ropensci.org/blog/2018/03/13/ode-to-testing/">enamoured</a> with the idea of testing for about six months now, but haven’t had much of a chance to work on research.</p>
+<p>So, I’m finally now sitting down to begin my first package in earnest, and thus writing my first tests. Seeing as I had a request, I thought I’d write my thoughts at this fairly early point. I must confess, however, that this post wandered around a bit and I’m not sure how useful John would find it, alas; it’s not really an explanatory post, more of an exploration. For actually useful information about getting started with testing, I recommend <a href="http://r-pkgs.had.co.nz/tests.html">R packages</a>.</p>
+<center>
+<blockquote class="twitter-tweet" data-lang="en">
+<p lang="en" dir="ltr">
+Any plans to write about this? Now and again I look at test that but have no idea where to start.
+</p>
+— John MacKintosh (<span class="citation" data-cites="_johnmackintosh">@_johnmackintosh</span>) <a href="https://twitter.com/_johnmackintosh/status/1012988162375811072?ref_src=twsrc%5Etfw">June 30, 2018</a>
+</blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</center>
+<p>I recently saw <a href="https://www.meetup.com/en-AU/rladies-seattle/events/250073046/">Kara Woo</a> speak at R-Ladies Seattle, and she made a compelling case for debugging with rigour. Admittedly I’ve only spent one evening reading about that before getting distracted by the next shiny thing (i.e., hyperventilating into a figurative paper bag as <a href="https://user2018.r-project.org">useR! 2018</a> approaches.). However, I came across this wonderful gem that has me alight with newfound testing enthusiasm:</p>
+<blockquote>
+<p>“If you’re using automated testing, this is also a good time to create an automated test case. If your existing test coverage is low, take the opportunity to add some nearby tests to ensure that existing good behaviour is preserved. This reduces the chances of creating a new bug.” (<a href="http://adv-r.had.co.nz/Exceptions-Debugging.html">Advanced R</a>)</p>
+</blockquote>
+<p>Now, don’t get me wrong, Kara’s inspired me to eventually get across the whole debugging gambit. But it is high conference season, and I’ve got some simulation problems to work out, so I can’t justify spending an overabundance of time on git.</p>
+<p>Adopting this idea into my workflow is enough for now; with this one tweak, my workflow for debugging feels transformed. It also solves the problem I had with figuring out when and how to test. I love the idea of taking this as an opportunity to increase testing coverage, whilst also assising in drilling down into which line of code.</p>
+<p>It’s also great for those moments where I’m feeling stuck or uninspired for a moment. Answer the question, does this work as I think it should?</p>
+<p>In this post I aim to outline an example from my work to illustrate the elements of a test:</p>
+<ul>
+<li>an expectation</li>
+<li>a test that groups multiple expectations</li>
+<li><del>a file that groups together multiple tests</del></li>
+</ul>
+<p>At the end there is a little mathematical promenade I went on while working on this post. I find it useful to see other people’s learning process, and I didn’t want to just toss my notes away.</p>
+<h2 id="a-little-example-from-what-im-working-on">A little example from what I’m working on</h2>
+<p>So, one of the things I need to code up properly at the moment is a series of densities with parameters estimated from summary statistic quantiles. I’m interested in comparing estimators derived from different distributions and how well they approximate the true density evaluated at the median.</p>
+<p>This came up last night; I sat down to work and I had in my head that the exponential estimator needed debugging. So, I thought this was a perfect time to practice testing as debugging. Even if it does work as should, I will have increased testing coverage and not wasted my time. I will also feel both reassured and just a little bit smug that I levelled up my <a href="https://nvie.com/posts/a-successful-git-branching-model/">gitflow</a>.</p>
+<p>Consider an exponential distribution <span class="math inline">\(\exp(\lambda)\)</span> with rate parameter <span class="math inline">\(\lambda &gt; 0\)</span>. It can be shown<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a> that the median <span class="math inline">\(\mu\)</span> of this distribution is <span class="math display">\[
+\mu := \frac {\log2}{\lambda};
+\]</span> so, we can think of <span class="math inline">\(\lambda\)</span> in terms of <span class="math inline">\(\mu\)</span>: <span class="math display">\[
+\lambda = \frac{\log 2}{\mu}.
+\]</span></p>
+<p>I’d written a function <code>exp_est</code> the other day that I was pretty sure took a median <span class="math inline">\(\mu\)</span> as an argument, estimated <span class="math inline">\(\lambda\)</span> as above, and evaluated the exponential density <span class="math inline">\(g\)</span> at <span class="math inline">\(\mu\)</span> with <span class="math inline">\(\lambda\)</span> estimated from the given median.</p>
+<p>So, given an argument, some observed median <span class="math inline">\(\mu\)</span>, we have the density evaluated at the median approximated thus <span class="math display">\[
+g(\mu; \lambda \approx \log 2/\lambda)
+\]</span></p>
+<p>This calculation is wrapped up in the <code>est_exp</code> function. Seeing as I am just using this for the comparison, I’m not making this an exported funciton.</p>
+<div class="layout-chunk" data-layout="l-body">
 
+</div>
+<p>Granted, this is only a couple of lines of code, so it can be eyeballed to make sure it’s commensurate with the mathematics<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a>.</p>
+<h3 id="expectations">Expectations</h3>
+<p>Firstly, I wanted to ensure that the calculataion worked for the default parameters <code>exp_est(qexp(1/2))</code>. So, I <strong>expect</strong> that <code>exp_est(qexp(1/2))</code> is <strong>equal</strong> to the density <code>dexp</code> evaluated at the median (calculated <code>qexp(1/2)</code>)<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a>.<br />
+We can do that by writing <em>expectation</em>. I believe the most common test is <code>expect_equal</code>.</p>
+<div class="layout-chunk" data-layout="l-body">
+
+</div>
+but if I try this
+<div class="layout-chunk" data-layout="l-body">
+
+</div>
+<p>in the console I see this:</p>
+<pre><code>
+Error : 2 not equal to 4.
+1/1 mismatches
+[1] 2 - 4 == -2</code></pre>
+<p>So, I suppose this shows how the function <code>expect_equal</code> works, it checks to see if their difference is <code>0</code>.</p>
+<p>I tried to think about a few ways it could go wrong. So, I tried specifying and not specifying the rate parameter, as well as checking a <span class="math inline">\(0 &lt; \lambda &lt; 1\)</span> value and a <span class="math inline">\(\lambda &gt; 1\)</span> value.</p>
+<h3 id="tests">Tests</h3>
+<p>For multiple tests that are alike in some way, in this case the same function, we can group them together into a <em>test</em>, a wrapper function <code>testthat::test_that</code> that takes in multiple expectations.</p>
+<p>We group multiple tests in a file. For this type of stuff, where it wanders away from mathematics completely and focuses on the dev side of what we do, I tend to make good use of helper functions to automate as much as possible.</p>
+<pre><code>
+test_that(&quot;exponential estimator produces what it should&quot;, {
+  expect_equal(exp(est(qexp(1/2)), dexp(qexp(1/2))))
+  expect_equal(exp_est(qexp(1/2)), dexp(qexp(1/2), log(2) / qexp(1/2)))
+  expect_equal(exp_est(qexp(1/2, rate = 3)), dexp(qexp(1/2, rate = 3), log(2) / qexp(1/2, rate = 3)))
+  expect_equal(exp_est(qexp(1/2, rate = 1/5)), dexp(qexp(1/2, rate = 1/5), log(2) / qexp(1/2, rate = 1/5)))
+})</code></pre>
+<h3 id="syntax">Syntax</h3>
+<p>Curiously, we do not separate the different tests with <code>,</code>, as an R coder of my ability expected. I separate mine with new lines, as all the examples do.</p>
+<p>I just experimented in the name of blogging posterity, and discovered that putting two tests on the same line with no space produced a parsing error that began thus:</p>
+<pre><code>
+Error in parse(textConnection(lines, encoding = &quot;UTF-8&quot;), n = -1, srcfile = srcfile,... </code></pre>
+<p>So it is not only easier to read, but is necessary to separate tests by new lines.</p>
+<h3 id="testthat-makes-testing-fun"><code>testthat</code> makes testing <em>fun</em>!</h3>
+<p>There is a serious joy to running all tests (<strong>control + shift + t</strong>) and seeing that happy output:</p>
+<div class="layout-chunk" data-layout="l-body">
+
+</div>
+<p>Every time I hear Strongbad’s voice in my head saying “I make testing <em>fun</em>!”.</p>
+<center>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/90X5NJleYJQ" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+</iframe>
+</center>
+<h2 id="teaching-myself-maths-as-i-go">Teaching myself maths as I go</h2>
+<p>My undergraduate degree was very light in analysis and calculus, which come up a lot in statistics. Most of what I focussed on was discrete mathematics. I find this helps immensely (even more than you’d think) with scientific programming, especially this new-fangled functional programming.</p>
+<p>I was a piano teacher for twenty years, and am by no means some undiscovered mathematical genius. I learn mathematics by painfully slowly unpicking definitions and playing around with them.</p>
+<p>The following was for my own edification, probably has errors, certainly has fudgey bits, but was undeniably helpful getting my head back into a mathematical place.</p>
+<p>I believe it’s useful for people to see the learning process, that it’s not magic, it’s just study.</p>
+<p>My blog is also intended to be a learning diary of sorts for myself, so I think it’ll be interesting to see how my understanding of concepts change and develop.</p>
+<h2 id="find-the-median-of-the-exponential-distribution">Find the median of the exponential distribution</h2>
+<p>We want to show that the median <span class="math inline">\(\nu\)</span> of the exponential distribution <span class="math inline">\(\exp(\lambda)\)</span> with rate parameter <span class="math inline">\(\lambda &gt; 0\)</span> is given by <span class="math display">\[
+\nu = \frac{\log2}{\lambda}.
+\]</span></p>
+<p>Now, we know that for any given pdf <span class="math inline">\(f\)</span> we have a cdf <span class="math inline">\(F\)</span> providing the probability that <span class="math inline">\(X\)</span> takes up to a certain value <span class="math inline">\(x\)</span>, <span class="math display">\[
+F(x) = P(X \leqslant x) = \int_0^x f(x)\, dx.
+\]</span></p>
+<p>So, where <span class="math inline">\(F(x) = 1/2\)</span>, we have <span class="math inline">\(x = \nu\)</span>. Thus, solving <span class="math inline">\(F(x) = 1/2\)</span> for <span class="math inline">\(x\)</span> will provide us with the median <span class="math inline">\(\nu\)</span>.</p>
+<p>Now, since <span class="math inline">\(X \sim \exp(\lambda)\)</span>, we have <span class="math display">\[
+f(x) := 
+\begin{cases}
+\lambda e^{- \lambda x} &amp; x \geqslant 0\\
+0 &amp; x &lt; 0
+\end{cases}
+\]</span> with <span class="math inline">\(\lambda &gt; 0\)</span>.</p>
+<p>Thus, we need to solve for <span class="math inline">\(x\)</span>, <span class="math display">\[
+ \int_0^x \lambda e^{- \lambda x} \, dx = \frac 1 2.
+\]</span></p>
+<p>So, if I can find <span class="math inline">\(\int e^{ax}\, dx\)</span> for some <span class="math inline">\(a &gt; 0\)</span>, then I am most of the way to solving this problem.</p>
+<p>Something I love about the exponential function is its series definition, <span class="math display">\[
+e^x = \exp(x) = \sum_{k = 0}^\infty \frac{x^k}{k!} = 1 + x + \frac{x^2}{2} + \frac{x^3}{6} + \dots
+\]</span> (In particular, I like this definition because it helps me understand Euler’s formula <span class="math inline">\(e^{ix} = \cos x + i \sin x\)</span>, using the series definitions of sine and cosine.)</p>
+<p>Since this is a polynomial, we can differentiate termwise, <span class="math display">\[
+\frac{de^x}{dx} = 0 + 1 + \frac{2x}{2} + \frac{3x^2}{6} \dots = 1 + x + \frac{x^2}{2} + \dots
+\]</span> thus giving the lovely result, <span class="math inline">\(\frac{de^x}{dx} = e^x\)</span>. I love how intuitive this is in series form. I’d completely forgotten it. Once gets so used to <span class="math inline">\(\frac{de^x}{dx} = e^x\)</span>, that one forgets why. So many things in maths are like that for me. And then I find it so irritating that I have to go through it all again.</p>
+<p>Now, starting with the chain rule we have</p>
+<p><span class="math display">\[\begin{align*}
+\frac{de^{ax}}{dx} &amp; = \frac{de^{ax}}{d(ax)} \cdot \frac{dax}{dx} = ae^{ax} \\
+\implies \int \frac{de^{ax}}{dx} &amp; = a \int  e^{ax}\, dx.
+\end{align*}\]</span></p>
+<p>To know how to handle integrating a derivative, we turn to the fundamental theorem of calculus, which states that if <span class="math inline">\(f\)</span> is a real-valued function on a closed interval <span class="math inline">\([a,b]\)</span>, then <span class="math inline">\(F(x) = \int_a^b f(x)\, dx\)</span> which gives <span class="math inline">\(F&#39;(x) = f(x)\)</span>. Or something, hm, perhaps that’s not quite right. It’s some fundamental application of calculus that gives us <span class="math inline">\(\int \frac{d}{dx}f(x) = f(x)\)</span>.</p>
+<p>Anyway, we now have</p>
+<p><span class="math display">\[\begin{align*}
+\int \frac{de^{ax}}{dx}  &amp; = a \int  e^{ax}\, dx \\
+\implies e^{ax} &amp; = a \int e^{ax} dx. \\
+\int e^{ax} dx &amp; = a^{-1}e^{ax}.\ (*)
+\end{align*}\]</span></p>
+<p>I think I’m glossing past some assumptions about this only working for definite integrals, but when we actually apply it we will on definite integrals, so I can live with this fudgery as we now have the key to the problem.</p>
+<p>Returning to our original problem, then, we have</p>
+<p><span class="math display">\[\begin{align*}
+\int_0^{x} \lambda e^{-\lambda x}\, dx &amp; = \frac{1}{2} \\
+\implies \lambda \int_0^{x} e^{-\lambda x}\, dx &amp; = \frac{1}{2} \\
+\implies \lambda((-\lambda)^{-1} e^{-\lambda x} - (-\lambda)^{-1}) &amp; = \frac 1 2\\
+\implies - e^{-\lambda x} + 1 &amp; = \frac{1}{2} \\
+\implies e^{- \lambda x} &amp; = \frac 1 2 \\
+\implies - \lambda x &amp; = \log(1/2)\\
+\implies x &amp; = \log 2 / \lambda.
+\end{align*}\]</span></p>
+<p>And since this came from the assumption <span class="math inline">\(F(x) = 1/2\)</span>, we now have that the median <span class="math inline">\(\nu\)</span> of the exponential distribution is given by <span class="math inline">\(\nu = \log2/\lambda\)</span>, as required. :)</p>
+<section class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p>This actually bugged me all week. So, I’ve added my mathematical musings as the final section. I<a href="#fnref1" class="footnote-back">↩</a></p></li>
+<li id="fn2"><p>I love converting my code back to maths as a lowfi debugging practice.<a href="#fnref2" class="footnote-back">↩</a></p></li>
+<li id="fn3"><p>I like to make calculations in fractions to remind myself that I’m dealing with standard quantiles, such as the median or quartiles.<a href="#fnref3" class="footnote-back">↩</a></p></li>
+</ol>
+</section>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>
@@ -1773,6 +1110,15 @@ function init_posts_list() {
 <div class="d-appendix">
 </div>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 
 <!--radix_placeholder_site_after_body-->
 <!--/radix_placeholder_site_after_body-->

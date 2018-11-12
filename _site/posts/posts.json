@@ -90,6 +90,21 @@
     "last_modified": "2018-11-12T13:49:29+11:00"
   },
   {
+    "path": "posts/2018-11-12-testing-as-debugging/",
+    "title": "testing as debugging",
+    "description": "A short description of the post.",
+    "author": [
+      {
+        "name": "Charles T. Gray",
+        "url": "https://twitter.com/cantabile"
+      }
+    ],
+    "date": "2018-07-01",
+    "categories": [],
+    "preview": {},
+    "last_modified": "2018-11-12T21:27:52+11:00"
+  },
+  {
     "path": "posts/2018-11-12-a-coding-workshop-without-code/",
     "title": "a coding workshop without code",
     "description": "A short description of the post.",
