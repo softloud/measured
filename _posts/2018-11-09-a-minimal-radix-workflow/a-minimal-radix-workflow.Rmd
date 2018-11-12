@@ -9,13 +9,19 @@ date: 11-09-2018
 output:
   radix::radix_article:
     self_contained: false
+categories:
+  - teaching
+  - radix
+  - thesis
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
-Radix is a publication format for scientific and technical writing, native to the web.
+I often get asked for R tips, and I feel like I disappoint when I say the thing that propels me along the most is saying how do I do this thing in an R way. I'm also super lazy, so I like to automate what I can along the way. 
 
-Learn more about using Radix at <https://rstudio.github.io/radix>.
+It's natural that I'm building my thesis in [`radix::`](https://rstudio.github.io/radix/),
+
+> Radix is a publication format for scientific and technical writing, native to the web. Learn more about using Radix at https://rstudio.github.io/radix.
 

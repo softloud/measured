@@ -6,7 +6,7 @@ base_url: https://fervent-hypatia-7b7343.netlify.com/
 output_dir: "_site"
 collections:
   posts:
-    feed_items_max: 50
+    feed_items_max: 3
     disqus: measured
     share: [twitter, linkedin]
 navbar:
@@ -17,4 +17,12 @@ navbar:
       href: about.html
     - text: "blog"
       href: blog.html
+    - text: "talks"
+      menu:
+        - text: "unimelb - 2018"
+          href: talks/replication/talk-nocats.html
+    - text: "projects"
+      menu:
+      - text: "chapter five"
+        href: chapter-five.html
 output: radix::radix_article

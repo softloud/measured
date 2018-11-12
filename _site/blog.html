@@ -397,6 +397,10 @@
     width: 100%;
   }
   
+  .pandoc-table>caption {
+    margin-bottom: 10px;
+  }
+  
   .pandoc-table th:not([align]) {
     text-align: left;
   }
@@ -411,6 +415,10 @@
   
   .l-screen-inset {
     padding-right: 16px;
+  }
+  
+  .l-screen .caption {
+    margin-left: 10px;
   }
   
   .shaded {
@@ -1178,9 +1186,19 @@
     // prevent underline for linked images
     $('a > img').parent().css({'border-bottom' : 'none'});
   
-    // mark figures created by knitr chunks as 100% width
+    // mark non-body figures created by knitr chunks as 100% width
     $('.layout-chunk').each(function(i, val) {
-      $(this).find('img, .html-widget').css('width', '100%');
+      var figures = $(this).find('img, .html-widget');
+      if ($(this).attr('data-layout') !== "l-body") {
+        figures.css('width', '100%');
+      } else {
+        figures.css('max-width', '100%');
+        figures.filter("[width]").each(function(i, val) {
+          var fig = $(this);
+          fig.css('width', fig.attr('width') + 'px');
+        });
+  
+      }
     });
   
     // auto-append index.html to post-preview links in file: protocol
@@ -1201,6 +1219,8 @@
     $('tr.header').parent('thead').parent('table').addClass('pandoc-table');
     $('.kable-table').children('table').addClass('pandoc-table');
   
+    // add figcaption style to table captions
+    $('caption').parent('table').addClass("figcaption");
   
     // initialize posts list
     if (window.init_posts_list)
@@ -1212,6 +1232,7 @@
       $('#disqus_thread').toggleClass('hidden');
       if (!$('#disqus_thread').hasClass('hidden')) {
         var offset = $(this).offset();
+        $(window).resize();
         $('html, body').animate({
           scrollTop: offset.top - 35
         });
@@ -1258,6 +1279,26 @@
 <a href="index.html">home</a>
 <a href="about.html">about</a>
 <a href="blog.html">blog</a>
+<div class="nav-dropdown">
+<button class="nav-dropbtn">
+talks
+ 
+<span class="down-arrow">&#x25BE;</span>
+</button>
+<div class="nav-dropdown-content">
+<a href="talks/replication/talk-nocats.html">unimelb - 2018</a>
+</div>
+</div>
+<div class="nav-dropdown">
+<button class="nav-dropbtn">
+projects
+ 
+<span class="down-arrow">&#x25BE;</span>
+</button>
+<div class="nav-dropdown-content">
+<a href="chapter-five.html">chapter five</a>
+</div>
+</div>
 <a href="javascript:void(0);" class="nav-toggle">&#9776;</a>
 </div>
 </nav>
@@ -1316,8 +1357,7 @@
 
 .posts-list .posts-list-caption {
   grid-column: screen;
-  font-weight: 500;
-  font-size: 40px;
+  font-weight: 400;
 }
 
 .posts-list .post-preview h2 {
@@ -1586,10 +1626,11 @@ function init_posts_list() {
 
 
 
-<div class="posts-container posts-apply-limit l-page">
+<div class="posts-container posts-with-sidebar posts-apply-limit l-screen-inset">
 <div class="posts-list">
+<h1 class="posts-list-caption">blog</h1>
 <a href="posts/2018-11-09-a-minimal-radix-workflow/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":[]}</script>
+<script class="post-metadata" type="text/json">{"categories":["teaching","radix","thesis"]}</script>
 <div class="metadata">
 <div class="publishedDate">Nov. 9, 2018</div>
 </div>
@@ -1601,6 +1642,102 @@ function init_posts_list() {
 <p>A short description of the post.</p>
 </div>
 </a>
+<a href="posts/2018-11-12-quack-quack-title/" class="post-preview">
+<script class="post-metadata" type="text/json">{"categories":["teaching","pseudocode"]}</script>
+<div class="metadata">
+<div class="publishedDate">Nov. 6, 2018</div>
+</div>
+<div class="thumbnail">
+<img/>
+</div>
+<div class="description">
+<h2>&lt;quack quack | title &gt;</h2>
+<p>A short description of the post.</p>
+</div>
+</a>
+<a href="posts/2018-11-12-if-were-really-committed-to-diversity-we-should-privilege-agency/" class="post-preview">
+<script class="post-metadata" type="text/json">{"categories":["community","grrr..."]}</script>
+<div class="metadata">
+<div class="publishedDate">Sept. 26, 2018</div>
+</div>
+<div class="thumbnail">
+<img/>
+</div>
+<div class="description">
+<h2>if we're really committed to diversity, we should privilege agency</h2>
+<p>A short description of the post.</p>
+</div>
+</a>
+<a href="posts/2018-11-12-am-i-a-man-invited-to-such-things/" class="post-preview">
+<script class="post-metadata" type="text/json">{"categories":["community"]}</script>
+<div class="metadata">
+<div class="publishedDate">Aug. 25, 2018</div>
+</div>
+<div class="thumbnail">
+<img/>
+</div>
+<div class="description">
+<h2>am I, a man, invited to such things?</h2>
+<p>A short description of the post.</p>
+</div>
+</a>
+<a href="posts/2018-11-12-if-were-really-committed-to-diversity-crying-should-be-okay/" class="post-preview">
+<script class="post-metadata" type="text/json">{"categories":["community","grrr..."]}</script>
+<div class="metadata">
+<div class="publishedDate">July 18, 2018</div>
+</div>
+<div class="thumbnail">
+<img/>
+</div>
+<div class="description">
+<h2>if we're really committed to diversity, crying should be okay</h2>
+<p>A short description of the post.</p>
+</div>
+</a>
+<a href="posts/2018-11-12-a-coding-workshop-without-code/" class="post-preview">
+<script class="post-metadata" type="text/json">{"categories":["teaching","pseudocode"]}</script>
+<div class="metadata">
+<div class="publishedDate">June 17, 2018</div>
+</div>
+<div class="thumbnail">
+<img/>
+</div>
+<div class="description">
+<h2>a coding workshop without code</h2>
+<p>A short description of the post.</p>
+</div>
+</a>
+</div>
+<div class="posts-sidebar">
+<div class="sidebar-section categories">
+<h3>Categories</h3>
+<ul>
+<li>
+<a href="#community">community</a>
+<span class="category-count">(3)</span>
+</li>
+<li>
+<a href="#grrr...">grrr...</a>
+<span class="category-count">(2)</span>
+</li>
+<li>
+<a href="#pseudocode">pseudocode</a>
+<span class="category-count">(2)</span>
+</li>
+<li>
+<a href="#radix">radix</a>
+<span class="category-count">(1)</span>
+</li>
+<li>
+<a href="#teaching">teaching</a>
+<span class="category-count">(3)</span>
+</li>
+<li>
+<a href="#thesis">thesis</a>
+<span class="category-count">(1)</span>
+</li>
+</ul>
+</div>
 </div>
 <div class="posts-more">
 <a href="#">More articles &raquo;</a>

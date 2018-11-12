@@ -1,0 +1,90 @@
+---
+title: "open and reproducible data analysis"
+subtitle: "charles t. gray </br> 
+**`from replication crisis to credibility revolution`** </br>
+*`university of melbourne`*"
+author: "r-ladies"
+date: "november 2018"
+output:
+  xaringan::moon_reader:
+    css: ["default", "rladies", "rladies-fonts"]
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+```
+
+
+class: bottom, right
+background-size: cover
+background-image: url(https://upload.wikimedia.org/wikipedia/commons/8/8a/CICB%27s_Laboratory.jpg)
+
+Image credit: [Wikimedia Commons](https://commons.wikimedia.org/w/index.php?curid=21915714)
+
+---
+class: middle, right
+
+```{r echo=FALSE}
+knitr::include_graphics("fish.jpg")
+```
+
+Image credit: [Mike Penguin]()
+
+---
+class: top, right
+
+background-image: url(https://upload.wikimedia.org/wikipedia/en/2/21/Web_of_Spider-Man_Vol_1_129-1.png)
+
+Image credit: [Wikimedia Commons](https://en.wikipedia.org/w/index.php?curid=58461384)
+
+# with great power comes great responsibility
+
+---
+class: bottom, right
+
+background-image: url(http://unconf18.ropensci.org/images/Seattle.svg)
+
+Image credit: [rOpenSci](http://unconf18.ropensci.org/)
+
+# bridging the toolchain gap
+
+---
+class: middle, centre
+
+# `varameta`
+
+For meta-analysing medians.
+
+
+---
+class: middle
+
+# open and reproducible data analysis
+
+- software dev
+- packaged data analysis
+- ethical data management
+- accessibility: code & results
+- reproducibility
+
+
+
+---
+class: inverse
+#### Thanks for listening! How to bling your slides, r-ladies style: 
+
+```{r eval=FALSE, echo = TRUE}
+output:
+  xaringan::moon_reader:
+    css: ["default", "rladies", "rladies-fonts"]
+```
+
+```{r echo = TRUE}
+knitr::include_url("https://alison.rbind.io/post/r-ladies-slides/", height = 375)
+``` 
+
