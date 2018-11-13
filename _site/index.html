@@ -1320,14 +1320,14 @@ projects
 
 <div class="d-article">
 <p>What if one practices science like music?</p>
-<p>My goal is to spend four hours a day on deep work.</p>
+<p>My goal is to spend four hours a day on deep work, work with intent.</p>
 <div class="layout-chunk" data-layout="l-body">
 <pre class="r"><code>
 # packages
 library(tidyverse)
 
 # get data
-tracker_data &lt;- readr::read_csv(&quot;atracker-data-2018-11-12.csv&quot;) %&gt;%
+tracker_data &lt;- readr::read_csv(&quot;~/Downloads/Details-20170206-20181112.csv&quot;) %&gt;%
   # tidy up columns
   rename(start = `Start time`,
          end = `End time`,
@@ -1345,7 +1345,7 @@ tracker_data &lt;- readr::read_csv(&quot;atracker-data-2018-11-12.csv&quot;) %&g
          month = lubridate::month(start, label = TRUE),
          date = lubridate::date(start))</code></pre>
 </div>
-<h2 id="distribution-of-deep-work-hours-each-day-by-month">distribution of deep work hours each day by month</h2>
+<h3 id="for-each-month-how-many-hours-a-day">for each month, how many hours a day?</h3>
 <div class="layout-chunk" data-layout="l-body">
 <pre class="r"><code>
 # plot monthly distributions
@@ -1354,11 +1354,12 @@ tracker_data %&gt;%
   group_by(date, month) %&gt;% 
   summarise(time = sum(duration) / 3600) %&gt;%
   ggplot(aes(x = time)) +
+  geom_vline(xintercept = 4, linetype = &quot;dotted&quot;) +
   geom_histogram(bins = 10) +
-  facet_grid(month ~ .)</code></pre>
+  facet_grid(month ~ .) </code></pre>
 <p><img src="index_files/figure-html5/unnamed-chunk-1-1.png" width="624" /></p>
 </div>
-<h2 id="distribution-of-deep-work-hours-by-month-and-category">distribution of deep work hours by month and category</h2>
+<h2 id="for-each-month-how-many-hours-a-day-for-each-category">for each month how many hours a day for each category?</h2>
 <div class="layout-chunk" data-layout="l-body">
 <pre class="r"><code>
 # plot monthly by category distributions
@@ -1367,23 +1368,30 @@ tracker_data %&gt;%
   summarise(time = sum(duration) / 3600) %&gt;%
   filter(category != &quot;Wellness&quot;) %&gt;%  # for now, need to join in calendar and munge yoga
   ggplot(aes(x = time)) +
+  geom_vline(xintercept = 1.3, linetype = &quot;dotted&quot;) +
   geom_histogram(bins = 10) +
   facet_grid(month ~ category)</code></pre>
 <p><img src="index_files/figure-html5/unnamed-chunk-2-1.png" width="624" /></p>
 </div>
-<h2 id="focus-and-tracking-over-time">focus and tracking over time</h2>
+<h2 id="over-time">over time?</h2>
 <div class="layout-chunk" data-layout="l-body">
 <pre class="r"><code>
+wes_palette = &quot;Moonrise2&quot;
+point_alpha = 0.6
+point_size = 3
+
 # plot monthly by category distributions
 tracker_data %&gt;% 
   filter(category != &quot;Wellness&quot;) %&gt;%  # for now, need to join in calendar and munge yoga
   group_by(day, month) %&gt;% 
   summarise(time = sum(duration) / 3600) %&gt;% 
+  mutate(goal = time  &gt; 4) %&gt;% 
   ggplot(aes(x = day, y = time)) +
-  geom_line(alpha = 0.7) +
-  geom_point(alpha = 0.5) +
+  geom_line() +
+  geom_point(aes(colour = goal), alpha = point_alpha, size = point_size) +
+  scale_color_manual(values=wesanderson::wes_palette(n=2, name= wes_palette)) +
   geom_hline(yintercept = 4, linetype = &quot;dotted&quot;) +
-  facet_grid(month ~ .)</code></pre>
+  facet_grid(month ~ .) </code></pre>
 <p><img src="index_files/figure-html5/unnamed-chunk-3-1.png" width="624" /></p>
 <pre class="r"><code>
 # with categories
@@ -1391,11 +1399,13 @@ tracker_data %&gt;%
   filter(category != &quot;Wellness&quot;) %&gt;%  # for now, need to join in calendar and munge yoga
   group_by(day, month, category) %&gt;% 
   summarise(time = sum(duration) / 3600) %&gt;% 
+  mutate(goal = time  &gt; 1.3) %&gt;% 
   ggplot(aes(x = day, y = time)) +
-  geom_line(alpha = 0.7) +
-  geom_point(alpha = 0.5) +
+  geom_line() +
+  geom_point(aes(colour = goal), alpha = point_alpha, size = point_size / 1.5) +
+  scale_color_manual(values=wesanderson::wes_palette(n=2, name= wes_palette)) +
   geom_hline(yintercept = 1.3, linetype = &quot;dotted&quot;) +
-  facet_grid(month ~ category)</code></pre>
+  facet_grid(month ~ category) </code></pre>
 <p><img src="index_files/figure-html5/unnamed-chunk-3-2.png" width="624" /></p>
 </div>
 <h2 id="my-system">my system</h2>

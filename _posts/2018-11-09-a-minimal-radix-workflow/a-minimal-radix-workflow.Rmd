@@ -1,7 +1,7 @@
 ---
-title: "a minimal radix workflow"
+title: "a minimal radix workflow" 
 description: |
-  Plan is to write about setting up a [`radix::`](https://rstudio.github.io/radix/) thesis.
+  Plan is to write about setting up a radix:: thesis.
 author:
   - name: Charles T. Gray
     author_url: https://twitter.com/cantabile
@@ -9,6 +9,7 @@ date: 11-09-2018
 output:
   radix::radix_article:
     self_contained: false
+  draft: true
 categories:
   - teaching
   - radix
@@ -21,10 +22,37 @@ knitr::opts_chunk$set(echo = FALSE)
 
 I often get asked for R tips, and I feel like I disappoint when I say the thing that propels me along the most is saying how do I do this thing in an R way. I'm also super lazy, so I like to automate what I can along the way. 
 
-It's natural that I'm building my thesis in [`radix::`](https://rstudio.github.io/radix/),
+I began using R in a biomedical research institute and was basted in the horrors of `aggregate` and `stringsAsFactors`. When I returned to R, having taken a break to frolic (yes, frolic).   
 
-> Radix is a publication format for scientific and technical writing, native to the web. Learn more about using Radix at https://rstudio.github.io/radix.
+It's natural that I'm building my thesis in [`radix::`](https://rstudio.github.io/radix/), self-described in every new `radix` article, 
 
-***
+> Radix is a publication format for scientific and technical writing, native to the web. 
+
+## barebones `radix`
+
+> Shameless homage to Alison's [awesome post](https://alison.rbind.io/post/up-and-running-with-blogdown/#in-github).
+
+### create a `radix` site
+
+#### install `radix` and create project
+
+To use `radix`, I had to upgrade to a [preview version](https://www.rstudio.com/products/rstudio/download/preview/) of RStudio.
+
+Once you've installed `radix`,
+
+```{r eval=FALSE, echo=TRUE}
+devtools::install_github("rstudio/radix")
+```
+
+you can create website project,
+
+**File >> New Project >> New Directory >> Radix Website**
+
+#### get it on github
+
+#### deploy via netlify
+
+#### custom domain
+
 
 *This page is a in progress.* 
