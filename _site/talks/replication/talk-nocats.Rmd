@@ -66,11 +66,11 @@ class: middle
 
 # open and reproducible data analysis
 
-- software dev
-- packaged data analysis
-- ethical data management
-- accessibility: code & results
-- reproducibility
+## reproducibility
+## software dev
+## packaged data analysis
+## ethical data management
+## accessibility: code & results
 
 
 
