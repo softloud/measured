@@ -12,7 +12,7 @@ site: radix::radix_website
 
 What if one practices science like music?
 
-My goal is to spend four hours a day on deep work, work with intent. 
+My goal is to spend four hours a day on deep work, that is, work with intent. 
 
 ```{r get data, echo=TRUE}
 # packages
