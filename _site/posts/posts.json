@@ -1,5 +1,22 @@
 [
   {
+    "path": "posts/2018-11-14-quick-and-dirty-vis/",
+    "title": "a quick and dirty vis",
+    "description": "Jen asked me to throw together a vis on a dataset in ten minutes for an R-Ladies Sydney thing.",
+    "author": [
+      {
+        "name": "Charles T. Gray",
+        "url": {}
+      }
+    ],
+    "date": "2018-11-14",
+    "categories": [],
+    "preview": "posts/2018-11-14-quick-and-dirty-vis/quick-and-dirty-vis_files/figure-html5/unnamed-chunk-2-1.png",
+    "last_modified": "2018-11-14T10:54:06+11:00",
+    "preview_width": 1248,
+    "preview_height": 768
+  },
+  {
     "path": "posts/2018-11-09-a-minimal-radix-workflow/",
     "title": "a minimal radix workflow",
     "description": "Plan is to write about setting up a radix:: thesis.",

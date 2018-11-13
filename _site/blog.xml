@@ -7,7 +7,16 @@
     <description>A one-time trophy bitch screams into the void. 
 </description>
     <generator>Radix</generator>
-    <lastBuildDate>Fri, 09 Nov 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 14 Nov 2018 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>a quick and dirty vis</title>
+      <dc:creator>Charles T. Gray</dc:creator>
+      <link>https://fervent-hypatia-7b7343.netlify.com/posts/2018-11-14-quick-and-dirty-vis</link>
+      <description>Jen asked me to throw together a vis on a dataset in ten minutes for an R-Ladies Sydney thing.</description>
+      <guid>https://fervent-hypatia-7b7343.netlify.com/posts/2018-11-14-quick-and-dirty-vis</guid>
+      <pubDate>Wed, 14 Nov 2018 00:00:00 +0000</pubDate>
+      <media:content url="https://fervent-hypatia-7b7343.netlify.com/posts/2018-11-14-quick-and-dirty-vis/quick-and-dirty-vis_files/figure-html5/unnamed-chunk-2-1.png" medium="image" type="image/png" width="1248" height="768"/>
+    </item>
     <item>
       <title>a minimal radix workflow</title>
       <dc:creator>Charles T. Gray</dc:creator>
@@ -23,14 +32,6 @@
       <description>Towards a light-weight, quick to type tidy pseudocode.</description>
       <guid>https://fervent-hypatia-7b7343.netlify.com/posts/2018-11-12-quack-quack-title</guid>
       <pubDate>Tue, 06 Nov 2018 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>if we're really committed to diversity, we should privilege agency</title>
-      <dc:creator>Charles T. Gray</dc:creator>
-      <link>https://fervent-hypatia-7b7343.netlify.com/posts/2018-11-12-if-were-really-committed-to-diversity-we-should-privilege-agency</link>
-      <description>Only a fool thinks they know what's good for another person. It never helps to make decisions on behalf of another person.</description>
-      <guid>https://fervent-hypatia-7b7343.netlify.com/posts/2018-11-12-if-were-really-committed-to-diversity-we-should-privilege-agency</guid>
-      <pubDate>Wed, 26 Sep 2018 00:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>

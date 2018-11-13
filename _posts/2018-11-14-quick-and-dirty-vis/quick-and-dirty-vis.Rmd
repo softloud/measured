@@ -1,0 +1,61 @@
+---
+title: "a quick and dirty vis"
+description: |
+  Jen asked me to throw together a vis on a dataset in ten minutes for an R-Ladies Sydney thing. 
+author:
+  - name: Charles T. Gray
+    url: {}
+date: 11-14-2018
+output:
+  radix::radix_article:
+    self_contained: false
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r packages}
+# packages
+library(tidyverse)
+```
+
+
+
+```{r get data}
+# get data 
+beaches_data <- read_csv("~/Downloads/rain_temp_beachbugs.csv")
+
+```
+
+More info on this dataset [here](https://rladiessydney.org/post/2018/11/05/basicbasics-3/).
+
+## take a look at what we have to work with
+
+```{r}
+skimr::skim(beaches_data)
+```
+
+Lat and long! So, natural next question.
+
+## where are these data?
+
+```{r location plot}
+beaches_data %>% 
+  leaflet::leaflet() %>% 
+  leaflet::addTiles() %>% 
+  leaflet::addCircleMarkers(lng = ~long, lat = ~lat)
+
+
+```
+
+What about the different sites?
+
+## temperature and rain relationship with beachbugs for the different sites
+
+```{r}
+beaches_data %>% 
+  ggplot(aes(x = temp_airport, y = rain_mm, colour = beachbugs, size = beachbugs)) +
+  geom_point(alpha = 0.3) +
+  facet_wrap(~ site)
+```
