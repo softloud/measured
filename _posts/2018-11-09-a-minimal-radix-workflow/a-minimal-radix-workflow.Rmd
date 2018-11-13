@@ -1,7 +1,7 @@
 ---
 title: "a minimal radix workflow"
 description: |
-  A short description of the post.
+  Plan is to write about setting up a [`radix::`](https://rstudio.github.io/radix/) thesis.
 author:
   - name: Charles T. Gray
     author_url: https://twitter.com/cantabile
@@ -9,7 +9,6 @@ date: 11-09-2018
 output:
   radix::radix_article:
     self_contained: false
-draft: true
 categories:
   - teaching
   - radix
@@ -28,4 +27,4 @@ It's natural that I'm building my thesis in [`radix::`](https://rstudio.github.i
 
 ***
 
-Work in progress. 
+*This page is a in progress.* 

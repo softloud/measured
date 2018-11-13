@@ -1,7 +1,7 @@
 ---
 title: "am I, a man, invited to such things?"
 description: |
-  A short description of the post.
+  We need men to step up and show their support as champions of change. We can't do this without you.
 author:
   - name: Charles T. Gray
 date: 8-25-2018
