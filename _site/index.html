@@ -1320,7 +1320,7 @@ projects
 
 <div class="d-article">
 <p>What if one practices science like music?</p>
-<p>My goal is to spend four hours a day on deep work, work with intent.</p>
+<p>My goal is to spend four hours a day on deep work, that is, work with intent.</p>
 <div class="layout-chunk" data-layout="l-body">
 <pre class="r"><code>
 # packages
@@ -1343,14 +1343,22 @@ tracker_data &lt;- readr::read_csv(&quot;~/Downloads/Details-20170206-20181112.c
          duration = lubridate::as.duration(duration),
          day = lubridate::day(start),
          month = lubridate::month(start, label = TRUE),
-         date = lubridate::date(start))</code></pre>
+         date = lubridate::date(start),
+         category = map_chr(category, .f = function(x) {
+           switch(x,
+                  &quot;Deep work&quot; = &quot;phd&quot;,
+                  &quot;Puzzles&quot; = &quot;busywork&quot;,
+                  &quot;Skills&quot; = &quot;skills&quot;,
+                  &quot;Wellness&quot; = &quot;wellness&quot;,
+                  x)
+         }))</code></pre>
 </div>
 <h3 id="for-each-month-how-many-hours-a-day">for each month, how many hours a day?</h3>
 <div class="layout-chunk" data-layout="l-body">
 <pre class="r"><code>
 # plot monthly distributions
 tracker_data %&gt;% 
-  filter(category != &quot;Wellness&quot;) %&gt;%  # for now, need to join in calendar and munge yoga
+  filter(category != &quot;wellness&quot;) %&gt;%  # for now, need to join in calendar and munge yoga
   group_by(date, month) %&gt;% 
   summarise(time = sum(duration) / 3600) %&gt;%
   ggplot(aes(x = time)) +
@@ -1366,7 +1374,7 @@ tracker_data %&gt;%
 tracker_data %&gt;% 
   group_by(date, category, month) %&gt;% 
   summarise(time = sum(duration) / 3600) %&gt;%
-  filter(category != &quot;Wellness&quot;) %&gt;%  # for now, need to join in calendar and munge yoga
+  filter(category != &quot;wellness&quot;) %&gt;%  # for now, need to join in calendar and munge yoga
   ggplot(aes(x = time)) +
   geom_vline(xintercept = 1.3, linetype = &quot;dotted&quot;) +
   geom_histogram(bins = 10) +
@@ -1382,7 +1390,7 @@ point_size = 3
 
 # plot monthly by category distributions
 tracker_data %&gt;% 
-  filter(category != &quot;Wellness&quot;) %&gt;%  # for now, need to join in calendar and munge yoga
+  filter(category != &quot;wellness&quot;) %&gt;%  # for now, need to join in calendar and munge yoga
   group_by(day, month) %&gt;% 
   summarise(time = sum(duration) / 3600) %&gt;% 
   mutate(goal = time  &gt; 4) %&gt;% 
@@ -1396,7 +1404,7 @@ tracker_data %&gt;%
 <pre class="r"><code>
 # with categories
 tracker_data %&gt;% 
-  filter(category != &quot;Wellness&quot;) %&gt;%  # for now, need to join in calendar and munge yoga
+  filter(category != &quot;wellness&quot;) %&gt;%  # for now, need to join in calendar and munge yoga
   group_by(day, month, category) %&gt;% 
   summarise(time = sum(duration) / 3600) %&gt;% 
   mutate(goal = time  &gt; 1.3) %&gt;% 
