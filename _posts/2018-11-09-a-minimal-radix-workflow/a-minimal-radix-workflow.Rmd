@@ -2,6 +2,7 @@
 title: "a minimal radix workflow" 
 description: |
   Plan is to write about setting up a radix:: thesis.
+draft: true
 author:
   - name: Charles T. Gray
     author_url: https://twitter.com/cantabile
@@ -9,7 +10,6 @@ date: 11-09-2018
 output:
   radix::radix_article:
     self_contained: false
-  draft: true
 categories:
   - teaching
   - radix
