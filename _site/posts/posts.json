@@ -17,25 +17,6 @@
     "preview_height": 768
   },
   {
-    "path": "posts/2018-11-09-a-minimal-radix-workflow/",
-    "title": "a minimal radix workflow",
-    "description": "Plan is to write about setting up a radix:: thesis.",
-    "author": [
-      {
-        "name": "Charles T. Gray",
-        "url": {}
-      }
-    ],
-    "date": "2018-11-09",
-    "categories": [
-      "teaching",
-      "radix",
-      "thesis"
-    ],
-    "preview": {},
-    "last_modified": "2018-11-13T20:40:12+11:00"
-  },
-  {
     "path": "posts/2018-11-12-quack-quack-title/",
     "title": "<quack quack | title >",
     "description": "Towards a light-weight, quick to type tidy pseudocode.",

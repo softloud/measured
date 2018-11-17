@@ -1,0 +1,31 @@
+---
+title: "good enough testing coverage"
+description: |
+  What defines good testing coverage in an R analysis?
+author:
+  - name: Charles T. Gray
+    url: {}
+date: 11-16-2018
+output:
+  radix::radix_article:
+    self_contained: false
+draft: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+I've previously written about [how cool I think testing is](https://ropensci.org/blog/2018/03/13/ode-to-testing/), as well as [debugging](http://cantabile.rbind.io/posts/2018-11-12-testing-as-debugging/). 
+
+I want to test a function, `varmaeta::effect_se` from a package I'm working from.
+
+I'm pretty certain it takes log at times.  
+
+```{r see function}
+varameta::effect_se
+```
+
+
+
+
