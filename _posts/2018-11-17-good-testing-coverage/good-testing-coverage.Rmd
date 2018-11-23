@@ -9,22 +9,72 @@ date: 11-16-2018
 output:
   radix::radix_article:
     self_contained: false
+bibliography: ../../biblio.bib
 draft: true
+categories: 
+  - testing
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
-I've previously written about [how cool I think testing is](https://ropensci.org/blog/2018/03/13/ode-to-testing/), as well as [debugging](http://cantabile.rbind.io/posts/2018-11-12-testing-as-debugging/). 
+I've previously written about [how cool I think testing is](https://ropensci.org/blog/2018/03/13/ode-to-testing/), as well as [debugging](http://cantabile.rbind.io/posts/2018-11-12-testing-as-debugging/). It feels natural to next ask, when is one done? When has one achieved testing _coverage_? What does `covr`[@hester_covr:_2018] measure? What does the literature say about testing? My ultimate question, pedant as I am, what is _good enough_[@wilson_good_2017] testing?
 
-I want to test a function, `varmaeta::effect_se` from a package I'm working from.
+## why do I care?
 
-I'm pretty certain it takes log at times.  
+My first rstats projects were in bioinformatics, and it struck me how hands off and ad hoc the data analysis process was, given the cost of the research materials.   
+
+## 
+
+I want to test a function, `varameta::effect_se` from a package I'm working from. 
+
+I'm pretty certain it takes log at times. 
 
 ```{r see function}
 varameta::effect_se
 ```
+
+## what to test
+
+Each function has a number of arguments. Each argument will have either a finite or infinite valid inputs, but will unlikely have infinite valid input data structures. 
+
+In addition to data types, there is also the question of dimensionality. Some arguments must be length 1, and so forth.
+
+So, we need to check that the function behaves as it should. 
+
+We also need to check that the function _misbehaves_ as it should when passed something that it shouldn't.
+
+But what exactly is _behave_ as it should? 
+
+Well, we need to consider every possible valid input and combination thereof. 
+
+### what to test in `varameta::effect_se`
+
+This function takes arguments with specified defaults and some without. 
+
+#### functions without defaults
+
+argument | expected type | notes
+-|-|-
+`centre` | numeric | some of these estimators don't work with negative medians because $\log$
+`spread` | numeric | estimators are designed to work with interquartile range or range
+`n` | integer | sample size - still wondering if I should make this default to 1
+
+#### functions with defaults
+
+argument | default value  | expected type | notes
+-|-|-|-
+`centre_type` | `"mean"` | `"mean"` or `"median"` | check defaults are defaults
+`spread_type` | `"iqr"` | `"iqr"` or `"range"` |
+
+For these, we need to check defaults are defaults. Why? If I write tests that validate these defaults, then I'll know if I change the function and there is code that relies on it. 
+
+## tools for testing
+
+In Parker's rumination on _opinionated_ analysis, `assertr` and `validate` are noted as tools that can help with testing[@parker_opinionated_nodate]. How? 
+
+> look into these packages when I have access to the internet 
 
 
 

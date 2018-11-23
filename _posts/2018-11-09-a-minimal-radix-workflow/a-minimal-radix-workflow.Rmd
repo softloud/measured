@@ -54,5 +54,10 @@ you can create website project,
 
 #### custom domain
 
+### notes
+
+- `.bib` is what's on [this](https://rstudio.github.io/radix/citations.html) page. 
+
+
 
 *This page is a in progress.* 

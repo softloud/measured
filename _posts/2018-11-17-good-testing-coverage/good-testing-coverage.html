@@ -41,10 +41,14 @@
   <meta property="twitter:description" content="What defines good testing coverage in an R analysis?"/>
   
   <!--/radix_placeholder_meta_tags-->
+  
+  <meta name="citation_reference" content="citation_title=Opinionated analysis development;citation_doi=10.7287/peerj.preprints.3210v1;citation_author=Hilary Parker"/>
+  <meta name="citation_reference" content="citation_title=Covr: Test Coverage for Packages;citation_publication_date=2018;citation_author=Jim Hester"/>
+  <meta name="citation_reference" content="citation_title=Good enough practices in scientific computing;citation_publication_date=2017;citation_volume=13;citation_doi=10.1371/journal.pcbi.1005510;citation_issn=1553-7358;citation_author=Greg Wilson;citation_author=Jennifer Bryan;citation_author=Karen Cranston;citation_author=Justin Kitzes;citation_author=Lex Nederbragt;citation_author=Tracy K. Teal"/>
   <!--radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output","draft"]}},"value":[{"type":"character","attributes":{},"value":["good enough testing coverage"]},{"type":"character","attributes":{},"value":["What defines good testing coverage in an R analysis?\n"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url"]}},"value":[{"type":"character","attributes":{},"value":["Charles T. Gray"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":[]}},"value":[]}]}]},{"type":"character","attributes":{},"value":["11-16-2018"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["radix::radix_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]},{"type":"logical","attributes":{},"value":[true]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output","bibliography","draft"]}},"value":[{"type":"character","attributes":{},"value":["good enough testing coverage"]},{"type":"character","attributes":{},"value":["What defines good testing coverage in an R analysis?\n"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url"]}},"value":[{"type":"character","attributes":{},"value":["Charles T. Gray"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":[]}},"value":[]}]}]},{"type":"character","attributes":{},"value":["11-16-2018"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["radix::radix_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]},{"type":"character","attributes":{},"value":["../../biblio.bib"]},{"type":"logical","attributes":{},"value":[true]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   
@@ -954,8 +958,11 @@
 </div>
 
 <div class="d-article">
-<p>I’ve previously written about <a href="https://ropensci.org/blog/2018/03/13/ode-to-testing/">how cool I think testing is</a>, as well as <a href="http://cantabile.rbind.io/posts/2018-11-12-testing-as-debugging/">debugging</a>.</p>
-<p>I want to test a function, <code>varmaeta::effect_se</code> from a package I’m working from.</p>
+<p>I’ve previously written about <a href="https://ropensci.org/blog/2018/03/13/ode-to-testing/">how cool I think testing is</a>, as well as <a href="http://cantabile.rbind.io/posts/2018-11-12-testing-as-debugging/">debugging</a>. It feels natural to next ask, when is one done? When has one achieved testing <em>coverage</em>? What does <code>covr</code><span class="citation" data-cites="hester_covr:_2018">(Hester <a href="#ref-hester_covr:_2018">2018</a>)</span> measure? What does the literature say about testing? My ultimate question, pedant as I am, what is <em>good enough</em><span class="citation" data-cites="wilson_good_2017">(Wilson et al. <a href="#ref-wilson_good_2017">2017</a>)</span> testing?</p>
+<h2 id="why-do-i-care">why do I care?</h2>
+<p>My first rstats projects were in bioinformatics, and it struck me how hands off and ad hoc the data analysis process was, given the cost of the research materials.</p>
+<h2 id="section"></h2>
+<p>I want to test a function, <code>varameta::effect_se</code> from a package I’m working from.</p>
 <p>I’m pretty certain it takes log at times.</p>
 <div class="layout-chunk" data-layout="l-body">
 <pre><code>
@@ -967,18 +974,101 @@ function(centre,
   if (centre_type == &quot;mean&quot; &amp; spread_type == &quot;sd&quot;) {
     return(spread / sqrt(n))
   } else if (centre_type == &quot;median&quot;) {
-    return(g_norm(
+    return(
+      g_norm(
         median = centre,
         spread = spread,
         n = n,
-        centre_type = &quot;median&quot;,
         spread_type = spread_type
       )
     )
   }
 }
-&lt;bytecode: 0x55b4b12df6d0&gt;
+&lt;bytecode: 0x557d00aaad98&gt;
 &lt;environment: namespace:varameta&gt;</code></pre>
+</div>
+<h2 id="what-to-test">what to test</h2>
+<p>Each function has a number of arguments. Each argument will have either a finite or infinite valid inputs, but will unlikely have infinite valid input data structures.</p>
+<p>In addition to data types, there is also the question of dimensionality. Some arguments must be length 1, and so forth.</p>
+<p>So, we need to check that the function behaves as it should.</p>
+<p>We also need to check that the function <em>misbehaves</em> as it should when passed something that it shouldn’t.</p>
+<p>But what exactly is <em>behave</em> as it should?</p>
+<p>Well, we need to consider every possible valid input and combination thereof.</p>
+<h3 id="what-to-test-in-varametaeffect_se">what to test in <code>varameta::effect_se</code></h3>
+<p>This function takes arguments with specified defaults and some without.</p>
+<h4 id="functions-without-defaults">functions without defaults</h4>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>argument</th>
+<th>expected type</th>
+<th>notes</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>centre</code></td>
+<td>numeric</td>
+<td>some of these estimators don’t work with negative medians because <span class="math inline">\(\log\)</span></td>
+</tr>
+<tr class="even">
+<td><code>spread</code></td>
+<td>numeric</td>
+<td>estimators are designed to work with interquartile range or range</td>
+</tr>
+<tr class="odd">
+<td><code>n</code></td>
+<td>integer</td>
+<td>sample size - still wondering if I should make this default to 1</td>
+</tr>
+</tbody>
+</table>
+<h4 id="functions-with-defaults">functions with defaults</h4>
+<table>
+<thead>
+<tr class="header">
+<th>argument</th>
+<th>default value</th>
+<th>expected type</th>
+<th>notes</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>centre_type</code></td>
+<td><code>&quot;mean&quot;</code></td>
+<td><code>&quot;mean&quot;</code> or <code>&quot;median&quot;</code></td>
+<td>check defaults are defaults</td>
+</tr>
+<tr class="even">
+<td><code>spread_type</code></td>
+<td><code>&quot;iqr&quot;</code></td>
+<td><code>&quot;iqr&quot;</code> or <code>&quot;range&quot;</code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>For these, we need to check defaults are defaults. Why? If I write tests that validate these defaults, then I’ll know if I change the function and there is code that relies on it.</p>
+<h2 id="tools-for-testing">tools for testing</h2>
+<p>In Parker’s rumination on <em>opinionated</em> analysis, <code>assertr</code> and <code>validate</code> are noted as tools that can help with testing<span class="citation" data-cites="parker_opinionated_nodate">(Parker <a href="#ref-parker_opinionated_nodate">n.d.</a>)</span>. How?</p>
+<blockquote>
+<p>look into these packages when I have access to the internet</p>
+</blockquote>
+<div id="refs" class="references">
+<div id="ref-hester_covr:_2018">
+<p>Hester, Jim. 2018. <em>Covr: Test Coverage for Packages</em>. <a href="https://CRAN.R-project.org/package=covr">https://CRAN.R-project.org/package=covr</a>.</p>
+</div>
+<div id="ref-parker_opinionated_nodate">
+<p>Parker, Hilary. n.d. “Opinionated Analysis Development.” Accessed November 3, 2018. <a href="https://doi.org/10.7287/peerj.preprints.3210v1">https://doi.org/10.7287/peerj.preprints.3210v1</a>.</p>
+</div>
+<div id="ref-wilson_good_2017">
+<p>Wilson, Greg, Jennifer Bryan, Karen Cranston, Justin Kitzes, Lex Nederbragt, and Tracy K. Teal. 2017. “Good Enough Practices in Scientific Computing.” Edited by Francis Ouellette. <em>PLOS Computational Biology</em> 13 (6): e1005510. <a href="https://doi.org/10.1371/journal.pcbi.1005510">https://doi.org/10.1371/journal.pcbi.1005510</a>.</p>
+</div>
 </div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
@@ -987,11 +1077,77 @@ function(centre,
 <div class="d-appendix">
 </div>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 
 <!--radix_placeholder_site_after_body-->
 <!--/radix_placeholder_site_after_body-->
 <!--radix_placeholder_appendices-->
 <div class="appendix-bottom"></div>
+<script id="distill-bibliography" type="text/bibtex">
+
+@article{edwards_bayesian_1963,
+	title = {Bayesian statistical inference for psychological research},
+	volume = {70},
+	issn = {1939-1471(Electronic),0033-295X(Print)},
+	doi = {10.1037/h0044139},
+	abstract = {Bayesian statistics, a currently controversial viewpoint concerning statistical inference, is based on a definition of probability as a particular measure of the opinions of ideally consistent people. Statistical inference is modification of these opinions in the light of evidence, and Bayes' theorem specifies how such modifications should be made. The tools of Bayesian statistics include the theory of specific distributions and the principle of stable estimation, which specifies when actual prior opinions may be satisfactorily approximated by a uniform distribution. A common feature of many classical significance tests is that a sharp null hypothesis is compared with a diffuse alternative hypothesis. Often evidence which, for a Bayesian statistician, strikingly supports the null hypothesis leads to rejection of that hypothesis by standard classical procedures. The likelihood principle emphasized in Bayesian statistics implies, among other things, that the rules governing when data collection stops are irrelevant to data interpretation. It is entirely appropriate to collect data until a point has been proven or disproven, or until the data collector runs out of time, money, or patience. (71 ref.) (PsycINFO Database Record (c) 2016 APA, all rights reserved)},
+	number = {3},
+	journal = {Psychological Review},
+	author = {Edwards, Ward and Lindman, Harold and Savage, Leonard J.},
+	year = {1963},
+	keywords = {Inference, Statistical Probability},
+	pages = {193--242},
+	file = {Snapshot:/home/charles/Zotero/storage/97ZQ3FEX/1964-00040-001.html:text/html}
+}
+
+@article{parker_opinionated_nodate,
+	title = {Opinionated analysis development},
+	url = {https://peerj.com/preprints/3210},
+	doi = {10.7287/peerj.preprints.3210v1},
+	abstract = {Traditionally, statistical training has focused primarily on mathematical derivations and proofs of statistical tests. The process of developing the technical artifact—that is, the paper, dashboard, or other deliverable—is much less frequently taught, presumably because of an aversion to cookbookery or prescribing specific software choices. In this paper I argue that it’s critical to teach analysts how to go about developing an analysis in order to maximize the probability that their analysis is reproducible, accurate, and collaborative. A critical component of this is adopting a blameless postmortem culture. By encouraging the use of and fluency in tooling that implements these opinions, as well as a blameless way of correcting course as analysts encounter errors, we as a community can foster the growth of processes that fail the practitioners as infrequently as possible.},
+	language = {en},
+	urldate = {2018-11-03},
+	author = {Parker, Hilary},
+	keywords = {measured.},
+	file = {Parker - Opinionated analysis development.pdf:/home/charles/Zotero/storage/W2AAN92U/Parker - Opinionated analysis development.pdf:application/pdf}
+}
+
+@book{hester_covr:_2018,
+	title = {covr: {Test} {Coverage} for {Packages}},
+	url = {https://CRAN.R-project.org/package=covr},
+	author = {Hester, Jim},
+	year = {2018},
+	keywords = {measured.},
+	annote = {R package version 3.2.1}
+}
+
+@article{wilson_good_2017,
+	title = {Good enough practices in scientific computing},
+	volume = {13},
+	issn = {1553-7358},
+	url = {http://dx.plos.org/10.1371/journal.pcbi.1005510},
+	doi = {10.1371/journal.pcbi.1005510},
+	language = {en},
+	number = {6},
+	urldate = {2018-11-17},
+	journal = {PLOS Computational Biology},
+	author = {Wilson, Greg and Bryan, Jennifer and Cranston, Karen and Kitzes, Justin and Nederbragt, Lex and Teal, Tracy K.},
+	editor = {Ouellette, Francis},
+	month = jun,
+	year = {2017},
+	keywords = {measured.},
+	pages = {e1005510},
+	file = {Wilson et al. - 2017 - Good enough practices in scientific computing.pdf:/home/charles/Zotero/storage/37F35SX5/Wilson et al. - 2017 - Good enough practices in scientific computing.pdf:application/pdf}
+}
+</script>
 <!--/radix_placeholder_appendices-->
 <!--radix_placeholder_navigation_after_body-->
 <!--/radix_placeholder_navigation_after_body-->
