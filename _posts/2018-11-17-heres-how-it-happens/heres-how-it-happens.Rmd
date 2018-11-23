@@ -1,0 +1,84 @@
+---
+title: "here's how it happens"
+description: |
+  women with drinking problems are particularly vulnerable to sexual assault
+author:
+  - name: Charles T. Gray
+date: 11-17-2018
+output:
+  radix::radix_article:
+    self_contained: false
+draft: true
+categories:
+  - grrr...
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+I remember the penny-drop moment for the limit of the [_difference quotient_](https://en.wikipedia.org/wiki/Difference_quotient), 
+
+$$
+\lim_{h \to 0}\ m = \lim_{h \to 0}\ \frac{f(a + h) - f(a)}{(a + h) - a}, 
+$$
+which gives the rise over run of a curve at a given point along the curve. 
+
+I was studying in the room I slept in, Melbourne 1997. I was sixteen. 
+
+I'd bought spray paint with my girlfriend and we'd painted optimistic daisies on the grimly mouldy walls of the front room of the [terrace house](https://en.wikipedia.org/wiki/Terraced_houses_in_Australia) squat. Rather defiantly positioned off a prominent street in North Fitzroy, my rather strange[^1] roommate would entertain us by firetwirling in the narrow street. We'd watch from the grimy couch on the verandah, and, on a good night, all share a bag of cask wine together. 
+
+In my experience, people don't end up on the streets _because_ of their substance abuse problems, but take up a substance abuse problem once there to self-medicate the existensial crisis that is their lived reality. Our lived reality included pooping in the backyard like animals because the skinheads who'd had the house before had somehow managed to block the toilet with human shit.  
+
+I was always considered the softcore one. The speed dealer couple who had the back room were way more intense, they were always beating each other up, but at least they left us out of it. I've never touched a needle, and at that point I was even still a virgin. But I learnt to drink heavily. 
+
+Drinking too much was not only mandatory, it was considered the minimum social norm to fit in. And it was the only way to experience any sense of community as a streetie. 
+
+As I tranisitioned into the bohemian days of nineties sharehousing in Fitzroy, it was still normal to drink to excess. I'd pop into pubs on the way home from visiting the pianos at the practice block. 
+
+And so it was, from fifteen to twenty-five, it was normalised to binge drink. After that was a long decade of working too much to have had much of a social life. 
+
+And so I find myself now, in my late thirties struggling to learn to socialise without abusing alcohol. After being raped this week, I am aware that it is imperative that I get a grip on my drinking problem, for my own protection.  
+
+I may have a drinking problem, but I don't deserve to be raped. 
+
+## here's how it happens
+
+I'm writing this down because _this_ is how it happens. And I believe it happens all the time. In fact, I believe it's so normalised that I'm not even angry at my rapist. But rapist I believe him to be.
+
+### here's what I know
+
+- Stumbling past a bar after the conference reception, and thinking I'd have one more drink for the evening.
+- I bought a drink and struck up a conversation with the barflies. 
+- A fleeting moment of consciousness, I was on my stomach, naked, and a man was inserting his penis into me from behind. 
+- Waking in the morning to find myself in a strange place, with a strange man.
+- He laughed as he told me that I was so wasted I didn't know who he was or where I was.
+- He laughed, and chided me, about how I'd thrown up all over his car. 
+- He told me he slowed down after having six or seven drinks, as he had to drive. 
+- He told me how he'd taken me inside and put me in the shower. I have no memory of any of these events. 
+- He told me with great pride that he was able to control himself long enough to put on a condom. 
+- I can't consent if I'm so drunk I don't remember anything, I don't know where I am, or who I'm with. 
+- I am certain that most would find this story somehow less sympathetic because I had already drunk too much alocohol.  
+
+### here's what I think
+
+Doesn't make it not rape. 
+I think my rapist is a product of his culture. I think that he was cruising for drunk chicks that he could ply with further alcohol and drugs so that he could have sex with them. I don't think he understands that this is wrong. 
+
+I think he saw me, drunk and alone, late at night. I think he then bought me drinks as he sobered up. And, given the unusual length of my blackouts that night, I suspect he even thought it was okay to slip me a rufie to loosen me up some. I think he saw it as helping me have a good time. I don't believe he understood he was taking advantage of me. 
+
+> I'm not sure if I'll ever change this post from draft mode.  
+
+### here's where I am
+
+I don't want to give up the academic opportunities I've worked really hard for. I may have a drinking problem to deal with, but I will not let a rape define the next year of my life, the year I hope to finish my doctorate. 
+
+So, I am going to make strategies to assist me in not drinking a priority. And I'm going to try to work, because the only thing that's going to bring me any peace right now is mathematical science[^2].
+
+I'm leaving for France tomorrow. And if I was asked to dream up the perfect respite after something this traumatic, I could not think of something better than a research retreat trip to Europe. 
+
+All I can do is try. 
+
+[^1]: He was maybe eighteen. He'd run away from his evangelical parents and was trying to walk away from his faith, but would wake me in the night distraught he was going to hell.
+
+[^2]: And, of course, my $3c^2$ gang. Dr X has been the most wonderful and supportive partner through this. 
