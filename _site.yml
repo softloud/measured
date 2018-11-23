@@ -21,6 +21,8 @@ navbar:
       menu:
         - text: "unimelb - 2018"
           href: talks/replication/talk-nocats.html
+        - text: "marseille - 2018"
+          href: talks/replication/marseille-2018.html
     - text: "projects"
       menu:
       - text: "chapter five"
