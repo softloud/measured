@@ -195,7 +195,7 @@ knitr::include_url("https://alison.rbind.io/post/r-ladies-slides/", height = 375
 
 
 ---
-# Thanks for listening!
+# Thank you for listening
 
 Marwick, Ben, Carl Boettiger, and Lincoln Mullen. “Packaging Data Analytical Work Reproducibly Using R (and Friends).” The American Statistician 72, no. 1 (January 2, 2018): 80–88. https://doi.org/10.1080/00031305.2017.1375986.
 
