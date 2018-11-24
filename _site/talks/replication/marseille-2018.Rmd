@@ -36,6 +36,32 @@ knitr::include_graphics("fish.jpg")
 Image credit: [Mike Penguin]()
 
 ---
+class: middle, centre
+
+# `varameta`
+
+For meta-analysing medians.
+
+$$
+\mathrm{Var}(m) \approx \frac 1 {4 n f(\nu)^2}
+$$
+
+--
+
+***
+
+
+$$
+\mathrm{Var}(m) \approx \frac 1 {4 n g(m; \hat \theta(m, iqr, n))} 
+$$
+
+---
+class: middle, center, inverse
+
+# but why should you believe this is a good method?
+
+
+---
 class: top, right
 
 background-image: url(https://upload.wikimedia.org/wikipedia/en/2/21/Web_of_Spider-Man_Vol_1_129-1.png)
@@ -76,19 +102,6 @@ Image credit: [rOpenSci](http://unconf18.ropensci.org/)
 
 # unconf fever: bridging the toolchain gap
 
----
-class: middle, centre
-
-# `varameta`
-
-For meta-analysing medians.
-
-
-
----
-class: middle, center, inverse
-
-# but why should you believe this is a good method?
 
 ---
 class: top, left
@@ -157,20 +170,6 @@ class: inverse
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">To accompany the paper, we have the rrtools pkg <a href="https://t.co/JOwkoeT8TR">https://t.co/JOwkoeT8TR</a> &amp; some presentations, such as <a href="https://t.co/S4DnZmChGB">https://t.co/S4DnZmChGB</a> <a href="https://t.co/FrpiTuJI5n">pic.twitter.com/FrpiTuJI5n</a></p>&mdash; Ben Marwick (@benmarwick) <a href="https://twitter.com/benmarwick/status/1066218210142220288?ref_src=twsrc%5Etfw">November 24, 2018</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-
----
-# References
-
-Marwick, Ben, Carl Boettiger, and Lincoln Mullen. “Packaging Data Analytical Work Reproducibly Using R (and Friends).” The American Statistician 72, no. 1 (January 2, 2018): 80–88. https://doi.org/10.1080/00031305.2017.1375986.
-
-Nosek, B. A., G. Alter, G. C. Banks, D. Borsboom, S. D. Bowman, S. J. Breckler, S. Buck, et al. “Promoting an Open Research Culture.” Science 348, no. 6242 (June 26, 2015): 1422–25. https://doi.org/10.1126/science.aab2374.
-
-Parker, Hilary. “Opinionated Analysis Development,” 2017. https://doi.org/10.7287/peerj.preprints.3210v1.
-
-Wilson, Greg, D. A. Aruliah, C. Titus Brown, Neil P. Chue Hong, Matt Davis, Richard T. Guy, Steven H. D. Haddock, et al. “Best Practices for Scientific Computing.” Edited by Jonathan A. Eisen. PLoS Biology 12, no. 1 (January 7, 2014): e1001745. https://doi.org/10.1371/journal.pbio.1001745.
-
-Wilson, Greg, Jennifer Bryan, Karen Cranston, Justin Kitzes, Lex Nederbragt, and Tracy K. Teal. “Good Enough Practices in Scientific Computing.” Edited by Francis Ouellette. PLOS Computational Biology 13, no. 6 (June 22, 2017): e1005510. https://doi.org/10.1371/journal.pcbi.1005510.
-
 ---
 ## these slides were made in R
 
@@ -182,7 +181,7 @@ Code for these slides found [here](https://github.com/softloud/measured/blob/mas
 
 ---
 class: inverse
-#### Thanks for listening! How to bling your slides, r-ladies style: 
+#### How to bling your slides, r-ladies style 
 
 ```{r eval=FALSE, echo = TRUE}
 output:
@@ -193,3 +192,19 @@ output:
 ```{r echo = TRUE}
 knitr::include_url("https://alison.rbind.io/post/r-ladies-slides/", height = 375)
 ``` 
+
+
+---
+# Thanks for listening!
+
+Marwick, Ben, Carl Boettiger, and Lincoln Mullen. “Packaging Data Analytical Work Reproducibly Using R (and Friends).” The American Statistician 72, no. 1 (January 2, 2018): 80–88. https://doi.org/10.1080/00031305.2017.1375986.
+
+Nosek, B. A., G. Alter, G. C. Banks, D. Borsboom, S. D. Bowman, S. J. Breckler, S. Buck, et al. “Promoting an Open Research Culture.” Science 348, no. 6242 (June 26, 2015): 1422–25. https://doi.org/10.1126/science.aab2374.
+
+Parker, Hilary. “Opinionated Analysis Development,” 2017. https://doi.org/10.7287/peerj.preprints.3210v1.
+
+Wilson, Greg, D. A. Aruliah, C. Titus Brown, Neil P. Chue Hong, Matt Davis, Richard T. Guy, Steven H. D. Haddock, et al. “Best Practices for Scientific Computing.” Edited by Jonathan A. Eisen. PLoS Biology 12, no. 1 (January 7, 2014): e1001745. https://doi.org/10.1371/journal.pbio.1001745.
+
+Wilson, Greg, Jennifer Bryan, Karen Cranston, Justin Kitzes, Lex Nederbragt, and Tracy K. Teal. “Good Enough Practices in Scientific Computing.” Edited by Francis Ouellette. PLOS Computational Biology 13, no. 6 (June 22, 2017): e1005510. https://doi.org/10.1371/journal.pcbi.1005510.
+
+
