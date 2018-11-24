@@ -2,7 +2,7 @@
 title: "open and reproducible data analysis"
 subtitle: "CIRM, Marseille <br/> young bayesians and big data for social good"
 author: "charles t. gray <br/> r-ladies & la trobe university"
-date: "23 November 2018"
+date: "24 November 2018"
 bibliography: biblio.bib
 output:
   xaringan::moon_reader:
