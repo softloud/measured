@@ -48,12 +48,31 @@ $$
 
 --
 
+Assume we know $m$, $iqr$, $n$ for the sample. 
+
 ***
 
 
 $$
 \mathrm{Var}(m) \approx \frac 1 {4 n g(m; \hat \theta(m, iqr, n))} 
 $$
+
+***
+
+--
+
+If $g \sim \log N(\mu, \sigma)$ then the median $\nu$ is given by
+
+$$
+\nu := \exp(\mu)
+$$
+then
+
+$$
+\mu \approx \log (\nu)
+$$
+
+
 
 ---
 class: middle, center, inverse
