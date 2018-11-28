@@ -28,7 +28,7 @@ But the inquiry began to be refined almost immediately as I discovered literatur
 
 > what work has been done in statistical open science and reproducibility, and what work needs to be done? 
 
-Furthemore, statistical software development is intrinsically linked ot reproducibility for statistics, so it is impossible to consider the above question without investigating tools developed specifically for reproducible data analysis such as `workflowr::`[@blischak_workflowr:_2018] and `rrtools::`[@marwick_rrtools:_2018].       
+Furthemore, statistical software development is intrinsically linked to reproducibility for statistics, so it is impossible to consider the above question without investigating tools developed specifically for reproducible data analysis such as `workflowr::`[@blischak_workflowr:_2018] and `rrtools::`[@marwick_rrtools:_2018].       
 
 Today I find myself asking,
 
