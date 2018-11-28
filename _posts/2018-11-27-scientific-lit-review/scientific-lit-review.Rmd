@@ -1,0 +1,42 @@
+---
+title: "writing a scientific literature review"
+description: |
+  What makes a _good enough_ literature review?
+author:
+  - name: Charles T. Gray
+    url: {}
+bibliography: ../../biblio.bib
+date: 11-27-2018
+output:
+  radix::radix_article:
+    self_contained: false
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+At the outset of a literature review, I've learnt the hard way to anticipate that you will not be able to cover the entirety of the literature. Perhaps a very pertinant paper did not come up in your journal search. Perhaps you used the wrong search tool, perhaps the keywords of interest are different in different disciplines. At any rate, a best practice literature review could well fall into the category of *how long is a piece of string*[^1]?
+
+This naturally leads to the question, what is a analogously _good enough_[@wilson_good_2017] literature review? My instinctive response, is a literature review that answers the question posed of it, that is, the follows the line of inquiry. But I have a feeling that reading and defining the question are a symbiotic process whereby I refine the question as I read peoples' thoughts. 
+
+For example, I began with 
+
+> read literature on open science and reproducibiility, what are key concepts?
+
+But the inquiry began to be refined almost immediately as I discovered literature focussing specifically on building a reproducible analysis [@marwick_packaging_2018]. 
+
+> what work has been done in statistical open science and reproducibility, and what work needs to be done? 
+
+Furthemore, statistical software development is intrinsically linked ot reproducibility for statistics, so it is impossible to consider the above question without investigating tools developed specifically for reproducible data analysis such as `workflowr::`[@blischak_workflowr:_2018] and `rrtools::`[@marwick_rrtools:_2018].       
+
+Today I find myself asking,
+
+> what does this paper confirm, nuance, or challenge about open and reproducible data analysis? 
+
+Perhaps there is more to this, but after taking a look at some lit review guides[@uoguelph_writing_2018; @writingcenter_literature_2018], and establishing there was little in guidance for the type of literature review I'm writing on google scholar. A cursory look at the generalist guides gives me the impression that this something to use common sense for. A clear message, narrative etc. Find both the question and the present the answer, comparing and contrasing nuances of opinion and so forth.
+
+Finishing this post off, I began to wonder if it was worth writing at all. But then I realised that I feel reassured I'm on the right track now, which absolutely makes it a worthwhile effort. The primary purpose of this blog is to write things down so I feel less anxious about my work. And now I do. :) 
+
+
+[^1]: Incidentally, _how long is a piece of string_ was said to me in one of the most infuriating moments of my brief and frustring career in bioinformatics.

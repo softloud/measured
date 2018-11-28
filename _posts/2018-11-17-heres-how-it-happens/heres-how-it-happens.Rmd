@@ -8,7 +8,7 @@ date: 11-17-2018
 output:
   radix::radix_article:
     self_contained: false
-draft: true
+draft: false
 categories:
   - grrr...
 ---
@@ -46,28 +46,41 @@ I may have a drinking problem, but I don't deserve to be raped.
 
 I'm writing this down because _this_ is how it happens. And I believe it happens all the time. In fact, I believe it's so normalised that I'm not even angry at my rapist. But rapist I believe him to be.
 
+Most rapes are messy, and it is very easy to interpret a woman making choices that render herself vulnerable as making her culpable for rape. But there really shouldn't be any culpability for victims of rape. If she didn't consent, it is rape, regardless of how much alcohol she has imbibed. 
+
+Rape is rarely a violent stranger, as was the case in the lightning rod case of [Jill Meagher](https://en.wikipedia.org/wiki/Murder_of_Jill_Meagher). Despite this, Jill's husband is heroically able to recognise that this [monster myth](https://whiteribbonblog.com/2014/04/17/the-danger-of-the-monster-myth/) is by the exception than the rule when it comes to rape.
+
+What happened to me the other night happens to women every single night. It's happening right now somewhere. **This is how it happens.** This is the most common situation. There is usaully some drinking and flirting involved. But we _must_ dispell the myth that any of this makes a woman more culpable for her rape. 
+
+It really is and should be simple. If she did not consent, it is assault. 
+
 ### here's what I know
+
+#### that night
 
 - Stumbling past a bar after the conference reception, and thinking I'd have one more drink for the evening.
 - I bought a drink and struck up a conversation with the barflies. 
-- A fleeting moment of consciousness, I was on my stomach, naked, and a man was inserting his penis into me from behind. 
+- A fleeting moment of consciousness, I was on my stomach, naked on a bed, and a man was inserting his penis into me from behind. Then blackness. 
+
+#### in the morning
+
 - Waking in the morning to find myself in a strange place, with a strange man.
 - He laughed as he told me that I was so wasted I didn't know who he was or where I was.
 - He laughed, and chided me, about how I'd thrown up all over his car. 
 - He told me he slowed down after having six or seven drinks, as he had to drive. 
-- He told me how he'd taken me inside and put me in the shower. I have no memory of any of these events. 
+- He told me how he'd taken me inside and put me in the shower. I have no memory of any of these events.
 - He told me with great pride that he was able to control himself long enough to put on a condom. 
 - I can't consent if I'm so drunk I don't remember anything, I don't know where I am, or who I'm with. 
+- I don't usually black out for 12 hours straight. Sometimes the night before. 
 - I am certain that most would find this story somehow less sympathetic because I had already drunk too much alocohol.  
 
 ### here's what I think
 
 Doesn't make it not rape. 
+
 I think my rapist is a product of his culture. I think that he was cruising for drunk chicks that he could ply with further alcohol and drugs so that he could have sex with them. I don't think he understands that this is wrong. 
 
-I think he saw me, drunk and alone, late at night. I think he then bought me drinks as he sobered up. And, given the unusual length of my blackouts that night, I suspect he even thought it was okay to slip me a rufie to loosen me up some. I think he saw it as helping me have a good time. I don't believe he understood he was taking advantage of me. 
-
-> I'm not sure if I'll ever change this post from draft mode.  
+I think he saw me, drunk and alone, late at night. I think he then bought me drinks as he sobered up. And, given the unusual length of my blackouts that night, I suspect he even thought it was okay to slip me a rufie to loosen me up some. I think he saw it as helping me have a good time. I don't believe he understood he was taking advantage of me[^3] 
 
 ### here's where I am
 
@@ -79,6 +92,34 @@ I'm leaving for France tomorrow. And if I was asked to dream up the perfect resp
 
 All I can do is try. 
 
+#### one week later
+
+Spent hours doing mathematics with the woman I now refer to as my codewife and we ended with hugging eachother and declaring it was the funnest of times.  
+
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">In the middle of two weeks at <a href="https://twitter.com/_CIRM?ref_src=twsrc%5Etfw">@_CIRM</a> with my codewife, <a href="https://twitter.com/thejholloway?ref_src=twsrc%5Etfw">@thejholloway</a>. Operation 🔥🐦 is in full swing.  <br><br>Can&#39;t think of anything more R-Ladies than this <a href="https://twitter.com/RLadiesGlobal?ref_src=twsrc%5Etfw">@RLadiesGlobal</a> <a href="https://twitter.com/RLadiesRemote?ref_src=twsrc%5Etfw">@RLadiesRemote</a>. 🥐 <a href="https://t.co/4NB0fbXt72">pic.twitter.com/4NB0fbXt72</a></p>&mdash; Charles T. Gray (@cantabile) <a href="https://twitter.com/cantabile/status/1067698193209716737?ref_src=twsrc%5Etfw">November 28, 2018</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+I couldn't think of any good that would be brought by telling anyone in France what had happened, but I have been open about not drinking. 
+
+I arranged to check in with a friend every day on slack with how I'm going, and it makes a difference have someone care. Nothing like a rape to _really_ turn one off one's drinking, I remarked to her. We agreed, bitter rape jokes are one of the only ways to cope with these things.  
+
+But is a piano here and stealing a hour with it each day, as well as a walk in the grounds, helps. More than anything else, the work is wonderful fun. To be around so many people that I share a passion for social good in addition to mathematics and scientific programming is unadulterated joy. 
+
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Stole an inexpert moment with Chopin at <a href="https://twitter.com/_CIRM?ref_src=twsrc%5Etfw">@_CIRM</a> <a href="https://t.co/0sX1eM1gFz">pic.twitter.com/0sX1eM1gFz</a></p>&mdash; Charles T. Gray (@cantabile) <a href="https://twitter.com/cantabile/status/1067412790816768000?ref_src=twsrc%5Etfw">November 27, 2018</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+I believe that those who have had traumatic lives are susceptible to proclivities that render them more vulnerable, such as my case with alcohol. And thus, the sad reality is that survivors are particularly vulnerable to further trauma. But they do not need to be defined entirely by their trauma. 
+
+I will not let rape or alcohol fully define me; but I will not deny that struggling with being a survivor still shapes parts of my life. However, I love my work; and I believe I am still capable of doing it. I believe that my work brings me peace and respite from my trauma. Why can't work be therapeutic? 
+
+Now, excuse me as I have to write unit tests for all my estimators, finish the literature review, wrap this package, prepare my seminar for next week in the UK, get ready for the miniunconf in Sweden, rerun `purrr` simulations and recreate `ggplot` figures, and bask in the fact that I was invited to Germany for a nextgen mathematical scientists thing next year and funding was confirmed this morning.
+
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Eat your heart out, Leo - _I&#39;m_ the king of the world, at Les Calanques. Merci, <a href="https://twitter.com/PreDocDom?ref_src=twsrc%5Etfw">@PreDocDom</a> for capturing the moment. 🥐 <a href="https://t.co/ZkxecfPSVi">pic.twitter.com/ZkxecfPSVi</a></p>&mdash; Charles T. Gray (@cantabile) <a href="https://twitter.com/cantabile/status/1067697402788921344?ref_src=twsrc%5Etfw">November 28, 2018</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
 [^1]: He was maybe eighteen. He'd run away from his evangelical parents and was trying to walk away from his faith, but would wake me in the night distraught he was going to hell.
 
-[^2]: And, of course, my $3c^2$ gang. Dr X has been the most wonderful and supportive partner through this. 
+[^2]: And, of course, my $3c^2$ gang. Dr X has been the most wonderful and supportive partner through this. We have bee
+
+[^3]: I'm not sure if I'll ever change this post from draft mode.  
+
