@@ -5,12 +5,11 @@ description: |
 author:
   - name: Charles T. Gray
     url: {}
-date: 11-16-2018
+date: 11-30-2018
 output:
   radix::radix_article:
     self_contained: false
 bibliography: ../../biblio.bib
-draft: true
 categories: 
   - testing
 tags: 

@@ -1,5 +1,22 @@
 [
   {
+    "path": "posts/2018-11-17-good-testing-coverage/",
+    "title": "good enough testing coverage",
+    "description": "What defines good testing coverage in an R analysis?",
+    "author": [
+      {
+        "name": "Charles T. Gray",
+        "url": {}
+      }
+    ],
+    "date": "2018-11-30",
+    "categories": [
+      "testing"
+    ],
+    "preview": {},
+    "last_modified": "2018-11-30T09:25:35+01:00"
+  },
+  {
     "path": "posts/2018-11-27-scientific-lit-review/",
     "title": "writing a scientific literature review",
     "description": "What makes a _good enough_ literature review?",

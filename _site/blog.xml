@@ -7,7 +7,15 @@
     <description>A one-time trophy bitch screams into the void. 
 </description>
     <generator>Radix</generator>
-    <lastBuildDate>Tue, 27 Nov 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 30 Nov 2018 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>good enough testing coverage</title>
+      <dc:creator>Charles T. Gray</dc:creator>
+      <link>https://fervent-hypatia-7b7343.netlify.com/posts/2018-11-17-good-testing-coverage</link>
+      <description>What defines good testing coverage in an R analysis?</description>
+      <guid>https://fervent-hypatia-7b7343.netlify.com/posts/2018-11-17-good-testing-coverage</guid>
+      <pubDate>Fri, 30 Nov 2018 00:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>writing a scientific literature review</title>
       <dc:creator>Charles T. Gray</dc:creator>
@@ -23,15 +31,6 @@
       <description>women with drinking problems are particularly vulnerable to sexual assault</description>
       <guid>https://fervent-hypatia-7b7343.netlify.com/posts/2018-11-17-heres-how-it-happens</guid>
       <pubDate>Sat, 17 Nov 2018 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>a quick and dirty vis</title>
-      <dc:creator>Charles T. Gray</dc:creator>
-      <link>https://fervent-hypatia-7b7343.netlify.com/posts/2018-11-14-quick-and-dirty-vis</link>
-      <description>Jen asked me to throw together a vis on a dataset in ten minutes for an R-Ladies Sydney thing.</description>
-      <guid>https://fervent-hypatia-7b7343.netlify.com/posts/2018-11-14-quick-and-dirty-vis</guid>
-      <pubDate>Wed, 14 Nov 2018 00:00:00 +0000</pubDate>
-      <media:content url="https://fervent-hypatia-7b7343.netlify.com/posts/2018-11-14-quick-and-dirty-vis/quick-and-dirty-vis_files/figure-html5/unnamed-chunk-2-1.png" medium="image" type="image/png" width="1248" height="768"/>
     </item>
   </channel>
 </rss>
