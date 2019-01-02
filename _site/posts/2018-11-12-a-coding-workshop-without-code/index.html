@@ -543,6 +543,10 @@ figure img.external {
 /* Tweak code blocks (note that this CSS is repeated above in an injection
    into the d-code shadow dom) */
 
+d-code {
+  overflow-x: auto !important;
+}
+
 pre.d-code code.d-code {
   padding-left: 10px;
   font-size: 12px;
@@ -573,6 +577,11 @@ pre.text-output {
 }
 
 @media(min-width: 768px) {
+
+d-code {
+  overflow-x: visible !important;
+}
+
 pre.d-code code.d-code  {
     padding-left: 18px;
     font-size: 14px;
@@ -1280,7 +1289,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"a coding workshop without code","description":"Thoughts on tidy pseudocode.","authors":[{"author":"Charles T. Gray","authorURL":"https://twitter.com/cantabile","affiliation":"&nbsp;","affiliationURL":"#"}],"publishedDate":"2018-06-17T00:00:00.000+02:00","citationText":"Gray, 2018"}
+{"title":"a coding workshop without code","description":"Thoughts on tidy pseudocode.","authors":[{"author":"Charles T. Gray","authorURL":"https://twitter.com/cantabile","affiliation":"&nbsp;","affiliationURL":"#"}],"publishedDate":"2018-06-17T00:00:00.000+10:00","citationText":"Gray, 2018"}
 </script>
 
 <!--/radix_placeholder_front_matter-->

@@ -527,6 +527,10 @@
   /* Tweak code blocks (note that this CSS is repeated above in an injection
      into the d-code shadow dom) */
   
+  d-code {
+    overflow-x: auto !important;
+  }
+  
   pre.d-code code.d-code {
     padding-left: 10px;
     font-size: 12px;
@@ -557,6 +561,11 @@
   }
   
   @media(min-width: 768px) {
+  
+  d-code {
+    overflow-x: visible !important;
+  }
+  
   pre.d-code code.d-code  {
       padding-left: 18px;
       font-size: 14px;
@@ -1327,7 +1336,7 @@ projects
 library(tidyverse)
 
 # get data
-tracker_data &lt;- readr::read_csv(&quot;~/Downloads/Details-20160206-20181216.csv&quot;) %&gt;%
+tracker_data &lt;- readr::read_csv(&quot;&quot;) %&gt;%
   # tidy up columns
   rename(start = `Start time`,
          end = `End time`,
@@ -1367,7 +1376,6 @@ tracker_data %&gt;%
   geom_vline(xintercept = 4, linetype = &quot;dotted&quot;) +
   geom_histogram(bins = 5) +
   facet_grid(month ~ .) </code></pre>
-<p><img src="index_files/figure-html5/unnamed-chunk-1-1.png" width="624" /></p>
 </div>
 <h2 id="for-each-month-how-many-hours-a-day-for-each-category">for each month how many hours a day for each category?</h2>
 <div class="layout-chunk" data-layout="l-body">
@@ -1381,7 +1389,6 @@ tracker_data %&gt;%
   geom_vline(xintercept = 1.3, linetype = &quot;dotted&quot;) +
   geom_histogram(bins = 10) +
   facet_grid(month ~ category)</code></pre>
-<p><img src="index_files/figure-html5/unnamed-chunk-2-1.png" width="624" /></p>
 </div>
 <h2 id="over-time">over time?</h2>
 <div class="layout-chunk" data-layout="l-body">
@@ -1401,9 +1408,8 @@ tracker_data %&gt;%
   geom_point(aes(colour = goal), alpha = point_alpha, size = point_size) +
   scale_color_manual(values=wesanderson::wes_palette(n=2, name= wes_palette)) +
   geom_hline(yintercept = 4, linetype = &quot;dotted&quot;) +
-  facet_grid(month ~ .) </code></pre>
-<p><img src="index_files/figure-html5/unnamed-chunk-3-1.png" width="624" /></p>
-<pre class="r"><code>
+  facet_grid(month ~ .) 
+
 # with categories
 tracker_data %&gt;% 
   filter(category != &quot;wellness&quot;) %&gt;%  # for now, need to join in calendar and munge yoga
@@ -1416,7 +1422,6 @@ tracker_data %&gt;%
   scale_color_manual(values=wesanderson::wes_palette(n=2, name= wes_palette)) +
   geom_hline(yintercept = 1.3, linetype = &quot;dotted&quot;) +
   facet_grid(month ~ category) </code></pre>
-<p><img src="index_files/figure-html5/unnamed-chunk-3-2.png" width="624" /></p>
 </div>
 <h2 id="my-system">my system</h2>
 <p>I use a combination of gtd, pomodoros, and bullet journaling in my productivity system.</p>

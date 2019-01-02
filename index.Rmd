@@ -10,6 +10,11 @@ author:
 site: radix::radix_website
 ---
 
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, eval = FALSE)
+```
+
 What if one practices mathematical science like music?
 
 My goal is to spend four hours a day on *work with intent*[^1].
@@ -21,7 +26,7 @@ My goal is to spend four hours a day on *work with intent*[^1].
 library(tidyverse)
 
 # get data
-tracker_data <- readr::read_csv("~/Downloads/Details-20160206-20181216.csv") %>%
+tracker_data <- readr::read_csv("") %>%
   # tidy up columns
   rename(start = `Start time`,
          end = `End time`,

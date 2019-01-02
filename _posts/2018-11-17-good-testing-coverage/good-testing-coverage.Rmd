@@ -1,11 +1,11 @@
 ---
 title: "good enough testing coverage"
 description: |
-  What defines good testing coverage in an R analysis?
+  What defines good testing coverage in an R analysis? _This post is a work in progress_. 
 author:
   - name: Charles T. Gray
     url: {}
-date: 11-30-2018
+date: 12-30-2018
 output:
   radix::radix_article:
     self_contained: false
@@ -28,24 +28,9 @@ library(validate)
 library(tidyverse)
 ```
 
-> this post is a work in progress
-
-
 I've previously written about [how cool I think testing is](https://ropensci.org/blog/2018/03/13/ode-to-testing/), as well as [debugging](http://cantabile.rbind.io/posts/2018-11-12-testing-as-debugging/). It feels natural to next ask, when is one done? When has one achieved testing _coverage_? What does `covr`[@hester_covr:_2018] measure? What does the literature say about testing? My ultimate question, pedant as I am, what is _good enough_[@wilson_good_2017] testing?
 
-## why do I care?
-
-My first rstats projects were in bioinformatics, and it struck me how hands off and ad hoc the data analysis process was, given the cost of the research materials.   
-
-## 
-
-I want to test a function, `varameta::effect_se` from a package I'm working from. 
-
-I'm pretty certain it takes log at times. 
-
-```{r see function}
-varameta:::g_lnorm
-```
+I want to test a function, `g_lnorm` from a package I'm working from.  
 
 ## what to test
 
@@ -59,33 +44,30 @@ We also need to check that the function _misbehaves_ as it should when passed so
 
 But what exactly is _behave_ as it should? 
 
-Well, we need to consider every possible valid input and combination thereof. 
+Well, we need to consider every possible valid input and combination thereof. This sounds overwhelming, however. So, what is a minimum testing standard. Where to start? 
 
-### what to test in `varameta::effect_se`
+### what to test 
 
-This function takes arguments with specified defaults and some without. 
+The function `g_norm` takes arguments with specified defaults and some without. 
 
-#### functions without defaults
+#### check equivalence classes
 
-argument | expected type | notes
--|-|-
-`centre` | numeric | some of these estimators don't work with negative medians because $\log$
-`spread` | numeric | estimators are designed to work with interquartile range or range
-`n` | integer | sample size - still wondering if I should make this default to 1
+Numerics are a bit tricky, because we need to consider a few cases.
 
-#### functions with defaults
+argument type | equivalence classes
+- | - 
+logical | `TRUE | FALSE`
+numeric | $[-\infty, -1], (-1, 0), [0,0], (0,1), [1, \infty]$
+character | context dependent
+function | runs, and$\dots$?
 
-argument | default value  | expected type | notes
--|-|-|-
-`centre_type` | `"mean"` | `"mean"` or `"median"` | check defaults are defaults
-`spread_type` | `"iqr"` | `"iqr"` or `"range"` |
+Checking each equivalence class produces an output of the type expected seems like an excellent way to begin. 
 
-For these, we need to check defaults are defaults. Why? If I write tests that validate these defaults, then I'll know if I change the function and there is code that relies on it. 
+Often I check and check the mathematics, only to find it was the code that was broken. I believe there's much that statisticians can learn from. Often simply checking in turn that the function runs for an arbitrary choice for each argument. 
 
+I like drawing a sample at the start to represent each of the equivalence classes, if it's not too unwieldy. That way my test is taking an arbitrary representative of each equivalence class; and I'm explicit about what I'm testing. It doesn't cover all possible cases, if I don't set up my equivalence classes correctly, but it's a start. It's enough to see if the code is running as I go. 
 
-
-
-## tools for testing
+## more tools for testing
 
 In Parker's rumination on _opinionated_ analysis, `assertr` and `validate` are noted as tools that can help with testing[@parker_opinionated_nodate]. How? 
 
@@ -108,8 +90,6 @@ varameta::sim_par %>% assertr::verify(nrow(.) %% length(unique(.$sample_size)) =
 
 ```
 
-
-
 ### validate 
 
 In the readme for [`validate::`](https://github.com/data-cleaning/validate), we have this description:
@@ -130,3 +110,7 @@ varameta::sim_par %>% validate::check_that(true_median > 0) %>% summary()
 ```
 
 Well now, isn't that handy? 
+
+## collecting my thoughts on this
+
+So, I've been working on tests in earnest to solve a problem on this package recently. And I find myself persevering rather doggedly with `testthat::auto_test`. It really does help me debug more efficiently. This is a workflow changer for me. 
