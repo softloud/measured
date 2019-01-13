@@ -1,7 +1,7 @@
 ---
 title: "good enough testing coverage"
 description: |
-  What defines good testing coverage in an R analysis? _This post is a work in progress_. 
+  What defines good testing coverage in an R analysis? 
 author:
   - name: Charles T. Gray
     url: {}

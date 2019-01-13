@@ -19,373 +19,43 @@
  <!--/radix_placeholder_import_source-->
 
   <!--radix_placeholder_meta_tags-->
-  <title>measured.: statistical rethinking</title>
+  <title>it's not not the math, it's the code</title>
   
-  <meta property="description" itemprop="description" content="chapter five: bookclub notes, work in progress"/>
+  <meta property="description" itemprop="description" content="how testing has changed my workflow"/>
   
   
   <!--  https://schema.org/Article -->
-  <meta property="article:published" itemprop="datePublished" content="2019-01-13"/>
-  <meta property="article:created" itemprop="dateCreated" content="2019-01-13"/>
+  <meta property="article:published" itemprop="datePublished" content="2019-01-05"/>
+  <meta property="article:created" itemprop="dateCreated" content="2019-01-05"/>
   <meta name="article:author" content="Charles T. Gray"/>
   
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
-  <meta property="og:title" content="measured.: statistical rethinking"/>
+  <meta property="og:title" content="it&#39;s not not the math, it&#39;s the code"/>
   <meta property="og:type" content="article"/>
-  <meta property="og:description" content="chapter five: bookclub notes, work in progress"/>
+  <meta property="og:description" content="how testing has changed my workflow"/>
   <meta property="og:locale" content="en_US"/>
-  <meta property="og:site_name" content="measured."/>
   
   <!--  https://dev.twitter.com/cards/types/summary -->
   <meta property="twitter:card" content="summary"/>
-  <meta property="twitter:title" content="measured.: statistical rethinking"/>
-  <meta property="twitter:description" content="chapter five: bookclub notes, work in progress"/>
+  <meta property="twitter:title" content="it&#39;s not not the math, it&#39;s the code"/>
+  <meta property="twitter:description" content="how testing has changed my workflow"/>
   
   <!--/radix_placeholder_meta_tags-->
+  
+  <meta name="citation_reference" content="citation_title=Tidyverse: Easily install and load the ’tidyverse’;citation_publication_date=2017;citation_author=Hadley Wickham"/>
+  <meta name="citation_reference" content="citation_title=R packages: Organize, test, document, and share your code;citation_publication_date=2015;citation_publisher=O’Reilly Media;citation_author=H. Wickham"/>
+  <meta name="citation_reference" content="citation_title=Advanced r;citation_publication_date=2015;citation_publisher=CRC Press;citation_author=H. Wickham"/>
   <!--radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output"]}},"value":[{"type":"character","attributes":{},"value":["statistical rethinking"]},{"type":"character","attributes":{},"value":["chapter five: bookclub notes, work in progress\n"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url","affiliation","affiliation_url"]}},"value":[{"type":"character","attributes":{},"value":["Charles T. Gray"]},{"type":"character","attributes":{},"value":["https://example.com/norajones"]},{"type":"character","attributes":{},"value":["Spacely Sprockets"]},{"type":"character","attributes":{},"value":["https://example.com/spacelysprokets"]}]}]},{"type":"character","attributes":{},"value":["2019-01-13"]},{"type":"character","attributes":{},"value":["radix::radix_article"]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output","categories","bibliography","draft"]}},"value":[{"type":"character","attributes":{},"value":["it's not not the math, it's the code"]},{"type":"character","attributes":{},"value":["how testing has changed my workflow\n"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url"]}},"value":[{"type":"character","attributes":{},"value":["Charles T. Gray"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":[]}},"value":[]}]}]},{"type":"character","attributes":{},"value":["01-05-2019"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["radix::radix_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]},{"type":"character","attributes":{},"value":["error handling","testing"]},{"type":"character","attributes":{},"value":["../../biblio.bib"]},{"type":"logical","attributes":{},"value":[true]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
-  <!--radix_placeholder_navigation_in_header-->
   
-  <script type="application/javascript">
-  
-    window.headroom_prevent_pin = false;
-  
-    window.document.addEventListener("DOMContentLoaded", function (event) {
-  
-      // initialize headroom for banner
-      var header = $('header').get(0);
-      var headerHeight = header.offsetHeight;
-      var headroom = new Headroom(header, {
-        onPin : function() {
-          if (window.headroom_prevent_pin) {
-            window.headroom_prevent_pin = false;
-            headroom.unpin();
-          }
-        }
-      });
-      headroom.init();
-      if(window.location.hash)
-        headroom.unpin();
-      $(header).addClass('headroom--transition');
-  
-      // offset scroll location for banner on hash change
-      // (see: https://github.com/WickyNilliams/headroom.js/issues/38)
-      window.addEventListener("hashchange", function(event) {
-        window.scrollTo(0, window.pageYOffset - (headerHeight + 25));
-      });
-  
-      // responsive menu
-      $('.radix-site-header').each(function(i, val) {
-        var topnav = $(this);
-        var toggle = topnav.find('.nav-toggle');
-        toggle.on('click', function() {
-          topnav.toggleClass('responsive');
-        });
-      });
-  
-      // nav dropdowns
-      $('.nav-dropbtn').click(function(e) {
-        $(this).next('.nav-dropdown-content').toggleClass('nav-dropdown-active');
-        $(this).parent().siblings('.nav-dropdown')
-           .children('.nav-dropdown-content').removeClass('nav-dropdown-active');
-      });
-      $("body").click(function(e){
-        $('.nav-dropdown-content').removeClass('nav-dropdown-active');
-      });
-      $(".nav-dropdown").click(function(e){
-        e.stopPropagation();
-      });
-    });
+  <script type="text/json" id="radix-resource-manifest">
+  {"type":"character","attributes":{},"value":["its-not-not-the-math-its-the-code_files/bowser-1.9.3/bowser.min.js","its-not-not-the-math-its-the-code_files/distill-2.2.21/template.v2.js","its-not-not-the-math-its-the-code_files/jquery-1.11.3/jquery.min.js","its-not-not-the-math-its-the-code_files/webcomponents-2.0.0/webcomponents.js"]}
   </script>
-  
-  <style type="text/css">
-  
-  /* Theme (user-documented overrideables for nav appearance) */
-  
-  .radix-site-nav {
-    color: rgba(255, 255, 255, 0.8);
-    background-color: #455a64;
-    font-size: 15px;
-    font-weight: 300;
-  }
-  
-  .radix-site-nav a {
-    color: inherit;
-    text-decoration: none;
-  }
-  
-  .radix-site-nav a:hover {
-    color: white;
-  }
-  
-  @media print {
-    .radix-site-nav {
-      display: none;
-    }
-  }
-  
-  .radix-site-header {
-  
-  }
-  
-  .radix-site-footer {
-  
-  }
-  
-  
-  /* Site Header */
-  
-  .radix-site-header {
-    width: 100%;
-    box-sizing: border-box;
-    z-index: 3;
-  }
-  
-  .radix-site-header .nav-left {
-    display: inline-block;
-    margin-left: 8px;
-  }
-  
-  @media screen and (max-width: 768px) {
-    .radix-site-header .nav-left {
-      margin-left: 0;
-    }
-  }
-  
-  
-  .radix-site-header .nav-right {
-    float: right;
-    margin-right: 8px;
-  }
-  
-  .radix-site-header a,
-  .radix-site-header .title {
-    display: inline-block;
-    text-align: center;
-    padding: 14px 10px 14px 10px;
-  }
-  
-  .radix-site-header .title {
-    font-size: 18px;
-  }
-  
-  .radix-site-header .logo {
-    padding: 0;
-  }
-  
-  .radix-site-header .logo img {
-    display: none;
-    max-height: 20px;
-    width: auto;
-    margin-bottom: -4px;
-  }
-  
-  .radix-site-header .nav-image img {
-    max-height: 18px;
-    width: auto;
-    display: inline-block;
-    margin-bottom: -3px;
-  }
-  
-  
-  
-  @media screen and (min-width: 1000px) {
-    .radix-site-header .logo img {
-      display: inline-block;
-    }
-    .radix-site-header .nav-left {
-      margin-left: 20px;
-    }
-    .radix-site-header .nav-right {
-      margin-right: 20px;
-    }
-    .radix-site-header .title {
-      padding-left: 12px;
-    }
-  }
-  
-  
-  .radix-site-header .nav-toggle {
-    display: none;
-  }
-  
-  .nav-dropdown {
-    display: inline-block;
-    position: relative;
-  }
-  
-  .nav-dropdown .nav-dropbtn {
-    border: none;
-    outline: none;
-    color: rgba(255, 255, 255, 0.8);
-    padding: 16px 10px;
-    background-color: transparent;
-    font-family: inherit;
-    font-size: inherit;
-    font-weight: inherit;
-    margin: 0;
-    margin-top: 1px;
-    z-index: 2;
-  }
-  
-  .nav-dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: white;
-    min-width: 200px;
-    border: 1px solid rgba(0,0,0,0.15);
-    border-radius: 4px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1);
-    z-index: 1;
-    margin-top: 2px;
-    white-space: nowrap;
-    padding-top: 4px;
-    padding-bottom: 4px;
-  }
-  
-  .nav-dropdown-content hr {
-    margin-top: 4px;
-    margin-bottom: 4px;
-    border: none;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  }
-  
-  .nav-dropdown-active {
-    display: block;
-  }
-  
-  .nav-dropdown-content a, .nav-dropdown-content .nav-dropdown-header {
-    color: black;
-    padding: 6px 24px;
-    text-decoration: none;
-    display: block;
-    text-align: left;
-  }
-  
-  .nav-dropdown-content .nav-dropdown-header {
-    display: block;
-    padding: 5px 24px;
-    padding-bottom: 0;
-    text-transform: uppercase;
-    font-size: 14px;
-    color: #999999;
-    white-space: nowrap;
-  }
-  
-  .nav-dropdown:hover .nav-dropbtn {
-    color: white;
-  }
-  
-  .nav-dropdown-content a:hover {
-    background-color: #ddd;
-    color: black;
-  }
-  
-  .nav-right .nav-dropdown-content {
-    margin-left: -45%;
-    right: 0;
-  }
-  
-  @media screen and (max-width: 768px) {
-    .radix-site-header a, .radix-site-header .nav-dropdown  {display: none;}
-    .radix-site-header a.nav-toggle {
-      float: right;
-      display: block;
-    }
-    .radix-site-header .title {
-      margin-left: 0;
-    }
-    .radix-site-header .nav-right {
-      margin-right: 0;
-    }
-    .radix-site-header {
-      overflow: hidden;
-    }
-    .nav-right .nav-dropdown-content {
-      margin-left: 0;
-    }
-  }
-  
-  
-  @media screen and (max-width: 768px) {
-    .radix-site-header.responsive {position: relative;}
-    .radix-site-header.responsive a.nav-toggle {
-      position: absolute;
-      right: 0;
-      top: 0;
-    }
-    .radix-site-header.responsive a,
-    .radix-site-header.responsive .nav-dropdown {
-      display: block;
-      text-align: left;
-    }
-    .radix-site-header.responsive .nav-left,
-    .radix-site-header.responsive .nav-right {
-      width: 100%;
-    }
-    .radix-site-header.responsive .nav-dropdown {float: none;}
-    .radix-site-header.responsive .nav-dropdown-content {position: relative;}
-    .radix-site-header.responsive .nav-dropdown .nav-dropbtn {
-      display: block;
-      width: 100%;
-      text-align: left;
-    }
-  }
-  
-  /* Site Footer */
-  
-  .radix-site-footer {
-    width: 100%;
-    overflow: hidden;
-    box-sizing: border-box;
-    z-index: 3;
-    margin-top: 30px;
-    padding-top: 30px;
-    padding-bottom: 30px;
-    text-align: center;
-  }
-  
-  /* Headroom */
-  
-  d-title {
-    padding-top: 6rem;
-  }
-  
-  @media print {
-    d-title {
-      padding-top: 4rem;
-    }
-  }
-  
-  .headroom {
-    z-index: 1000;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-  }
-  
-  .headroom--transition {
-    transition: all .4s ease-in-out;
-  }
-  
-  .headroom--unpinned {
-    top: -100px;
-  }
-  
-  .headroom--pinned {
-    top: 0;
-  }
-  
-  </style>
-  
-  <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet"/>
-  <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet"/>
-  <script src="site_libs/headroom-0.9.4/headroom.min.js"></script>
+  <!--radix_placeholder_navigation_in_header-->
   <!--/radix_placeholder_navigation_in_header-->
   <!--radix_placeholder_distill-->
   
@@ -1261,10 +931,10 @@
   </script>
   
   <!--/radix_placeholder_distill-->
-  <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
-  <script src="site_libs/bowser-1.9.3/bowser.min.js"></script>
-  <script src="site_libs/webcomponents-2.0.0/webcomponents.js"></script>
-  <script src="site_libs/distill-2.2.21/template.v2.js"></script>
+  <script src="its-not-not-the-math-its-the-code_files/jquery-1.11.3/jquery.min.js"></script>
+  <script src="its-not-not-the-math-its-the-code_files/bowser-1.9.3/bowser.min.js"></script>
+  <script src="its-not-not-the-math-its-the-code_files/webcomponents-2.0.0/webcomponents.js"></script>
+  <script src="its-not-not-the-math-its-the-code_files/distill-2.2.21/template.v2.js"></script>
   <!--radix_placeholder_site_in_header-->
   <!--/radix_placeholder_site_in_header-->
 
@@ -1276,62 +946,90 @@
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"statistical rethinking","description":"chapter five: bookclub notes, work in progress","authors":[{"author":"Charles T. Gray","authorURL":"https://example.com/norajones","affiliation":"Spacely Sprockets","affiliationURL":"https://example.com/spacelysprokets"}],"publishedDate":"2019-01-13T00:00:00.000+11:00","citationText":"Gray, 2019"}
+{"title":"it's not not the math, it's the code","description":"how testing has changed my workflow","authors":[{"author":"Charles T. Gray","authorURL":{},"affiliation":"&nbsp;","affiliationURL":"#"}],"publishedDate":"2019-01-05T00:00:00.000+11:00","citationText":"Gray, 2019"}
 </script>
 
 <!--/radix_placeholder_front_matter-->
 <!--radix_placeholder_navigation_before_body-->
-<header class="header header--fixed" role="banner">
-<nav class="radix-site-nav radix-site-header">
-<div class="nav-left">
-<a href="index.html" class="title">measured.</a>
-</div>
-<div class="nav-right">
-<a href="index.html">home</a>
-<a href="about.html">about</a>
-<a href="blog.html">blog</a>
-<div class="nav-dropdown">
-<button class="nav-dropbtn">
-talks
- 
-<span class="down-arrow">&#x25BE;</span>
-</button>
-<div class="nav-dropdown-content">
-<a href="talks/replication/talk-nocats.html">unimelb - 2018</a>
-<a href="talks/replication/marseille-2018.html">marseille - 2018</a>
-</div>
-</div>
-<div class="nav-dropdown">
-<button class="nav-dropbtn">
-projects
- 
-<span class="down-arrow">&#x25BE;</span>
-</button>
-<div class="nav-dropdown-content">
-<a href="chapter-five.html">chapter five</a>
-</div>
-</div>
-<a href="javascript:void(0);" class="nav-toggle">&#9776;</a>
-</div>
-</nav>
-</header>
 <!--/radix_placeholder_navigation_before_body-->
 <!--radix_placeholder_site_before_body-->
 <!--/radix_placeholder_site_before_body-->
 
 <div class="d-title">
-<h1>statistical rethinking</h1>
-<p>chapter five: bookclub notes, work in progress</p>
+<h1>it’s not not the math, it’s the code</h1>
+<p>how testing has changed my workflow</p>
 </div>
 
 <div class="d-byline">
-  Charles T. Gray <a href="https://example.com/norajones" class="uri">https://example.com/norajones</a> (Spacely Sprockets)<a href="https://example.com/spacelysprokets" class="uri">https://example.com/spacelysprokets</a>
+  Charles T. Gray true 
   
-<br/>2019-01-13
+<br/>01-05-2019
 </div>
 
 <div class="d-article">
+<div class="layout-chunk" data-layout="l-body">
 
+</div>
+<p>As a student of mathematical science, I’ve worked on projects in various disciplines, from ecology to medicine. I’ve clocked up about five years of R use. Although the projects have been varied, one constant has been that debugging has disproportionately dominated my time.</p>
+<p>I find this frustrating, as I would rather work on mathematics. I’m not a computer scientist, and I don’t feel like debugging plays to my strengths. Over the last three years, I’ve become an evangelistic devotee of the <code>tidyverse::</code><span class="citation" data-cites="wickham_tidyverse:_2017">(Wickham <a href="#ref-wickham_tidyverse:_2017">2017</a>)</span> because it saves me so much time in terms of data wrangling. Surely there are similar tools for debugging?</p>
+<p>But of course there are. I’m now convinced that the time I spend learning these tools is time gained in efficiency. Indeed, apparently I am following a well-worn path.</p>
+<blockquote>
+<p><a href="http://r-pkgs.had.co.nz/tests.html">I started using automated tests because I discovered I was spending too much time re-fixing bugs that I’d already fixed before.</a>(Hadley Wickham<span class="citation" data-cites="wickham_r_2015">(H. Wickham <a href="#ref-wickham_r_2015">2015</a><a href="#ref-wickham_r_2015">b</a>)</span>)</p>
+</blockquote>
+<p>I was looking into debugging and I came across this.</p>
+<blockquote>
+<p><a href="http://adv-r.had.co.nz/Exceptions-Debugging.html">If your existing test coverage is low, take the opportunity to add some nearby tests to ensure that existing good behaviour is preserved. This reduces the chances of creating a new bug.</a>(Again, Hadley Wickham<span class="citation" data-cites="wickham_advanced_2015">(H. Wickham <a href="#ref-wickham_advanced_2015">2015</a><a href="#ref-wickham_advanced_2015">a</a>)</span>. Should put out a line of fortune cookies.)</p>
+</blockquote>
+<p>I can see the benefit of tests<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a> for developing the work. I often reuse functions and rework analyses, so having an automated system of checking that functions do what you think they’ll do makes sense. Seems like a two birds one stone thing, I can increase testing coverage of my package while debugging the problem I have. It’s also the answer to, where to start with testing?</p>
+<p>I am trying to finish an analysis at the moment which has some estimators I’ve coded. I’m trying to write simulations using these estimators. As usual, I run into problems with my simulations, but I struggle to understand where the problems are. Is it in the structure of the simulation, or in the mathematics, or in the mathematical assumptions?</p>
+<p>Testing via <code>testthat::</code> enables me to keep track of what I’ve checked, and rechecks it automatically for me. I’ve even become a tentative <code>testthat::auto_test</code> (sotto robot voce) convert.</p>
+<p>Here’s my big revelation so far. Sometimes it’s the <em>code</em>, not the mathematics. Testing has shown me I should spend as much time worrying about whether my code works as I should about the mathematics.</p>
+<p>Oftimes it’s my code that’s the problem, not the maths. And sometimes, after all, it’s the maths<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a>. Anyway, testing helps with both, at least to some extent.</p>
+<p>I was really surprised how useful it was to simply test out that the function returns the expected type of result. I build these algorithms that feel like Rube Goldberg machines by the time I’ve done with them, and I’m usually not convinced I’ve not put in several steps for which there was a better shortcut. The things that keep us up at night<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a>.</p>
+<p>I think working testing into my workflow is a lot like learning to <code>%&gt;%</code>. It’s arguably harder to learn when a workflow has already been locked in place. I think this is a struggle for R users of all sorts of levels. However, I think this one is a worthy skill in terms of time benefits, just as learning to <code>%&gt;%</code> saved me so much in debugging. And then some. The <code>%&gt;%</code> changed my workflow and the structure of my code. I’m surprised to find I can use testing as I build the analysis.</p>
+<p>But I don’t think the benefits of testing are immediately apparent for mathematical scientists. They weren’t for me.</p>
+<p>Simply testing each argument in turn is a great place to start, I discovered. Then you can consider all possible inputs for that. And that felt overwhelming.</p>
+<h2 id="the-dark-days">the dark days</h2>
+<p>So, how do I check functions usually? Well, I was writing functions into .Rmd files. Then I’d have a chunk in there.</p>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+# test parameters
+sample_size = 3
+par_1 = 3
+par_2 = NULL
+rs_fn = rexp</code></pre>
+</div>
+<p>These would be my testing parameters. I’d set them up in a chunk, so that I could play around with different values.</p>
+<p>In particular, I’d store those values in the environment so I could run particular lines of code and not others.</p>
+<p>The problem with this is it’s not reproducible. Most importantly, <em>by me</em>. I find it really hard to remember from day to day what I’ve tested ad hoc, and find myself repeating checks compulsively.</p>
+<h2 id="and-now-with-testing-less-murky">and now, with testing, less murky</h2>
+<p>Let’s say these parameters went into a function which outputs a numeric results. Even having an expectation like</p>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+expect_is(&lt;my_function&gt;(3, 3, NULL, rexp), &quot;numeric&quot;)</code></pre>
+</div>
+<p>is really useful. I can also check for multiple inputs at once.</p>
+<p>Especially as I often have functions that rely on other functions. So changing one can break others really easily if I’m not careful.</p>
+<p>Now, instead of running</p>
+<div id="refs" class="references">
+<div id="ref-wickham_advanced_2015">
+<p>Wickham, H. 2015a. <em>Advanced R</em>. Chapman &amp; Hall/CRC the R Series. CRC Press. <a href="https://books.google.com.au/books?id=FfsYCwAAQBAJ">https://books.google.com.au/books?id=FfsYCwAAQBAJ</a>.</p>
+</div>
+<div id="ref-wickham_r_2015">
+<p>———. 2015b. <em>R Packages: Organize, Test, Document, and Share Your Code</em>. O’Reilly Media. <a href="https://books.google.com.au/books?id=DqSxBwAAQBAJ">https://books.google.com.au/books?id=DqSxBwAAQBAJ</a>.</p>
+</div>
+<div id="ref-wickham_tidyverse:_2017">
+<p>Wickham, Hadley. 2017. <em>Tidyverse: Easily Install and Load the ’Tidyverse’</em>. <a href="https://CRAN.R-project.org/package=tidyverse">https://CRAN.R-project.org/package=tidyverse</a>.</p>
+</div>
+</div>
+<section class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p>R Packages has a great section on <a href="http://r-pkgs.had.co.nz/tests.html">testing</a>, which I myself must study more.<a href="#fnref1" class="footnote-back">↩</a></p></li>
+<li id="fn2"><p>Is it peculiarly Australian to say <em>maths</em>?<a href="#fnref2" class="footnote-back">↩</a></p></li>
+<li id="fn3"><p>Incidentally, I realised yesterday that because I’ve been stop-starting this analysis for two years, I wasn’t coding it tidy, because <em>that’s the way I’d always done it</em>. A supervisor asked me about it a few weeks ago, and now I’ve been turning it over in my head. For no better reason. It’s interesting to see what I’m blind to as I learn. Sometimes it would take years of practicing every day for what a piano teacher had said to me to sink in. This was especially true for the technique of slurring.<a href="#fnref3" class="footnote-back">↩</a></p></li>
+</ol>
+</section>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>
@@ -1344,6 +1042,183 @@ projects
 <!--/radix_placeholder_site_after_body-->
 <!--radix_placeholder_appendices-->
 <div class="appendix-bottom"></div>
+<script id="distill-bibliography" type="text/bibtex">
+
+@article{wilson_best_2014,
+	title = {Best Practices for Scientific Computing},
+	volume = {12},
+	issn = {1545-7885},
+	url = {https://dx.plos.org/10.1371/journal.pbio.1001745},
+	doi = {10.1371/journal.pbio.1001745},
+	pages = {e1001745},
+	number = {1},
+	journaltitle = {{PLoS} Biology},
+	author = {Wilson, Greg and Aruliah, D. A. and Brown, C. Titus and Chue Hong, Neil P. and Davis, Matt and Guy, Richard T. and Haddock, Steven H. D. and Huff, Kathryn D. and Mitchell, Ian M. and Plumbley, Mark D. and Waugh, Ben and White, Ethan P. and Wilson, Paul},
+	editor = {Eisen, Jonathan A.},
+	urldate = {2018-11-10},
+	date = {2014-01-07},
+	langid = {english},
+	keywords = {dumpsterfire, measured.},
+	file = {Wilson et al. - 2014 - Best Practices for Scientific Computing.pdf:/home/charles/Zotero/storage/EMWZGF3A/Wilson et al. - 2014 - Best Practices for Scientific Computing.pdf:application/pdf}
+}
+
+@article{parker_opinionated_2017,
+	title = {Opinionated analysis development},
+	doi = {10.7287/peerj.preprints.3210v1},
+	abstract = {Traditionally, statistical training has focused primarily on mathematical derivations and proofs of statistical tests. The process of developing the technical artifact—that is, the paper, dashboard, or other deliverable—is much less frequently taught, presumably because of an aversion to cookbookery or prescribing specific software choices. In this paper I argue that it’s critical to teach analysts how to go about developing an analysis in order to maximize the probability that their analysis is reproducible, accurate, and collaborative. A critical component of this is adopting a blameless postmortem culture. By encouraging the use of and fluency in tooling that implements these opinions, as well as a blameless way of correcting course as analysts encounter errors, we as a community can foster the growth of processes that fail the practitioners as infrequently as possible.},
+	author = {Parker, Hilary},
+	urldate = {2018-11-03},
+	date = {2017},
+	langid = {english},
+	keywords = {dumpsterfire, measured.},
+	file = {Parker - Opinionated analysis development.pdf:/home/charles/Zotero/storage/W2AAN92U/Parker - Opinionated analysis development.pdf:application/pdf}
+}
+
+@book{hester_covr:_2018,
+	title = {covr: Test Coverage for Packages},
+	url = {https://CRAN.R-project.org/package=covr},
+	author = {Hester, Jim},
+	date = {2018},
+	keywords = {measured.}
+}
+
+@article{wilson_good_2017,
+	title = {Good enough practices in scientific computing},
+	volume = {13},
+	issn = {1553-7358},
+	url = {http://dx.plos.org/10.1371/journal.pcbi.1005510},
+	doi = {10.1371/journal.pcbi.1005510},
+	pages = {e1005510},
+	number = {6},
+	journaltitle = {{PLOS} Computational Biology},
+	author = {Wilson, Greg and Bryan, Jennifer and Cranston, Karen and Kitzes, Justin and Nederbragt, Lex and Teal, Tracy K.},
+	editor = {Ouellette, Francis},
+	urldate = {2018-11-17},
+	date = {2017-06-22},
+	langid = {english},
+	keywords = {dumpsterfire, measured.},
+	file = {Wilson et al. - 2017 - Good enough practices in scientific computing.pdf:/home/charles/Zotero/storage/37F35SX5/Wilson et al. - 2017 - Good enough practices in scientific computing.pdf:application/pdf}
+}
+
+@article{nosek_promoting_2015,
+	title = {Promoting an open research culture},
+	volume = {348},
+	rights = {Copyright © 2015, American Association for the Advancement of Science},
+	issn = {0036-8075, 1095-9203},
+	url = {http://science.sciencemag.org/content/348/6242/1422},
+	doi = {10.1126/science.aab2374},
+	abstract = {Author guidelines for journals could help to promote transparency, openness, and reproducibility
+Author guidelines for journals could help to promote transparency, openness, and reproducibility},
+	pages = {1422--1425},
+	number = {6242},
+	journaltitle = {Science},
+	author = {Nosek, B. A. and Alter, G. and Banks, G. C. and Borsboom, D. and Bowman, S. D. and Breckler, S. J. and Buck, S. and Chambers, C. D. and Chin, G. and Christensen, G. and Contestabile, M. and Dafoe, A. and Eich, E. and Freese, J. and Glennerster, R. and Goroff, D. and Green, D. P. and Hesse, B. and Humphreys, M. and Ishiyama, J. and Karlan, D. and Kraut, A. and Lupia, A. and Mabry, P. and Madon, T. and Malhotra, N. and Mayo-Wilson, E. and {McNutt}, M. and Miguel, E. and Paluck, E. Levy and Simonsohn, U. and Soderberg, C. and Spellman, B. A. and Turitto, J. and {VandenBos}, G. and Vazire, S. and Wagenmakers, E. J. and Wilson, R. and Yarkoni, T.},
+	urldate = {2018-11-22},
+	date = {2015-06-26},
+	langid = {english},
+	pmid = {26113702},
+	keywords = {dumpsterfire, measured., open science, psychology},
+	file = {Full Text PDF:/home/charles/Zotero/storage/C834I6T6/Nosek et al. - 2015 - Promoting an open research culture.pdf:application/pdf;Snapshot:/home/charles/Zotero/storage/JP27GIVX/1422.html:text/html}
+}
+
+@article{marwick_packaging_2018,
+	title = {Packaging Data Analytical Work Reproducibly Using R (and Friends)},
+	volume = {72},
+	issn = {0003-1305},
+	url = {https://doi.org/10.1080/00031305.2017.1375986},
+	doi = {10.1080/00031305.2017.1375986},
+	abstract = {Computers are a central tool in the research process, enabling complex and large-scale data analysis. As computer-based research has increased in complexity, so have the challenges of ensuring that this research is reproducible. To address this challenge, we review the concept of the research compendium as a solution for providing a standard and easily recognizable way for organizing the digital materials of a research project to enable other researchers to inspect, reproduce, and extend the research. We investigate how the structure and tooling of software packages of the R programming language are being used to produce research compendia in a variety of disciplines. We also describe how software engineering tools and services are being used by researchers to streamline working with research compendia. Using real-world examples, we show how researchers can improve the reproducibility of their work using research compendia based on R packages and related tools.},
+	pages = {80--88},
+	number = {1},
+	journaltitle = {The American Statistician},
+	author = {Marwick, Ben and Boettiger, Carl and Mullen, Lincoln},
+	urldate = {2018-11-24},
+	date = {2018-01-02},
+	keywords = {measured., Computational science, Data science, Open source software, Reproducible research, packaged data analysis, reproducibility},
+	file = {Full Text PDF:/home/charles/Zotero/storage/MEBP88H9/Marwick et al. - 2018 - Packaging Data Analytical Work Reproducibly Using .pdf:application/pdf;Snapshot:/home/charles/Zotero/storage/K524VAIS/00031305.2017.html:text/html}
+}
+
+@book{blischak_workflowr:_2018,
+	title = {workflowr: A Framework for Reproducible and Collaborative Data Science},
+	url = {https://CRAN.R-project.org/package=workflowr},
+	author = {Blischak, John and Carbonetto, Peter and Stephens, Matthew},
+	date = {2018},
+	keywords = {measured.}
+}
+
+@online{marwick_rrtools:_2018,
+	title = {rrtools: Creates a reproducible research compendium},
+	url = {https://github.com/benmarwick/rrtools},
+	author = {Marwick, Ben},
+	date = {2018},
+	keywords = {measured.}
+}
+
+@book{fischetti_assertr:_2018,
+	title = {assertr: Assertive Programming for R Analysis Pipelines},
+	url = {https://CRAN.R-project.org/package=assertr},
+	author = {Fischetti, Tony},
+	date = {2018},
+	keywords = {measured.}
+}
+
+@book{loo_validate:_2018,
+	title = {validate: Data Validation Infrastructure},
+	url = {https://CRAN.R-project.org/package=validate},
+	author = {Loo, Mark van der and Jonge, Edwin de},
+	date = {2018},
+	keywords = {measured.}
+}
+
+@online{noauthor_introduction_nodate,
+	title = {Introduction to Validate},
+	url = {https://cran.r-project.org/web/packages/validate/vignettes/introduction.html},
+	urldate = {2018-11-29},
+	keywords = {measured., vignette},
+	file = {Introduction to Validate:/home/charles/Zotero/storage/999V227M/introduction.html:text/html}
+}
+
+@book{goldie_collateral:_2018,
+	title = {collateral: Quickly Evaluate Captured Side Effects},
+	url = {https://CRAN.R-project.org/package=collateral},
+	author = {Goldie, James},
+	date = {2018}
+}
+
+@book{wickham_tidyverse:_2017,
+	title = {tidyverse: Easily Install and Load the 'Tidyverse'},
+	url = {https://CRAN.R-project.org/package=tidyverse},
+	author = {Wickham, Hadley},
+	date = {2017}
+}
+
+@online{noauthor_testing_nodate,
+	title = {Testing · R packages},
+	url = {http://r-pkgs.had.co.nz/tests.html},
+	urldate = {2019-01-04},
+	file = {Testing · R packages:/home/charles/Zotero/storage/AGF3F2IB/tests.html:text/html}
+}
+
+@book{wickham_r_2015,
+	title = {R Packages: Organize, Test, Document, and Share Your Code},
+	isbn = {978-1-4919-1056-6},
+	url = {https://books.google.com.au/books?id=DqSxBwAAQBAJ},
+	publisher = {O'Reilly Media},
+	author = {Wickham, H.},
+	date = {2015},
+	lccn = {2015472811}
+}
+
+@book{wickham_advanced_2015,
+	title = {Advanced R},
+	isbn = {978-1-4987-5980-9},
+	url = {https://books.google.com.au/books?id=FfsYCwAAQBAJ},
+	series = {Chapman \& Hall/{CRC} The R Series},
+	publisher = {{CRC} Press},
+	author = {Wickham, H.},
+	date = {2015}
+}
+</script>
 <!--/radix_placeholder_appendices-->
 <!--radix_placeholder_navigation_after_body-->
 <!--/radix_placeholder_navigation_after_body-->

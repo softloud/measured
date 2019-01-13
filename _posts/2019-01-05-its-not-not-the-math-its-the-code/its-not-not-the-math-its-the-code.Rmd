@@ -1,0 +1,98 @@
+---
+title: "it's not not the math, it's the code"
+description: |
+  how testing has changed my workflow
+author:
+  - name: Charles T. Gray
+    url: {}
+date: 01-05-2019
+output:
+  radix::radix_article:
+    self_contained: false
+categories:
+  - error handling
+  - testing
+bibliography: ../../biblio.bib
+draft: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+```{r}
+
+```
+
+
+As a student of mathematical science, I've worked on projects in various disciplines, from ecology to medicine. I've clocked up about five years of R use. Although the projects have been varied, one constant has been that debugging has disproportionately dominated my time. 
+
+I find this frustrating, as I would rather work on mathematics. I'm not a computer scientist, and I don't feel like debugging plays to my strengths. Over the last three years, I've become an evangelistic devotee of the `tidyverse::`[@wickham_tidyverse:_2017] because it saves me so much time in terms of data wrangling. Surely there are similar tools for debugging?
+
+But of course there are. I'm now convinced that the time I spend learning these tools is time gained in efficiency. Indeed, apparently I am following a well-worn path.
+
+> [I started using automated tests because I discovered I was spending too much time re-fixing bugs that I’d already fixed before.](http://r-pkgs.had.co.nz/tests.html)(Hadley Wickham[@wickham_r_2015])  
+
+I was looking into debugging and I came across this. 
+
+> [If your existing test coverage is low, take the opportunity to add some nearby tests to ensure that existing good behaviour is preserved. This reduces the chances of creating a new bug.](http://adv-r.had.co.nz/Exceptions-Debugging.html)(Again, Hadley Wickham[@wickham_advanced_2015]. Should put out a line of fortune cookies.)
+
+I can see the benefit of tests[^1] for developing the work. I often reuse functions and rework analyses, so having an automated system of checking that functions do what you think they'll do makes sense. Seems like a two birds one stone thing, I can increase testing coverage of my package while debugging  the problem I have. It's also the answer to, where to start with testing? 
+
+I am trying to finish an analysis at the moment which has some estimators I've coded. I'm trying to write simulations using these estimators. As usual, I run into problems with my simulations, but I struggle to understand where the problems are. Is it in the structure of the simulation, or in the mathematics, or in the mathematical assumptions? 
+
+Testing via `testthat::` enables me to keep track of what I've checked, and rechecks it automatically for me. I've even become a tentative `testthat::auto_test` (sotto robot voce) convert. 
+
+Here's my big revelation so far. Sometimes it's the _code_, not the mathematics. Testing has shown me I should spend as much time worrying about whether my code works as I should about the mathematics. 
+
+Oftimes it's my code that's the problem, not the maths. And sometimes, after all, it's the maths[^2]. Anyway, testing helps with both, at least to some extent. 
+
+I was really surprised how useful it was to simply test out that the function returns the expected type of result. I build these algorithms that feel like Rube Goldberg machines by the time I've done with them, and I'm usually not convinced I've not put in several steps for which there was a better shortcut. The things that keep us up at night[^3]. 
+
+I think working testing into my workflow is a lot like learning to ` %>% `. It's arguably harder to learn when a workflow has already been locked in place. I think this is a struggle for R users of all sorts of levels. However, I think this one is a worthy skill in terms of time benefits, just as learning to ` %>% ` saved me so much in debugging. And then some. The ` %>% ` changed my workflow and the structure of my code. I'm surprised to find I can use testing as I build the analysis. 
+
+But I don't think the benefits of testing are immediately apparent for mathematical scientists. They weren't for me.   
+
+Simply testing each argument in turn is a great place to start, I discovered. Then you can consider all possible inputs for that. And that felt overwhelming. 
+
+## the dark days
+
+So, how do I check functions usually? Well, I was writing functions into .Rmd files. Then I'd have a chunk in there. 
+
+
+```{r eval=FALSE, echo=TRUE}
+# test parameters
+sample_size = 3
+par_1 = 3
+par_2 = NULL
+rs_fn = rexp
+
+```
+
+These would be my testing parameters. I'd set them up in a chunk, so that I could play around with different values. 
+
+In particular, I'd store those values in the environment so I could run particular lines of code and not others. 
+
+The problem with this is it's not reproducible. Most importantly, _by me_. I find it really hard to remember from day to day what I've tested ad hoc, and find myself repeating checks compulsively. 
+
+## and now, with testing, less murky 
+
+Let's say these parameters went into a function which outputs a numeric results. Even having an expectation like
+
+```{r eval=FALSE, echo=TRUE}
+expect_is(<my_function>(3, 3, NULL, rexp), "numeric")
+```
+
+is really useful. I can also check for multiple inputs at once. 
+
+Especially as I often have functions that rely on other functions. So changing one can break others really easily if I'm not careful. 
+
+## the autotest challenge
+
+`testthat::` 
+
+
+
+[^1]: R Packages has a great section on [testing](http://r-pkgs.had.co.nz/tests.html), which I myself must study more. 
+[^2]: Is it peculiarly Australian to say _maths_? 
+[^3]: Incidentally, I realised yesterday that because I've been stop-starting this analysis for two years, I wasn't coding it tidy, because _that's the way I'd always done it_. A supervisor asked me about it a few weeks ago, and now I've been turning it over in my head. For no better reason. It's interesting to see what I'm blind to as I learn. Sometimes it would take years of practicing every day for what a piano teacher had said to me to sink in. This was especially true for the technique of slurring. 
