@@ -15,7 +15,6 @@ categories:
   - error handling
   - testing
 bibliography: ../../biblio.bib
-draft: true
 ---
 
 ```{r setup, include=FALSE}

@@ -34,6 +34,24 @@
     "last_modified": "2019-01-05T13:26:07+11:00"
   },
   {
+    "path": "posts/2019-01-05-its-not-not-the-math-its-the-code/",
+    "title": "it's not not the maths, it's the code",
+    "description": "how testing has changed my workflow",
+    "author": [
+      {
+        "name": "Charles T. Gray",
+        "url": {}
+      }
+    ],
+    "date": "2019-01-05",
+    "categories": [
+      "error handling",
+      "testing"
+    ],
+    "preview": {},
+    "last_modified": "2019-01-14T12:23:03+11:00"
+  },
+  {
     "path": "posts/2018-11-17-good-testing-coverage/",
     "title": "good enough testing coverage",
     "description": "What defines good testing coverage in an R analysis?",
