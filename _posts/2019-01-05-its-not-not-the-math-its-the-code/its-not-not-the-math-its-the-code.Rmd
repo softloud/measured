@@ -5,7 +5,7 @@ description: |
 author:
   - name: Charles T. Gray
     url: {}
-date: 01-05-2019
+date: 01-14-2019
 output:
   radix::radix_article:
     self_contained: false
