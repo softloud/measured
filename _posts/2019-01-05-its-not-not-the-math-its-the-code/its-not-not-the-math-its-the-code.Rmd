@@ -1,5 +1,5 @@
 ---
-title: "it's not not the math, it's the code"
+title: "it's not not the maths, it's the code"
 description: |
   how testing has changed my workflow
 author:
@@ -9,6 +9,8 @@ date: 01-05-2019
 output:
   radix::radix_article:
     self_contained: false
+    toc: true
+    toc_float: true
 categories:
   - error handling
   - testing
@@ -20,10 +22,7 @@ draft: true
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
-```{r}
-
-```
-
+## debugging, bane of my existence
 
 As a student of mathematical science, I've worked on projects in various disciplines, from ecology to medicine. I've clocked up about five years of R use. Although the projects have been varied, one constant has been that debugging has disproportionately dominated my time. 
 
@@ -43,7 +42,9 @@ I am trying to finish an analysis at the moment which has some estimators I've c
 
 Testing via `testthat::` enables me to keep track of what I've checked, and rechecks it automatically for me. I've even become a tentative `testthat::auto_test` (sotto robot voce) convert. 
 
-Here's my big revelation so far. Sometimes it's the _code_, not the mathematics. Testing has shown me I should spend as much time worrying about whether my code works as I should about the mathematics. 
+<p><a href="https://en.wikipedia.org/wiki/File:Bender_Rodriguez.png#/media/File:Bender_Rodriguez.png"><img src="https://upload.wikimedia.org/wikipedia/en/a/a6/Bender_Rodriguez.png" alt="Bender Rodriguez.png"></a><br>By Source, <a href="//en.wikipedia.org/wiki/File:Bender_Rodriguez.png" title="Fair use of copyrighted material in the context of Bender (Futurama)">Fair use</a>, <a href="https://en.wikipedia.org/w/index.php?curid=18172404">Link</a></p>
+
+Here's my big revelation so far. Sometimes it's the _code_, not the mathematics. Testing has shown me I should spend as much time worrying about whether my code works structurally as I should about the mathematics. For example, does this function always produce a data.frame? 
 
 Oftimes it's my code that's the problem, not the maths. And sometimes, after all, it's the maths[^2]. Anyway, testing helps with both, at least to some extent. 
 
@@ -87,9 +88,73 @@ is really useful. I can also check for multiple inputs at once.
 
 Especially as I often have functions that rely on other functions. So changing one can break others really easily if I'm not careful. 
 
-## the autotest challenge
+## `auto_test` workflow junkie
 
-`testthat::` 
+`testthat::` has this lovely function `auto_test`. From the documentation,
+
+> The idea behind ‘auto_test()’ is that you just leave it running
+     while you develop your code.  Everytime you save a file it will be
+     automatically tested and you can easily see if your changes have
+     caused any test failures[@wickham_testthat:_2011]. 
+
+For the last week or so, I've been experimenting with developing my analysis this way. Here's what's changed so far:
+
+### console work _is_ testing
+
+I discovered that much of what I do at the console could be written as an [*expectation*](http://r-pkgs.had.co.nz/tests.html). For example, when I run this function, does it return a dataframe? is the kind of question I frequently ask at the console of a function.   
+
+### analyses as functions
+
+I began to write _all_ my code as functions. Not just the bits I want to repeat. I started writing my analyses as functions that have tests associated. 
+
+Previously, I'd followed the rule that if I would need to copy and paste it more than twice, I'd make it a function. 
+
+I'd work from a .Rmd file and run chunks, try bits out. 
+
+The problem with this was I'd feel like I was starting at the start each day, trying to find the issues in the code. 
+
+### honesty is hard
+
+I found I had to not infrequently fight the compulsion to stop `auto_test`, and thus free up the console. But I made it a rule that I had to switch back if what I found myself doing could be phrased as an expectation. I was forced to switch back after a couple of minutes each time. 
+
+Here's the thing. Much of what I do at the console is answer these questions,
+
+- does it run? (or, in the case of data, is it a non-empty thing of `<type>`?)
+- if I put this is in, does it run? 
+- is this in it its output? 
+- is this a number? 
+- a positive number? 
+- a big number? (say, bigger than 1?)
+
+And all of these can be written as expectations. 
+
+For example, here's a commented example from a few days ago. In the past I would have checked these things as I wrote the code, but I've have no record of checking those things. 
+
+
+```{r eval=FALSE, echo=TRUE}
+test_that("simulation parameter set up", {
+  expect_is(meta_df(), "data.frame") # does fn output a dataframe?
+  expect_is(meta_df() %>% pluck("rdist"), "character") # is this variable a string?
+  expect_is(meta_df() %>% pluck("n"), "list") # is this variable a list?
+   # is <column name> a column name in the output of this?
+  expect_true("median_ratio" %in% colnames(meta_df()))
+  expect_true("true_median" %in% colnames(meta_df()))
+  
+  # does changing the value of the argument prop affect the running of the function?
+  expect_is(meta_df(prop = 0.4), "data.frame")
+  expect_is(meta_df(prop = prop), "data.frame")
+})
+```
+
+### workflow changer
+
+By writing tests, I both solve my problem, and keep of log of what I've tried and what works. I find this is especially useful for sanity checks. And that I need a lot more sanity checks (i.e, does this function throw an error?) than I thought I did.  
+
+I'm genuinely startled by how much this has influenced my workflow. I thought I would employ these tools specifically for debugging, troubleshooting a specific error, not for development. 
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/XtTL0A5nhfk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+When my husband asks me what I've been doing at work, I can't help but answer by dancing the robot.
 
 
 
