@@ -1,7 +1,7 @@
 [
   {
     "path": "posts/2019-01-05-its-not-not-the-math-its-the-code/",
-    "title": "it's not not the maths, it's the code",
+    "title": "it's not the maths, it's the code",
     "description": "how testing has changed my workflow",
     "author": [
       {
@@ -15,7 +15,7 @@
       "testing"
     ],
     "preview": {},
-    "last_modified": "2019-01-14T12:25:21+11:00"
+    "last_modified": "2019-01-14T13:23:53+11:00"
   },
   {
     "path": "posts/2019-01-13-curiousity-science-letter/",
@@ -33,23 +33,6 @@
     ],
     "preview": {},
     "last_modified": "2019-01-13T15:55:50+11:00"
-  },
-  {
-    "path": "posts/2019-01-05-collateral/",
-    "title": "collateral",
-    "description": "catching non-convergent models",
-    "author": [
-      {
-        "name": "Charles T. Gray",
-        "url": {}
-      }
-    ],
-    "date": "2019-01-05",
-    "categories": [
-      "error handling"
-    ],
-    "preview": {},
-    "last_modified": "2019-01-05T13:26:07+11:00"
   },
   {
     "path": "posts/2018-11-17-good-testing-coverage/",

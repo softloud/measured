@@ -1,5 +1,5 @@
 ---
-title: "it's not not the maths, it's the code"
+title: "it's not the maths, it's the code"
 description: |
   how testing has changed my workflow
 author:
@@ -49,7 +49,7 @@ Oftimes it's my code that's the problem, not the maths. And sometimes, after all
 
 I was really surprised how useful it was to simply test out that the function returns the expected type of result. I build these algorithms that feel like Rube Goldberg machines by the time I've done with them, and I'm usually not convinced I've not put in several steps for which there was a better shortcut. The things that keep us up at night[^3]. 
 
-I think working testing into my workflow is a lot like learning to ` %>% `. It's arguably harder to learn when a workflow has already been locked in place. I think this is a struggle for R users of all sorts of levels. However, I think this one is a worthy skill in terms of time benefits, just as learning to ` %>% ` saved me so much in debugging. And then some. The ` %>% ` changed my workflow and the structure of my code. I'm surprised to find I can use testing as I build the analysis. 
+I think working testing into my workflow is a lot like learning to ` %>% `. It's arguably harder to learn when a workflow has already been locked in place. I think this is a struggle for R users of all sorts of levels. However, I think testing is a worthy skill in terms of time benefits, just as learning to ` %>% ` saved me so much in debugging. And then some. The ` %>% ` changed my workflow and the structure of my code. I'm surprised to find I can use testing as I build the analysis itself. *I've started using testing all the time.* 
 
 But I don't think the benefits of testing are immediately apparent for mathematical scientists. They weren't for me.   
 
@@ -57,10 +57,10 @@ Simply testing each argument in turn is a great place to start, I discovered. Th
 
 ## the dark days
 
-So, how do I check functions usually? Well, I was writing functions into .Rmd files. Then I'd have a chunk in there. 
-
+So, how do I check functions usually? Well, I was writing functions into .Rmd files. Then I'd have an `eval=FALSE` chunk in there, for these testing parameters.
 
 ```{r eval=FALSE, echo=TRUE}
+
 # test parameters
 sample_size = 3
 par_1 = 3
@@ -70,8 +70,6 @@ rs_fn = rexp
 ```
 
 These would be my testing parameters. I'd set them up in a chunk, so that I could play around with different values. 
-
-In particular, I'd store those values in the environment so I could run particular lines of code and not others. 
 
 The problem with this is it's not reproducible. Most importantly, _by me_. I find it really hard to remember from day to day what I've tested ad hoc, and find myself repeating checks compulsively. 
 
@@ -95,6 +93,8 @@ Especially as I often have functions that rely on other functions. So changing o
      while you develop your code.  Everytime you save a file it will be
      automatically tested and you can easily see if your changes have
      caused any test failures[@wickham_testthat:_2011]. 
+
+A key feature of `testthat::auto_test` is that the console becomes inaccessible, and all tests run automatically. It was a bit terrifying at first, but I started to write all my code with this function running. 
 
 For the last week or so, I've been experimenting with developing my analysis this way. Here's what's changed so far:
 
