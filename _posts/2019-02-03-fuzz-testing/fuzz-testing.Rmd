@@ -72,10 +72,12 @@ And, what about $\pm 1$? It _is_ always a special case because of cancelling eff
 test | equivalence class | `<arg> = `
 - | - | - 
 negative | $[-\infty, 0)$ | `runif(1, -100, -1)`
+-1 |  $[-1,-1]$ |  -1
 small negative | $(-1, 0)$ | `runif(1, -1, 0)`
 0 |  $[0,0]$ |  0
 small positive | $(0, 1)$ | `runif(1, 0, 1)`
-positive | $(0, \infty]$ |  `runif(1, 1, 100)`
+1 |  $[1,1]$ |  1 
+positive | $(1, \infty]$ |  `runif(1, 1, 100)`
 
 ## meh, stop somewhere
 

@@ -1334,7 +1334,8 @@ talks
 # packages
 library(tidyverse)
 library(googlesheets)
-library(lubridate)</code></pre>
+library(lubridate)
+library(latex2exp)</code></pre>
 </div>
 <p>See <a href="https://github.com/softloud/measured/blob/master/index.Rmd">repo</a> for data import script.</p>
 <div class="layout-chunk" data-layout="l-body">
@@ -1352,7 +1353,6 @@ century &lt;- time_tracker %&gt;%
 </div>
 <h2 id="practice-routine">practice routine</h2>
 <p>Aim for one or two hardcore days, two or three moderate, and one or two light days<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a>.</p>
-<h2 id="how-about-the-last-100-days">how about the last 100 days?</h2>
 <div class="layout-chunk" data-layout="l-body">
 <pre class="r"><code>
 # little miss fussy plot parameters
@@ -1362,6 +1362,13 @@ colour = &quot;darkgrey&quot;
 fill = &quot;black&quot;</code></pre>
 </div>
 <h3 id="workload-achieved">workload achieved</h3>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+category_labels &lt;- c(
+  &quot;phi&quot; = &quot;a&quot;,
+  &quot;psi&quot; = &quot;b&quot;,
+  &quot;theta&quot; = &quot;c&quot;)</code></pre>
+</div>
 <p>I want these to be nice and pointy around the dotted line.</p>
 <div class="layout-chunk" data-layout="l-body">
 <pre class="r"><code>
@@ -1369,7 +1376,8 @@ time_tracker %&gt;%
   filter(date &gt;= today() - 99) %&gt;%
   ggplot(aes(x = hrs)) +
   geom_vline(linetype = &quot;dotted&quot;, xintercept = 4 / 3) +
-  geom_density(alpha = alpha,
+  geom_density(alpha 
+               = alpha,
                colour = colour,
                fill = fill) +
   facet_grid( ~ category, scales = &quot;free&quot;) </code></pre>
@@ -1400,7 +1408,7 @@ time_tracker %&gt;%
                colour = colour,
                fill = fill) +
   facet_grid(category ~ month, scales = &quot;free&quot;) +
-  labs(title = &quot;2018&quot;,
+  labs(title = &quot;2019&quot;,
        caption = &quot;&quot;)</code></pre>
 <p><img src="index_files/figure-html5/unnamed-chunk-3-2.png" width="624" /></p>
 </div>

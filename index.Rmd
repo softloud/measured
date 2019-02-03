@@ -35,13 +35,13 @@ For a sanity, efficiency, and inspiration, I intend to balance my time between t
 library(tidyverse)
 library(googlesheets)
 library(lubridate)
-
+library(latex2exp)
 
 ```
 
 See [repo](https://github.com/softloud/measured/blob/master/index.Rmd) for data import script.
 
-```{r import, echo=FALSE}
+```{r import, echo=FALSE, eval=TRUE}
 # import
 
 # import time tracker data (exported manually from iphone app atracker)
@@ -120,12 +120,8 @@ century <- time_tracker %>%
 
 Aim for one or two hardcore days, two or three moderate, and one or two light days[^2]. 
 
-
-
-
-## how about the last 100 days?
-
 ```{r geom parameters}
+
 
 # little miss fussy plot parameters
 
@@ -138,6 +134,16 @@ fill = "black"
 
 ### workload achieved
 
+```{r labelling ggplots}
+category_labels <- c(
+  "phi" = "a",
+  "psi" = "b",
+  "theta" = "c")
+
+
+```
+
+
 I want these to be nice and pointy around the dotted line.
 
 ```{r}
@@ -145,7 +151,8 @@ time_tracker %>%
   filter(date >= today() - 99) %>%
   ggplot(aes(x = hrs)) +
   geom_vline(linetype = "dotted", xintercept = 4 / 3) +
-  geom_density(alpha = alpha,
+  geom_density(alpha 
+               = alpha,
                colour = colour,
                fill = fill) +
   facet_grid( ~ category, scales = "free") 
@@ -180,7 +187,7 @@ time_tracker %>%
                colour = colour,
                fill = fill) +
   facet_grid(category ~ month, scales = "free") +
-  labs(title = "2018",
+  labs(title = "2019",
        caption = "")
 
 ```
