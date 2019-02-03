@@ -7,7 +7,15 @@
     <description>A one-time trophy bitch screams into the void. 
 </description>
     <generator>Radix</generator>
-    <lastBuildDate>Mon, 14 Jan 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 02 Feb 2019 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>fuzz testing</title>
+      <dc:creator>Charles T. Gray</dc:creator>
+      <link>https://fervent-hypatia-7b7343.netlify.com/posts/2019-02-03-fuzz-testing</link>
+      <description>a neat testing concept</description>
+      <guid>https://fervent-hypatia-7b7343.netlify.com/posts/2019-02-03-fuzz-testing</guid>
+      <pubDate>Sat, 02 Feb 2019 00:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>it's not the maths, it's the code</title>
       <dc:creator>Charles T. Gray</dc:creator>
@@ -23,14 +31,6 @@
       <description>Curiosity Science asked me to write a letter</description>
       <guid>https://fervent-hypatia-7b7343.netlify.com/posts/2019-01-13-curiousity-science-letter</guid>
       <pubDate>Sun, 13 Jan 2019 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>good enough testing coverage</title>
-      <dc:creator>Charles T. Gray</dc:creator>
-      <link>https://fervent-hypatia-7b7343.netlify.com/posts/2018-11-17-good-testing-coverage</link>
-      <description>What defines good testing coverage in an R analysis?</description>
-      <guid>https://fervent-hypatia-7b7343.netlify.com/posts/2018-11-17-good-testing-coverage</guid>
-      <pubDate>Sun, 30 Dec 2018 00:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>

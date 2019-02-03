@@ -380,8 +380,9 @@
   
   </style>
   
-  <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet"/>
-  <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet"/>
+  <link href="site_libs/font-awesome-5.0.13/css/fa-svg-with-js.css" rel="stylesheet"/>
+  <script src="site_libs/font-awesome-5.0.13/js/fontawesome-all.min.js"></script>
+  <script src="site_libs/font-awesome-5.0.13/js/fa-v4-shims.min.js"></script>
   <script src="site_libs/headroom-0.9.4/headroom.min.js"></script>
   <!--/radix_placeholder_navigation_in_header-->
   <!--radix_placeholder_distill-->
@@ -1298,16 +1299,7 @@ talks
 <a href="talks/replication/marseille-2018.html">marseille - 2018</a>
 </div>
 </div>
-<div class="nav-dropdown">
-<button class="nav-dropbtn">
-projects
- 
-<span class="down-arrow">&#x25BE;</span>
-</button>
-<div class="nav-dropdown-content">
-<a href="chapter-five.html">chapter five</a>
-</div>
-</div>
+<span class="nav-dropdown-header">projects</span>
 <a href="javascript:void(0);" class="nav-toggle">&#9776;</a>
 </div>
 </nav>
@@ -1635,6 +1627,17 @@ function init_posts_list() {
 <div class="posts-container posts-with-sidebar posts-apply-limit l-screen-inset">
 <div class="posts-list">
 <h1 class="posts-list-caption">blog</h1>
+<a href="posts/2019-02-03-fuzz-testing/" class="post-preview">
+<script class="post-metadata" type="text/json">{"categories":["testing"]}</script>
+<div class="metadata">
+<div class="publishedDate">Feb. 2, 2019</div>
+</div>
+<div class="thumbnail"></div>
+<div class="description">
+<h2>fuzz testing</h2>
+<p>a neat testing concept</p>
+</div>
+</a>
 <a href="posts/2019-01-05-its-not-not-the-math-its-the-code/" class="post-preview">
 <script class="post-metadata" type="text/json">{"categories":["error handling","testing"]}</script>
 <div class="metadata">
@@ -1822,7 +1825,7 @@ function init_posts_list() {
 </li>
 <li>
 <a href="#testing">testing</a>
-<span class="category-count">(3)</span>
+<span class="category-count">(4)</span>
 </li>
 </ul>
 </div>
