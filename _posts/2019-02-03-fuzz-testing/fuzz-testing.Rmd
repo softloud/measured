@@ -89,4 +89,4 @@ Finally, the good news is that other types are easier to partition. Logicals hav
 
 ## fuzz testing
 
-I pestered the author of the primers I was working through, Greg Wislon, with these thoughts, and he put me onto this concept of [fuzz testing](https://en.wikipedia.org/wiki/Fuzzing). 
+I pestered the author of the primers I was working through, Greg Wilson, with these thoughts, and he put me onto this concept of [fuzz testing](https://en.wikipedia.org/wiki/Fuzzing). 
