@@ -56,10 +56,8 @@ measures <- gs_title("measures")
 
 ```{r packages and data, echo=FALSE, message=FALSE}
 
-# 
-
 # daily totals
-time_tracker <- time_tracker_raw %>% 
+time_tracker <- time_tracker_raw %>%
   # tidy column names
   rename(
     task = `Task name`,
@@ -72,32 +70,34 @@ time_tracker <- time_tracker_raw %>%
     category = Category
   ) %>%
   mutate(
-  # get date object, as I'll want to do things by day
+    # get date object, as I'll want to do things by day
     start = dmy_hm(start),
     finish = dmy_hm(finish),
     date = date(start),
-    month = month(start)) %>% 
-  filter(category != "wellness") %>% 
-  select(-note,-description) %>%
+    month = month(start)
+  ) %>%
+  filter(category != "wellness") %>%
+  select(-note, -description) %>%
   group_by(date, category) %>%
   summarise(hrs = sum(duration_hrs)) %>%
   mutate(month = month(date, label = TRUE, abbr = FALSE),
-         year = year(date)) 
+         year = year(date))
+
 
 
 # extract daily record
-daily <- measures %>% 
-  gs_read(ws = "daily_record") %>% 
+daily <- measures %>%
+  gs_read(ws = "daily_record") %>%
   mutate(date = ymd(date))
-operations <- measures %>% 
-  gs_read(ws = "operations") %>% 
+operations <- measures %>%
+  gs_read(ws = "operations") %>%
   mutate(initiated = ymd(initiated))
 
 # workload definitions
-workload_key <- measures %>% 
-  gs_read(ws = "workload") %>% 
-  select(-phi, -theta, -psi, -exercise) %>% 
-  gather(key = "category", value = "hrs_goal", -workload) %>% 
+workload_key <- measures %>%
+  gs_read(ws = "workload") %>%
+  select(-phi, -theta, -psi, -exercise) %>%
+  gather(key = "category", value = "hrs_goal", -workload) %>%
   separate(category, into = "category", sep = "_")
 
 
@@ -106,8 +106,8 @@ workload_key <- measures %>%
 ## how have I done over the last 100 days? 
 
 ```{r workload achieved}
-century <- time_tracker %>% 
-  filter(date >= (today() - 100)) %>% 
+century <- time_tracker %>%
+  filter(date >= (today() - 100)) %>%
   left_join(workload_key, by = "category")
 
 
@@ -125,15 +125,28 @@ Aim for one or two hardcore days, two or three moderate, and one or two light da
 
 ## how about the last 100 days?
 
+```{r geom parameters}
+
+# little miss fussy plot parameters
+
+alpha = 0.4
+colour = "darkgrey"
+fill = "black"
+
+```
+
+
 ### workload achieved
 
 ```{r}
 time_tracker %>%
-  filter(date >= today() - 99) %>% 
+  filter(date >= today() - 99) %>%
   ggplot(aes(x = hrs)) +
   geom_vline(linetype = "dotted", xintercept = 4 / 3) +
-  geom_density(alpha = 0.7, colour = "darkgrey", fill = "darkgrey") +
-  facet_grid(~ category, scales = "free") 
+  geom_density(alpha = alpha,
+               colour = colour,
+               fill = fill) +
+  facet_grid( ~ category, scales = "free") 
   
 ```
 
@@ -143,21 +156,28 @@ time_tracker %>%
 
 ```{r}
 
+
 # 2018
 time_tracker %>%
-  filter(year == 2018, month(date) > 7) %>% 
-  ggplot(aes(x = hrs)) + 
- geom_vline(linetype = "dotted", xintercept = 4 / 3) +
-  geom_density(alpha = 0.7, colour = "darkgrey", fill = "darkgrey") +  facet_grid(category ~ month, scales = "free") +
+  filter(year == 2018, month(date) > 7) %>%
+  ggplot(aes(x = hrs)) +
+  geom_vline(linetype = "dotted", xintercept = 4 / 3) +
+  geom_density(alpha = alpha,
+               colour = colour,
+               fill = fill) +
+  facet_grid(category ~ month, scales = "free") +
   labs(title = "2018",
        caption = "test")
 
 # 2019
 time_tracker %>%
-  filter(year == 2019) %>% 
-    ggplot(aes(x = hrs)) + 
- geom_vline(linetype = "dotted", xintercept = 4 / 3) +
-  geom_density(alpha = 0.7, colour = "darkgrey", fill = "darkgrey") +  facet_grid(category ~ month, scales = "free") +
+  filter(year == 2019) %>%
+  ggplot(aes(x = hrs)) +
+  geom_vline(linetype = "dotted", xintercept = 4 / 3) +
+  geom_density(alpha = alpha,
+               colour = colour,
+               fill = fill) +
+  facet_grid(category ~ month, scales = "free") +
   labs(title = "2018",
        caption = "")
 
