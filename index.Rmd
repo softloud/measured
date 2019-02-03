@@ -14,7 +14,7 @@ site: radix::radix_website
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE, 
                       # eval = FALSE, 
-                      cache = TRUE)
+                      cache = FALSE)
 ```
 
 What if one practices mathematical science like music?
@@ -130,9 +130,11 @@ Aim for one or two hardcore days, two or three moderate, and one or two light da
 ```{r}
 time_tracker %>%
   filter(date >= today() - 99) %>% 
-  ggplot(aes(x = hrs)) + 
-  geom_density() +
-  facet_grid(~ category, scales = "free")
+  ggplot(aes(x = hrs)) +
+  geom_vline(linetype = "dotted", xintercept = 4 / 3) +
+  geom_density(alpha = 0.7, colour = "darkgrey", fill = "darkgrey") +
+  facet_grid(~ category, scales = "free") 
+  
 ```
 
 
@@ -145,8 +147,8 @@ time_tracker %>%
 time_tracker %>%
   filter(year == 2018, month(date) > 7) %>% 
   ggplot(aes(x = hrs)) + 
-  geom_density() +
-  facet_grid(category ~ month, scales = "free") +
+ geom_vline(linetype = "dotted", xintercept = 4 / 3) +
+  geom_density(alpha = 0.7, colour = "darkgrey", fill = "darkgrey") +  facet_grid(category ~ month, scales = "free") +
   labs(title = "2018",
        caption = "test")
 
@@ -154,8 +156,8 @@ time_tracker %>%
 time_tracker %>%
   filter(year == 2019) %>% 
     ggplot(aes(x = hrs)) + 
-  geom_density() +
-  facet_grid(category ~ month, scales = "free") +
+ geom_vline(linetype = "dotted", xintercept = 4 / 3) +
+  geom_density(alpha = 0.7, colour = "darkgrey", fill = "darkgrey") +  facet_grid(category ~ month, scales = "free") +
   labs(title = "2018",
        caption = "")
 

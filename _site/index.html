@@ -1358,9 +1358,10 @@ century &lt;- time_tracker %&gt;%
 <pre class="r"><code>
 time_tracker %&gt;%
   filter(date &gt;= today() - 99) %&gt;% 
-  ggplot(aes(x = hrs)) + 
-  geom_density() +
-  facet_grid(~ category, scales = &quot;free&quot;)</code></pre>
+  ggplot(aes(x = hrs)) +
+  geom_vline(linetype = &quot;dotted&quot;, xintercept = 4 / 3) +
+  geom_density(alpha = 0.7, colour = &quot;darkgrey&quot;, fill = &quot;darkgrey&quot;) +
+  facet_grid(~ category, scales = &quot;free&quot;) </code></pre>
 <p><img src="index_files/figure-html5/unnamed-chunk-2-1.png" width="624" /></p>
 </div>
 <h2 id="monthly-distributions">monthly distributions</h2>
@@ -1370,8 +1371,8 @@ time_tracker %&gt;%
 time_tracker %&gt;%
   filter(year == 2018, month(date) &gt; 7) %&gt;% 
   ggplot(aes(x = hrs)) + 
-  geom_density() +
-  facet_grid(category ~ month, scales = &quot;free&quot;) +
+ geom_vline(linetype = &quot;dotted&quot;, xintercept = 4 / 3) +
+  geom_density(alpha = 0.7, colour = &quot;darkgrey&quot;, fill = &quot;darkgrey&quot;) +  facet_grid(category ~ month, scales = &quot;free&quot;) +
   labs(title = &quot;2018&quot;,
        caption = &quot;test&quot;)</code></pre>
 <p><img src="index_files/figure-html5/unnamed-chunk-3-1.png" width="624" /></p>
@@ -1380,8 +1381,8 @@ time_tracker %&gt;%
 time_tracker %&gt;%
   filter(year == 2019) %&gt;% 
     ggplot(aes(x = hrs)) + 
-  geom_density() +
-  facet_grid(category ~ month, scales = &quot;free&quot;) +
+ geom_vline(linetype = &quot;dotted&quot;, xintercept = 4 / 3) +
+  geom_density(alpha = 0.7, colour = &quot;darkgrey&quot;, fill = &quot;darkgrey&quot;) +  facet_grid(category ~ month, scales = &quot;free&quot;) +
   labs(title = &quot;2018&quot;,
        caption = &quot;&quot;)</code></pre>
 <p><img src="index_files/figure-html5/unnamed-chunk-3-2.png" width="624" /></p>
