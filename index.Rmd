@@ -136,7 +136,7 @@ fill = "black"
 
 ```{r labelling ggplots}
 category_labels <- c(
-  "phi" = "a",
+  "phi" = "phi",
   "psi" = "b",
   "theta" = "c")
 
@@ -148,14 +148,15 @@ I want these to be nice and pointy around the dotted line.
 
 ```{r}
 time_tracker %>%
-  filter(date >= today() - 99) %>%
+  filter(date >= today() - 99) %>% 
+  mutate(category = if_else(category == "phi", "Phi", category)) %>% 
   ggplot(aes(x = hrs)) +
   geom_vline(linetype = "dotted", xintercept = 4 / 3) +
   geom_density(alpha 
                = alpha,
                colour = colour,
                fill = fill) +
-  facet_grid( ~ category, scales = "free") 
+  facet_grid( ~ category, scales = "free", labeller = label_parsed) 
   
 ```
 
@@ -174,7 +175,8 @@ time_tracker %>%
   geom_density(alpha = alpha,
                colour = colour,
                fill = fill) +
-  facet_grid(category ~ month, scales = "free") +
+  facet_grid(category ~ month, scales = "free", 
+             labeller = label_parsed) +
   labs(title = "2018",
        caption = "test")
 
@@ -186,7 +188,7 @@ time_tracker %>%
   geom_density(alpha = alpha,
                colour = colour,
                fill = fill) +
-  facet_grid(category ~ month, scales = "free") +
+  facet_grid(category ~ month, scales = "free", labeller = label_parsed) +
   labs(title = "2019",
        caption = "")
 

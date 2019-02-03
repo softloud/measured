@@ -1365,7 +1365,7 @@ fill = &quot;black&quot;</code></pre>
 <div class="layout-chunk" data-layout="l-body">
 <pre class="r"><code>
 category_labels &lt;- c(
-  &quot;phi&quot; = &quot;a&quot;,
+  &quot;phi&quot; = &quot;phi&quot;,
   &quot;psi&quot; = &quot;b&quot;,
   &quot;theta&quot; = &quot;c&quot;)</code></pre>
 </div>
@@ -1373,14 +1373,15 @@ category_labels &lt;- c(
 <div class="layout-chunk" data-layout="l-body">
 <pre class="r"><code>
 time_tracker %&gt;%
-  filter(date &gt;= today() - 99) %&gt;%
+  filter(date &gt;= today() - 99) %&gt;% 
+  mutate(category = if_else(category == &quot;phi&quot;, &quot;Phi&quot;, category)) %&gt;% 
   ggplot(aes(x = hrs)) +
   geom_vline(linetype = &quot;dotted&quot;, xintercept = 4 / 3) +
   geom_density(alpha 
                = alpha,
                colour = colour,
                fill = fill) +
-  facet_grid( ~ category, scales = &quot;free&quot;) </code></pre>
+  facet_grid( ~ category, scales = &quot;free&quot;, labeller = label_parsed) </code></pre>
 <p><img src="index_files/figure-html5/unnamed-chunk-2-1.png" width="624" /></p>
 </div>
 <h2 id="monthly-distributions">monthly distributions</h2>
@@ -1394,7 +1395,8 @@ time_tracker %&gt;%
   geom_density(alpha = alpha,
                colour = colour,
                fill = fill) +
-  facet_grid(category ~ month, scales = &quot;free&quot;) +
+  facet_grid(category ~ month, scales = &quot;free&quot;, 
+             labeller = label_parsed) +
   labs(title = &quot;2018&quot;,
        caption = &quot;test&quot;)</code></pre>
 <p><img src="index_files/figure-html5/unnamed-chunk-3-1.png" width="624" /></p>
@@ -1407,7 +1409,7 @@ time_tracker %&gt;%
   geom_density(alpha = alpha,
                colour = colour,
                fill = fill) +
-  facet_grid(category ~ month, scales = &quot;free&quot;) +
+  facet_grid(category ~ month, scales = &quot;free&quot;, labeller = label_parsed) +
   labs(title = &quot;2019&quot;,
        caption = &quot;&quot;)</code></pre>
 <p><img src="index_files/figure-html5/unnamed-chunk-3-2.png" width="624" /></p>
