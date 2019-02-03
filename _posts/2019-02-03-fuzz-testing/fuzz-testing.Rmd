@@ -22,7 +22,7 @@ knitr::opts_chunk$set(echo = TRUE, message = FALSE)
 
 Came across this neat testing concept recently, _fuzz testing_. 
 
-I was working through some primers on testing, I got to thinking about [equivalence class partitioning](https://en.wikipedia.org/wiki/Equivalence_class) in algebra (I had a proof on equivalence class partitions in my thesis) as a means of exploring the question, for what values of `<type>` does my function `<fn>` run? 
+I was working through some primers on testing,  I got to thinking about [equivalence class partitioning](https://en.wikipedia.org/wiki/Equivalence_class) in algebra (I had a proof on equivalence class partitions in my thesis) as a means of exploring the question, for what values of `<type>` does my function `<fn>` run? 
 
 Anyway, I got to thinking it may well not entirely be clear to another user what assumptions were made. And these things can **matter**. For me, it's often the difference between whether my code runs or not. 
 
@@ -87,3 +87,6 @@ So what I like about this is my tests make it clear what contingences I've prepa
 
 Finally, the good news is that other types are easier to partition. Logicals have only `TRUE` and `FALSE` inputs. 
 
+## fuzz testing
+
+I pestered the author of the primers I was working through, Greg Wislon, with these thoughts, and he put me onto this concept of [fuzz testing](https://en.wikipedia.org/wiki/Fuzzing). 
