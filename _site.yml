@@ -25,6 +25,6 @@ navbar:
           href: talks/replication/marseille-2018.html
     - text: "projects"
       menu:
-      - text: "chapter five"
-        href: chapter-five.html
+      # - text: "chapter five"
+      #   href: chapter-five.html
 output: radix::radix_article

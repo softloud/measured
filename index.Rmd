@@ -12,116 +12,152 @@ site: radix::radix_website
 
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE, eval = FALSE)
+knitr::opts_chunk$set(echo = TRUE, 
+                      # eval = FALSE, 
+                      cache = TRUE)
 ```
 
 What if one practices mathematical science like music?
 
 My goal is to spend four hours a day on *work with intent*[^1].
 
-[^1]: This term is adopted from a piano teacher that I studied under, that I subsequently adapted into my own teaching. She encouraged me to *practice with intent*; that is, play what you intend to play. I found this to be particularly useful for discouraging my students, and myself, from the age-old pitfall of playing a piece of music until you make a mistake and stopping and playing that section over until you get it right. It's better to play *through* the piece, which empowers you to adapt to mistakes you will inevitably play and, most importantly, not lose time. Oddly, it appeared to be a universal misconception, myself included, that without careful consideration, the attempt to *get the notes right* inevitably means the **rhythm is wrong**, and thus you get nothing right after all. Best, therefore, to play through the piece.    
+For a sanity, efficiency, and inspiration, I intend to balance my time between three categories: 
 
-```{r get data, echo=TRUE}
+- research, $\Phi$; 
+- skills, $\theta$; and 
+- administrative tasks, $\psi$.
+
+
+## load packages and get data
+
+```{r}
 # packages
 library(tidyverse)
+library(googlesheets)
+library(lubridate)
 
-# get data
-tracker_data <- readr::read_csv("") %>%
-  # tidy up columns
-  rename(start = `Start time`,
-         end = `End time`,
-         duration = Duration,
-         hours = `Duration in hours`,
-         category = Category,
-         project = `Task name`) %>%
-  # drop things unused features
-  select(-`Task description`, -Note) %>% 
-  # convert dates to date objects in R
-  mutate(start = lubridate::dmy_hm(start),
-         end = lubridate::dmy_hm(end),
-         duration = lubridate::as.duration(duration),
-         day = lubridate::day(start),
-         month = lubridate::month(start, label = TRUE, abbr = FALSE) %>% 
-           fct_drop(), # drop month levels with no values 
-         date = lubridate::date(start),
-         category = map_chr(category, .f = function(x) {
-           switch(x,
-                  "Research" = "research",
-                  "Busywork" = "busywork",
-                  "Skills" = "skills",
-                  "Wellness" = "wellness",
-                  x)
-         })) 
 
 ```
 
-### for each month, how many hours a day?
+See [repo](https://github.com/softloud/measured/blob/master/index.Rmd) for data import script.
 
-```{r echo=TRUE}
-# plot monthly distributions
-tracker_data %>% 
-  filter(category != "wellness") %>%  # for now, need to join in calendar and munge yoga
-  group_by(date, month) %>% 
-  summarise(time = sum(duration) / 3600) %>%
-  filter(time != 0) %>% 
-   ggplot(aes(x = time)) +
-  geom_vline(xintercept = 4, linetype = "dotted") +
-  geom_histogram(bins = 5) +
-  facet_grid(month ~ .) 
+```{r import, echo=FALSE}
+# import
 
-```
+# import time tracker data (exported manually from iphone app atracker)
+time_tracker_raw <- read_csv("~/Downloads/Details-20170101-20190228.csv")
 
-## for each month how many hours a day for each category? 
+# import measures (googlesheet where I track things manually)
+measures <- gs_title("measures")
 
-
-```{r echo=TRUE}
-# plot monthly by category distributions
-tracker_data %>% 
-  group_by(date, category, month) %>% 
-  summarise(time = sum(duration) / 3600) %>%
-  filter(category != "wellness", time != 0) %>%  # for now, need to join in calendar and munge yoga
-  ggplot(aes(x = time)) +
-  geom_vline(xintercept = 1.3, linetype = "dotted") +
-  geom_histogram(bins = 10) +
-  facet_grid(month ~ category)
-
+ 
 ```
 
 
-## over time? 
+```{r packages and data, echo=FALSE, message=FALSE}
+
+# 
+
+# daily totals
+time_tracker <- time_tracker_raw %>% 
+  # tidy column names
+  rename(
+    task = `Task name`,
+    description = `Task description`,
+    start = `Start time`,
+    finish = `End time`,
+    duration = Duration,
+    duration_hrs = `Duration in hours`,
+    note = Note,
+    category = Category
+  ) %>%
+  mutate(
+  # get date object, as I'll want to do things by day
+    start = dmy_hm(start),
+    finish = dmy_hm(finish),
+    date = date(start),
+    month = month(start)) %>% 
+  filter(category != "wellness") %>% 
+  select(-note,-description) %>%
+  group_by(date, category) %>%
+  summarise(hrs = sum(duration_hrs)) %>%
+  mutate(month = month(date, label = TRUE, abbr = FALSE),
+         year = year(date)) 
 
 
-```{r echo=TRUE}
-wes_palette = "Moonrise2"
-point_alpha = 0.6
-point_size = 3
+# extract daily record
+daily <- measures %>% 
+  gs_read(ws = "daily_record") %>% 
+  mutate(date = ymd(date))
+operations <- measures %>% 
+  gs_read(ws = "operations") %>% 
+  mutate(initiated = ymd(initiated))
 
-# plot monthly by category distributions
-tracker_data %>% 
-  filter(category != "wellness") %>%  # for now, need to join in calendar and munge yoga
-  group_by(day, month) %>% 
-  summarise(time = sum(duration) / 3600) %>% 
-  mutate(goal = time  > 4) %>% 
-  ggplot(aes(x = day, y = time)) +
-  geom_line() +
-  geom_point(aes(colour = goal), alpha = point_alpha, size = point_size) +
-  scale_color_manual(values=wesanderson::wes_palette(n=2, name= wes_palette)) +
-  geom_hline(yintercept = 4, linetype = "dotted") +
-  facet_grid(month ~ .) 
+# workload definitions
+workload_key <- measures %>% 
+  gs_read(ws = "workload") %>% 
+  select(-phi, -theta, -psi, -exercise) %>% 
+  gather(key = "category", value = "hrs_goal", -workload) %>% 
+  separate(category, into = "category", sep = "_")
 
-# with categories
-tracker_data %>% 
-  filter(category != "wellness") %>%  # for now, need to join in calendar and munge yoga
-  group_by(day, month, category) %>% 
-  summarise(time = sum(duration) / 3600) %>% 
-  mutate(goal = time  > 1.3) %>% 
-  ggplot(aes(x = day, y = time)) +
-  geom_line() +
-  geom_point(aes(colour = goal), alpha = point_alpha, size = point_size / 1.5) +
-  scale_color_manual(values=wesanderson::wes_palette(n=2, name= wes_palette)) +
-  geom_hline(yintercept = 1.3, linetype = "dotted") +
-  facet_grid(month ~ category) 
 
+```
+
+## how have I done over the last 100 days? 
+
+```{r workload achieved}
+century <- time_tracker %>% 
+  filter(date >= (today() - 100)) %>% 
+  left_join(workload_key, by = "category")
+
+
+
+
+```
+
+
+## practice routine
+
+Aim for one or two hardcore days, two or three moderate, and one or two light days[^2]. 
+
+
+
+
+## how about the last 100 days?
+
+### workload achieved
+
+```{r}
+time_tracker %>%
+  filter(date >= today() - 99) %>% 
+  ggplot(aes(x = hrs)) + 
+  geom_density() +
+  facet_grid(~ category, scales = "free")
+```
+
+
+
+## monthly distributions 
+
+```{r}
+
+# 2018
+time_tracker %>%
+  filter(year == 2018, month(date) > 7) %>% 
+  ggplot(aes(x = hrs)) + 
+  geom_density() +
+  facet_grid(category ~ month, scales = "free") +
+  labs(title = "2018",
+       caption = "test")
+
+# 2019
+time_tracker %>%
+  filter(year == 2019) %>% 
+    ggplot(aes(x = hrs)) + 
+  geom_density() +
+  facet_grid(category ~ month, scales = "free") +
+  labs(title = "2018",
+       caption = "")
 
 ```
 
@@ -132,7 +168,11 @@ I use a combination of gtd, pomodoros, and bullet journaling in my productivity 
 
 And a toy elephant, along with a [digraph](https://en.wikipedia.org/wiki/Directed_graph).
 
-
 ***
 
 *Work in progress.*
+
+[^1]: This term is adopted from a piano teacher that I studied under, that I subsequently adapted into my own teaching. She encouraged me to *practice with intent*; that is, play what you intend to play. I found this to be particularly useful for discouraging my students, and myself, from the age-old pitfall of playing a piece of music until you make a mistake and stopping and playing that section over until you get it right. It's better to play *through* the piece, which empowers you to adapt to mistakes you will inevitably play and, most importantly, not lose time. Oddly, it appeared to be a universal misconception, myself included, that without careful consideration, the attempt to *get the notes right* inevitably means the **rhythm is wrong**, and thus you get nothing right after all. Best, therefore, to play through the piece.    
+
+
+[^2]: I would tell my piano students to have a sense of a what light day is, what a moderate workload, and what a hardcore day looks like. If I get locked in with the impression that a hardcore workload day is the norm, then I get deflated and start avoiding doing work altogether. It feels insurmountable. Instead, I would advise them to expect days where you don't want to do anything at all. I recently experienced this. I discovered I was not meeting my defintion of a light workload (12 poms). I now realise that waas too ambitious. I was missing entire days of work. I redefined my light workload as a moderate workload, and am now hitting hardcore goals some days. 
