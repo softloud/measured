@@ -138,6 +138,8 @@ fill = "black"
 
 ### workload achieved
 
+I want these to be nice and pointy around the dotted line.
+
 ```{r}
 time_tracker %>%
   filter(date >= today() - 99) %>%
