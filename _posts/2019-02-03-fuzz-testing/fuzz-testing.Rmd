@@ -92,3 +92,28 @@ Finally, the good news is that other types are easier to partition. Logicals hav
 ## fuzz testing
 
 I pestered the author of the primers I was working through, Greg Wilson, with these thoughts, and he put me onto this concept of [fuzz testing](https://en.wikipedia.org/wiki/Fuzzing). 
+
+## update: reproducibility
+
+Something I forgot to mention in this post, that came up in discussion when I posted this to twitter was reproducibility. How to ensure another can reproduce my results, and, in particular, my errors. Especially when I need help. And I always need help.
+
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">If you&#39;re using random numbers though, how do you know what value caused a failure? So you set the seed in each test file, maybe by date?</p>&mdash; Heather Turner (@HeathrTurnr) <a href="https://twitter.com/HeathrTurnr/status/1092338359182258176?ref_src=twsrc%5Etfw">February 4, 2019</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+```{r eval=FALSE}
+# include this at the top of your testing script for reproducibility
+set.seed(<pick a number>)
+```
+
+![](chat.png)
+
+## a question
+
+Heather Turner raised a question, that I myself also wondered about.
+
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Takes away the randomness though, which might be useful here. Something related to current date/time may be better as long as the expected result is still predictable.</p>&mdash; Heather Turner (@HeathrTurnr) <a href="https://twitter.com/HeathrTurnr/status/1092345228495912960?ref_src=twsrc%5Etfw">February 4, 2019</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+My current solution is to remove `set.seed` at the moment, while I'm playing around with the functions, but to use `set.seed` when I'm collaborating. And intend to set it for publication, but that's a fair more testing aways as of yet. 
+
+I'm curious whether people, especially with development training, have insight? 

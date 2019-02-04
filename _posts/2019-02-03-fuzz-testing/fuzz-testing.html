@@ -49,7 +49,7 @@
   <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["fuzz-testing_files/bowser-1.9.3/bowser.min.js","fuzz-testing_files/distill-2.2.21/template.v2.js","fuzz-testing_files/jquery-1.11.3/jquery.min.js","fuzz-testing_files/webcomponents-2.0.0/webcomponents.js"]}
+  {"type":"character","attributes":{},"value":["chat.png","fuzz-testing_files/bowser-1.9.3/bowser.min.js","fuzz-testing_files/distill-2.2.21/template.v2.js","fuzz-testing_files/jquery-1.11.3/jquery.min.js","fuzz-testing_files/webcomponents-2.0.0/webcomponents.js"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
   <!--/radix_placeholder_navigation_in_header-->
@@ -1071,6 +1071,32 @@ In runif(1, -Inf) : NAs produced</code></pre>
 <p>Finally, the good news is that other types are easier to partition. Logicals have only <code>TRUE</code> and <code>FALSE</code> inputs.</p>
 <h2 id="fuzz-testing">fuzz testing</h2>
 <p>I pestered the author of the primers I was working through, Greg Wilson, with these thoughts, and he put me onto this concept of <a href="https://en.wikipedia.org/wiki/Fuzzing">fuzz testing</a>.</p>
+<h2 id="update-reproducibility">update: reproducibility</h2>
+<p>Something I forgot to mention in this post, that came up in discussion when I posted this to twitter was reproducibility. How to ensure another can reproduce my results, and, in particular, my errors. Especially when I need help. And I always need help.</p>
+<blockquote class="twitter-tweet" data-lang="en">
+<p lang="en" dir="ltr">
+If you're using random numbers though, how do you know what value caused a failure? So you set the seed in each test file, maybe by date?
+</p>
+— Heather Turner (<span class="citation" data-cites="HeathrTurnr">@HeathrTurnr</span>) <a href="https://twitter.com/HeathrTurnr/status/1092338359182258176?ref_src=twsrc%5Etfw">February 4, 2019</a>
+</blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+# include this at the top of your testing script for reproducibility
+set.seed(&lt;pick a number&gt;)</code></pre>
+</div>
+<p><img src="chat.png" /></p>
+<h2 id="a-question">a question</h2>
+<p>Heather Turner raised a question, that I myself also wondered about.</p>
+<blockquote class="twitter-tweet" data-lang="en">
+<p lang="en" dir="ltr">
+Takes away the randomness though, which might be useful here. Something related to current date/time may be better as long as the expected result is still predictable.
+</p>
+— Heather Turner (<span class="citation" data-cites="HeathrTurnr">@HeathrTurnr</span>) <a href="https://twitter.com/HeathrTurnr/status/1092345228495912960?ref_src=twsrc%5Etfw">February 4, 2019</a>
+</blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<p>My current solution is to remove <code>set.seed</code> at the moment, while I’m playing around with the functions, but to use <code>set.seed</code> when I’m collaborating. And intend to set it for publication, but that’s a fair more testing aways as of yet.</p>
+<p>I’m curious whether people, especially with development training, have insight?</p>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>

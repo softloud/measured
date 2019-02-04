@@ -134,18 +134,8 @@ fill = "black"
 
 ### workload achieved
 
-```{r labelling ggplots}
-category_labels <- c(
-  "phi" = "phi",
-  "psi" = "b",
-  "theta" = "c")
-
-
-```
-
-
 I want these to be nice and pointy around the dotted line.
-
+                   
 ```{r}
 time_tracker %>%
   filter(date >= today() - 99) %>% 
@@ -164,8 +154,8 @@ time_tracker %>%
 
 ## monthly distributions 
 
-```{r}
 
+```{r}
 
 # 2018
 time_tracker %>%
