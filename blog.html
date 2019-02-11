@@ -7,6 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"/>
   <meta name="generator" content="radix" />
+  <link rel="alternate" type="application/rss+xml" href="https://fervent-hypatia-7b7343.netlify.com/blog.xml" />
 
   <style type="text/css">
   /* Hide doc at startup (prevent jankiness while JS renders/transforms) */
@@ -19,39 +20,370 @@
  <!--/radix_placeholder_import_source-->
 
   <!--radix_placeholder_meta_tags-->
-  <title>the letter there's no point sending</title>
+  <title>measured.: blog</title>
   
-  <meta property="description" itemprop="description" content="I don&#39;t have the time for people who think that expressing distress at bullying and tenancy eviction means I am mentally deficient and cannot make decisions for myself."/>
+  <meta property="description" itemprop="description" content="A one-time trophy bitch screams into the void."/>
   
   
-  <!--  https://schema.org/Article -->
-  <meta property="article:published" itemprop="datePublished" content="2019-02-11"/>
-  <meta property="article:created" itemprop="dateCreated" content="2019-02-11"/>
-  <meta name="article:author" content="Charles T. Gray"/>
   
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
-  <meta property="og:title" content="the letter there&#39;s no point sending"/>
+  <meta property="og:title" content="measured.: blog"/>
   <meta property="og:type" content="article"/>
-  <meta property="og:description" content="I don&#39;t have the time for people who think that expressing distress at bullying and tenancy eviction means I am mentally deficient and cannot make decisions for myself."/>
+  <meta property="og:description" content="A one-time trophy bitch screams into the void."/>
   <meta property="og:locale" content="en_US"/>
+  <meta property="og:site_name" content="measured."/>
   
   <!--  https://dev.twitter.com/cards/types/summary -->
   <meta property="twitter:card" content="summary"/>
-  <meta property="twitter:title" content="the letter there&#39;s no point sending"/>
-  <meta property="twitter:description" content="I don&#39;t have the time for people who think that expressing distress at bullying and tenancy eviction means I am mentally deficient and cannot make decisions for myself."/>
+  <meta property="twitter:title" content="measured.: blog"/>
+  <meta property="twitter:description" content="A one-time trophy bitch screams into the void."/>
   
   <!--/radix_placeholder_meta_tags-->
   <!--radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output","categories"]}},"value":[{"type":"character","attributes":{},"value":["the letter there's no point sending"]},{"type":"character","attributes":{},"value":["I don't have the time for people who think that expressing distress at bullying and tenancy eviction means I am mentally deficient and cannot make decisions for myself. \n"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url"]}},"value":[{"type":"character","attributes":{},"value":["Charles T. Gray"]},{"type":"character","attributes":{},"value":["https://twitter.com/cantabile"]}]}]},{"type":"character","attributes":{},"value":["02-11-2019"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["radix::radix_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]},{"type":"character","attributes":{},"value":["grrr"]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","listing"]}},"value":[{"type":"character","attributes":{},"value":["blog"]},{"type":"character","attributes":{},"value":["A one-time trophy bitch screams into the void. \n"]},{"type":"character","attributes":{},"value":["posts"]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
-  
-  <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["the-letter-theres-no-point-sending_files/bowser-1.9.3/bowser.min.js","the-letter-theres-no-point-sending_files/distill-2.2.21/template.v2.js","the-letter-theres-no-point-sending_files/jquery-1.11.3/jquery.min.js","the-letter-theres-no-point-sending_files/webcomponents-2.0.0/webcomponents.js"]}
-  </script>
   <!--radix_placeholder_navigation_in_header-->
+  
+  <script type="application/javascript">
+  
+    window.headroom_prevent_pin = false;
+  
+    window.document.addEventListener("DOMContentLoaded", function (event) {
+  
+      // initialize headroom for banner
+      var header = $('header').get(0);
+      var headerHeight = header.offsetHeight;
+      var headroom = new Headroom(header, {
+        onPin : function() {
+          if (window.headroom_prevent_pin) {
+            window.headroom_prevent_pin = false;
+            headroom.unpin();
+          }
+        }
+      });
+      headroom.init();
+      if(window.location.hash)
+        headroom.unpin();
+      $(header).addClass('headroom--transition');
+  
+      // offset scroll location for banner on hash change
+      // (see: https://github.com/WickyNilliams/headroom.js/issues/38)
+      window.addEventListener("hashchange", function(event) {
+        window.scrollTo(0, window.pageYOffset - (headerHeight + 25));
+      });
+  
+      // responsive menu
+      $('.radix-site-header').each(function(i, val) {
+        var topnav = $(this);
+        var toggle = topnav.find('.nav-toggle');
+        toggle.on('click', function() {
+          topnav.toggleClass('responsive');
+        });
+      });
+  
+      // nav dropdowns
+      $('.nav-dropbtn').click(function(e) {
+        $(this).next('.nav-dropdown-content').toggleClass('nav-dropdown-active');
+        $(this).parent().siblings('.nav-dropdown')
+           .children('.nav-dropdown-content').removeClass('nav-dropdown-active');
+      });
+      $("body").click(function(e){
+        $('.nav-dropdown-content').removeClass('nav-dropdown-active');
+      });
+      $(".nav-dropdown").click(function(e){
+        e.stopPropagation();
+      });
+    });
+  </script>
+  
+  <style type="text/css">
+  
+  /* Theme (user-documented overrideables for nav appearance) */
+  
+  .radix-site-nav {
+    color: rgba(255, 255, 255, 0.8);
+    background-color: #455a64;
+    font-size: 15px;
+    font-weight: 300;
+  }
+  
+  .radix-site-nav a {
+    color: inherit;
+    text-decoration: none;
+  }
+  
+  .radix-site-nav a:hover {
+    color: white;
+  }
+  
+  @media print {
+    .radix-site-nav {
+      display: none;
+    }
+  }
+  
+  .radix-site-header {
+  
+  }
+  
+  .radix-site-footer {
+  
+  }
+  
+  
+  /* Site Header */
+  
+  .radix-site-header {
+    width: 100%;
+    box-sizing: border-box;
+    z-index: 3;
+  }
+  
+  .radix-site-header .nav-left {
+    display: inline-block;
+    margin-left: 8px;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .radix-site-header .nav-left {
+      margin-left: 0;
+    }
+  }
+  
+  
+  .radix-site-header .nav-right {
+    float: right;
+    margin-right: 8px;
+  }
+  
+  .radix-site-header a,
+  .radix-site-header .title {
+    display: inline-block;
+    text-align: center;
+    padding: 14px 10px 14px 10px;
+  }
+  
+  .radix-site-header .title {
+    font-size: 18px;
+  }
+  
+  .radix-site-header .logo {
+    padding: 0;
+  }
+  
+  .radix-site-header .logo img {
+    display: none;
+    max-height: 20px;
+    width: auto;
+    margin-bottom: -4px;
+  }
+  
+  .radix-site-header .nav-image img {
+    max-height: 18px;
+    width: auto;
+    display: inline-block;
+    margin-bottom: -3px;
+  }
+  
+  
+  
+  @media screen and (min-width: 1000px) {
+    .radix-site-header .logo img {
+      display: inline-block;
+    }
+    .radix-site-header .nav-left {
+      margin-left: 20px;
+    }
+    .radix-site-header .nav-right {
+      margin-right: 20px;
+    }
+    .radix-site-header .title {
+      padding-left: 12px;
+    }
+  }
+  
+  
+  .radix-site-header .nav-toggle {
+    display: none;
+  }
+  
+  .nav-dropdown {
+    display: inline-block;
+    position: relative;
+  }
+  
+  .nav-dropdown .nav-dropbtn {
+    border: none;
+    outline: none;
+    color: rgba(255, 255, 255, 0.8);
+    padding: 16px 10px;
+    background-color: transparent;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    margin: 0;
+    margin-top: 1px;
+    z-index: 2;
+  }
+  
+  .nav-dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 200px;
+    border: 1px solid rgba(0,0,0,0.15);
+    border-radius: 4px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1);
+    z-index: 1;
+    margin-top: 2px;
+    white-space: nowrap;
+    padding-top: 4px;
+    padding-bottom: 4px;
+  }
+  
+  .nav-dropdown-content hr {
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  
+  .nav-dropdown-active {
+    display: block;
+  }
+  
+  .nav-dropdown-content a, .nav-dropdown-content .nav-dropdown-header {
+    color: black;
+    padding: 6px 24px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+  }
+  
+  .nav-dropdown-content .nav-dropdown-header {
+    display: block;
+    padding: 5px 24px;
+    padding-bottom: 0;
+    text-transform: uppercase;
+    font-size: 14px;
+    color: #999999;
+    white-space: nowrap;
+  }
+  
+  .nav-dropdown:hover .nav-dropbtn {
+    color: white;
+  }
+  
+  .nav-dropdown-content a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+  
+  .nav-right .nav-dropdown-content {
+    margin-left: -45%;
+    right: 0;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .radix-site-header a, .radix-site-header .nav-dropdown  {display: none;}
+    .radix-site-header a.nav-toggle {
+      float: right;
+      display: block;
+    }
+    .radix-site-header .title {
+      margin-left: 0;
+    }
+    .radix-site-header .nav-right {
+      margin-right: 0;
+    }
+    .radix-site-header {
+      overflow: hidden;
+    }
+    .nav-right .nav-dropdown-content {
+      margin-left: 0;
+    }
+  }
+  
+  
+  @media screen and (max-width: 768px) {
+    .radix-site-header.responsive {position: relative;}
+    .radix-site-header.responsive a.nav-toggle {
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+    .radix-site-header.responsive a,
+    .radix-site-header.responsive .nav-dropdown {
+      display: block;
+      text-align: left;
+    }
+    .radix-site-header.responsive .nav-left,
+    .radix-site-header.responsive .nav-right {
+      width: 100%;
+    }
+    .radix-site-header.responsive .nav-dropdown {float: none;}
+    .radix-site-header.responsive .nav-dropdown-content {position: relative;}
+    .radix-site-header.responsive .nav-dropdown .nav-dropbtn {
+      display: block;
+      width: 100%;
+      text-align: left;
+    }
+  }
+  
+  /* Site Footer */
+  
+  .radix-site-footer {
+    width: 100%;
+    overflow: hidden;
+    box-sizing: border-box;
+    z-index: 3;
+    margin-top: 30px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    text-align: center;
+  }
+  
+  /* Headroom */
+  
+  d-title {
+    padding-top: 6rem;
+  }
+  
+  @media print {
+    d-title {
+      padding-top: 4rem;
+    }
+  }
+  
+  .headroom {
+    z-index: 1000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+  
+  .headroom--transition {
+    transition: all .4s ease-in-out;
+  }
+  
+  .headroom--unpinned {
+    top: -100px;
+  }
+  
+  .headroom--pinned {
+    top: 0;
+  }
+  
+  </style>
+  
+  <link href="site_libs/font-awesome-5.0.13/css/fa-svg-with-js.css" rel="stylesheet"/>
+  <script src="site_libs/font-awesome-5.0.13/js/fontawesome-all.min.js"></script>
+  <script src="site_libs/font-awesome-5.0.13/js/fa-v4-shims.min.js"></script>
+  <script src="site_libs/headroom-0.9.4/headroom.min.js"></script>
   <!--/radix_placeholder_navigation_in_header-->
   <!--radix_placeholder_distill-->
   
@@ -927,54 +1259,610 @@
   </script>
   
   <!--/radix_placeholder_distill-->
-  <script src="the-letter-theres-no-point-sending_files/jquery-1.11.3/jquery.min.js"></script>
-  <script src="the-letter-theres-no-point-sending_files/bowser-1.9.3/bowser.min.js"></script>
-  <script src="the-letter-theres-no-point-sending_files/webcomponents-2.0.0/webcomponents.js"></script>
-  <script src="the-letter-theres-no-point-sending_files/distill-2.2.21/template.v2.js"></script>
+  <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+  <script src="site_libs/bowser-1.9.3/bowser.min.js"></script>
+  <script src="site_libs/webcomponents-2.0.0/webcomponents.js"></script>
+  <script src="site_libs/distill-2.2.21/template.v2.js"></script>
   <!--radix_placeholder_site_in_header-->
   <!--/radix_placeholder_site_in_header-->
 
 
 </head>
 
-<body>
+<body class="layout-listing">
 
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"the letter there's no point sending","description":"I don't have the time for people who think that expressing distress at bullying and tenancy eviction means I am mentally deficient and cannot make decisions for myself.","authors":[{"author":"Charles T. Gray","authorURL":"https://twitter.com/cantabile","affiliation":"&nbsp;","affiliationURL":"#"}],"publishedDate":"2019-02-11T00:00:00.000+11:00","citationText":"Gray, 2019"}
+{"title":"blog","description":"A one-time trophy bitch screams into the void.","authors":[]}
 </script>
 
 <!--/radix_placeholder_front_matter-->
 <!--radix_placeholder_navigation_before_body-->
+<header class="header header--fixed" role="banner">
+<nav class="radix-site-nav radix-site-header">
+<div class="nav-left">
+<a href="index.html" class="title">measured.</a>
+</div>
+<div class="nav-right">
+<a href="index.html">home</a>
+<a href="about.html">about</a>
+<a href="blog.html">blog</a>
+<div class="nav-dropdown">
+<button class="nav-dropbtn">
+talks
+ 
+<span class="down-arrow">&#x25BE;</span>
+</button>
+<div class="nav-dropdown-content">
+<a href="talks/replication/talk-nocats.html">unimelb - 2018</a>
+<a href="talks/replication/marseille-2018.html">marseille - 2018</a>
+</div>
+</div>
+<span class="nav-dropdown-header">projects</span>
+<a href="javascript:void(0);" class="nav-toggle">&#9776;</a>
+</div>
+</nav>
+</header>
 <!--/radix_placeholder_navigation_before_body-->
 <!--radix_placeholder_site_before_body-->
 <!--/radix_placeholder_site_before_body-->
+<!--radix_placeholder_article_listing-->
+
+<style type="text/css">
+
+/* Styles for listing layout (hide title) */
+.layout-listing d-title, .layout-listing .d-title {
+  display: none;
+}
+
+/* Styles for posts lists (not auto-injected) */
+
+
+.posts-with-sidebar {
+  padding-left: 45px;
+  padding-right: 45px;
+}
+
+.posts-list .description h2,
+.posts-list .description p {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
+}
+
+.posts-list .description h2 {
+  font-weight: 700;
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.posts-list h2.post-tag {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  padding-bottom: 12px;
+}
+.posts-list {
+  margin-top: 60px;
+  margin-bottom: 24px;
+}
+
+.posts-list .post-preview {
+  text-decoration: none;
+  overflow: hidden;
+  display: block;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 24px 0;
+}
+
+.post-preview-last {
+  border-bottom: none !important;
+}
+
+.posts-list .posts-list-caption {
+  grid-column: screen;
+  font-weight: 400;
+}
+
+.posts-list .post-preview h2 {
+  margin: 0 0 6px 0;
+  line-height: 1.2em;
+  font-style: normal;
+  font-size: 24px;
+}
+
+.posts-list .post-preview p {
+  margin: 0 0 12px 0;
+  line-height: 1.4em;
+  font-size: 16px;
+}
+
+.posts-list .post-preview .thumbnail {
+  box-sizing: border-box;
+  margin-bottom: 24px;
+  position: relative;
+  max-width: 500px;
+}
+.posts-list .post-preview img {
+  width: 100%;
+  display: block;
+}
+
+.posts-list .metadata {
+  font-size: 12px;
+  line-height: 1.4em;
+  margin-bottom: 18px;
+}
+
+.posts-list .metadata > * {
+  display: inline-block;
+}
+
+.posts-list .metadata .publishedDate {
+  margin-right: 1em;
+}
+
+.posts-list .metadata .tags {
+  margin-top: 1em;
+}
+
+.posts-list .tags .tag {
+  color: rgba(0,0,0,0.67);
+  padding: 0.3em 0.5em;
+  margin: 0;
+  font-size: 80%;
+  border: 1px solid rgba(0,0,0,0.4);
+  border-radius: 3px;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.posts-list img {
+  opacity: 1;
+}
+
+.posts-list img[data-src] {
+  opacity: 0;
+}
+
+.posts-more {
+  clear: both;
+}
+
+
+.posts-sidebar {
+  font-size: 16px;
+}
+
+.posts-sidebar h3 {
+  font-size: 16px;
+  margin-top: 0;
+  margin-bottom: 0.5em;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.sidebar-section {
+  margin-bottom: 30px;
+}
+
+.categories ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.categories li {
+  color: rgba(0, 0, 0, 0.8);
+  margin-bottom: 0;
+}
+
+.categories li>a {
+  border-bottom: none;
+}
+
+.categories li>a:hover {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+}
+
+.categories .active {
+  font-weight: 600;
+}
+
+.categories .category-count {
+  color: rgba(0, 0, 0, 0.4);
+}
+
+
+@media(min-width: 768px) {
+  .posts-list .post-preview h2 {
+    font-size: 26px;
+  }
+  .posts-list .post-preview .thumbnail {
+    float: right;
+    width: 35%;
+    margin-bottom: 0;
+  }
+  .posts-list .post-preview .description {
+    float: left;
+    width: 45%;
+  }
+  .posts-list .post-preview .metadata {
+    float: left;
+    width: 15%;
+    margin-top: 8px;
+  }
+  .posts-list .post-preview p {
+    margin: 0 0 12px 0;
+    line-height: 1.5em;
+    font-size: 16px;
+  }
+  .posts-with-sidebar .posts-list {
+    float: left;
+    width: 72%;
+  }
+  .posts-with-sidebar .posts-sidebar {
+    float: right;
+    width: 20%;
+    margin-top: 60px;
+    padding-top: 24px;
+    padding-bottom: 24px;
+  }
+}
+
+.downlevel .posts-list .post-preview {
+  color: inherit;
+}
+
+</style>
+
+<script type="application/javascript">
+
+function init_posts_list() {
+
+  function load_image(img) {
+    var src = $(img).attr('data-src');
+    if (src) {
+      $(img).attr('src', src);
+      $(img).load(function() {
+        img.removeAttribute('data-src');
+      });
+    }
+  }
+
+  function set_posts_visible(posts, visible) {
+    if (visible) {
+
+      // show bottom border by default
+      $(posts).removeClass('post-preview-last');
+
+      // apply limits if need be
+      var max_posts = 25;
+      var apply_limits = $('.posts-container').hasClass('posts-apply-limit');
+      if (apply_limits && posts.length > max_posts) {
+        posts = $(posts).slice(0, max_posts);
+      } else {
+        $('.posts-more a').addClass('hidden');
+      }
+
+      // apply last style
+      $(posts.slice(-1)[0]).addClass('post-preview-last');
+
+      $(posts).removeClass('hidden');
+      $(posts).find('img[data-src]').each(function(i, img) {
+        load_image(img);
+      });
+    } else {
+      $(posts).addClass('hidden');
+    }
+  }
+
+  function apply_hash_filter() {
+
+    // clear active state
+    $('.categories .active').removeClass('active');
+
+    // mark all posts invisible to start
+    set_posts_visible($('.posts-list').children('a'), false);
+
+    // if we have a hash filter
+    if (window.location.hash) {
+
+      // mark posts that match the category visible
+      var page_category = window.location.hash.replace("#", "");
+      var posts = $('.post-metadata').map(function(idx, script) {
+        var metadata = $.parseJSON($(script).html());
+        var post = null;
+        $.each(metadata.categories, function(idx, category) {
+          category = category.replace(/ /g,"_");
+          if (category == page_category) {
+            post = $(script).parent().get();
+            return false;
+          }
+        });
+        return post;
+      });
+      set_posts_visible(posts, true);
+
+      // mark the hash active
+      $('.categories li>a[href="' + window.location.hash + '"]').addClass('active');
+
+    } else {
+
+      // no hash filter, make all posts visible (subject to max display)
+      set_posts_visible($('.posts-list').children(), true);
+
+    }
+  }
+
+  // more articles
+  function apply_post_limits(apply) {
+    if (apply) {
+      $('.posts-container').addClass('posts-apply-limit');
+      $('.posts-more a').removeClass('hidden');
+    } else {
+      $('.posts-container').removeClass('posts-apply-limit');
+      $('.posts-more a').addClass('hidden');
+    }
+  }
+
+  // hash filter handling
+  apply_hash_filter();
+  $(window).on('hashchange',function() {
+    apply_post_limits(true);
+    apply_hash_filter();
+  });
+
+  // more articles link
+  $('.posts-more a').click(function(e) {
+    e.preventDefault();
+    apply_post_limits(false);
+    apply_hash_filter();
+    return false;
+  });
+
+}
+
+</script>
+
+
+
+<div class="posts-container posts-with-sidebar posts-apply-limit l-screen-inset">
+<div class="posts-list">
+<h1 class="posts-list-caption">blog</h1>
+<a href="posts/2019-02-11-the-letter-theres-no-point-sending/" class="post-preview">
+<script class="post-metadata" type="text/json">{"categories":["grrr"]}</script>
+<div class="metadata">
+<div class="publishedDate">Feb. 11, 2019</div>
+</div>
+<div class="thumbnail">
+<img/>
+</div>
+<div class="description">
+<h2>the letter there's no point sending</h2>
+<p>I don't have the time for people who think that expressing distress at bullying and tenancy eviction means I am mentally deficient and cannot make decisions for myself.</p>
+</div>
+</a>
+<a href="posts/2019-02-03-fuzz-testing/" class="post-preview">
+<script class="post-metadata" type="text/json">{"categories":["testing"]}</script>
+<div class="metadata">
+<div class="publishedDate">Feb. 3, 2019</div>
+</div>
+<div class="thumbnail">
+<img/>
+</div>
+<div class="description">
+<h2>fuzz testing</h2>
+<p>a neat testing concept</p>
+</div>
+</a>
+<a href="posts/2019-01-05-its-not-not-the-math-its-the-code/" class="post-preview">
+<script class="post-metadata" type="text/json">{"categories":["error handling","testing"]}</script>
+<div class="metadata">
+<div class="publishedDate">Jan. 14, 2019</div>
+</div>
+<div class="thumbnail">
+<img/>
+</div>
+<div class="description">
+<h2>it's not the maths, it's the code</h2>
+<p>how testing has changed my workflow</p>
+</div>
+</a>
+<a href="posts/2019-01-13-curiousity-science-letter/" class="post-preview">
+<script class="post-metadata" type="text/json">{"categories":["community"]}</script>
+<div class="metadata">
+<div class="publishedDate">Jan. 13, 2019</div>
+</div>
+<div class="thumbnail">
+<img/>
+</div>
+<div class="description">
+<h2>curiousity science letter</h2>
+<p>Curiosity Science asked me to write a letter</p>
+</div>
+</a>
+<a href="posts/2018-11-17-good-testing-coverage/" class="post-preview">
+<script class="post-metadata" type="text/json">{"categories":["testing"]}</script>
+<div class="metadata">
+<div class="publishedDate">Dec. 30, 2018</div>
+</div>
+<div class="thumbnail">
+<img/>
+</div>
+<div class="description">
+<h2>good enough testing coverage</h2>
+<p>What defines good testing coverage in an R analysis?</p>
+</div>
+</a>
+<a href="posts/2018-11-27-scientific-lit-review/" class="post-preview">
+<script class="post-metadata" type="text/json">{"categories":[]}</script>
+<div class="metadata">
+<div class="publishedDate">Nov. 27, 2018</div>
+</div>
+<div class="thumbnail">
+<img/>
+</div>
+<div class="description">
+<h2>writing a scientific literature review</h2>
+<p>What makes a _good enough_ literature review?</p>
+</div>
+</a>
+<a href="posts/2018-11-17-heres-how-it-happens/" class="post-preview">
+<script class="post-metadata" type="text/json">{"categories":["grrr..."]}</script>
+<div class="metadata">
+<div class="publishedDate">Nov. 17, 2018</div>
+</div>
+<div class="thumbnail">
+<img/>
+</div>
+<div class="description">
+<h2>here's how it happens</h2>
+<p>women with drinking problems are particularly vulnerable to sexual assault</p>
+</div>
+</a>
+<a href="posts/2018-11-14-quick-and-dirty-vis/" class="post-preview">
+<script class="post-metadata" type="text/json">{"categories":[]}</script>
+<div class="metadata">
+<div class="publishedDate">Nov. 14, 2018</div>
+</div>
+<div class="thumbnail">
+<img data-src="posts/2018-11-14-quick-and-dirty-vis/quick-and-dirty-vis_files/figure-html5/unnamed-chunk-2-1.png"/>
+</div>
+<div class="description">
+<h2>a quick and dirty vis</h2>
+<p>Jen asked me to throw together a vis on a dataset in ten minutes for an R-Ladies Sydney thing.</p>
+</div>
+</a>
+<a href="posts/2018-11-12-quack-quack-title/" class="post-preview">
+<script class="post-metadata" type="text/json">{"categories":["teaching","pseudocode"]}</script>
+<div class="metadata">
+<div class="publishedDate">Nov. 6, 2018</div>
+</div>
+<div class="thumbnail">
+<img/>
+</div>
+<div class="description">
+<h2>&lt;quack quack | title &gt;</h2>
+<p>Towards a light-weight, quick to type tidy pseudocode.</p>
+</div>
+</a>
+<a href="posts/2018-11-12-if-were-really-committed-to-diversity-we-should-privilege-agency/" class="post-preview">
+<script class="post-metadata" type="text/json">{"categories":["community","grrr..."]}</script>
+<div class="metadata">
+<div class="publishedDate">Sept. 26, 2018</div>
+</div>
+<div class="thumbnail">
+<img/>
+</div>
+<div class="description">
+<h2>if we're really committed to diversity, we should privilege agency</h2>
+<p>Only a fool thinks they know what's good for another person. It never helps to make decisions on behalf of another person.</p>
+</div>
+</a>
+<a href="posts/2018-11-12-am-i-a-man-invited-to-such-things/" class="post-preview">
+<script class="post-metadata" type="text/json">{"categories":["community"]}</script>
+<div class="metadata">
+<div class="publishedDate">Aug. 25, 2018</div>
+</div>
+<div class="thumbnail">
+<img/>
+</div>
+<div class="description">
+<h2>am I, a man, invited to such things?</h2>
+<p>We need men to step up and show their support as champions of change. We can't do this without you.</p>
+</div>
+</a>
+<a href="posts/2018-11-12-if-were-really-committed-to-diversity-crying-should-be-okay/" class="post-preview">
+<script class="post-metadata" type="text/json">{"categories":["community","grrr..."]}</script>
+<div class="metadata">
+<div class="publishedDate">July 18, 2018</div>
+</div>
+<div class="thumbnail">
+<img/>
+</div>
+<div class="description">
+<h2>if we're really committed to diversity, crying should be okay</h2>
+<p>Why is it socially acceptable to ostracise, but not to show emotion?</p>
+</div>
+</a>
+<a href="posts/2018-11-12-testing-as-debugging/" class="post-preview">
+<script class="post-metadata" type="text/json">{"categories":["testing","debugging"]}</script>
+<div class="metadata">
+<div class="publishedDate">July 1, 2018</div>
+</div>
+<div class="thumbnail">
+<img/>
+</div>
+<div class="description">
+<h2>testing as debugging</h2>
+<p>Thoughts on writing my first tests.</p>
+</div>
+</a>
+<a href="posts/2018-11-12-a-coding-workshop-without-code/" class="post-preview">
+<script class="post-metadata" type="text/json">{"categories":["teaching","pseudocode"]}</script>
+<div class="metadata">
+<div class="publishedDate">June 17, 2018</div>
+</div>
+<div class="thumbnail">
+<img/>
+</div>
+<div class="description">
+<h2>a coding workshop without code</h2>
+<p>Thoughts on tidy pseudocode.</p>
+</div>
+</a>
+</div>
+<div class="posts-sidebar">
+<div class="sidebar-section categories">
+<h3>Categories</h3>
+<ul>
+<li>
+<a href="#community">community</a>
+<span class="category-count">(4)</span>
+</li>
+<li>
+<a href="#debugging">debugging</a>
+<span class="category-count">(1)</span>
+</li>
+<li>
+<a href="#error_handling">error handling</a>
+<span class="category-count">(1)</span>
+</li>
+<li>
+<a href="#grrr">grrr</a>
+<span class="category-count">(1)</span>
+</li>
+<li>
+<a href="#grrr...">grrr...</a>
+<span class="category-count">(3)</span>
+</li>
+<li>
+<a href="#pseudocode">pseudocode</a>
+<span class="category-count">(2)</span>
+</li>
+<li>
+<a href="#teaching">teaching</a>
+<span class="category-count">(2)</span>
+</li>
+<li>
+<a href="#testing">testing</a>
+<span class="category-count">(4)</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="posts-more">
+<a href="#">More articles &raquo;</a>
+</div>
+</div>
+<!--/radix_placeholder_article_listing-->
 
 <div class="d-title">
-<h1>the letter there’s no point sending</h1>
-<p>I don’t have the time for people who think that expressing distress at bullying and tenancy eviction means I am mentally deficient and cannot make decisions for myself.</p>
+<h1>blog</h1>
+<p>A one-time trophy bitch screams into the void.</p>
 </div>
 
-<div class="d-byline">
-  Charles T. Gray <a href="https://twitter.com/cantabile" class="uri">https://twitter.com/cantabile</a> 
-  
-<br/>02-11-2019
-</div>
 
 <div class="d-article">
-<p>Dear <code>&lt;sadly not just one person&gt;</code>,</p>
-<p>I appreciate you do not understand my anger and that you believe yourself to be “just trying to be nice”.</p>
-<p>Here’s the thing, you’ve spoken about me behind my back and made decisions for me, after I reported to you distress at being bullied and harassed, whilst being evicted from my rental property. I believe anyone would be distressed under these conditions. But you seem to have inferred all sorts of bewildering things about my mental capacity.</p>
-<p>Reporting this distress does not mean I abdicated my ability to reason as to what I am capable of doing and what will be of most benefit to my wellbeing. In all cases, the decisions made for me without consultation or warning were not only contrary to what would have actually assisted me, but compounded assumptions about me in others who look to you as role models. This leads to further bullying and discriminatory experiences for me where yet more people believe they can make decisions for me without consulting me and be disingenuous in their dealings with me. I believe this to be textbook discriminatory behaviour.</p>
-<p>You cannot understand why I act angrily when you attempt well meant gestures and act dismissively when I try to broach this subject.</p>
-<p>However, I am trying to understand how you can think what I feel are hateful things about my capacity as a functioning human being. If you truly don’t feel I can think for myself, then you see me as lesser to you. I don’t find your nice gestures to make up for this; I feel strongly that I am cast in a pantomime where you pretend nothing happens so you don’t have to feel bad about anything.</p>
-<p>Every time you contact me with your nice gestures, you remind me of what horrible things you think of me. It’s hurtful, and I don’t feel respected when you dismiss my offense so brusquely. I feel trivialised as irrational or, shrugs, I can only guess as you will not explain your actions.</p>
-<p>Meanwhile, I’m thinking, when will it happen again? When will you lie to me again? When will you interfere in my research and make decisions for me again? I am <em>scared</em> of you, and what you believe of me, and I am deeply offended, not only for myself but for anyone you perceive to be different in this way you encounter in future. Who will learn from you that this is an acceptable way to treat someone?</p>
-<p>I don’t see a functional relationship between us while you believe I can’t reason for myself or that you do not need to be truthful with me. I don’t understand your nice gestures. It’s not nice or respectful to treat someone like this, and trying to pretend nothing happened is not being nice to me. It’s being nice to you. I don’t have any reason to be nice to you while you think these things of me.</p>
-<p>You said you don’t have time for this. Good lord, I don’t have time for people who think it’s respectful to interact with me like this. So would you, please, stop wasting mine?</p>
-<p>Goodbye,</p>
-<p>Just someone who has a different disposition to you</p>
+
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>
