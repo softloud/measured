@@ -1326,18 +1326,17 @@ talks
 <ul>
 <li>research, <span class="math inline">\(\Phi\)</span>;</li>
 <li>skills, <span class="math inline">\(\theta\)</span>; and</li>
-<li>administrative tasks, <span class="math inline">\(\psi\)</span>.</li>
+<li>busywork, <span class="math inline">\(\psi\)</span>.</li>
 </ul>
-<h2 id="load-packages-and-get-data">load packages and get data</h2>
 <div class="layout-chunk" data-layout="l-body">
-<pre class="r"><code>
-# packages
-library(tidyverse)
-library(googlesheets)
-library(lubridate)
-library(latex2exp)</code></pre>
+
 </div>
-<p>See <a href="https://github.com/softloud/measured/blob/master/index.Rmd">repo</a> for data import script.</p>
+<div class="layout-chunk" data-layout="l-body">
+
+</div>
+<div class="layout-chunk" data-layout="l-body">
+
+</div>
 <div class="layout-chunk" data-layout="l-body">
 
 </div>
@@ -1346,77 +1345,33 @@ library(latex2exp)</code></pre>
 </div>
 <h2 id="how-have-i-done-over-the-last-100-days">how have I done over the last 100 days?</h2>
 <div class="layout-chunk" data-layout="l-body">
-<pre class="r"><code>
-century &lt;- time_tracker %&gt;%
-  filter(date &gt;= (today() - 100)) %&gt;%
-  left_join(workload_key, by = &quot;category&quot;)</code></pre>
-</div>
-<h2 id="practice-routine">practice routine</h2>
-<p>Aim for one or two hardcore days, two or three moderate, and one or two light days<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a>.</p>
-<div class="layout-chunk" data-layout="l-body">
-<pre class="r"><code>
-# little miss fussy plot parameters
 
-alpha = 0.4
-colour = &quot;darkgrey&quot;
-fill = &quot;black&quot;</code></pre>
+</div>
+<h3 id="practice-routine">practice routine</h3>
+<p>Aim for <span class="math inline">\(\frac 1 5\)</span> <code>hardcore</code> days, <span class="math inline">\(\frac 2 5\)</span> <code>moderate</code>, and <span class="math inline">\(\frac 2 5\)</span> light days<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a>. Anything in <code>eaglescream</code> territory deserves to be celebrated.</p>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="index_files/figure-html5/unnamed-chunk-2-1.png" width="624" /></p>
 </div>
 <h3 id="workload-achieved">workload achieved</h3>
 <p>I want these to be nice and pointy around the dotted line.</p>
 <div class="layout-chunk" data-layout="l-body">
-<pre class="r"><code>
-time_tracker %&gt;%
-  filter(date &gt;= today() - 99) %&gt;% 
-  mutate(category = if_else(category == &quot;phi&quot;, &quot;Phi&quot;, category)) %&gt;% 
-  ggplot(aes(x = hrs)) +
-  geom_vline(linetype = &quot;dotted&quot;, xintercept = 4 / 3) +
-  geom_density(alpha 
-               = alpha,
-               colour = colour,
-               fill = fill) +
-  facet_grid( ~ category, scales = &quot;free&quot;, labeller = label_parsed) </code></pre>
-<p><img src="index_files/figure-html5/unnamed-chunk-2-1.png" width="624" /></p>
-</div>
-<h2 id="monthly-distributions">monthly distributions</h2>
-<div class="layout-chunk" data-layout="l-body">
-<pre class="r"><code>
-# 2018
-time_tracker %&gt;%
-  filter(year == 2018, month(date) &gt; 7) %&gt;%
-  ggplot(aes(x = hrs)) +
-  geom_vline(linetype = &quot;dotted&quot;, xintercept = 4 / 3) +
-  geom_density(alpha = alpha,
-               colour = colour,
-               fill = fill) +
-  facet_grid(category ~ month, scales = &quot;free&quot;, 
-             labeller = label_parsed) +
-  labs(title = &quot;2018&quot;,
-       caption = &quot;test&quot;)</code></pre>
 <p><img src="index_files/figure-html5/unnamed-chunk-3-1.png" width="624" /></p>
-<pre class="r"><code>
-# 2019
-time_tracker %&gt;%
-  filter(year == 2019) %&gt;%
-  ggplot(aes(x = hrs)) +
-  geom_vline(linetype = &quot;dotted&quot;, xintercept = 4 / 3) +
-  geom_density(alpha = alpha,
-               colour = colour,
-               fill = fill) +
-  facet_grid(category ~ month, scales = &quot;free&quot;, labeller = label_parsed) +
-  labs(title = &quot;2019&quot;,
-       caption = &quot;&quot;)</code></pre>
-<p><img src="index_files/figure-html5/unnamed-chunk-3-2.png" width="624" /></p>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+
 </div>
 <h2 id="my-system">my system</h2>
 <p>I use a combination of gtd, pomodoros, and bullet journaling in my productivity system.</p>
 <p>And a toy elephant, along with a <a href="https://en.wikipedia.org/wiki/Directed_graph">digraph</a>.</p>
+<h2 id="code">code</h2>
+<p>See <a href="https://github.com/softloud/measured/blob/master/index.Rmd">repo</a> for code that produced these analyses.</p>
 <hr />
 <p><em>Work in progress.</em></p>
 <section class="footnotes">
 <hr />
 <ol>
-<li id="fn1"><p>This term is adopted from a piano teacher that I studied under, that I subsequently adapted into my own teaching. She encouraged me to <em>practice with intent</em>; that is, play what you intend to play. I found this to be particularly useful for discouraging my students, and myself, from the age-old pitfall of playing a piece of music until you make a mistake and stopping and playing that section over until you get it right. It’s better to play <em>through</em> the piece, which empowers you to adapt to mistakes you will inevitably play and, most importantly, not lose time. Oddly, it appeared to be a universal misconception, myself included, that without careful consideration, the attempt to <em>get the notes right</em> inevitably means the <strong>rhythm is wrong</strong>, and thus you get nothing right after all. Best, therefore, to play through the piece.<a href="#fnref1" class="footnote-back">↩</a></p></li>
-<li id="fn2"><p>I would tell my piano students to have a sense of a what light day is, what a moderate workload, and what a hardcore day looks like. If I get locked in with the impression that a hardcore workload day is the norm, then I get deflated and start avoiding doing work altogether. It feels insurmountable. Instead, I would advise them to expect days where you don’t want to do anything at all. I recently experienced this. I discovered I was not meeting my defintion of a light workload (12 poms). I now realise that waas too ambitious. I was missing entire days of work. I redefined my light workload as a moderate workload, and am now hitting hardcore goals some days.<a href="#fnref2" class="footnote-back">↩</a></p></li>
+<li id="fn1"><p>This term is adopted from a piano teacher that I studied under, that I subsequently adapted into my own teaching. She encouraged me to <em>practice with intent</em>; that is, play what you intend to play. I found this to be particularly useful for discouraging my students, and myself, from the age-old pitfall of playing a piece of music until you make a mistake and stopping and playing that section over until you get it right. It’s better to play <em>through</em> the piece, which empowers you to adapt to mistakes you will inevitably play and, most importantly, not lose time. Oddly, it appeared to be a universal misconception, myself included, that without careful consideration, the attempt to <em>get the notes right</em> inevitably means the <strong>rhythm is wrong</strong>, and thus you get nothing right after all. Best, therefore, to play through the piece. I use my bullet journal to help me focus on work with intent; I’ve found the simplicity of only timing work when I’ve written down what I intend to do has been extraordinarily powerful in helping me complete daunting tasks.<a href="#fnref1" class="footnote-back">↩</a></p></li>
+<li id="fn2"><p>I would tell my piano students to have a sense of a what light day is, what a moderate workload, and what a hardcore day looks like. If I get locked in with the impression that a hardcore workload day is the norm, then I get deflated and start avoiding doing work altogether. It feels insurmountable. Instead, I would advise them to expect days where you don’t want to do anything at all. I recently experienced this. I discovered I was not meeting my defintion of a light workload (12 poms). I now realise that was too ambitious. I was missing entire days of work. I redefined my light workload as a moderate workload, and am now hitting hardcore goals some days.<a href="#fnref2" class="footnote-back">↩</a></p></li>
 </ol>
 </section>
 <!--radix_placeholder_article_footer-->

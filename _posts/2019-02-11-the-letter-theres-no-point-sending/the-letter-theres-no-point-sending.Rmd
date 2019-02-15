@@ -10,7 +10,7 @@ output:
   radix::radix_article:
     self_contained: false
 categories:
-  - grrr
+  - grrr...
 ---
 
 ```{r setup, include=FALSE}
