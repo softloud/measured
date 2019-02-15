@@ -12,7 +12,7 @@ site: radix::radix_website
 
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE, 
+knitr::opts_chunk$set(echo = FALSE, 
                       # eval = FALSE, 
                       cache = FALSE)
 ```
@@ -25,10 +25,7 @@ For a sanity, efficiency, and inspiration, I intend to balance my time between t
 
 - research, $\Phi$; 
 - skills, $\theta$; and 
-- administrative tasks, $\psi$.
-
-
-## load packages and get data
+- busywork, $\psi$.
 
 ```{r}
 # packages
@@ -37,15 +34,15 @@ library(googlesheets)
 library(lubridate)
 library(latex2exp)
 
+
 ```
 
-See [repo](https://github.com/softloud/measured/blob/master/index.Rmd) for data import script.
 
 ```{r import, echo=FALSE, eval=TRUE}
 # import
 
 # import time tracker data (exported manually from iphone app atracker)
-time_tracker_raw <- read_csv("~/Downloads/Details-20170101-20190228.csv")
+time_tracker_raw <- read_csv("~/Downloads/Details-20170101-20200228.csv")
 
 # import measures (googlesheet where I track things manually)
 measures <- gs_title("measures")
@@ -74,21 +71,18 @@ time_tracker <- time_tracker_raw %>%
     start = dmy_hm(start),
     finish = dmy_hm(finish),
     date = date(start),
-    month = month(start)
-  ) %>%
-  filter(category != "wellness") %>%
+  ) %>% 
+  filter(category != "wellness" & category != "exercise") %>%
   select(-note, -description) %>%
   group_by(date, category) %>%
-  summarise(hrs = sum(duration_hrs)) %>%
-  mutate(month = month(date, label = TRUE, abbr = FALSE),
-         year = year(date))
-
-
+  summarise(hrs = sum(duration_hrs)) 
 
 # extract daily record
 daily <- measures %>%
   gs_read(ws = "daily_record") %>%
   mutate(date = ymd(date))
+
+# extract operations
 operations <- measures %>%
   gs_read(ws = "operations") %>%
   mutate(initiated = ymd(initiated))
@@ -96,32 +90,50 @@ operations <- measures %>%
 # workload definitions
 workload_key <- measures %>%
   gs_read(ws = "workload") %>%
-  select(-phi, -theta, -psi, -exercise) %>%
+  select(-phi, -theta, -psi, -exercise)  %>%
   gather(key = "category", value = "hrs_goal", -workload) %>%
-  separate(category, into = "category", sep = "_")
+  separate(category, into = "category", sep = "_")  %>% 
+  spread(key = "workload", value = "hrs_goal")
 
 
 ```
 
-## how have I done over the last 100 days? 
-
-```{r workload achieved}
-century <- time_tracker %>%
-  filter(date >= (today() - 100)) %>%
-  left_join(workload_key, by = "category")
+```{r missing dates}
+# wrangle missing dates
 
 
 
+daily_data <- tibble(date = seq(
+  from = min(time_tracker$date),
+  to = max(time_tracker$date),
+  by = "day"
+)) %>%
+  mutate(phi = 0, theta = 0, psi = 0) %>%
+  gather(key = "category", value = "hrs", phi, theta, psi) %>%
+  anti_join(time_tracker, by = c("date", "category")) %>%
+  full_join(time_tracker) %>%
+  arrange(date) %>%
+  mutate(month = month(date, label = TRUE, abbr = FALSE),
+         year = year(date)) %>% 
+  group_by(category, date) %>% 
+  full_join(workload_key, by = "category") %>%
+  ungroup() %>% 
+  mutate(
+    category = if_else(category == "phi", "Phi", category),
+    workload_achieved = case_when(
+    hrs < light ~ "got fuck all done",
+    hrs > light & hrs < moderate ~ "light",
+    hrs > moderate & hrs < hardcore ~ "moderate",
+    hrs > moderate & hrs < hardcore ~ "hardcore",
+    hrs > hardcore ~ "eaglescream"
+  ),
+  category = fct_relevel(category, "Phi", "theta", "psi"))
 
 ```
 
 
-## practice routine
 
-Aim for one or two hardcore days, two or three moderate, and one or two light days[^2]. 
-
-```{r geom parameters}
-
+```{r geom parameters, echo=FALSE}
 
 # little miss fussy plot parameters
 
@@ -132,14 +144,49 @@ fill = "black"
 ```
 
 
+## how have I done over the last 100 days? 
+
+```{r workload achieved}
+# filter last 100 days dataset
+century <- daily_data %>%
+  filter(date >= (today() - 100)) 
+
+```
+
+### practice routine
+
+Aim for $\frac 1 5$ `hardcore` days, $\frac 2 5$ `moderate`, and $\frac 2 5$ light days[^2]. Anything in `eaglescream` territory deserves to be celebrated.
+
+```{r}
+century %>% 
+  count(category, workload_achieved) %>% 
+  mutate(workload_achieved = fct_relevel(workload_achieved, "eaglescream", "hardcore", "moderate", "light")) %>% 
+  ggplot(aes(x = category, y = n)) +
+  scale_fill_grey() +
+  geom_bar(aes(fill = workload_achieved), stat = "identity", colour = NA) +
+  labs(title = "workload achieved over the last 100 days",
+       x = "category",
+       y = "intensity proportions",
+       fill = "intensity") +
+  scale_x_discrete(labels = c("Phi" = parse(text = TeX("$\\Phi$")),
+                              "theta" = parse(text = TeX("$\\theta")),
+                              "psi" = parse(text = TeX("$\\psi")))) +
+  scale_y_continuous(labels = NULL)
+
+```
+
+
+
+
+
+
+
 ### workload achieved
 
 I want these to be nice and pointy around the dotted line.
                    
 ```{r}
-time_tracker %>%
-  filter(date >= today() - 99) %>% 
-  mutate(category = if_else(category == "phi", "Phi", category)) %>% 
+century %>% 
   ggplot(aes(x = hrs)) +
   geom_vline(linetype = "dotted", xintercept = 4 / 3) +
   geom_density(alpha 
@@ -152,13 +199,10 @@ time_tracker %>%
 
 
 
-## monthly distributions 
-
-
-```{r}
+```{r eval=FALSE}
 
 # 2018
-time_tracker %>%
+daily_data %>%
   filter(year == 2018, month(date) > 7) %>%
   ggplot(aes(x = hrs)) +
   geom_vline(linetype = "dotted", xintercept = 4 / 3) +
@@ -191,11 +235,16 @@ I use a combination of gtd, pomodoros, and bullet journaling in my productivity 
 
 And a toy elephant, along with a [digraph](https://en.wikipedia.org/wiki/Directed_graph).
 
+## code
+
+See [repo](https://github.com/softloud/measured/blob/master/index.Rmd) for code that produced these analyses.
+
+
 ***
 
 *Work in progress.*
 
-[^1]: This term is adopted from a piano teacher that I studied under, that I subsequently adapted into my own teaching. She encouraged me to *practice with intent*; that is, play what you intend to play. I found this to be particularly useful for discouraging my students, and myself, from the age-old pitfall of playing a piece of music until you make a mistake and stopping and playing that section over until you get it right. It's better to play *through* the piece, which empowers you to adapt to mistakes you will inevitably play and, most importantly, not lose time. Oddly, it appeared to be a universal misconception, myself included, that without careful consideration, the attempt to *get the notes right* inevitably means the **rhythm is wrong**, and thus you get nothing right after all. Best, therefore, to play through the piece.    
+[^1]: This term is adopted from a piano teacher that I studied under, that I subsequently adapted into my own teaching. She encouraged me to *practice with intent*; that is, play what you intend to play. I found this to be particularly useful for discouraging my students, and myself, from the age-old pitfall of playing a piece of music until you make a mistake and stopping and playing that section over until you get it right. It's better to play *through* the piece, which empowers you to adapt to mistakes you will inevitably play and, most importantly, not lose time. Oddly, it appeared to be a universal misconception, myself included, that without careful consideration, the attempt to *get the notes right* inevitably means the **rhythm is wrong**, and thus you get nothing right after all. Best, therefore, to play through the piece. I use my bullet journal to help me focus on work with intent; I've found the simplicity of only timing work when I've written down what I intend to do has been extraordinarily powerful in helping me complete daunting tasks.      
 
 
-[^2]: I would tell my piano students to have a sense of a what light day is, what a moderate workload, and what a hardcore day looks like. If I get locked in with the impression that a hardcore workload day is the norm, then I get deflated and start avoiding doing work altogether. It feels insurmountable. Instead, I would advise them to expect days where you don't want to do anything at all. I recently experienced this. I discovered I was not meeting my defintion of a light workload (12 poms). I now realise that waas too ambitious. I was missing entire days of work. I redefined my light workload as a moderate workload, and am now hitting hardcore goals some days. 
+[^2]: I would tell my piano students to have a sense of a what light day is, what a moderate workload, and what a hardcore day looks like. If I get locked in with the impression that a hardcore workload day is the norm, then I get deflated and start avoiding doing work altogether. It feels insurmountable. Instead, I would advise them to expect days where you don't want to do anything at all. I recently experienced this. I discovered I was not meeting my defintion of a light workload (12 poms). I now realise that was too ambitious. I was missing entire days of work. I redefined my light workload as a moderate workload, and am now hitting hardcore goals some days. 
