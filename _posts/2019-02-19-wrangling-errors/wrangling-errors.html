@@ -970,7 +970,7 @@ library(tidyverse)</code></pre>
 </div>
 <p>I want to wrangle some errors out of the results of a function.</p>
 <p>At the moment, my function returns <code>NULL</code> if a warning or an error is thrown, which gets me the results that ran, but I’d like to have more information about the trials that didn’t run.</p>
-<p>I think I can get my function tot return a dataframe of results if the function works as intended, and a character string detailing the error or warning if the function fails. This will give me a list of dataframes intermixed with character strings.</p>
+<p>I think I can get my function to return a dataframe of results if the function works as intended, and a character string detailing the error or warning if the function fails. This will give me a list of dataframes intermixed with character strings.</p>
 <p>So, my question of the day is <strong>how to filter a list by type</strong>?</p>
 <p>First, I’ll create a dummy list<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>.</p>
 <div class="layout-chunk" data-layout="l-body">
@@ -1045,7 +1045,7 @@ playlist %&gt;%
 [3] &quot;NULL&quot;                           &quot;NULL&quot;                          
 [5] &quot;NULL&quot;                           &quot;Lord Euclid of the Fluffy Butt&quot;</code></pre>
 </div>
-<p>How to get rid of the <code>NULL</code> elements? I suppose I could do some base, but there’s probably a nifty tidy way around this.B</p>
+<p>How to get rid of the <code>NULL</code> elements? I suppose I could do some base, but there’s probably a nifty tidy way around this.</p>
 <p>I suspect, however, that there is a better way to filter lists with <code>purrr::</code> combined with <code>dplyr::</code>. Possibly scary lambda functions? I need to level up my <code>purrr::</code>.</p>
 <h2 id="tweeps-to-the-rescue">tweeps to the rescue</h2>
 <p>Thanks to James, Ken, and Francois, I found the <code>purrr::keep</code> function. Just what I wanted for Christmas! Cheers.</p>
