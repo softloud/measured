@@ -1,0 +1,84 @@
+---
+title: "wrangling errors"
+description: |
+  filtering a list by type
+author:
+  - name: Charles T. Gray
+    url: https://twitter.com/cantabile
+date: 02-19-2019
+output:
+  radix::radix_article:
+    self_contained: false
+categories:
+  - wrangling
+  - error handling
+  - debugging
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+```{r packages}
+# packages used in this post
+library(tidyverse)
+```
+
+I want to wrangle some errors out of the results of a function. 
+
+At the moment, my function returns `NULL` if a warning or an error is thrown, which gets me the results that ran, but I'd like to have more information about the trials that didn't run. 
+
+I think I can get my function tot return a dataframe of results if the function works as intended, and a character string detailing the error or warning if the function fails. This will give me a list of dataframes intermixed with character strings. 
+
+So, my question of the day is **how to filter a list by type**?
+
+First, I'll create a dummy list[^1].
+
+```{r dummy data}
+# create a list of dataframes and character strings
+playlist <- list(
+  "Beanie 'Legs' McGraw",
+  "Peug the Door-opening Cat",
+  iris %>% select(Sepal.Length, Species) %>%  filter(Species == "setosa") %>% head(),
+  iris %>% select(Sepal.Length, Species) %>% filter(Species == "versicolor") %>% head(),
+  iris %>% select(Sepal.Length, Species) %>% filter(Species == "virginica") %>% head(),
+  "Lord Euclid of the Fluffy Butt"
+)
+
+playlist %>% str()
+```
+
+So, how do I get the dataframes out into one list and the errors into another? Once separated, I'll be able to `bind_rows` into two dataframes, results and  errors. 
+
+Off the top of my head, I can see how to do this with map, at least for the dataframes.
+
+```{r}
+
+# extract elements that are dataframes
+playlist %>% 
+  map(.f = function(x){
+    if (is.data.frame(x)) return(x)
+  }) %>% bind_rows()
+
+```
+
+So that seems to work and didn't take too much code. Good enough. (I checked, and the function defaults to returning `NULL` if the condition is not met.)
+
+But applying the same logic to filtering the character strings out  
+
+```{r}
+# extract elements that are character strings
+playlist %>% 
+  map(.f = function(x){
+    if (is.character(x)) return(x) 
+  }) %>% as.character()
+
+```
+
+How to get rid of the `NULL` elements? I suppose I could do some base, but there's probably a nifty tidy way around this.B
+
+I suspect, however, that there is a better way to filter lists with `purrr::` combined with `dplyr::`. Possibly scary lambda functions? I need to level up my `purrr::`. 
+
+[^1]: I know, I know, I should find a more interesting  dataset than `iris`. 
+
