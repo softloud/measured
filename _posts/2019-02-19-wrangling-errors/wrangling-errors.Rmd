@@ -80,5 +80,21 @@ How to get rid of the `NULL` elements? I suppose I could do some base, but there
 
 I suspect, however, that there is a better way to filter lists with `purrr::` combined with `dplyr::`. Possibly scary lambda functions? I need to level up my `purrr::`. 
 
+## tweeps to the rescue
+
+Thanks to James, Ken, and Francois, I found the `purrr::keep` function. Just what I wanted for Christmas! Cheers. 
+
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Hey, purrr:: tweeps. Anyone know offhand about filtering a list by type? Here&#39;s a quick post outlining what I&#39;d like to do, and my hack. <a href="https://twitter.com/samclifford?ref_src=twsrc%5Etfw">@samclifford</a> <a href="https://twitter.com/rensa_co?ref_src=twsrc%5Etfw">@rensa_co</a>, perchance?  <a href="https://t.co/BxpXXfHUBc">https://t.co/BxpXXfHUBc</a></p>&mdash; Charles T. Gray (@cantabile) <a href="https://twitter.com/cantabile/status/1097716740627193856?ref_src=twsrc%5Etfw">February 19, 2019</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+```{r}
+playlist %>% keep(is.data.frame) %>% bind_rows()
+
+playlist %>% keep(is.character) %>% as.character()
+```
+
+`w00t`
+
 [^1]: I know, I know, I should find a more interesting  dataset than `iris`. 
 
