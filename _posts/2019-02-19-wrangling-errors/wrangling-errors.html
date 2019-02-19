@@ -1047,6 +1047,45 @@ playlist %&gt;%
 </div>
 <p>How to get rid of the <code>NULL</code> elements? I suppose I could do some base, but there’s probably a nifty tidy way around this.B</p>
 <p>I suspect, however, that there is a better way to filter lists with <code>purrr::</code> combined with <code>dplyr::</code>. Possibly scary lambda functions? I need to level up my <code>purrr::</code>.</p>
+<h2 id="tweeps-to-the-rescue">tweeps to the rescue</h2>
+<p>Thanks to James, Ken, and Francois, I found the <code>purrr::keep</code> function. Just what I wanted for Christmas! Cheers.</p>
+<blockquote class="twitter-tweet" data-lang="en">
+<p lang="en" dir="ltr">
+Hey, purrr:: tweeps. Anyone know offhand about filtering a list by type? Here's a quick post outlining what I'd like to do, and my hack. <a href="https://twitter.com/samclifford?ref_src=twsrc%5Etfw"><span class="citation" data-cites="samclifford">@samclifford</span></a> <a href="https://twitter.com/rensa_co?ref_src=twsrc%5Etfw"><span class="citation" data-cites="rensa_co">@rensa_co</span></a>, perchance? <a href="https://t.co/BxpXXfHUBc">https://t.co/BxpXXfHUBc</a>
+</p>
+— Charles T. Gray (<span class="citation" data-cites="cantabile">@cantabile</span>) <a href="https://twitter.com/cantabile/status/1097716740627193856?ref_src=twsrc%5Etfw">February 19, 2019</a>
+</blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+playlist %&gt;% keep(is.data.frame) %&gt;% bind_rows()</code></pre>
+<pre><code>
+   Sepal.Length    Species
+1           5.1     setosa
+2           4.9     setosa
+3           4.7     setosa
+4           4.6     setosa
+5           5.0     setosa
+6           5.4     setosa
+7           7.0 versicolor
+8           6.4 versicolor
+9           6.9 versicolor
+10          5.5 versicolor
+11          6.5 versicolor
+12          5.7 versicolor
+13          6.3  virginica
+14          5.8  virginica
+15          7.1  virginica
+16          6.3  virginica
+17          6.5  virginica
+18          7.6  virginica</code></pre>
+<pre class="r"><code>
+playlist %&gt;% keep(is.character) %&gt;% as.character()</code></pre>
+<pre><code>
+[1] &quot;Beanie &#39;Legs&#39; McGraw&quot;           &quot;Peug the Door-opening Cat&quot;     
+[3] &quot;Lord Euclid of the Fluffy Butt&quot;</code></pre>
+</div>
+<p><code>w00t</code></p>
 <section class="footnotes">
 <hr />
 <ol>
