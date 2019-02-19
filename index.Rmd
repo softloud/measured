@@ -72,7 +72,8 @@ time_tracker <- time_tracker_raw %>%
     finish = dmy_hm(finish),
     date = date(start),
   ) %>% 
-  filter(category != "wellness" & category != "exercise") %>%
+  filter(category != "wellness" & 
+           category != "exercise") %>%
   select(-note, -description) %>%
   group_by(date, category) %>%
   summarise(hrs = sum(duration_hrs)) 
@@ -127,10 +128,35 @@ daily_data <- tibble(date = seq(
     hrs > moderate & hrs < hardcore ~ "hardcore",
     hrs > hardcore ~ "eaglescream"
   ),
-  category = fct_relevel(category, "Phi", "theta", "psi"))
+  category = fct_relevel(category, "Phi", "theta", "psi"),
+    workload_achieved =
+      fct_relevel(
+        workload_achieved,
+        "eaglescream",
+        "hardcore",
+        "moderate",
+        "light"
+      )
+  ) 
+
 
 ```
 
+```{r}
+
+# last week
+# week_workload <- daily_data %>%
+#   filter(date >= (today() - 7)) %>%
+#   group_by(category) %>% 
+#   summarise(
+#     workload_achieved = add_count(workload_achieved)
+#   )
+
+# workload achieved
+century <- daily_data %>%
+  filter(date >= (today() - 100))
+
+```
 
 
 ```{r geom parameters, echo=FALSE}
@@ -146,12 +172,7 @@ fill = "black"
 
 ## how have I done over the last 100 days? 
 
-```{r workload achieved}
-# filter last 100 days dataset
-century <- daily_data %>%
-  filter(date >= (today() - 100)) 
 
-```
 
 ### practice routine
 
@@ -160,7 +181,6 @@ Aim for $\frac 1 5$ `hardcore` days, $\frac 2 5$ `moderate`, and $\frac 2 5$ lig
 ```{r}
 century %>% 
   count(category, workload_achieved) %>% 
-  mutate(workload_achieved = fct_relevel(workload_achieved, "eaglescream", "hardcore", "moderate", "light")) %>% 
   ggplot(aes(x = category, y = n)) +
   scale_fill_grey() +
   geom_bar(aes(fill = workload_achieved), stat = "identity", colour = NA) +
@@ -174,9 +194,6 @@ century %>%
   scale_y_continuous(labels = NULL)
 
 ```
-
-
-
 
 
 
