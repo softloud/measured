@@ -29,7 +29,7 @@ I want to wrangle some errors out of the results of a function.
 
 At the moment, my function returns `NULL` if a warning or an error is thrown, which gets me the results that ran, but I'd like to have more information about the trials that didn't run. 
 
-I think I can get my function tot return a dataframe of results if the function works as intended, and a character string detailing the error or warning if the function fails. This will give me a list of dataframes intermixed with character strings. 
+I think I can get my function to return a dataframe of results if the function works as intended, and a character string detailing the error or warning if the function fails. This will give me a list of dataframes intermixed with character strings. 
 
 So, my question of the day is **how to filter a list by type**?
 
@@ -76,7 +76,7 @@ playlist %>%
 
 ```
 
-How to get rid of the `NULL` elements? I suppose I could do some base, but there's probably a nifty tidy way around this.B
+How to get rid of the `NULL` elements? I suppose I could do some base, but there's probably a nifty tidy way around this.
 
 I suspect, however, that there is a better way to filter lists with `purrr::` combined with `dplyr::`. Possibly scary lambda functions? I need to level up my `purrr::`. 
 
