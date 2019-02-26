@@ -34,7 +34,6 @@ library(googlesheets)
 library(lubridate)
 library(latex2exp)
 
-
 ```
 
 
@@ -101,9 +100,6 @@ workload_key <- measures %>%
 
 ```{r missing dates}
 # wrangle missing dates
-
-
-
 daily_data <- tibble(date = seq(
   from = min(time_tracker$date),
   to = max(time_tracker$date),
@@ -122,40 +118,70 @@ daily_data <- tibble(date = seq(
   mutate(
     category = if_else(category == "phi", "Phi", category),
     workload_achieved = case_when(
-    hrs < light ~ "got fuck all done",
-    hrs > light & hrs < moderate ~ "light",
-    hrs > moderate & hrs < hardcore ~ "moderate",
-    hrs > moderate & hrs < hardcore ~ "hardcore",
+    hrs == 0 ~ "got fuck all done",  
+    hrs < light ~ "for trying",
+    hrs < moderate ~ "a good day",
+    hrs < hardcore ~ "hardcore",
     hrs > hardcore ~ "eaglescream"
   ),
   category = fct_relevel(category, "Phi", "theta", "psi"),
     workload_achieved =
       fct_relevel(
         workload_achieved,
-        "eaglescream",
+        "got fuck all done",
+        "for trying",
+        "a good day",
         "hardcore",
-        "moderate",
-        "light"
+        "eaglescream"
       )
   ) 
 
 
 ```
 
-```{r}
+```{r eval=FALSE}
+workload_achieved <- daily_data %>% 
+  filter(category != "exercise") %>%
+  mutate(category = fct_drop(category)) %>% 
+  group_by(category) %>% 
+  count(workload_achieved) %>% 
+  filter(!is.na(workload_achieved))
+
+workload_achieved %>% 
+  ggplot() +
+  geom_mosaic(aes(x = product(category), 
+                  fill = workload_achieved, 
+                  weight = n)) +
+  scale_fill_brewer(palette = 6) +
+  labs(title = "workload achieved over the last 100 days",
+       x = "category",
+        fill = "intensity")
+# +
+#   scale_x_discrete(c("Phi" = parse(text = TeX("$\\Phi$")),
+#                                "theta" = parse(text = TeX("$\\theta")),
+#                                "psi" = parse(text = TeX("$\\psi"))))# +
+  # scale_y_continuous(labels = NULL)
+
+```
+
+
+```{r eval=FALSE}
+
+
 
 # last week
-# week_workload <- daily_data %>%
-#   filter(date >= (today() - 7)) %>%
-#   group_by(category) %>% 
-#   summarise(
-#     workload_achieved = add_count(workload_achieved)
-#   )
+decade <- daily_data %>%
+  filter(date >= (today() - 9)) %>%
+  group_by(category) %>%
+  summarise(
+    workload_achieved = add_count(workload_achieved)
+  )
 
 # workload achieved
 century <- daily_data %>%
-  filter(date >= (today() - 100))
+  filter(date >= (today() - 99))
 
+millenium <- daily_data()
 ```
 
 
@@ -178,7 +204,7 @@ fill = "black"
 
 Aim for $\frac 1 5$ `hardcore` days, $\frac 2 5$ `moderate`, and $\frac 2 5$ light days[^2]. Anything in `eaglescream` territory deserves to be celebrated.
 
-```{r}
+```{reval=FALSE}
 century %>% 
   count(category, workload_achieved) %>% 
   ggplot(aes(x = category, y = n)) +
@@ -202,7 +228,7 @@ century %>%
 
 I want these to be nice and pointy around the dotted line.
                    
-```{r}
+```{r eval=FALSE}
 century %>% 
   ggplot(aes(x = hrs)) +
   geom_vline(linetype = "dotted", xintercept = 4 / 3) +

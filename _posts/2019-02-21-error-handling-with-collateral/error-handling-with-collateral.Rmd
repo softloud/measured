@@ -1,0 +1,28 @@
+---
+title: "error handling with collateral::"
+description: |
+  a deep dive of collateral::'s documentation
+author:
+  - name: Charles T. Gray
+    url: https://twitter.com/cantabile
+date: 02-21-2019
+output:
+  radix::radix_article:
+    self_contained: false
+draft: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r packages, message=FALSE}
+# packages used in this post
+library(tidyverse)
+library(collateral)
+```
+
+
+Such an inspiration looking at James' documentation for his package 
+[`collateral::`](https://rensa.co/collateral/articles/collateral.html). 
+

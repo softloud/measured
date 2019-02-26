@@ -1,0 +1,145 @@
+---
+title: "does safely play nice with rma?"
+description: |
+  unpicking what happened with metafor::rma and purrr::safely
+author:
+  - name: Charles T. Gray
+    url: https://twitter.com/cantabile
+date: 02-25-2019
+output:
+  radix::radix_article:
+    self_contained: false
+categories:
+  - error handling
+  - debugging
+  - metafor
+  - purrr
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r packages}
+# packages used in this post
+library(tidyverse)
+library(metasim)
+library(metafor)
+library(metabroom)
+
+# for reproducibility
+set.seed(38)
+```
+
+## lm
+
+```{r lm data}
+x <- seq(0, 10)
+
+# simulate some data
+(lm_data <- x %>% {
+  tibble(
+    x = .,
+    y = rnorm(length(.), mean = 1.2 * ., sd = 2)
+  )
+})
+
+# and take a look
+lm_data %>% 
+  ggplot(aes(x  = x, y = y)) +
+  geom_smooth(method = "lm", 
+              colour = "darkgrey",
+              linetype = "dotted") +
+  geom_point() 
+
+
+
+```
+
+Now, I expect to see the same results if I fit a linear model using the `lm` function. First, let's see what I can get out with pluck.
+
+```{r}
+# create safe version of lm
+safe_lm <- safely(lm, otherwise = "lm model didn't work", quiet = FALSE)
+
+# model data with lm and safely
+lm_model <- lm_data %>% lm(y ~ x, data = .) 
+
+safe_lm_model <- lm_data %>% safe_lm(y ~ x, data = .) 
+
+# lm model results
+lm_model %>% str(0)
+
+# safe lm model results, same but in list with errors
+safe_lm_model %>% str(1)
+
+
+```
+
+## rma
+
+So, that all seemed cromulent enough, and just as the `log` example from the documentation had me following along. 
+
+Now to try with `metafor::rma`.
+
+```{r meta-analysis data}
+# simulate meta-analysis data
+rma_data <- sim_n(k = 7) %>% 
+  sim_stats(wide = TRUE) %>% 
+   escalc(
+     data = .,
+     measure = "SMD",
+     m1i = mean_c,
+     m2i = mean_i,
+     sd1i = sd_c,
+     sd2i = sd_i,
+     n1i = n_c,
+     n2i = n_i
+   ) 
+
+# peek at the data
+rma_data %>% str(0)
+
+# rma model works fine
+rma_model <- rma_data %>% 
+    rma(yi = yi, vi = vi, data = ., slab = study)
+
+# take a look at results
+rma_model %>% metabroom::tidy()
+
+# plot data
+rma_model %>% forest()
+
+
+
+ 
+```
+
+## error 
+
+```{r eval=FALSE}
+# set up safely function
+safe_rma <- safely(rma, 
+                   otherwise = "rma model didn't work", 
+                   quiet = FALSE)
+# 
+# safe_rma_model <- rma_data %>% 
+#     safe_rma(yi = yi, vi = vi, data = ., slab = study)
+# 
+# 
+# # plot data
+# safe_rma_model %>% forest()
+
+```
+
+Trying wrap `metafor::rma` with `purrr::safely` results in the following error:
+
+```{}
+Error: Can't convert a `rma.uni/rma` object to function
+```
+
+So, I have convinced myself, now. For some reason, `purrr::safely` does not play nicely with `metafor::rma`.
+
+## what to do instead?
+
+I suspect I'll need to do something with `tryCatch`. However, I think I'm ready to dive into James' [collateral](@goldie_collateral:_2018) package.  

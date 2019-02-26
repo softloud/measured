@@ -1,0 +1,18 @@
+---
+title: "so, why do rma models clap out sometimes?"
+description: |
+  understanding convergence in metafor::
+author:
+  - name: Charles T. Gray
+    url: https://twitter.com/cantabile
+date: 02-22-2019
+output:
+  radix::radix_article:
+    self_contained: false
+draft: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+

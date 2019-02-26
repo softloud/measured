@@ -1,0 +1,22 @@
+---
+title: "life's work"
+description: |
+  my bespoke productivity system
+author:
+  - name: Charles T. Gray 
+    # url: https://example.com/norajones
+    # affiliation: Spacely Sprockets
+    # affiliation_url: https://example.com/spacelysprokets
+date: "`r Sys.Date()`"
+output: radix::radix_article
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+
+
+
+
+
