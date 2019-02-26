@@ -7,14 +7,22 @@
     <description>A one-time trophy bitch screams into the void. 
 </description>
     <generator>Radix</generator>
-    <lastBuildDate>Mon, 18 Feb 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 25 Feb 2019 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>does safely play nice with rma?</title>
+      <dc:creator>Charles T. Gray</dc:creator>
+      <link>https://fervent-hypatia-7b7343.netlify.com/posts/2019-02-25-does-safely-play-nice-with-rma</link>
+      <description>unpicking what happened with metafor::rma and purrr::safely</description>
+      <guid>https://fervent-hypatia-7b7343.netlify.com/posts/2019-02-25-does-safely-play-nice-with-rma</guid>
+      <pubDate>Mon, 25 Feb 2019 00:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>wrangling errors</title>
       <dc:creator>Charles T. Gray</dc:creator>
       <link>https://fervent-hypatia-7b7343.netlify.com/posts/2019-02-19-wrangling-errors</link>
       <description>filtering a list by type</description>
       <guid>https://fervent-hypatia-7b7343.netlify.com/posts/2019-02-19-wrangling-errors</guid>
-      <pubDate>Mon, 18 Feb 2019 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 19 Feb 2019 00:00:00 +0000</pubDate>
     </item>
     <item>
       <title>the letter there's no point sending</title>
@@ -23,14 +31,6 @@
       <description>I don't have the time for people who think that expressing distress at bullying and tenancy eviction means I am mentally deficient and cannot make decisions for myself.</description>
       <guid>https://fervent-hypatia-7b7343.netlify.com/posts/2019-02-11-the-letter-theres-no-point-sending</guid>
       <pubDate>Mon, 11 Feb 2019 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>fuzz testing</title>
-      <dc:creator>Charles T. Gray</dc:creator>
-      <link>https://fervent-hypatia-7b7343.netlify.com/posts/2019-02-03-fuzz-testing</link>
-      <description>a neat testing concept</description>
-      <guid>https://fervent-hypatia-7b7343.netlify.com/posts/2019-02-03-fuzz-testing</guid>
-      <pubDate>Sun, 03 Feb 2019 00:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
