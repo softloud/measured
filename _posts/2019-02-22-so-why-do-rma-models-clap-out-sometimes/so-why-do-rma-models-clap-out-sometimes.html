@@ -963,7 +963,38 @@
 </div>
 
 <div class="d-article">
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+# packages used in this post
+library(tidyverse)
+library(metafor)</code></pre>
+</div>
+<p>Set up the data.</p>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+example_1_data &lt;- tibble(
+  yi = c(-0.47,-1.56, 0.18, 0.88, 0.74, 0.89,-0.05, 0.52, 2.08, 0.81),
+  vi = c(0.663, 0.660, 0.125, 0.068, 0.971, 0.094, 0.509, 0.887, 0.704, 0.556)
+)
 
+example_1_iterations &lt;- rma(yi = yi, vi = vi, data = example_1_data,
+                            verbose = TRUE, digits = 5)</code></pre>
+<pre><code>
+Iteration 0     tau^2 = 0.41412 
+Iteration 1     tau^2 = 0.26531 
+Iteration 2     tau^2 = 0.22359 
+Iteration 3     tau^2 = 0.20858 
+Iteration 4     tau^2 = 0.20274 
+Iteration 5     tau^2 = 0.20039 
+Iteration 6     tau^2 = 0.19944 
+Iteration 7     tau^2 = 0.19905 
+Iteration 8     tau^2 = 0.19889 
+Iteration 9     tau^2 = 0.19883 
+Iteration 10    tau^2 = 0.19880 
+Iteration 11    tau^2 = 0.19879 
+Iteration 12    tau^2 = 0.19878 
+Fisher scoring algorithm converged after 12 iterations.</code></pre>
+</div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>
