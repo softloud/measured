@@ -20,9 +20,41 @@ knitr::opts_chunk$set(echo = TRUE)
 # packages used in this post
 library(tidyverse)
 library(collateral)
+
+
+
+
 ```
 
 
 Such an inspiration looking at James' documentation for his package 
 [`collateral::`](https://rensa.co/collateral/articles/collateral.html). 
+
+```{r skim diamonds}
+# uses diamonds
+diamonds %>% skimr::skim()
+```
+
+
+## distributions
+
+```{r diamonds histograms, message=FALSE}
+diamonds %>% 
+  ggplot(aes(x = price, y = stat(count))) + 
+  geom_histogram()
+
+```
+
+Multiple peaks exposed by logarithmic scale indicates more than one group. 
+
+```{r}
+
+diamonds %>% 
+  ggplot(aes(x = price, y = stat(count))) + 
+  
+  scale_x_log10()
+
+```
+
+Perhaps there is a relationship between `price` and one of the  
 

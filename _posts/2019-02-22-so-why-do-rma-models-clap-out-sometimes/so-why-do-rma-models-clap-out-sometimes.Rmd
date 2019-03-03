@@ -13,6 +13,66 @@ draft: true
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+# packages used in this post
+library(tidyverse)
+library(metafor)
+
+```
+
+
+Set up the data.
+
+```{r}
+example_1_data <- tibble(
+  yi = c(-0.47,-1.56, 0.18, 0.88, 0.74, 0.89,-0.05, 0.52, 2.08, 0.81),
+  vi = c(0.663, 0.660, 0.125, 0.068, 0.971, 0.094, 0.509, 0.887, 0.704, 0.556)
+)
+
+ex_1_rma <- rma(yi = yi, vi = vi, data = example_1_data)
+
+# capture itertions of the algorith on these data
+example_1_iterations <-
+  # interesting bit of base here
+  capture.output(try(rma(yi = yi, vi = vi,
+                         data = example_1_data,
+                         verbose=TRUE, # captures tau2 value at iteration 
+                         digits=5))) # precision of tau2 value
+
+# red dots
+ex_1_plot_data <- tibble(
+tau_sq = example_1_iterations[str_detect(example_1_iterations, "Iteration")] %>% 
+  str_split(pattern = " = ") %>% 
+  map(2)  %>% as.numeric()
+) %>% 
+  mutate(
+    rll = map_dbl(tau_sq, 
+                  .f = function(x) {
+                    logLik(rma(yi = yi, vi = vi, data = example_1_data, tau2=x))
+                  })
+  )
+
+# new function for me, this is
+# need to look into what it does
+profile_rma_ex_1 <- profile(ex_1_rma, xlim = c(0, 0.5))
+
+
+# create underlying plot
+tibble(
+  tau2 = profile_rma_ex_1 %>% pluck("tau2"),
+  ll = profile_rma_ex_1 %>% pluck("ll")
+  
+) %>% 
+  ggplot(aes(x = tau2, y = ll)) +
+  geom_vline(xintercept = ex_1_rma$tau2, linetype = "dotted") +
+  geom_line(colour = "black", alpha = 0.5) +
+  geom_point(colour = "black", alpha = 0.7)
+
+# animation layers
+
+
 ```
 

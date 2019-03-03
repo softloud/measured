@@ -33,8 +33,18 @@ library(tidyverse)
 library(googlesheets)
 library(lubridate)
 library(latex2exp)
+library(dontpanic)
 
 ```
+
+```{r}
+
+mdat <- dontpanic:::measured_data("~/Downloads/Details-20170101-20200228.csv")
+
+
+
+```
+
 
 
 ```{r import, echo=FALSE, eval=TRUE}
