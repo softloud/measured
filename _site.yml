@@ -15,8 +15,6 @@ navbar:
       href: index.html
     - text: "about"
       href: about.html
-    - text: "life's work"
-      href: lifes-work.html
     - text: "blog"
       href: blog.html
     - text: "talks"
