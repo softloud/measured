@@ -1380,16 +1380,22 @@ fluffyduck &lt;- &quot;i am a duck&quot;
 
 # i wonder if you can define your own class?
 class(fluffyduck) &lt;- &quot;duck&quot;
-class(fluffyduck)
-
+class(fluffyduck)</code></pre>
+<pre><code>
+[1] &quot;duck&quot;</code></pre>
+<pre class="r"><code>
 # the UseMethod documentation said the method needs to act on an object
-is.object(fluffyduck)
-
+is.object(fluffyduck)</code></pre>
+<pre><code>
+[1] TRUE</code></pre>
+<pre class="r"><code>
 # make a function 
 firstquack &lt;- function() {cat(&quot;quack&quot;)}
 
 # see if it works
 firstquack()</code></pre>
+<pre><code>
+quack</code></pre>
 </div>
 <div class="layout-chunk" data-layout="l-body">
 <pre class="r"><code>

@@ -43,7 +43,7 @@ Recently someone, I think it was @[kiersi](https://twitter.com/kierisi), was ask
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 
-```{r eval=FALSE}
+```{r }
 # i guess i need an object for my function to act on
 fluffyduck <- "i am a duck"
 
