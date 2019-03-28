@@ -148,3 +148,13 @@ I don't understand what all the words mean in these definitions of [S3 and S4](h
 Does _multiple dispatch_ mean that the method can be conditional on the class of more than one argument? 
 
 This was fun; despite me finishing with more questions than I began with. 
+
+# meritget
+
+Much obliged to @[jacinta](https://twitter.com/thejholloway) for suggesting I update; the internet's highest honour, gif-phrased praise.
+
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Fluffy duck! :) <a href="https://t.co/9HUPVaXAL4">pic.twitter.com/9HUPVaXAL4</a></p>&mdash; Dr Jenny Richmond (@JenRichmondPhD) <a href="https://twitter.com/JenRichmondPhD/status/1111192429883985926?ref_src=twsrc%5Etfw">March 28, 2019</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+
