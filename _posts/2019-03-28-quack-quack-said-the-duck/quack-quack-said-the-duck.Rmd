@@ -1,0 +1,150 @@
+---
+title: "quack! quack! said the duck"
+description: |
+  making sense of methods in R
+author:
+  - name: cantabile
+    url: {}
+date: 03-28-2019
+output:
+  radix::radix_article:
+    self_contained: false
+    toc: true
+    toc_float: true
+categories: 
+  - dev
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Some time back, @[malco_barrett](https://twitter.com/malco_barrett) and I discovered we both had `tidyverse::`-integrated functions in development for meta-analysis models, specifically models produced by `metafor::rma`. 
+
+We started to discuss how to bring together the work we'd done, and then, speaking for myself, I got busy and overwhelmed last year with the general craziness that doing a doctorate is, and this slipped way back on the backburner. 
+
+Last week, however, one of the creators of the `broom::` package [got in touch with Malcolm](https://github.com/malcolmbarrett/tidymeta/issues/2) about porting the code. And, with the [Evidence Synthesis Hackathon](https://evidencesynthesishackathon.com/) imminent, it seems as if the time is nigh. If I'm going to be able to collaborate on this, that means finally getting around to learning about methods in R.  
+
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Cracks metaphoric R knuckles.<br><br>So, S3. What&#39;s that all about?</p>&mdash; Charles T. Gray (@cantabile) <a href="https://twitter.com/cantabile/status/1111025148486811648?ref_src=twsrc%5Etfw">March 27, 2019</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+I think I might find this pedagogically interesting in future, to reflect on where I started today, and where I ended up.
+
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Journey begins here: my current impression is that, digging back 8 years ago to my *one* compsci subject, first year java, S3 is a method for an object.</p>&mdash; Charles T. Gray (@cantabile) <a href="https://twitter.com/cantabile/status/1111026614475739136?ref_src=twsrc%5Etfw">March 27, 2019</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+# after a cursory look at `UseMethod` documentation
+
+Recently someone, I think it was @[kiersi](https://twitter.com/kierisi), was asking on twitter how people learn. Today I learnt that I like to play first, ask questions of the documentation after.
+
+[Mike Penguin]() said something about `UseMethod` on twitter, so I thought I'd start there.  
+
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Once I realized that myfun &lt;- function(x, ...) UseMethod(&quot;myfun&quot;) is the boilerplate needed I was away. It does magic so that the methods *you* write i.e. myfun.myclass work like myfun(x) where  class(x) includes&quot;my class&quot;</p>&mdash; Michael Sumner (@mdsumner) <a href="https://twitter.com/mdsumner/status/1111033864024023040?ref_src=twsrc%5Etfw">March 27, 2019</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+```{r eval=FALSE}
+# i guess i need an object for my function to act on
+fluffyduck <- "i am a duck"
+
+# i wonder if you can define your own class?
+class(fluffyduck) <- "duck"
+class(fluffyduck)
+
+# the UseMethod documentation said the method needs to act on an object
+is.object(fluffyduck)
+
+# make a function 
+firstquack <- function() {cat("quack")}
+
+# see if it works
+firstquack()
+
+```
+
+```{r error=TRUE}
+# but this throws an error
+UseMethod("firstquack", duck)
+
+# okay, time to look to the tubes for help
+
+```
+
+# make a duck quack, with a little help from Josiah
+
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">This! I wrote a post about it and used my PR to janitor as an example. <a href="https://t.co/Vn7H3BAQjm">https://t.co/Vn7H3BAQjm</a></p>&mdash; Josiah Parry (@JosiahParry) <a href="https://twitter.com/JosiahParry/status/1111075259845873669?ref_src=twsrc%5Etfw">March 28, 2019</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+Josiah's [post](http://josiahparry.com/post/function-methods/#the-generic-method) was most helpful, indeed. These are my notes.  
+
+```{r}
+# start by creating a "generic" function
+quack <- function(says_the_duck, greeting = "quack!") {
+  UseMethod("quack")
+}
+```
+
+The generic function seems like an instantiation step. I read this as, I will create a function called this that I can control how it behaves for different classes.
+
+```{r error=TRUE}
+quack() # okay, same error as josiah's, so far so good
+```
+
+Sidenote, [set chunk option](https://github.com/rstudio/rmarkdown/issues/149) `error=TRUE` to display code and output for an error. 
+
+Makes sense that this throws an error, we haven't told it how to behave for anything yet.
+
+
+```{r }
+
+# set up a default method
+quack.default <-
+  function(says_the_duck = "quack!",
+           greeting = "quack! ") {
+    print(paste0(greeting, says_the_duck))
+    cat("said the duck")
+  }
+
+# check this default works for anything
+quack(NULL) # yay! it quacked on NULL
+quack() # and no argument?
+quack("i'm a duck") # a string?
+
+# now to make a fluffyduck-class object
+fluffyduck <- "i am fluffy" # create an object
+class(fluffyduck) <- "fluffyduck" # set class of object
+
+# trying this before referring back to the post
+quack.fluffyduck <- function(says_the_duck, greeting = "quack! ") {
+  print(paste0(greeting, says_the_duck))
+  cat("said the fluffy duck\n")
+}
+
+# does the duck quack?
+quack(fluffyduck)
+
+# try another object
+another_fluffy_duck <- "i am the fluffiest!"
+
+# test default
+quack(another_fluffy_duck)
+
+# but this duck is also fluffy!
+class(another_fluffy_duck) <- "fluffyduck"
+quack(another_fluffy_duck)
+
+# now to test changing my default greeting, to understand how to parse other arguments
+quack(another_fluffy_duck, greeting = "a most fluffy day to you, ")
+
+```
+
+# stuff I still don't get
+
+I don't understand what all the words mean in these definitions of [S3 and S4](http://adv-r.had.co.nz/OO-essentials.html).
+
+> 4 works similarly to S3, but is more formal. There are two major differences to S3. S4 has formal class definitions, which describe the **representation** and **inheritance** for each class, and has **special helper functions** for defining generics and methods. S4 also has **multiple dispatch**, which means that generic functions can pick methods based on the class of any number of arguments, not just one.  - [Advanced R](http://adv-r.had.co.nz/OO-essentials.html)
+
+Does _multiple dispatch_ mean that the method can be conditional on the class of more than one argument? 
+
+This was fun; despite me finishing with more questions than I began with. 

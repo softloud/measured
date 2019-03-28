@@ -7,7 +7,15 @@
     <description>A one-time trophy bitch screams into the void. 
 </description>
     <generator>Radix</generator>
-    <lastBuildDate>Mon, 25 Feb 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 28 Mar 2019 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>quack! quack! said the duck</title>
+      <dc:creator>cantabile</dc:creator>
+      <link>https://fervent-hypatia-7b7343.netlify.com/posts/2019-03-28-quack-quack-said-the-duck</link>
+      <description>making sense of methods in R</description>
+      <guid>https://fervent-hypatia-7b7343.netlify.com/posts/2019-03-28-quack-quack-said-the-duck</guid>
+      <pubDate>Thu, 28 Mar 2019 00:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>does safely play nice with rma?</title>
       <dc:creator>Charles T. Gray</dc:creator>
@@ -23,14 +31,6 @@
       <description>filtering a list by type</description>
       <guid>https://fervent-hypatia-7b7343.netlify.com/posts/2019-02-19-wrangling-errors</guid>
       <pubDate>Tue, 19 Feb 2019 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>the letter there's no point sending</title>
-      <dc:creator>Charles T. Gray</dc:creator>
-      <link>https://fervent-hypatia-7b7343.netlify.com/posts/2019-02-11-the-letter-theres-no-point-sending</link>
-      <description>I don't have the time for people who think that expressing distress at bullying and tenancy eviction means I am mentally deficient and cannot make decisions for myself.</description>
-      <guid>https://fervent-hypatia-7b7343.netlify.com/posts/2019-02-11-the-letter-theres-no-point-sending</guid>
-      <pubDate>Mon, 11 Feb 2019 00:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
