@@ -1,5 +1,22 @@
 [
   {
+    "path": "posts/2019-03-28-quack-quack-said-the-duck/",
+    "title": "quack! quack! said the duck",
+    "description": "making sense of methods in R",
+    "author": [
+      {
+        "name": "cantabile",
+        "url": {}
+      }
+    ],
+    "date": "2019-03-28",
+    "categories": [
+      "dev"
+    ],
+    "preview": {},
+    "last_modified": "2019-03-28T19:49:21+11:00"
+  },
+  {
     "path": "posts/2019-02-25-does-safely-play-nice-with-rma/",
     "title": "does safely play nice with rma?",
     "description": "unpicking what happened with metafor::rma and purrr::safely",
