@@ -1,0 +1,514 @@
+---
+title: "batpigday"
+description: |
+  a batpigday is the coding equivalent of  groundhogday 
+author:
+  - name: 'Charles T. Gray'
+    url: https://twitter.com/cantabile
+date: 03-30-2019
+output:
+  radix::radix_article:
+    self_contained: false
+    toc: true
+categories:
+  - batpigday
+  - debugging
+  - dev
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# introduction
+
+I can only but assume this will be the first of many batpigday posts. 
+
+In the six years or so that I've been using rstats, debugging has dominated far too much of my time. 
+
+<iframe seamless="seamless" style="width: 100%; border: none; display: block; max-width: 420px; height: 360px;" src="https://getyarn.io/yarn-clip/embed/76c65c90-5e05-419f-9a84-0f8adc431d92?autoplay=false"> </iframe>
+
+To motivate myself to move this frustrating project that is dragging on just a litte more today, I'm going to document my workflow. I wonder where there are points where I could make this less frustrating for myself?
+
+
+# set objective
+
+**get new error message** & document the process
+
+
+## version control
+
+I really need to stop going of half-cocked at this point and create an issue for this, tag a new branch with that issue's number, and feel like I can make a mess today. 
+
+## how to sync?
+
+I need to read this more carefully; documenting my workflow is exposing to me how half-baked my git skills are. 
+
+Something I'd like to master is functional feature branching. Not aiming to do anything fancy, but this is not smooth workflow for me yet. 
+
+```bash
+metasim on  sampling-size-debug-55
+➜
+```
+
+Created issue and new branch, tagged with issue number. 
+
+`git pull` or possibly `git fetch`?! to sync. I did learn that `git fetch -p` will note the branches you've deleted remotely. If I manage my branches from GitHub, hopefully this will keep my branches in sync. 
+
+## what is current error message?
+
+
+``` r
+library(metasim)
+#> Error: package or namespace load failed for 'metasim':
+#>  object 'tidy' is not exported by 'namespace:metabroom'
+```
+
+Created on 2019-03-30 by the [reprex package](http://reprex.tidyverse.org) (v0.2.0).
+
+Was not anticipating that. Completely forgot that this package depends on the `broom::` project going on. Malcolm's `tidymeta::` is functional on my system right now. 
+So, ready to start troubleshooting. 
+
+## where is current error message?
+
+Switch to `tidymeta::` `tidy`  method using workflow-changing trick that @[emilythelime](todo: emily's twitter handle) taught me recently; github's repo text-search tool is sublime. 
+
+It builds and loads. `library(metasim)` now displays no error. 
+
+# batpigday, starting again, more different S
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/90X5NJleYJQ?start=54" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+## what is current error message?
+
+
+``` r
+library(metasim)
+metasims()
+#> performing  108  simulations of  10  trials
+#> 
+  |                                                                       
+  |                                                                 |   0%
+#> Error: Column `measure` is unknown
+metasims(trial_fn = singletrial)
+#> performing  108  simulations of  10  trials
+#> 
+  |                                                                       
+  |                                                                 |   0%
+#> Error: Column `measure` is unknown
+```
+
+Created on 2019-03-31 by the [reprex package](http://reprex.tidyverse.org) (v0.2.0).
+
+## where is current error message?
+
+Not sure, but I'm going to start by ensuring that I am always generating positive sample sizes.  
+
+# how to make sure what i think is true is true?
+
+Tests! 
+
+```{r test sample sizes, eval=FALSE}
+context("sampling")
+
+library(tidyverse)
+library(metasim)
+
+samples_sizes <- rerun(1000, sim_n(k = 10)) %>% bind_rows()
+
+test_that("sample sizes are positive", {
+  expect_equal(samples_sizes %>%
+                 filter(n < 0) %>%
+                 nrow(), 0)
+})
+
+```
+
+So, I can feel fairly confident it's not the sample sizes. 
+
+On second thought, I could `assertthat::` this to make sure.
+
+```r
+sim_n <- function(k = 3,
+                   min_n = 20,
+                   max_n = 200,
+                   prop = 0.3,
+                   wide = FALSE) {
+  assert_that(min_n > 0,
+              msg = "minimum sample size must be positive")
+  assert_that(max_n > 0,
+              msg = "maximum sample size must be positive")
+  assert_that(min_n <= max_n,
+              msg = "minimum sample size cannot exceed maximum sample size")
+
+```
+
+And now tests can be updated with error expectations.
+
+```r
+samples_sizes <- rerun(1000, sim_n(k = 10)) %>% bind_rows()
+
+test_that("sample sizes are positive", {
+  expect_equal(samples_sizes %>%
+                 filter(n < 0) %>%
+                 nrow(), 0)
+  expect_error(sim_n(min_n = -30))
+  expect_error(sim_n(min_n = -30, max_n = -100))
+  expect_error(sim_n(min_n= 50, max_n = 2))
+})
+```
+
+I wonder if I should be using `validate::` or `assertthat::`? Haven't learnt to use `validate::` yet, and it's not today's rabbit hole. 
+
+# batpigday
+
+## what is the current error?
+
+
+``` r
+library(metasim)
+metasims()
+#> performing  108  simulations of  10  trials
+#> 
+  |                                                                       
+  |                                                                 |   0%
+#> Error: Column `measure` is unknown
+```
+
+Created on 2019-03-31 by the [reprex package](http://reprex.tidyverse.org) (v0.2.0).
+
+Yes, batpigday, indeed.
+
+### sidenote, repex system info
+
+```
+Error: First three lines of putative code are:
+<!-- language-all: lang-r -->
+
+    Yes, batpigday, indeed.
+which isn't valid R code.
+Are we going in circles? Did you just run reprex()?
+In that case, the clipboard now holds the *rendered* result.
+```
+
+And now my clipboard is mocking me, as I investigate how to get system information in a `reprex`.
+
+``` r
+library(metasim)
+metasims()
+#> performing  108  simulations of  10  trials
+#> 
+  |                                                                       
+  |                                                                 |   0%
+#> Error: Column `measure` is unknown
+```
+
+Created on 2019-03-31 by the [reprex package](http://reprex.tidyverse.org) (v0.2.0).
+
+<details>
+
+<summary>Session info</summary>
+
+``` r
+devtools::session_info()
+#> Session info -------------------------------------------------------------
+#>  setting  value                       
+#>  version  R version 3.5.1 (2018-07-02)
+#>  system   x86_64, linux-gnu           
+#>  ui       X11                         
+#>  language en_AU:en                    
+#>  collate  en_AU.UTF-8                 
+#>  tz       Australia/Melbourne         
+#>  date     2019-03-31
+#> Packages -----------------------------------------------------------------
+#>  package    * version    date       source                               
+#>  actuar       2.3-1      2018-03-19 CRAN (R 3.5.1)                       
+#>  assertthat   0.2.0      2017-04-11 CRAN (R 3.5.1)                       
+#>  backports    1.1.2      2017-12-13 CRAN (R 3.5.1)                       
+#>  base       * 3.5.1      2018-08-05 local                                
+#>  broom        0.5.0      2018-07-17 CRAN (R 3.5.1)                       
+#>  colorspace   1.3-2      2016-12-14 CRAN (R 3.5.1)                       
+#>  compiler     3.5.1      2018-08-05 local                                
+#>  crayon       1.3.4      2017-09-16 CRAN (R 3.5.1)                       
+#>  datasets   * 3.5.1      2018-08-05 local                                
+#>  devtools     1.13.6     2018-06-27 CRAN (R 3.5.1)                       
+#>  digest       0.6.15     2018-01-28 CRAN (R 3.5.1)                       
+#>  dontpanic    0.0.0.9000 2019-03-21 local                                
+#>  dplyr        0.8.0.9002 2019-03-03 Github (tidyverse/dplyr@cedc939)     
+#>  evaluate     0.11       2018-07-17 CRAN (R 3.5.1)                       
+#>  expint       0.1-5      2018-06-29 CRAN (R 3.5.1)                       
+#>  forcats      0.3.0      2018-02-19 CRAN (R 3.5.1)                       
+#>  ggplot2      3.1.0.9000 2019-03-26 Github (tidyverse/ggplot2@c3fcbd8)   
+#>  glue         1.3.0      2018-07-17 CRAN (R 3.5.1)                       
+#>  graphics   * 3.5.1      2018-08-05 local                                
+#>  grDevices  * 3.5.1      2018-08-05 local                                
+#>  grid         3.5.1      2018-08-05 local                                
+#>  gtable       0.2.0      2016-02-26 CRAN (R 3.5.1)                       
+#>  htmltools    0.3.6      2017-04-28 CRAN (R 3.5.1)                       
+#>  knitr        1.20       2018-02-20 CRAN (R 3.5.1)                       
+#>  lattice      0.20-35    2017-03-25 CRAN (R 3.5.1)                       
+#>  lazyeval     0.2.1      2017-10-29 CRAN (R 3.5.1)                       
+#>  magrittr     1.5        2014-11-22 CRAN (R 3.5.1)                       
+#>  Matrix       1.2-14     2018-04-13 CRAN (R 3.5.1)                       
+#>  memoise      1.1.0      2017-04-21 CRAN (R 3.5.1)                       
+#>  metafor      2.0-0      2017-06-22 CRAN (R 3.5.1)                       
+#>  metasim    * 0.0.0.9000 2019-03-30 local                                
+#>  methods    * 3.5.1      2018-08-05 local                                
+#>  munsell      0.5.0      2018-06-12 CRAN (R 3.5.1)                       
+#>  nlme         3.1-137    2018-04-07 CRAN (R 3.5.1)                       
+#>  pillar       1.3.1.9000 2019-01-29 Github (r-lib/pillar@3a54b8d)        
+#>  pkgconfig    2.0.2      2019-02-09 Github (r-lib/pkgconfig@e9d0190)     
+#>  plyr         1.8.4      2016-06-08 CRAN (R 3.5.1)                       
+#>  purrr        0.3.1      2019-03-03 Github (tidyverse/purrr@d5a59ff)     
+#>  R6           2.2.2      2017-06-17 CRAN (R 3.5.0)                       
+#>  Rcpp         1.0.0      2018-11-07 CRAN (R 3.5.1)                       
+#>  rlang        0.3.1      2019-01-08 CRAN (R 3.5.1)                       
+#>  rmarkdown    1.10       2018-06-11 CRAN (R 3.5.1)                       
+#>  rprojroot    1.3-2      2018-01-03 CRAN (R 3.5.1)                       
+#>  scales       0.5.0      2017-08-24 CRAN (R 3.5.1)                       
+#>  stats      * 3.5.1      2018-08-05 local                                
+#>  stringi      1.2.4      2018-07-20 CRAN (R 3.5.1)                       
+#>  stringr      1.3.1      2018-05-10 CRAN (R 3.5.1)                       
+#>  tibble       2.1.1.9000 2019-03-26 Github (tidyverse/tibble@71b8ff6)    
+#>  tidymeta     0.1.0.9000 2019-03-27 local                                
+#>  tidyr        0.8.1      2018-05-18 CRAN (R 3.5.1)                       
+#>  tidyselect   0.2.5.9000 2019-03-10 Github (tidyverse/tidyselect@19150c0)
+#>  tools        3.5.1      2018-08-05 local                                
+#>  utils      * 3.5.1      2018-08-05 local                                
+#>  varameta     0.0.0.9000 2019-03-18 local                                
+#>  withr        2.1.2      2018-03-15 CRAN (R 3.5.1)                       
+#>  yaml         2.2.0      2018-07-25 CRAN (R 3.5.1)
+```
+
+</details>
+
+with `reprex::reprex(si = TRUE)`.
+
+## where is the current error?
+
+I really should have test, and in particular, a **context** for this by now. Documenting my workflow is making me face some hard truths. I get distracted by ad hoc console testing, and it's inefficient, in the long run.
+
+
+
+```r
+context("default pipeline")
+
+library(testthat)
+library(metasim)
+
+test_that("work upwards through algorithm", {
+  expect_is(sim_n(), "data.frame")
+  # sim_df calls sim_n
+  expect_is(sim_df(), "data.frame")
+  # metasim calls metatrial
+  expect_is(metatrial, "data.frame")
+  expect_is(singletrial(), "data.frame") # alternate trial
+  expect_is(metasim(), "data.frame")
+  # metasims calls sim_df & metasim
+  expect_is(metasims(), "data.frame")
+})
+
+```
+
+So this test will stop when I hit the bug.
+
+Although, it's also of interest whether components up the pipe work. 
+
+So, I can write separate tests for each of them. 
+
+I often feel like I want to scrunch it all up and start again. I am really enjoying how creating a  new context to debug this problem is scratching that itch. 
+
+```r
+context("default pipeline")
+
+library(testthat)
+library(metasim)
+
+test_that("work upwards through algorithm", {
+  expect_is(sim_n(), "data.frame")
+  # sim_df calls sim_n
+  expect_is(sim_df(), "data.frame")
+  expect_is(sim_stats(), "data.frame")
+  # metasim calls metatrial
+  expect_is(metatrial, "data.frame")
+  expect_is(singletrial(), "data.frame") # alternate trial
+  expect_is(metasim(), "data.frame")
+  # metasims calls sim_df & metasim
+  expect_is(metasims(), "data.frame")
+})
+
+# test each component on defaults
+
+test_that("sim_n", {
+  expect_is(sim_n(), "data.frame")
+})
+
+test_that("sim_df", {
+  expect_is(sim_df(), "data.frame")
+})
+
+test_that("metatrial", {
+  # metasim calls metatrial
+  expect_is(metatrial, "data.frame")
+})
+
+test_that("singletrial", {
+  expect_is(singletrial(), "data.frame") # alternate trial
+})
+
+test_that("metasim", {
+  expect_is(metasim(), "data.frame")
+})
+
+```
+
+Okay, I think I can run this and the output will make sense. It's interesting how much I would usually go to the console at this point, and not write down what I did yesterday. I feel like I am repeating the same steps and it feels so unproductive. I think testing is the way around this, but I am still developing the discipline.  
+
+### interpreting `testthat::` output 
+
+```r
+> testthat::test_file("tests/testthat/test-default-pipeline.R")
+✔ | OK F W S | Context
+✖ |  7 4     | default pipeline [2.2 s]
+───────────────────────────────────────────────────────────────────────
+test-default-pipeline.R:12: failure: work upwards through algorithm
+`metatrial` inherits from `function` not `data.frame`.
+
+test-default-pipeline.R:14: error: work upwards through algorithm
+Column `measure` is unknown
+1: expect_is(metasim(), "data.frame") at tests/testthat/test-default-pipeline.R:14
+2: quasi_label(enquo(object), label)
+3: eval_bare(get_expr(quo), get_env(quo))
+4: metasim()
+5: results %>% transpose() %>% pluck("result") %>% keep(is.data.frame) %>% 
+       keep(~nrow(.) >= 1) %>% bind_rows() %>% dplyr::group_by(measure) %>% 
+       dplyr::summarise(tau2 = mean(tau2), ci_width = mean(ci_ub - ci_lb), 
+           bias = mean(bias), coverage_count = sum(coverage), successful_trials = length(coverage), 
+           coverage = coverage_count/successful_trials) %>% mutate(id = id) at /home/charles/Documents/repos/metasim/R/metasim.R:20
+6: withVisible(eval(quote(`_fseq`(`_lhs`)), env, env))
+7: eval(quote(`_fseq`(`_lhs`)), env, env)
+8: eval(quote(`_fseq`(`_lhs`)), env, env)
+9: `_fseq`(`_lhs`)
+10: freduce(value, `_function_list`)
+11: function_list[[i]](value)
+12: dplyr::group_by(., measure)
+13: group_by.data.frame(., measure)
+14: grouped_df(groups$data, groups$group_names, .drop)
+15: grouped_df_impl(data, unname(vars), drop)
+
+test-default-pipeline.R:31: failure: metatrial
+`metatrial` inherits from `function` not `data.frame`.
+
+test-default-pipeline.R:39: error: metasim
+Column `measure` is unknown
+1: expect_is(metasim(), "data.frame") at tests/testthat/test-default-pipeline.R:39
+2: quasi_label(enquo(object), label)
+3: eval_bare(get_expr(quo), get_env(quo))
+4: metasim()
+5: results %>% transpose() %>% pluck("result") %>% keep(is.data.frame) %>% 
+       keep(~nrow(.) >= 1) %>% bind_rows() %>% dplyr::group_by(measure) %>% 
+       dplyr::summarise(tau2 = mean(tau2), ci_width = mean(ci_ub - ci_lb), 
+           bias = mean(bias), coverage_count = sum(coverage), successful_trials = length(coverage), 
+           coverage = coverage_count/successful_trials) %>% mutate(id = id) at /home/charles/Documents/repos/metasim/R/metasim.R:20
+6: withVisible(eval(quote(`_fseq`(`_lhs`)), env, env))
+7: eval(quote(`_fseq`(`_lhs`)), env, env)
+8: eval(quote(`_fseq`(`_lhs`)), env, env)
+9: `_fseq`(`_lhs`)
+10: freduce(value, `_function_list`)
+11: function_list[[i]](value)
+12: dplyr::group_by(., measure)
+13: group_by.data.frame(., measure)
+14: grouped_df(groups$data, groups$group_names, .drop)
+15: grouped_df_impl(data, unname(vars), drop)
+───────────────────────────────────────────────────────────────────────
+
+══ Results ════════════════════════════════════════════════════════════
+Duration: 2.2 s
+
+OK:       7
+Failed:   4
+Warnings: 0
+Skipped:  0
+```
+Okay, so I have an error in line 12. Ah, that's a typo; forgot the `()`. 
+
+But this is good news, this means that `sim_n`, `sim_df`, and `sim_stats` all returned dataframes. I kinda want to know they're not empty. I suppose I could add another expectation. 
+
+***
+
+So now it fails on the trial function, which I did know from my console testing. I like that I've thought through a way of automating these tests for tomorrow. 
+
+***
+
+aha! Found it it was the use of `glance` on the simulation function. Still need to sort out dependencies. 
+
+***
+
+Lesson of the day. Use tests, they _are_ the documentation of my trouble-shooting processes. Don't be afraid to create new contexts to test really specific things.  
+
+My sampling problem was already solved, but it was not so simple to take care of the bespoke `broom::` depencies.
+
+And now, a blog post later. I have, indeed, got a new error message. No error! There are a worrying number of warnings being generated. But, that my friends, is tomorrow Charles' problem.
+
+Sidenote, I leveled up a great deal today, inadvertently, in how to import and export functions into a package. I also finally understand why export is a handy function. 
+
+### today's bughunt
+
+<img src="https://images.gr-assets.com/hostedimages/1496299559ra/22898103.gif" width="400" class="gr-hostedUserImg">
+
+
+Here's the version of the test I ended up working with. Documentating my workflow certainly made me disciplined. 
+
+```r 
+context("default pipeline")
+
+library(testthat)
+library(metasim)
+
+
+# test each component on defaults
+
+test_that("sim_n", {
+  expect_is(sim_n(), "data.frame")
+})
+
+test_that("sim_df", {
+  expect_is(sim_df(), "data.frame")
+})
+
+test_that("metatrial", {
+  # metasim calls metatrial
+  expect_is(metatrial(), "data.frame")
+})
+
+test_that("singletrial", {
+  expect_is(singletrial(), "data.frame") # alternate trial
+})
+
+test_that("metasim", {
+  expect_is(metasim() %>% pluck("results_summary"), "data.frame")
+})
+
+test_that("metasims", {
+  expect_is(metasims(), "data.frame")
+})
+
+
+test_that("work upwards through algorithm", {
+  expect_is(sim_n(), "data.frame")
+  expect_gt(sim_n() %>% nrow(), 1)
+  # sim_df calls sim_n
+  expect_is(sim_df(), "data.frame")
+  expect_is(sim_stats(), "data.frame")
+  # metasim calls metatrial
+  expect_is(metatrial(), "data.frame")
+  expect_is(singletrial(), "data.frame") # alternate trial
+  expect_is(metasim() %>% pluck('results_summary'), "data.frame")
+  # metasims calls sim_df & metasim
+  expect_is(metasims(), "data.frame")
+})
+
+
+
+```
+

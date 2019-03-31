@@ -969,7 +969,9 @@
 <li><a href="#after-a-cursory-look-at-usemethod-documentation">after a cursory look at <code>UseMethod</code> documentation</a></li>
 <li><a href="#make-a-duck-quack-with-a-little-help-from-josiah">make a duck quack, with a little help from Josiah</a></li>
 <li><a href="#stuff-i-still-dont-get">stuff I still don’t get</a></li>
-<li><a href="#meritget">meritget</a></li>
+<li><a href="#meritget">meritget</a><ul>
+<li><a href="#a-duck-for-maelle">a duck for maelle</a></li>
+</ul></li>
 </ul>
 </nav>
 <hr class="d-toc-separator"/>
@@ -1063,8 +1065,7 @@ Error in UseMethod(&quot;quack&quot;): no applicable method for &#39;quack&#39; 
 <pre class="r"><code>
 # set up a default method
 quack.default &lt;-
-  function(says_the_duck = &quot;quack!&quot;,
-           greeting = &quot;quack! &quot;) {
+  function(says_the_duck = &quot;quack!&quot;,           greeting = &quot;quack! &quot;) {
     print(paste0(greeting, says_the_duck))
     cat(&quot;said the duck&quot;)
   }
@@ -1139,6 +1140,25 @@ Fluffy duck! :) <a href="https://t.co/9HUPVaXAL4">pic.twitter.com/9HUPVaXAL4</a>
 — Dr Jenny Richmond (<span class="citation" data-cites="JenRichmondPhD">@JenRichmondPhD</span>) <a href="https://twitter.com/JenRichmondPhD/status/1111192429883985926?ref_src=twsrc%5Etfw">March 28, 2019</a>
 </blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<h2 id="a-duck-for-maelle">a duck for maelle</h2>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+# a duck for maelle!
+maelles_duck &lt;- &quot;je suis une cane&quot;
+class(maelles_duck) &lt;- &quot;frenchduck&quot;
+
+# french ducks speak in french
+quack.frenchduck &lt;- function(says_the_duck, greeting = &quot;coin! &quot;) {
+  print(paste0(greeting, says_the_duck))
+  cat(&quot;dit la cane\n&quot;)
+}
+
+# coin?
+quack(maelles_duck)</code></pre>
+<pre><code>
+[1] &quot;coin! je suis une cane&quot;
+dit la cane</code></pre>
+</div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>

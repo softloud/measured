@@ -100,8 +100,7 @@ Makes sense that this throws an error, we haven't told it how to behave for anyt
 
 # set up a default method
 quack.default <-
-  function(says_the_duck = "quack!",
-           greeting = "quack! ") {
+  function(says_the_duck = "quack!",           greeting = "quack! ") {
     print(paste0(greeting, says_the_duck))
     cat("said the duck")
   }
@@ -155,6 +154,24 @@ Much obliged to @[jacinta](https://twitter.com/thejholloway) for suggesting I up
 
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Fluffy duck! :) <a href="https://t.co/9HUPVaXAL4">pic.twitter.com/9HUPVaXAL4</a></p>&mdash; Dr Jenny Richmond (@JenRichmondPhD) <a href="https://twitter.com/JenRichmondPhD/status/1111192429883985926?ref_src=twsrc%5Etfw">March 28, 2019</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+## a duck for maelle
+
+```{r}
+# a duck for maelle!
+maelles_duck <- "je suis une cane"
+class(maelles_duck) <- "frenchduck"
+
+# french ducks speak in french
+quack.frenchduck <- function(says_the_duck, greeting = "coin! ") {
+  print(paste0(greeting, says_the_duck))
+  cat("dit la cane\n")
+}
+
+# coin?
+quack(maelles_duck)
+
+```
 
 
 
