@@ -1,0 +1,1405 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"/>
+  <meta name="generator" content="radix" />
+
+  <style type="text/css">
+  /* Hide doc at startup (prevent jankiness while JS renders/transforms) */
+  body {
+    visibility: hidden;
+  }
+  </style>
+
+ <!--radix_placeholder_import_source-->
+ <!--/radix_placeholder_import_source-->
+
+  <!--radix_placeholder_meta_tags-->
+  <title>batpigday</title>
+  
+  <meta property="description" itemprop="description" content="a batpigday is the coding equivalent of  groundhogday"/>
+  
+  
+  <!--  https://schema.org/Article -->
+  <meta property="article:published" itemprop="datePublished" content="2019-03-30"/>
+  <meta property="article:created" itemprop="dateCreated" content="2019-03-30"/>
+  <meta name="article:author" content="Charles T. Gray"/>
+  
+  <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
+  <meta property="og:title" content="batpigday"/>
+  <meta property="og:type" content="article"/>
+  <meta property="og:description" content="a batpigday is the coding equivalent of  groundhogday"/>
+  <meta property="og:locale" content="en_US"/>
+  
+  <!--  https://dev.twitter.com/cards/types/summary -->
+  <meta property="twitter:card" content="summary"/>
+  <meta property="twitter:title" content="batpigday"/>
+  <meta property="twitter:description" content="a batpigday is the coding equivalent of  groundhogday"/>
+  
+  <!--/radix_placeholder_meta_tags-->
+  <!--radix_placeholder_rmarkdown_metadata-->
+  
+  <script type="text/json" id="radix-rmarkdown-metadata">
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output","categories"]}},"value":[{"type":"character","attributes":{},"value":["batpigday"]},{"type":"character","attributes":{},"value":["a batpigday is the coding equivalent of  groundhogday \n"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url"]}},"value":[{"type":"character","attributes":{},"value":["Charles T. Gray"]},{"type":"character","attributes":{},"value":["https://twitter.com/cantabile"]}]}]},{"type":"character","attributes":{},"value":["03-30-2019"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["radix::radix_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained","toc"]}},"value":[{"type":"logical","attributes":{},"value":[false]},{"type":"logical","attributes":{},"value":[true]}]}]},{"type":"character","attributes":{},"value":["batpigday","debugging","dev"]}]}
+  </script>
+  <!--/radix_placeholder_rmarkdown_metadata-->
+  
+  <script type="text/json" id="radix-resource-manifest">
+  {"type":"character","attributes":{},"value":["batpigday_files/bowser-1.9.3/bowser.min.js","batpigday_files/distill-2.2.21/template.v2.js","batpigday_files/jquery-1.11.3/jquery.min.js","batpigday_files/webcomponents-2.0.0/webcomponents.js"]}
+  </script>
+  <!--radix_placeholder_navigation_in_header-->
+  <!--/radix_placeholder_navigation_in_header-->
+  <!--radix_placeholder_distill-->
+  
+  <style type="text/css">
+  
+  body {
+    background-color: white;
+  }
+  
+  .pandoc-table {
+    width: 100%;
+  }
+  
+  .pandoc-table>caption {
+    margin-bottom: 10px;
+  }
+  
+  .pandoc-table th:not([align]) {
+    text-align: left;
+  }
+  
+  .pagedtable-footer {
+    font-size: 15px;
+  }
+  
+  .html-widget {
+    margin-bottom: 2.0em;
+  }
+  
+  .l-screen-inset {
+    padding-right: 16px;
+  }
+  
+  .l-screen .caption {
+    margin-left: 10px;
+  }
+  
+  .shaded {
+    background: rgb(247, 247, 247);
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  
+  .shaded .html-widget {
+    margin-bottom: 0;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  
+  .shaded .shaded-content {
+    background: white;
+  }
+  
+  .text-output {
+    margin-top: 0;
+    line-height: 1.5em;
+  }
+  
+  .hidden {
+    display: none !important;
+  }
+  
+  d-article {
+    padding-bottom: 30px;
+  }
+  
+  d-appendix {
+    padding-top: 30px;
+  }
+  
+  d-article>p>img {
+    width: 100%;
+  }
+  
+  d-article iframe {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    margin-bottom: 2.0em;
+    width: 100%;
+  }
+  
+  figure img.external {
+    background: white;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
+    padding: 18px;
+    box-sizing: border-box;
+  }
+  
+  /* CSS for table of contents */
+  
+  .d-toc {
+    color: rgba(0,0,0,0.8);
+    font-size: 0.8em;
+    line-height: 1em;
+  }
+  
+  .d-toc-header {
+    font-size: 0.6rem;
+    font-weight: 400;
+    color: rgba(0, 0, 0, 0.5);
+    text-transform: uppercase;
+    margin-top: 0;
+    margin-bottom: 1.3em;
+  }
+  
+  .d-toc a {
+    border-bottom: none;
+  }
+  
+  .d-toc ul {
+    padding-left: 0;
+  }
+  
+  .d-toc li>ul {
+    padding-top: 0.8em;
+    padding-left: 16px;
+    margin-bottom: 0.6em;
+  }
+  
+  .d-toc ul,
+  .d-toc li {
+    list-style-type: none;
+  }
+  
+  .d-toc li {
+    margin-bottom: 0.9em;
+  }
+  
+  .d-toc-separator {
+    margin-top: 20px;
+    margin-bottom: 2em;
+  }
+  
+  .d-article-with-toc {
+    border-top: none;
+    padding-top: 0;
+  }
+  
+  
+  
+  /* Tweak code blocks (note that this CSS is repeated above in an injection
+     into the d-code shadow dom) */
+  
+  d-code {
+    overflow-x: auto !important;
+  }
+  
+  pre.d-code code.d-code {
+    padding-left: 10px;
+    font-size: 12px;
+    border-left: 2px solid rgba(0,0,0,0.1);
+  }
+  
+  pre.text-output {
+  
+    font-size: 12px;
+    color: black;
+    background: none;
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+    text-align: left;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+    word-wrap: normal;
+    line-height: 1.5;
+  
+    -moz-tab-size: 4;
+    -o-tab-size: 4;
+    tab-size: 4;
+  
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
+  }
+  
+  @media(min-width: 768px) {
+  
+  d-code {
+    overflow-x: visible !important;
+  }
+  
+  pre.d-code code.d-code  {
+      padding-left: 18px;
+      font-size: 14px;
+  }
+  pre.text-output {
+    font-size: 14px;
+  }
+  }
+  
+  /* Figure */
+  
+  .figure {
+    position: relative;
+    margin-bottom: 2.5em;
+    margin-top: 1.5em;
+  }
+  
+  .figure img {
+    width: 100%;
+  }
+  
+  .figure .caption {
+    color: rgba(0, 0, 0, 0.6);
+    font-size: 12px;
+    line-height: 1.5em;
+  }
+  
+  .figure img.external {
+    background: white;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
+    padding: 18px;
+    box-sizing: border-box;
+  }
+  
+  .figure .caption a {
+    color: rgba(0, 0, 0, 0.6);
+  }
+  
+  .figure .caption b,
+  .figure .caption strong, {
+    font-weight: 600;
+    color: rgba(0, 0, 0, 1.0);
+  }
+  
+  
+  
+  /* Tweak 1000px media break to show more text */
+  
+  @media(min-width: 1000px) {
+    .base-grid,
+    distill-header,
+    d-title,
+    d-abstract,
+    d-article,
+    d-appendix,
+    distill-appendix,
+    d-byline,
+    d-footnote-list,
+    d-citation-list,
+    distill-footer {
+      grid-template-columns: [screen-start] 1fr [page-start kicker-start] 80px [middle-start] 50px [text-start kicker-end] 65px 65px 65px 65px 65px 65px 65px 65px [text-end gutter-start] 65px [middle-end] 65px [page-end gutter-end] 1fr [screen-end];
+      grid-column-gap: 16px;
+    }
+  
+    .grid {
+      grid-column-gap: 16px;
+    }
+  
+    d-article {
+      font-size: 1.06rem;
+      line-height: 1.7em;
+    }
+    figure .caption, .figure .caption, figure figcaption {
+      font-size: 13px;
+    }
+  }
+  
+  @media(min-width: 1180px) {
+    .base-grid,
+    distill-header,
+    d-title,
+    d-abstract,
+    d-article,
+    d-appendix,
+    distill-appendix,
+    d-byline,
+    d-footnote-list,
+    d-citation-list,
+    distill-footer {
+      grid-template-columns: [screen-start] 1fr [page-start kicker-start] 60px [middle-start] 60px [text-start kicker-end] 60px 60px 60px 60px 60px 60px 60px 60px [text-end gutter-start] 60px [middle-end] 60px [page-end gutter-end] 1fr [screen-end];
+      grid-column-gap: 32px;
+    }
+  
+    .grid {
+      grid-column-gap: 32px;
+    }
+  }
+  
+  
+  /* Get the citation styles for the appendix (not auto-injected on render since
+     we do our own rendering of the citation appendix) */
+  
+  d-appendix .citation-appendix,
+  .d-appendix .citation-appendix {
+    font-size: 11px;
+    line-height: 15px;
+    border-left: 1px solid rgba(0, 0, 0, 0.1);
+    padding-left: 18px;
+    border: 1px solid rgba(0,0,0,0.1);
+    background: rgba(0, 0, 0, 0.02);
+    padding: 10px 18px;
+    border-radius: 3px;
+    color: rgba(150, 150, 150, 1);
+    overflow: hidden;
+    margin-top: -12px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+  
+  
+  /* Social footer */
+  
+  .social_footer {
+    margin-top: 30px;
+    margin-bottom: 0;
+    color: rgba(0,0,0,0.67);
+  }
+  
+  .disqus-comments {
+    margin-right: 30px;
+  }
+  
+  .disqus-comment-count {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+  }
+  
+  #disqus_thread {
+    margin-top: 30px;
+  }
+  
+  .article-sharing a {
+    border-bottom: none;
+    margin-right: 8px;
+  }
+  
+  .article-sharing a:hover {
+    border-bottom: none;
+  }
+  
+  .sidebar-section.subscribe {
+    font-size: 12px;
+    line-height: 1.6em;
+  }
+  
+  .subscribe p {
+    margin-bottom: 0.5em;
+  }
+  
+  
+  .article-footer .subscribe {
+    font-size: 15px;
+    margin-top: 45px;
+  }
+  
+  
+  /* Improve display for browsers without grid (IE/Edge <= 15) */
+  
+  .downlevel {
+    line-height: 1.6em;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
+    margin: 0;
+  }
+  
+  .downlevel .d-title {
+    padding-top: 6rem;
+    padding-bottom: 1.5rem;
+  }
+  
+  .downlevel .d-title h1 {
+    font-size: 50px;
+    font-weight: 700;
+    line-height: 1.1em;
+    margin: 0 0 0.5rem;
+  }
+  
+  .downlevel .d-title p {
+    font-weight: 300;
+    font-size: 1.2rem;
+    line-height: 1.55em;
+    margin-top: 0;
+  }
+  
+  .downlevel .d-byline {
+    padding-top: 0.8em;
+    padding-bottom: 0.8em;
+    font-size: 0.8rem;
+    line-height: 1.8em;
+  }
+  
+  .downlevel .section-separator {
+    border: none;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  
+  .downlevel .d-article {
+    font-size: 1.06rem;
+    line-height: 1.7em;
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+  }
+  
+  
+  .downlevel .d-appendix {
+    padding-left: 0;
+    padding-right: 0;
+    max-width: none;
+    font-size: 0.8em;
+    line-height: 1.7em;
+    margin-bottom: 0;
+    color: rgba(0,0,0,0.5);
+    padding-top: 40px;
+    padding-bottom: 48px;
+  }
+  
+  .downlevel .footnotes ol {
+    padding-left: 13px;
+  }
+  
+  .downlevel .base-grid,
+  .downlevel .distill-header,
+  .downlevel .d-title,
+  .downlevel .d-abstract,
+  .downlevel .d-article,
+  .downlevel .d-appendix,
+  .downlevel .distill-appendix,
+  .downlevel .d-byline,
+  .downlevel .d-footnote-list,
+  .downlevel .d-citation-list,
+  .downlevel .distill-footer,
+  .downlevel .appendix-bottom,
+  .downlevel .posts-container {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+  
+  @media(min-width: 768px) {
+    .downlevel .base-grid,
+    .downlevel .distill-header,
+    .downlevel .d-title,
+    .downlevel .d-abstract,
+    .downlevel .d-article,
+    .downlevel .d-appendix,
+    .downlevel .distill-appendix,
+    .downlevel .d-byline,
+    .downlevel .d-footnote-list,
+    .downlevel .d-citation-list,
+    .downlevel .distill-footer,
+    .downlevel .appendix-bottom,
+    .downlevel .posts-container {
+    padding-left: 150px;
+    padding-right: 150px;
+    max-width: 900px;
+  }
+  }
+  
+  .downlevel pre code {
+    display: block;
+    border-left: 2px solid rgba(0, 0, 0, .1);
+    padding: 0 0 0 20px;
+    font-size: 14px;
+  }
+  
+  .downlevel code, .downlevel pre {
+    color: black;
+    background: none;
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+    text-align: left;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+    word-wrap: normal;
+    line-height: 1.5;
+  
+    -moz-tab-size: 4;
+    -o-tab-size: 4;
+    tab-size: 4;
+  
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
+  }
+  
+  </style>
+  
+  <script type="application/javascript">
+  
+  function is_downlevel_browser() {
+    if (bowser.isUnsupportedBrowser({ msie: "12", msedge: "16"},
+                                   window.navigator.userAgent)) {
+      return true;
+    } else {
+      return window.load_distill_framework === undefined;
+    }
+  }
+  
+  // show body when load is complete
+  function on_load_complete() {
+  
+    // set body to visible
+    document.body.style.visibility = 'visible';
+  
+    // force redraw for leaflet widgets
+    if (window.HTMLWidgets) {
+      var maps = window.HTMLWidgets.findAll(".leaflet");
+      $.each(maps, function(i, el) {
+        var map = this.getMap();
+        map.invalidateSize();
+        map.eachLayer(function(layer) {
+          if (layer instanceof L.TileLayer)
+            layer.redraw();
+        });
+      });
+    }
+  
+    // trigger 'shown' so htmlwidgets resize
+    $('d-article').trigger('shown');
+  }
+  
+  function init_distill() {
+  
+    init_common();
+  
+    // create front matter
+    var front_matter = $('<d-front-matter></d-front-matter>');
+    $('#distill-front-matter').wrap(front_matter);
+  
+    // create d-title
+    $('.d-title').changeElementType('d-title');
+  
+    // create d-byline
+    var byline = $('<d-byline></d-byline>');
+    $('.d-byline').replaceWith(byline);
+  
+    // create d-article
+    var article = $('<d-article></d-article>');
+    $('.d-article').wrap(article).children().unwrap();
+  
+    // move posts container into article
+    $('.posts-container').appendTo($('d-article'));
+  
+    // create d-appendix
+    $('.d-appendix').changeElementType('d-appendix');
+  
+    // create d-bibliography
+    var bibliography = $('<d-bibliography></d-bibliography>');
+    $('#distill-bibliography').wrap(bibliography);
+  
+    // flag indicating that we have appendix items
+    var appendix = $('.appendix-bottom').children('h3').length > 0;
+  
+    // replace citations with <d-cite>
+    $('.citation').each(function(i, val) {
+      appendix = true;
+      var cites = $(this).attr('data-cites').split(" ");
+      var dt_cite = $('<d-cite></d-cite>');
+      dt_cite.attr('key', cites.join());
+      $(this).replaceWith(dt_cite);
+    });
+    // remove refs
+    $('#refs').remove();
+  
+    // replace footnotes with <d-footnote>
+    $('.footnote-ref').each(function(i, val) {
+      appendix = true;
+      var href = $(this).attr('href');
+      var id = href.replace('#', '');
+      var fn = $('#' + id);
+      var fn_p = $('#' + id + '>p');
+      fn_p.find('.footnote-back').remove();
+      var text = fn_p.html();
+      var dtfn = $('<d-footnote></d-footnote>');
+      dtfn.html(text);
+      $(this).replaceWith(dtfn);
+    });
+    // remove footnotes
+    $('.footnotes').remove();
+  
+    $('h1.appendix, h2.appendix').each(function(i, val) {
+      $(this).changeElementType('h3');
+    });
+    $('h3.appendix').each(function(i, val) {
+      var id = $(this).attr('id');
+      $('.d-toc a[href="#' + id + '"]').parent().remove();
+      appendix = true;
+      $(this).nextUntil($('h1, h2, h3')).addBack().appendTo($('d-appendix'));
+    });
+  
+    // show d-appendix if we have appendix content
+    $("d-appendix").css('display', appendix ? 'grid' : 'none');
+  
+    // replace code blocks with d-code
+    $('pre>code').each(function(i, val) {
+      var code = $(this);
+      var pre = code.parent();
+      var clz = "";
+      var language = pre.attr('class');
+      if (language) {
+        // map unknown languages to "clike" (without this they just dissapear)
+        if ($.inArray(language, ["bash", "clike", "css", "go", "html",
+                                 "javascript", "js", "julia", "lua", "markdown",
+                                 "markup", "mathml", "python", "svg", "xml"]) == -1)
+          language = "clike";
+        language = ' language="' + language + '"';
+        var dt_code = $('<d-code block' + language + clz + '></d-code>');
+        dt_code.text(code.text());
+        pre.replaceWith(dt_code);
+      } else {
+        code.addClass('text-output').unwrap().changeElementType('pre');
+      }
+    });
+  
+    // localize layout chunks to just output
+    $('.layout-chunk').each(function(i, val) {
+  
+      // capture layout
+      var layout = $(this).attr('data-layout');
+  
+      // apply layout to markdown level block elements
+      var elements = $(this).children().not('d-code, pre.text-output, script');
+      elements.each(function(i, el) {
+        var layout_div = $('<div class="' + layout + '"></div>');
+        if (layout_div.hasClass('shaded')) {
+          var shaded_content = $('<div class="shaded-content"></div>');
+          $(this).wrap(shaded_content);
+          $(this).parent().wrap(layout_div);
+        } else {
+          $(this).wrap(layout_div);
+        }
+      });
+  
+  
+      // unwrap the layout-chunk div
+      $(this).children().unwrap();
+    });
+  
+    // load distill framework
+    load_distill_framework();
+  
+    // wait for window.distillRunlevel == 4 to do post processing
+    function distill_post_process() {
+  
+      if (!window.distillRunlevel || window.distillRunlevel < 4)
+        return;
+  
+      // hide author/affiliations entirely if we have no authors
+      var front_matter = JSON.parse($("#distill-front-matter").html());
+      var have_authors = front_matter.authors && front_matter.authors.length > 0;
+      if (!have_authors)
+        $('d-byline').addClass('hidden');
+  
+      // table of contents
+      if (have_authors) // adjust border if we are in authors
+        $('.d-toc').parent().addClass('d-article-with-toc');
+  
+      // strip links that point to #
+      $('.authors-affiliations').find('a[href="#"]').removeAttr('href');
+  
+      // hide elements of author/affiliations grid that have no value
+      function hide_byline_column(caption) {
+        $('d-byline').find('h3:contains("' + caption + '")').parent().css('visibility', 'hidden');
+      }
+  
+      // affiliations
+      var have_affiliations = false;
+      for (var i = 0; i<front_matter.authors.length; ++i) {
+        var author = front_matter.authors[i];
+        if (author.affiliation !== "&nbsp;") {
+          have_affiliations = true;
+          break;
+        }
+      }
+      if (!have_affiliations)
+        $('d-byline').find('h3:contains("Affiliations")').css('visibility', 'hidden');
+  
+      // published date
+      if (!front_matter.publishedDate)
+        hide_byline_column("Published");
+  
+      // document object identifier
+      var doi = $('d-byline').find('h3:contains("DOI")');
+      var doi_p = doi.next().empty();
+      if (!front_matter.doi) {
+        // if we have a citation and valid citationText then link to that
+        if ($('#citation').length > 0 && front_matter.citationText) {
+          doi.html('Citation');
+          $('<a href="#citation"></a>')
+            .text(front_matter.citationText)
+            .appendTo(doi_p);
+        } else {
+          hide_byline_column("DOI");
+        }
+      } else {
+        $('<a></a>')
+           .attr('href', "https://doi.org/" + front_matter.doi)
+           .html(front_matter.doi)
+           .appendTo(doi_p);
+      }
+  
+       // change plural form of authors/affiliations
+      if (front_matter.authors.length === 1) {
+        var grid = $('.authors-affiliations');
+        grid.children('h3:contains("Authors")').text('Author');
+        grid.children('h3:contains("Affiliations")').text('Affiliation');
+      }
+  
+      // inject pre code styles (can't do this with a global stylesheet b/c a shadow root is used)
+      $('d-code').each(function(i, val) {
+        var style = document.createElement('style');
+        style.innerHTML = 'pre code { padding-left: 10px; font-size: 12px; border-left: 2px solid rgba(0,0,0,0.1); } ' +
+                          '@media(min-width: 768px) { pre code { padding-left: 18px; font-size: 14px; } }';
+        if (this.shadowRoot)
+          this.shadowRoot.appendChild(style);
+      });
+  
+      // move appendix-bottom entries to the bottom
+      $('.appendix-bottom').appendTo('d-appendix').children().unwrap();
+      $('.appendix-bottom').remove();
+  
+      // clear polling timer
+      clearInterval(tid);
+  
+      // show body now that everything is ready
+      on_load_complete();
+    }
+  
+    var tid = setInterval(distill_post_process, 50);
+    distill_post_process();
+  
+  }
+  
+  function init_downlevel() {
+  
+    init_common();
+  
+     // insert hr after d-title
+    $('.d-title').after($('<hr class="section-separator"/>'));
+  
+    // check if we have authors
+    var front_matter = JSON.parse($("#distill-front-matter").html());
+    var have_authors = front_matter.authors && front_matter.authors.length > 0;
+  
+    // manage byline/border
+    if (!have_authors)
+      $('.d-byline').remove();
+    $('.d-byline').after($('<hr class="section-separator"/>'));
+    $('.d-byline a').remove();
+  
+    // remove toc
+    $('.d-toc-header').remove();
+    $('.d-toc').remove();
+    $('.d-toc-separator').remove();
+  
+    // move appendix elements
+    $('h1.appendix, h2.appendix').each(function(i, val) {
+      $(this).changeElementType('h3');
+    });
+    $('h3.appendix').each(function(i, val) {
+      $(this).nextUntil($('h1, h2, h3')).addBack().appendTo($('.d-appendix'));
+    });
+  
+  
+    // inject headers into references and footnotes
+    var refs_header = $('<h3></h3>');
+    refs_header.text('References');
+    $('#refs').prepend(refs_header);
+  
+    var footnotes_header = $('<h3></h3');
+    footnotes_header.text('Footnotes');
+    $('.footnotes').children('hr').first().replaceWith(footnotes_header);
+  
+    // move appendix-bottom entries to the bottom
+    $('.appendix-bottom').appendTo('.d-appendix').children().unwrap();
+    $('.appendix-bottom').remove();
+  
+    // remove appendix if it's empty
+    if ($('.d-appendix').children().length === 0)
+      $('.d-appendix').remove();
+  
+    // prepend separator above appendix
+    $('.d-appendix').before($('<hr class="section-separator" style="clear: both"/>'));
+  
+    // trim code
+    $('pre>code').each(function(i, val) {
+      $(this).html($.trim($(this).html()));
+    });
+  
+    // move posts-container right before article
+    $('.posts-container').insertBefore($('.d-article'));
+  
+    $('body').addClass('downlevel');
+  
+    on_load_complete();
+  }
+  
+  
+  function init_common() {
+  
+    // jquery plugin to change element types
+    (function($) {
+      $.fn.changeElementType = function(newType) {
+        var attrs = {};
+  
+        $.each(this[0].attributes, function(idx, attr) {
+          attrs[attr.nodeName] = attr.nodeValue;
+        });
+  
+        this.replaceWith(function() {
+          return $("<" + newType + "/>", attrs).append($(this).contents());
+        });
+      };
+    })(jQuery);
+  
+    // prevent underline for linked images
+    $('a > img').parent().css({'border-bottom' : 'none'});
+  
+    // mark non-body figures created by knitr chunks as 100% width
+    $('.layout-chunk').each(function(i, val) {
+      var figures = $(this).find('img, .html-widget');
+      if ($(this).attr('data-layout') !== "l-body") {
+        figures.css('width', '100%');
+      } else {
+        figures.css('max-width', '100%');
+        figures.filter("[width]").each(function(i, val) {
+          var fig = $(this);
+          fig.css('width', fig.attr('width') + 'px');
+        });
+  
+      }
+    });
+  
+    // auto-append index.html to post-preview links in file: protocol
+    // and in rstudio ide preview
+    $('.post-preview').each(function(i, val) {
+      if (window.location.protocol === "file:")
+        $(this).attr('href', $(this).attr('href') + "index.html");
+    });
+  
+    // get rid of index.html references in header
+    if (window.location.protocol !== "file:") {
+      $('.radix-site-header a[href]').each(function(i,val) {
+        $(this).attr('href', $(this).attr('href').replace("index.html", "./"));
+      });
+    }
+  
+    // add class to pandoc style tables
+    $('tr.header').parent('thead').parent('table').addClass('pandoc-table');
+    $('.kable-table').children('table').addClass('pandoc-table');
+  
+    // add figcaption style to table captions
+    $('caption').parent('table').addClass("figcaption");
+  
+    // initialize posts list
+    if (window.init_posts_list)
+      window.init_posts_list();
+  
+    // implmement disqus comment link
+    $('.disqus-comment-count').click(function() {
+      window.headroom_prevent_pin = true;
+      $('#disqus_thread').toggleClass('hidden');
+      if (!$('#disqus_thread').hasClass('hidden')) {
+        var offset = $(this).offset();
+        $(window).resize();
+        $('html, body').animate({
+          scrollTop: offset.top - 35
+        });
+      }
+    });
+  }
+  
+  document.addEventListener('DOMContentLoaded', function() {
+    if (is_downlevel_browser())
+      init_downlevel();
+    else
+      window.addEventListener('WebComponentsReady', init_distill);
+  });
+  
+  </script>
+  
+  <!--/radix_placeholder_distill-->
+  <script src="batpigday_files/jquery-1.11.3/jquery.min.js"></script>
+  <script src="batpigday_files/bowser-1.9.3/bowser.min.js"></script>
+  <script src="batpigday_files/webcomponents-2.0.0/webcomponents.js"></script>
+  <script src="batpigday_files/distill-2.2.21/template.v2.js"></script>
+  <!--radix_placeholder_site_in_header-->
+  <!--/radix_placeholder_site_in_header-->
+
+
+</head>
+
+<body>
+
+<!--radix_placeholder_front_matter-->
+
+<script id="distill-front-matter" type="text/json">
+{"title":"batpigday","description":"a batpigday is the coding equivalent of  groundhogday","authors":[{"author":"Charles T. Gray","authorURL":"https://twitter.com/cantabile","affiliation":"&nbsp;","affiliationURL":"#"}],"publishedDate":"2019-03-30T00:00:00.000+11:00","citationText":"Gray, 2019"}
+</script>
+
+<!--/radix_placeholder_front_matter-->
+<!--radix_placeholder_navigation_before_body-->
+<!--/radix_placeholder_navigation_before_body-->
+<!--radix_placeholder_site_before_body-->
+<!--/radix_placeholder_site_before_body-->
+
+<div class="d-title">
+<h1>batpigday</h1>
+<p>a batpigday is the coding equivalent of groundhogday</p>
+</div>
+
+<div class="d-byline">
+  Charles T. Gray <a href="https://twitter.com/cantabile" class="uri">https://twitter.com/cantabile</a> 
+  
+<br/>03-30-2019
+</div>
+
+<div class="d-article">
+<h3 class="d-toc-header">Table of Contents</h3>
+<nav class="d-toc" id="TOC">
+<ul>
+<li><a href="#introduction">introduction</a></li>
+<li><a href="#set-objective">set objective</a><ul>
+<li><a href="#version-control">version control</a></li>
+<li><a href="#how-to-sync">how to sync?</a></li>
+<li><a href="#what-is-current-error-message">what is current error message?</a></li>
+<li><a href="#where-is-current-error-message">where is current error message?</a></li>
+</ul></li>
+<li><a href="#batpigday-starting-again-more-different-s">batpigday, starting again, more different S</a><ul>
+<li><a href="#what-is-current-error-message-1">what is current error message?</a></li>
+<li><a href="#where-is-current-error-message-1">where is current error message?</a></li>
+</ul></li>
+<li><a href="#how-to-make-sure-what-i-think-is-true-is-true">how to make sure what i think is true is true?</a></li>
+<li><a href="#batpigday">batpigday</a><ul>
+<li><a href="#what-is-the-current-error">what is the current error?</a><ul>
+<li><a href="#sidenote-repex-system-info">sidenote, repex system info</a></li>
+</ul></li>
+<li><a href="#where-is-the-current-error">where is the current error?</a><ul>
+<li><a href="#interpreting-testthat-output">interpreting <code>testthat::</code> output</a></li>
+<li><a href="#todays-bughunt">today’s bughunt</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+<hr class="d-toc-separator"/>
+<h1 id="introduction">introduction</h1>
+<p>I can only but assume this will be the first of many batpigday posts.</p>
+<p>In the six years or so that I’ve been using rstats, debugging has dominated far too much of my time.</p>
+<iframe seamless="seamless" style="width: 100%; border: none; display: block; max-width: 420px; height: 360px;" src="https://getyarn.io/yarn-clip/embed/76c65c90-5e05-419f-9a84-0f8adc431d92?autoplay=false">
+</iframe>
+<p>To motivate myself to move this frustrating project that is dragging on just a litte more today, I’m going to document my workflow. I wonder where there are points where I could make this less frustrating for myself?</p>
+<h1 id="set-objective">set objective</h1>
+<p><strong>get new error message</strong> &amp; document the process</p>
+<h2 id="version-control">version control</h2>
+<p>I really need to stop going of half-cocked at this point and create an issue for this, tag a new branch with that issue’s number, and feel like I can make a mess today.</p>
+<h2 id="how-to-sync">how to sync?</h2>
+<p>I need to read this more carefully; documenting my workflow is exposing to me how half-baked my git skills are.</p>
+<p>Something I’d like to master is functional feature branching. Not aiming to do anything fancy, but this is not smooth workflow for me yet.</p>
+<pre class="bash"><code>
+metasim on  sampling-size-debug-55
+➜</code></pre>
+<p>Created issue and new branch, tagged with issue number.</p>
+<p><code>git pull</code> or possibly <code>git fetch</code>?! to sync. I did learn that <code>git fetch -p</code> will note the branches you’ve deleted remotely. If I manage my branches from GitHub, hopefully this will keep my branches in sync.</p>
+<h2 id="what-is-current-error-message">what is current error message?</h2>
+<pre class="r"><code>
+library(metasim)
+#&gt; Error: package or namespace load failed for &#39;metasim&#39;:
+#&gt;  object &#39;tidy&#39; is not exported by &#39;namespace:metabroom&#39;</code></pre>
+<p>Created on 2019-03-30 by the <a href="http://reprex.tidyverse.org">reprex package</a> (v0.2.0).</p>
+<p>Was not anticipating that. Completely forgot that this package depends on the <code>broom::</code> project going on. Malcolm’s <code>tidymeta::</code> is functional on my system right now. So, ready to start troubleshooting.</p>
+<h2 id="where-is-current-error-message">where is current error message?</h2>
+<p>Switch to <code>tidymeta::</code> <code>tidy</code> method using workflow-changing trick that @<a href="todo:%20emily&#39;s%20twitter%20handle">emilythelime</a> taught me recently; github’s repo text-search tool is sublime.</p>
+<p>It builds and loads. <code>library(metasim)</code> now displays no error.</p>
+<h1 id="batpigday-starting-again-more-different-s">batpigday, starting again, more different S</h1>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/90X5NJleYJQ?start=54" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe>
+<h2 id="what-is-current-error-message-1">what is current error message?</h2>
+<pre class="r"><code>
+library(metasim)
+metasims()
+#&gt; performing  108  simulations of  10  trials
+#&gt; 
+  |                                                                       
+  |                                                                 |   0%
+#&gt; Error: Column `measure` is unknown
+metasims(trial_fn = singletrial)
+#&gt; performing  108  simulations of  10  trials
+#&gt; 
+  |                                                                       
+  |                                                                 |   0%
+#&gt; Error: Column `measure` is unknown</code></pre>
+<p>Created on 2019-03-31 by the <a href="http://reprex.tidyverse.org">reprex package</a> (v0.2.0).</p>
+<h2 id="where-is-current-error-message-1">where is current error message?</h2>
+<p>Not sure, but I’m going to start by ensuring that I am always generating positive sample sizes.</p>
+<h1 id="how-to-make-sure-what-i-think-is-true-is-true">how to make sure what i think is true is true?</h1>
+<p>Tests!</p>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+context(&quot;sampling&quot;)
+
+library(tidyverse)
+library(metasim)
+
+samples_sizes &lt;- rerun(1000, sim_n(k = 10)) %&gt;% bind_rows()
+
+test_that(&quot;sample sizes are positive&quot;, {
+  expect_equal(samples_sizes %&gt;%
+                 filter(n &lt; 0) %&gt;%
+                 nrow(), 0)
+})</code></pre>
+</div>
+<p>So, I can feel fairly confident it’s not the sample sizes.</p>
+<p>On second thought, I could <code>assertthat::</code> this to make sure.</p>
+<pre class="r"><code>
+sim_n &lt;- function(k = 3,
+                   min_n = 20,
+                   max_n = 200,
+                   prop = 0.3,
+                   wide = FALSE) {
+  assert_that(min_n &gt; 0,
+              msg = &quot;minimum sample size must be positive&quot;)
+  assert_that(max_n &gt; 0,
+              msg = &quot;maximum sample size must be positive&quot;)
+  assert_that(min_n &lt;= max_n,
+              msg = &quot;minimum sample size cannot exceed maximum sample size&quot;)
+</code></pre>
+<p>And now tests can be updated with error expectations.</p>
+<pre class="r"><code>
+samples_sizes &lt;- rerun(1000, sim_n(k = 10)) %&gt;% bind_rows()
+
+test_that(&quot;sample sizes are positive&quot;, {
+  expect_equal(samples_sizes %&gt;%
+                 filter(n &lt; 0) %&gt;%
+                 nrow(), 0)
+  expect_error(sim_n(min_n = -30))
+  expect_error(sim_n(min_n = -30, max_n = -100))
+  expect_error(sim_n(min_n= 50, max_n = 2))
+})</code></pre>
+<p>I wonder if I should be using <code>validate::</code> or <code>assertthat::</code>? Haven’t learnt to use <code>validate::</code> yet, and it’s not today’s rabbit hole.</p>
+<h1 id="batpigday">batpigday</h1>
+<h2 id="what-is-the-current-error">what is the current error?</h2>
+<pre class="r"><code>
+library(metasim)
+metasims()
+#&gt; performing  108  simulations of  10  trials
+#&gt; 
+  |                                                                       
+  |                                                                 |   0%
+#&gt; Error: Column `measure` is unknown</code></pre>
+<p>Created on 2019-03-31 by the <a href="http://reprex.tidyverse.org">reprex package</a> (v0.2.0).</p>
+<p>Yes, batpigday, indeed.</p>
+<h3 id="sidenote-repex-system-info">sidenote, repex system info</h3>
+<pre><code>
+Error: First three lines of putative code are:
+&lt;!-- language-all: lang-r --&gt;
+
+    Yes, batpigday, indeed.
+which isn&#39;t valid R code.
+Are we going in circles? Did you just run reprex()?
+In that case, the clipboard now holds the *rendered* result.</code></pre>
+<p>And now my clipboard is mocking me, as I investigate how to get system information in a <code>reprex</code>.</p>
+<pre class="r"><code>
+library(metasim)
+metasims()
+#&gt; performing  108  simulations of  10  trials
+#&gt; 
+  |                                                                       
+  |                                                                 |   0%
+#&gt; Error: Column `measure` is unknown</code></pre>
+<p>Created on 2019-03-31 by the <a href="http://reprex.tidyverse.org">reprex package</a> (v0.2.0).</p>
+<details>
+<p><summary>Session info</summary></p>
+<pre class="r"><code>
+devtools::session_info()
+#&gt; Session info -------------------------------------------------------------
+#&gt;  setting  value                       
+#&gt;  version  R version 3.5.1 (2018-07-02)
+#&gt;  system   x86_64, linux-gnu           
+#&gt;  ui       X11                         
+#&gt;  language en_AU:en                    
+#&gt;  collate  en_AU.UTF-8                 
+#&gt;  tz       Australia/Melbourne         
+#&gt;  date     2019-03-31
+#&gt; Packages -----------------------------------------------------------------
+#&gt;  package    * version    date       source                               
+#&gt;  actuar       2.3-1      2018-03-19 CRAN (R 3.5.1)                       
+#&gt;  assertthat   0.2.0      2017-04-11 CRAN (R 3.5.1)                       
+#&gt;  backports    1.1.2      2017-12-13 CRAN (R 3.5.1)                       
+#&gt;  base       * 3.5.1      2018-08-05 local                                
+#&gt;  broom        0.5.0      2018-07-17 CRAN (R 3.5.1)                       
+#&gt;  colorspace   1.3-2      2016-12-14 CRAN (R 3.5.1)                       
+#&gt;  compiler     3.5.1      2018-08-05 local                                
+#&gt;  crayon       1.3.4      2017-09-16 CRAN (R 3.5.1)                       
+#&gt;  datasets   * 3.5.1      2018-08-05 local                                
+#&gt;  devtools     1.13.6     2018-06-27 CRAN (R 3.5.1)                       
+#&gt;  digest       0.6.15     2018-01-28 CRAN (R 3.5.1)                       
+#&gt;  dontpanic    0.0.0.9000 2019-03-21 local                                
+#&gt;  dplyr        0.8.0.9002 2019-03-03 Github (tidyverse/dplyr@cedc939)     
+#&gt;  evaluate     0.11       2018-07-17 CRAN (R 3.5.1)                       
+#&gt;  expint       0.1-5      2018-06-29 CRAN (R 3.5.1)                       
+#&gt;  forcats      0.3.0      2018-02-19 CRAN (R 3.5.1)                       
+#&gt;  ggplot2      3.1.0.9000 2019-03-26 Github (tidyverse/ggplot2@c3fcbd8)   
+#&gt;  glue         1.3.0      2018-07-17 CRAN (R 3.5.1)                       
+#&gt;  graphics   * 3.5.1      2018-08-05 local                                
+#&gt;  grDevices  * 3.5.1      2018-08-05 local                                
+#&gt;  grid         3.5.1      2018-08-05 local                                
+#&gt;  gtable       0.2.0      2016-02-26 CRAN (R 3.5.1)                       
+#&gt;  htmltools    0.3.6      2017-04-28 CRAN (R 3.5.1)                       
+#&gt;  knitr        1.20       2018-02-20 CRAN (R 3.5.1)                       
+#&gt;  lattice      0.20-35    2017-03-25 CRAN (R 3.5.1)                       
+#&gt;  lazyeval     0.2.1      2017-10-29 CRAN (R 3.5.1)                       
+#&gt;  magrittr     1.5        2014-11-22 CRAN (R 3.5.1)                       
+#&gt;  Matrix       1.2-14     2018-04-13 CRAN (R 3.5.1)                       
+#&gt;  memoise      1.1.0      2017-04-21 CRAN (R 3.5.1)                       
+#&gt;  metafor      2.0-0      2017-06-22 CRAN (R 3.5.1)                       
+#&gt;  metasim    * 0.0.0.9000 2019-03-30 local                                
+#&gt;  methods    * 3.5.1      2018-08-05 local                                
+#&gt;  munsell      0.5.0      2018-06-12 CRAN (R 3.5.1)                       
+#&gt;  nlme         3.1-137    2018-04-07 CRAN (R 3.5.1)                       
+#&gt;  pillar       1.3.1.9000 2019-01-29 Github (r-lib/pillar@3a54b8d)        
+#&gt;  pkgconfig    2.0.2      2019-02-09 Github (r-lib/pkgconfig@e9d0190)     
+#&gt;  plyr         1.8.4      2016-06-08 CRAN (R 3.5.1)                       
+#&gt;  purrr        0.3.1      2019-03-03 Github (tidyverse/purrr@d5a59ff)     
+#&gt;  R6           2.2.2      2017-06-17 CRAN (R 3.5.0)                       
+#&gt;  Rcpp         1.0.0      2018-11-07 CRAN (R 3.5.1)                       
+#&gt;  rlang        0.3.1      2019-01-08 CRAN (R 3.5.1)                       
+#&gt;  rmarkdown    1.10       2018-06-11 CRAN (R 3.5.1)                       
+#&gt;  rprojroot    1.3-2      2018-01-03 CRAN (R 3.5.1)                       
+#&gt;  scales       0.5.0      2017-08-24 CRAN (R 3.5.1)                       
+#&gt;  stats      * 3.5.1      2018-08-05 local                                
+#&gt;  stringi      1.2.4      2018-07-20 CRAN (R 3.5.1)                       
+#&gt;  stringr      1.3.1      2018-05-10 CRAN (R 3.5.1)                       
+#&gt;  tibble       2.1.1.9000 2019-03-26 Github (tidyverse/tibble@71b8ff6)    
+#&gt;  tidymeta     0.1.0.9000 2019-03-27 local                                
+#&gt;  tidyr        0.8.1      2018-05-18 CRAN (R 3.5.1)                       
+#&gt;  tidyselect   0.2.5.9000 2019-03-10 Github (tidyverse/tidyselect@19150c0)
+#&gt;  tools        3.5.1      2018-08-05 local                                
+#&gt;  utils      * 3.5.1      2018-08-05 local                                
+#&gt;  varameta     0.0.0.9000 2019-03-18 local                                
+#&gt;  withr        2.1.2      2018-03-15 CRAN (R 3.5.1)                       
+#&gt;  yaml         2.2.0      2018-07-25 CRAN (R 3.5.1)</code></pre>
+</details>
+<p>with <code>reprex::reprex(si = TRUE)</code>.</p>
+<h2 id="where-is-the-current-error">where is the current error?</h2>
+<p>I really should have test, and in particular, a <strong>context</strong> for this by now. Documenting my workflow is making me face some hard truths. I get distracted by ad hoc console testing, and it’s inefficient, in the long run.</p>
+<pre class="r"><code>
+context(&quot;default pipeline&quot;)
+
+library(testthat)
+library(metasim)
+
+test_that(&quot;work upwards through algorithm&quot;, {
+  expect_is(sim_n(), &quot;data.frame&quot;)
+  # sim_df calls sim_n
+  expect_is(sim_df(), &quot;data.frame&quot;)
+  # metasim calls metatrial
+  expect_is(metatrial, &quot;data.frame&quot;)
+  expect_is(singletrial(), &quot;data.frame&quot;) # alternate trial
+  expect_is(metasim(), &quot;data.frame&quot;)
+  # metasims calls sim_df &amp; metasim
+  expect_is(metasims(), &quot;data.frame&quot;)
+})
+</code></pre>
+<p>So this test will stop when I hit the bug.</p>
+<p>Although, it’s also of interest whether components up the pipe work.</p>
+<p>So, I can write separate tests for each of them.</p>
+<p>I often feel like I want to scrunch it all up and start again. I am really enjoying how creating a new context to debug this problem is scratching that itch.</p>
+<pre class="r"><code>
+context(&quot;default pipeline&quot;)
+
+library(testthat)
+library(metasim)
+
+test_that(&quot;work upwards through algorithm&quot;, {
+  expect_is(sim_n(), &quot;data.frame&quot;)
+  # sim_df calls sim_n
+  expect_is(sim_df(), &quot;data.frame&quot;)
+  expect_is(sim_stats(), &quot;data.frame&quot;)
+  # metasim calls metatrial
+  expect_is(metatrial, &quot;data.frame&quot;)
+  expect_is(singletrial(), &quot;data.frame&quot;) # alternate trial
+  expect_is(metasim(), &quot;data.frame&quot;)
+  # metasims calls sim_df &amp; metasim
+  expect_is(metasims(), &quot;data.frame&quot;)
+})
+
+# test each component on defaults
+
+test_that(&quot;sim_n&quot;, {
+  expect_is(sim_n(), &quot;data.frame&quot;)
+})
+
+test_that(&quot;sim_df&quot;, {
+  expect_is(sim_df(), &quot;data.frame&quot;)
+})
+
+test_that(&quot;metatrial&quot;, {
+  # metasim calls metatrial
+  expect_is(metatrial, &quot;data.frame&quot;)
+})
+
+test_that(&quot;singletrial&quot;, {
+  expect_is(singletrial(), &quot;data.frame&quot;) # alternate trial
+})
+
+test_that(&quot;metasim&quot;, {
+  expect_is(metasim(), &quot;data.frame&quot;)
+})
+</code></pre>
+<p>Okay, I think I can run this and the output will make sense. It’s interesting how much I would usually go to the console at this point, and not write down what I did yesterday. I feel like I am repeating the same steps and it feels so unproductive. I think testing is the way around this, but I am still developing the discipline.</p>
+<h3 id="interpreting-testthat-output">interpreting <code>testthat::</code> output</h3>
+<pre class="r"><code>
+&gt; testthat::test_file(&quot;tests/testthat/test-default-pipeline.R&quot;)
+✔ | OK F W S | Context
+✖ |  7 4     | default pipeline [2.2 s]
+───────────────────────────────────────────────────────────────────────
+test-default-pipeline.R:12: failure: work upwards through algorithm
+`metatrial` inherits from `function` not `data.frame`.
+
+test-default-pipeline.R:14: error: work upwards through algorithm
+Column `measure` is unknown
+1: expect_is(metasim(), &quot;data.frame&quot;) at tests/testthat/test-default-pipeline.R:14
+2: quasi_label(enquo(object), label)
+3: eval_bare(get_expr(quo), get_env(quo))
+4: metasim()
+5: results %&gt;% transpose() %&gt;% pluck(&quot;result&quot;) %&gt;% keep(is.data.frame) %&gt;% 
+       keep(~nrow(.) &gt;= 1) %&gt;% bind_rows() %&gt;% dplyr::group_by(measure) %&gt;% 
+       dplyr::summarise(tau2 = mean(tau2), ci_width = mean(ci_ub - ci_lb), 
+           bias = mean(bias), coverage_count = sum(coverage), successful_trials = length(coverage), 
+           coverage = coverage_count/successful_trials) %&gt;% mutate(id = id) at /home/charles/Documents/repos/metasim/R/metasim.R:20
+6: withVisible(eval(quote(`_fseq`(`_lhs`)), env, env))
+7: eval(quote(`_fseq`(`_lhs`)), env, env)
+8: eval(quote(`_fseq`(`_lhs`)), env, env)
+9: `_fseq`(`_lhs`)
+10: freduce(value, `_function_list`)
+11: function_list[[i]](value)
+12: dplyr::group_by(., measure)
+13: group_by.data.frame(., measure)
+14: grouped_df(groups$data, groups$group_names, .drop)
+15: grouped_df_impl(data, unname(vars), drop)
+
+test-default-pipeline.R:31: failure: metatrial
+`metatrial` inherits from `function` not `data.frame`.
+
+test-default-pipeline.R:39: error: metasim
+Column `measure` is unknown
+1: expect_is(metasim(), &quot;data.frame&quot;) at tests/testthat/test-default-pipeline.R:39
+2: quasi_label(enquo(object), label)
+3: eval_bare(get_expr(quo), get_env(quo))
+4: metasim()
+5: results %&gt;% transpose() %&gt;% pluck(&quot;result&quot;) %&gt;% keep(is.data.frame) %&gt;% 
+       keep(~nrow(.) &gt;= 1) %&gt;% bind_rows() %&gt;% dplyr::group_by(measure) %&gt;% 
+       dplyr::summarise(tau2 = mean(tau2), ci_width = mean(ci_ub - ci_lb), 
+           bias = mean(bias), coverage_count = sum(coverage), successful_trials = length(coverage), 
+           coverage = coverage_count/successful_trials) %&gt;% mutate(id = id) at /home/charles/Documents/repos/metasim/R/metasim.R:20
+6: withVisible(eval(quote(`_fseq`(`_lhs`)), env, env))
+7: eval(quote(`_fseq`(`_lhs`)), env, env)
+8: eval(quote(`_fseq`(`_lhs`)), env, env)
+9: `_fseq`(`_lhs`)
+10: freduce(value, `_function_list`)
+11: function_list[[i]](value)
+12: dplyr::group_by(., measure)
+13: group_by.data.frame(., measure)
+14: grouped_df(groups$data, groups$group_names, .drop)
+15: grouped_df_impl(data, unname(vars), drop)
+───────────────────────────────────────────────────────────────────────
+
+══ Results ════════════════════════════════════════════════════════════
+Duration: 2.2 s
+
+OK:       7
+Failed:   4
+Warnings: 0
+Skipped:  0</code></pre>
+<p>Okay, so I have an error in line 12. Ah, that’s a typo; forgot the <code>()</code>.</p>
+<p>But this is good news, this means that <code>sim_n</code>, <code>sim_df</code>, and <code>sim_stats</code> all returned dataframes. I kinda want to know they’re not empty. I suppose I could add another expectation.</p>
+<hr />
+<p>So now it fails on the trial function, which I did know from my console testing. I like that I’ve thought through a way of automating these tests for tomorrow.</p>
+<hr />
+<p>aha! Found it it was the use of <code>glance</code> on the simulation function. Still need to sort out dependencies.</p>
+<hr />
+<p>Lesson of the day. Use tests, they <em>are</em> the documentation of my trouble-shooting processes. Don’t be afraid to create new contexts to test really specific things.</p>
+<p>My sampling problem was already solved, but it was not so simple to take care of the bespoke <code>broom::</code> depencies.</p>
+<p>And now, a blog post later. I have, indeed, got a new error message. No error! There are a worrying number of warnings being generated. But, that my friends, is tomorrow Charles’ problem.</p>
+<p>Sidenote, I leveled up a great deal today, inadvertently, in how to import and export functions into a package. I also finally understand why export is a handy function.</p>
+<h3 id="todays-bughunt">today’s bughunt</h3>
+<p><img src="https://images.gr-assets.com/hostedimages/1496299559ra/22898103.gif" width="400" class="gr-hostedUserImg"></p>
+<p>Here’s the version of the test I ended up working with. Documentating my workflow certainly made me disciplined.</p>
+<pre class="r"><code>
+context(&quot;default pipeline&quot;)
+
+library(testthat)
+library(metasim)
+
+
+# test each component on defaults
+
+test_that(&quot;sim_n&quot;, {
+  expect_is(sim_n(), &quot;data.frame&quot;)
+})
+
+test_that(&quot;sim_df&quot;, {
+  expect_is(sim_df(), &quot;data.frame&quot;)
+})
+
+test_that(&quot;metatrial&quot;, {
+  # metasim calls metatrial
+  expect_is(metatrial(), &quot;data.frame&quot;)
+})
+
+test_that(&quot;singletrial&quot;, {
+  expect_is(singletrial(), &quot;data.frame&quot;) # alternate trial
+})
+
+test_that(&quot;metasim&quot;, {
+  expect_is(metasim() %&gt;% pluck(&quot;results_summary&quot;), &quot;data.frame&quot;)
+})
+
+test_that(&quot;metasims&quot;, {
+  expect_is(metasims(), &quot;data.frame&quot;)
+})
+
+
+test_that(&quot;work upwards through algorithm&quot;, {
+  expect_is(sim_n(), &quot;data.frame&quot;)
+  expect_gt(sim_n() %&gt;% nrow(), 1)
+  # sim_df calls sim_n
+  expect_is(sim_df(), &quot;data.frame&quot;)
+  expect_is(sim_stats(), &quot;data.frame&quot;)
+  # metasim calls metatrial
+  expect_is(metatrial(), &quot;data.frame&quot;)
+  expect_is(singletrial(), &quot;data.frame&quot;) # alternate trial
+  expect_is(metasim() %&gt;% pluck(&#39;results_summary&#39;), &quot;data.frame&quot;)
+  # metasims calls sim_df &amp; metasim
+  expect_is(metasims(), &quot;data.frame&quot;)
+})
+
+
+</code></pre>
+<!--radix_placeholder_article_footer-->
+<!--/radix_placeholder_article_footer-->
+</div>
+
+<div class="d-appendix">
+</div>
+
+
+<!--radix_placeholder_site_after_body-->
+<!--/radix_placeholder_site_after_body-->
+<!--radix_placeholder_appendices-->
+<div class="appendix-bottom"></div>
+<!--/radix_placeholder_appendices-->
+<!--radix_placeholder_navigation_after_body-->
+<!--/radix_placeholder_navigation_after_body-->
+
+</body>
+
+</html>

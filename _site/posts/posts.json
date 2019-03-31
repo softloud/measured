@@ -1,5 +1,24 @@
 [
   {
+    "path": "posts/2019-03-30-batpigday/",
+    "title": "batpigday",
+    "description": "a batpigday is the coding equivalent of  groundhogday",
+    "author": [
+      {
+        "name": "Charles T. Gray",
+        "url": "https://twitter.com/cantabile"
+      }
+    ],
+    "date": "2019-03-30",
+    "categories": [
+      "batpigday",
+      "debugging",
+      "dev"
+    ],
+    "preview": "https://images.gr-assets.com/hostedimages/1496299559ra/22898103.gif",
+    "last_modified": "2019-03-31T15:00:52+11:00"
+  },
+  {
     "path": "posts/2019-03-28-quack-quack-said-the-duck/",
     "title": "quack! quack! said the duck",
     "description": "making sense of methods in R",
@@ -14,7 +33,7 @@
       "dev"
     ],
     "preview": {},
-    "last_modified": "2019-03-28T21:03:18+11:00"
+    "last_modified": "2019-03-30T13:38:31+11:00"
   },
   {
     "path": "posts/2019-02-25-does-safely-play-nice-with-rma/",
