@@ -27,7 +27,7 @@ I recently watched a documentary series[^1] about a murder in a tiny community i
 
 I’m seeing a lot of talk about Code of Conducts in the rstats community, and I think there are a lot of good intentions, that are fundamentally wrongheaded. And I feel that it’s overlooked that these have real consequences. Acknowledging unwanted consequences of decisions does not necessarily imply that people bear ill will. Indeed actions are almost never malicious, everyone is the good guy hero of their own story; almost no one, and I include most abusers in this, _intends_ to be a bad person. But our actions, however well intentioned, can and do have consequences for others.  
 
-I think the focus needs to shift from conduct to community, support, and inclusivity. The problem with the term conduct, is it focussed on the perpetrator’s _doing_. We are not in the business of policing people. We should support people in making complaints to the police about serious cases of abuse and harassment, rather than trying to do their job for them. Indeed, it is very important that complaints are formal, so that the weight of evidence builds in the public record. 
+I think the focus needs to shift from conduct to community, support, and inclusivity. The problem with the term conduct, is it is focussed on the perpetrator’s _doing_. We are not in the business of policing people. We should support people in making complaints to the police about serious cases of abuse and harassment, rather than trying to do their job for them. Indeed, it is very important that complaints are formal, so that the weight of evidence builds in the public record. 
 
 ## you don’t need to ascertain wrongdoing
 
