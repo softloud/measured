@@ -1,0 +1,93 @@
+---
+title: "A coding of kindness"
+description: |
+  Perhaps we should opt for a Coding of Kindness, rather than a Code of Conduct.
+author:
+  - name: Charles T. Gray
+    url: https://twitter.com/cantabile
+date: 04-06-2019
+output:
+  radix::radix_article:
+    self_contained: false
+    toc: true
+categories: 
+  - grrr
+
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+I’m starting to think we should drop the _conduct_ from Code of Conduct.
+
+## police are for crimes
+
+I recently watched a documentary series[^1] about a murder in a tiny community in some remote desert in the US. It detailed how despite overwhelming evidence as to who committed the murder, the murderer was let off by the jury. And it wasn’t because they were his friends, it was because there wasn’t enough CSI-style forensic evidence. There wasn’t really a crime to solve, but merely to adjudicate the outcome. The jury became obsessed with assessing the evidence, to the point where logic was ignored.
+
+I’m seeing a lot of talk about Code of Conducts in the rstats community, and I think there are a lot of good intentions, that are fundamentally wrongheaded. And I feel that it’s overlooked that these have real consequences. Acknowledging unwanted consequences of decisions does not necessarily imply that people bear ill will. Indeed actions are almost never malicious, everyone is the good guy hero of their own story; almost no one, and I include most abusers in this, _intends_ to be a bad person. But our actions, however well intentioned, can and do have consequences for others.  
+
+I think the focus needs to shift from conduct to community, support, and inclusivity. The problem with the term conduct, is it focussed on the perpetrator’s _doing_. We are not in the business of policing people. We should support people in making complaints to the police about serious cases of abuse and harassment, rather than trying to do their job for them. Indeed, it is very important that complaints are formal, so that the weight of evidence builds in the public record. 
+
+## you don’t need to ascertain wrongdoing
+
+Here’s my biggest issue with what I'm seeing and experiencing. Why do you need to ascertain wrongdoing to find someone in distress worthy of empathy? Why do you need a villain?
+
+If you only take action for the most serious of cases, then you are trying to replace the police. 
+
+I think it’s great how the community have rallied around the woman who was harassed (possibly assaulted, I don’t know details)  at Data Camp. But in that case people were able to define a perpetrator and a victim. 
+
+Here’s another scenario, that in my experience is not at all acceptable. It is entirely possible, indeed even probable, that a socially awkward man who is well intentioned can make a woman who has experienced abuse feel uncomfortable. Sometimes there isn’t a villain, only a victim.
+
+Consider the number of survivors in the community. If we treat all of them as I have been, I think we have ways to go. 
+
+I'm sure everyone in the following story had the best of intentions, but their actions nonetheless have had negative consquences for me. 
+
+## a value judgement is not required
+
+I contacted someone who I thought was a friend on a Code of Conduct Committee. What I requested, I believed was simple. 
+
+I said a co-author was making me uncomfortable; intervening in a way that I found invasive in my professional life, setting meetings, announcing funding publically, turning up uninvited when I was working. That I'd repeatedly asked him to stop, but he kept intervening in ways I found invasive. I said I thought I could navigate the tricky diplomacy of the situation, most importantly saving the paper, if I could avoid having to interact with that person alone. Could I please follow my friend around at the conference for strength in numbers? 
+
+My friend then became very uncomfortable, said he needed to talk to other people. I said,oh, I thought, as friends, we’d be out  hanging a lot anyway, this was just to say, this is why I might do it _a lot_.  He didn’t finish the conversation.  
+
+Feeling alone with the problem, I then resigned myself to losing the paper, contacted the person who was making me uncomfortable and told him the simplest thing was to leave me alone, as I couldn’t make him understand how I found his behaviour to be invasive of my professional work.
+
+I contacted the committee again and told them that I had resolved the situation and no action need be taken. I arrived at the conference to find a lot of people behaving strangely, and even avoiding me entirely. Action was taken by sending a man I didn’t know knew about it to my workshop without informing me, despite me asking no action be taken. And no one seemed to care about the paper, which was all I cared about.           
+
+Since then I haven’t able to get anyone to talk to me sensibly about it; or more to the point, reassure me that they would be polite. When I arrived the conference it became clear lots of people knew about it, and people seemed less friendly than before. I tried to understand what was going on, but it was made clear that the only  acceptable behaviour from me was to pretend as if everyone wasn’t behaving strangely with me. It feels as if everyone thought I'd falsely accused someone of misconduct, when I was expressing what I  believe is understandable discomfort. 
+
+I can only surmise, given the lack of communication, that this has spread interstate for me. The same unfriendliness and general weirdness has followed me here. 
+
+People appear to me to be behaving as I am in a false accusation of misconduct scandal. All I know was that it was decided for me that I could travel a six-hour round trip to do menial tasks, for my own good, but there was little interest in any professional input I may have. I quit the organisation; I really do have better things to do with my time. I expressed my dismay to someone on the committee, and they said that they hoped I would give them the opportunity to change my mind. Never heard from them again on it, and I quit.  
+
+## not how to handle it
+
+It’s not polite not to respond to someone. It’s not polite to avoid someone. It’s not polite to take something told to you in confidence and share it with others without informing them. And I think it’s really not very kind to treat someone who asked for help like this. It’s not kind to send me on a six-hour round trip to do menial tasks. I don’t feel comfortable around people who feel empowered to make decisions for me like this, and who are not being communicative in general. I don’t feel safe that people will treat me with civility. 
+
+I now feel ostracised in my local professional community and am trying to leave the country. I also now feel particularly isolated with my research.  
+
+As if things weren’t hard enough. I tried to explain that treating someone who is a survivor like this is extraordinarily hurtful, and I have been dismissed repeatedly. It’s not trivial for me to experience what feels like a lot (some truly bizarre) judgements of me. It’s not trivial to appear to be embroiled in a false accusation of misconduct scandal when I accused no one of misconduct. I have now abandoned hope that I will be treated with civility. 
+
+I don’t understand why you need someone to have breached your code to care. 
+
+For someone from my background (I am a [textbook case](https://en.wikipedia.org/wiki/Forgotten_Australians)), who was shunned by my friends and family when I experienced family breakdown at 15, to experience shunning all over again causes me ongoing distress that I don’t feel I’ll escape until I leave the country. 
+
+## a coding of kindness
+
+Here’s the kind of committee I’d like to see. A group at a conference or event that is dedicated to supporting people who may not have something serious enough to take time off work for, but have something going on, and need a bit of social or professional support. 
+
+We make allowances for breaches of social mores by neurodiverse people all the time in the community. There is a wonderful acceptance of socially awkward young men who can’t make eye contact in the mathematical science community. 
+
+Why can’t we extend the same support to a woman who is feeling uncomfortable and not sure how to handle a professional situation? Especially if she is a survivor? 
+
+I don’t believe trivialising, dismissing, and shunning is kind or, even, polite. I think the bare minimum of kindness we can afford is civility. 
+
+Rather than a Code of Conduct, I propose we need a Coding, to neologise a collective noun, of Kindness, a collection of ideas and ways we actively acknowledge and support people in the community who have experienced abuse, harassment, and bullying. 
+
+We should *encode* behaviour of support and empathy, rather than look for crimes to solve and villains to blame. Sometimes there aren’t villains, just someone in need of some empathy.  
+
+[^1]: I wish I could find the name of the show or the trailer; it had these extraordinary interviews with one-eyed cowboy, who’d gaze across the desert, open another beer, light a smoke, and pontificate. I would love to have a twitterbot delivering me snippets on a daily basis of him.  
+
+
+

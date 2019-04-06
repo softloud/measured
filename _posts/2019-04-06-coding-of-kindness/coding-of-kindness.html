@@ -19,9 +19,9 @@
  <!--/radix_placeholder_import_source-->
 
   <!--radix_placeholder_meta_tags-->
-  <title>measured.: life's work</title>
+  <title>A coding of kindness</title>
   
-  <meta property="description" itemprop="description" content="my bespoke productivity system"/>
+  <meta property="description" itemprop="description" content="Perhaps we should opt for a Coding of Kindness, rather than a Code of Conduct."/>
   
   
   <!--  https://schema.org/Article -->
@@ -30,363 +30,28 @@
   <meta name="article:author" content="Charles T. Gray"/>
   
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
-  <meta property="og:title" content="measured.: life&#39;s work"/>
+  <meta property="og:title" content="A coding of kindness"/>
   <meta property="og:type" content="article"/>
-  <meta property="og:description" content="my bespoke productivity system"/>
+  <meta property="og:description" content="Perhaps we should opt for a Coding of Kindness, rather than a Code of Conduct."/>
   <meta property="og:locale" content="en_US"/>
-  <meta property="og:site_name" content="measured."/>
   
   <!--  https://dev.twitter.com/cards/types/summary -->
   <meta property="twitter:card" content="summary"/>
-  <meta property="twitter:title" content="measured.: life&#39;s work"/>
-  <meta property="twitter:description" content="my bespoke productivity system"/>
+  <meta property="twitter:title" content="A coding of kindness"/>
+  <meta property="twitter:description" content="Perhaps we should opt for a Coding of Kindness, rather than a Code of Conduct."/>
   
   <!--/radix_placeholder_meta_tags-->
   <!--radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output"]}},"value":[{"type":"character","attributes":{},"value":["life's work"]},{"type":"character","attributes":{},"value":["my bespoke productivity system\n"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name"]}},"value":[{"type":"character","attributes":{},"value":["Charles T. Gray"]}]}]},{"type":"character","attributes":{},"value":["2019-04-06"]},{"type":"character","attributes":{},"value":["radix::radix_article"]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output","categories"]}},"value":[{"type":"character","attributes":{},"value":["A coding of kindness"]},{"type":"character","attributes":{},"value":["Perhaps we should opt for a Coding of Kindness, rather than a Code of Conduct.\n"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url"]}},"value":[{"type":"character","attributes":{},"value":["Charles T. Gray"]},{"type":"character","attributes":{},"value":["https://twitter.com/cantabile"]}]}]},{"type":"character","attributes":{},"value":["04-06-2019"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["radix::radix_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained","toc"]}},"value":[{"type":"logical","attributes":{},"value":[false]},{"type":"logical","attributes":{},"value":[true]}]}]},{"type":"character","attributes":{},"value":["grrr"]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
-  <!--radix_placeholder_navigation_in_header-->
   
-  <script type="application/javascript">
-  
-    window.headroom_prevent_pin = false;
-  
-    window.document.addEventListener("DOMContentLoaded", function (event) {
-  
-      // initialize headroom for banner
-      var header = $('header').get(0);
-      var headerHeight = header.offsetHeight;
-      var headroom = new Headroom(header, {
-        onPin : function() {
-          if (window.headroom_prevent_pin) {
-            window.headroom_prevent_pin = false;
-            headroom.unpin();
-          }
-        }
-      });
-      headroom.init();
-      if(window.location.hash)
-        headroom.unpin();
-      $(header).addClass('headroom--transition');
-  
-      // offset scroll location for banner on hash change
-      // (see: https://github.com/WickyNilliams/headroom.js/issues/38)
-      window.addEventListener("hashchange", function(event) {
-        window.scrollTo(0, window.pageYOffset - (headerHeight + 25));
-      });
-  
-      // responsive menu
-      $('.radix-site-header').each(function(i, val) {
-        var topnav = $(this);
-        var toggle = topnav.find('.nav-toggle');
-        toggle.on('click', function() {
-          topnav.toggleClass('responsive');
-        });
-      });
-  
-      // nav dropdowns
-      $('.nav-dropbtn').click(function(e) {
-        $(this).next('.nav-dropdown-content').toggleClass('nav-dropdown-active');
-        $(this).parent().siblings('.nav-dropdown')
-           .children('.nav-dropdown-content').removeClass('nav-dropdown-active');
-      });
-      $("body").click(function(e){
-        $('.nav-dropdown-content').removeClass('nav-dropdown-active');
-      });
-      $(".nav-dropdown").click(function(e){
-        e.stopPropagation();
-      });
-    });
+  <script type="text/json" id="radix-resource-manifest">
+  {"type":"character","attributes":{},"value":["coding-of-kindness_files/bowser-1.9.3/bowser.min.js","coding-of-kindness_files/distill-2.2.21/template.v2.js","coding-of-kindness_files/jquery-1.11.3/jquery.min.js","coding-of-kindness_files/webcomponents-2.0.0/webcomponents.js"]}
   </script>
-  
-  <style type="text/css">
-  
-  /* Theme (user-documented overrideables for nav appearance) */
-  
-  .radix-site-nav {
-    color: rgba(255, 255, 255, 0.8);
-    background-color: #455a64;
-    font-size: 15px;
-    font-weight: 300;
-  }
-  
-  .radix-site-nav a {
-    color: inherit;
-    text-decoration: none;
-  }
-  
-  .radix-site-nav a:hover {
-    color: white;
-  }
-  
-  @media print {
-    .radix-site-nav {
-      display: none;
-    }
-  }
-  
-  .radix-site-header {
-  
-  }
-  
-  .radix-site-footer {
-  
-  }
-  
-  
-  /* Site Header */
-  
-  .radix-site-header {
-    width: 100%;
-    box-sizing: border-box;
-    z-index: 3;
-  }
-  
-  .radix-site-header .nav-left {
-    display: inline-block;
-    margin-left: 8px;
-  }
-  
-  @media screen and (max-width: 768px) {
-    .radix-site-header .nav-left {
-      margin-left: 0;
-    }
-  }
-  
-  
-  .radix-site-header .nav-right {
-    float: right;
-    margin-right: 8px;
-  }
-  
-  .radix-site-header a,
-  .radix-site-header .title {
-    display: inline-block;
-    text-align: center;
-    padding: 14px 10px 14px 10px;
-  }
-  
-  .radix-site-header .title {
-    font-size: 18px;
-  }
-  
-  .radix-site-header .logo {
-    padding: 0;
-  }
-  
-  .radix-site-header .logo img {
-    display: none;
-    max-height: 20px;
-    width: auto;
-    margin-bottom: -4px;
-  }
-  
-  .radix-site-header .nav-image img {
-    max-height: 18px;
-    width: auto;
-    display: inline-block;
-    margin-bottom: -3px;
-  }
-  
-  
-  
-  @media screen and (min-width: 1000px) {
-    .radix-site-header .logo img {
-      display: inline-block;
-    }
-    .radix-site-header .nav-left {
-      margin-left: 20px;
-    }
-    .radix-site-header .nav-right {
-      margin-right: 20px;
-    }
-    .radix-site-header .title {
-      padding-left: 12px;
-    }
-  }
-  
-  
-  .radix-site-header .nav-toggle {
-    display: none;
-  }
-  
-  .nav-dropdown {
-    display: inline-block;
-    position: relative;
-  }
-  
-  .nav-dropdown .nav-dropbtn {
-    border: none;
-    outline: none;
-    color: rgba(255, 255, 255, 0.8);
-    padding: 16px 10px;
-    background-color: transparent;
-    font-family: inherit;
-    font-size: inherit;
-    font-weight: inherit;
-    margin: 0;
-    margin-top: 1px;
-    z-index: 2;
-  }
-  
-  .nav-dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: white;
-    min-width: 200px;
-    border: 1px solid rgba(0,0,0,0.15);
-    border-radius: 4px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1);
-    z-index: 1;
-    margin-top: 2px;
-    white-space: nowrap;
-    padding-top: 4px;
-    padding-bottom: 4px;
-  }
-  
-  .nav-dropdown-content hr {
-    margin-top: 4px;
-    margin-bottom: 4px;
-    border: none;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  }
-  
-  .nav-dropdown-active {
-    display: block;
-  }
-  
-  .nav-dropdown-content a, .nav-dropdown-content .nav-dropdown-header {
-    color: black;
-    padding: 6px 24px;
-    text-decoration: none;
-    display: block;
-    text-align: left;
-  }
-  
-  .nav-dropdown-content .nav-dropdown-header {
-    display: block;
-    padding: 5px 24px;
-    padding-bottom: 0;
-    text-transform: uppercase;
-    font-size: 14px;
-    color: #999999;
-    white-space: nowrap;
-  }
-  
-  .nav-dropdown:hover .nav-dropbtn {
-    color: white;
-  }
-  
-  .nav-dropdown-content a:hover {
-    background-color: #ddd;
-    color: black;
-  }
-  
-  .nav-right .nav-dropdown-content {
-    margin-left: -45%;
-    right: 0;
-  }
-  
-  @media screen and (max-width: 768px) {
-    .radix-site-header a, .radix-site-header .nav-dropdown  {display: none;}
-    .radix-site-header a.nav-toggle {
-      float: right;
-      display: block;
-    }
-    .radix-site-header .title {
-      margin-left: 0;
-    }
-    .radix-site-header .nav-right {
-      margin-right: 0;
-    }
-    .radix-site-header {
-      overflow: hidden;
-    }
-    .nav-right .nav-dropdown-content {
-      margin-left: 0;
-    }
-  }
-  
-  
-  @media screen and (max-width: 768px) {
-    .radix-site-header.responsive {position: relative;}
-    .radix-site-header.responsive a.nav-toggle {
-      position: absolute;
-      right: 0;
-      top: 0;
-    }
-    .radix-site-header.responsive a,
-    .radix-site-header.responsive .nav-dropdown {
-      display: block;
-      text-align: left;
-    }
-    .radix-site-header.responsive .nav-left,
-    .radix-site-header.responsive .nav-right {
-      width: 100%;
-    }
-    .radix-site-header.responsive .nav-dropdown {float: none;}
-    .radix-site-header.responsive .nav-dropdown-content {position: relative;}
-    .radix-site-header.responsive .nav-dropdown .nav-dropbtn {
-      display: block;
-      width: 100%;
-      text-align: left;
-    }
-  }
-  
-  /* Site Footer */
-  
-  .radix-site-footer {
-    width: 100%;
-    overflow: hidden;
-    box-sizing: border-box;
-    z-index: 3;
-    margin-top: 30px;
-    padding-top: 30px;
-    padding-bottom: 30px;
-    text-align: center;
-  }
-  
-  /* Headroom */
-  
-  d-title {
-    padding-top: 6rem;
-  }
-  
-  @media print {
-    d-title {
-      padding-top: 4rem;
-    }
-  }
-  
-  .headroom {
-    z-index: 1000;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-  }
-  
-  .headroom--transition {
-    transition: all .4s ease-in-out;
-  }
-  
-  .headroom--unpinned {
-    top: -100px;
-  }
-  
-  .headroom--pinned {
-    top: 0;
-  }
-  
-  </style>
-  
-  <link href="site_libs/font-awesome-5.0.13/css/fa-svg-with-js.css" rel="stylesheet"/>
-  <script src="site_libs/font-awesome-5.0.13/js/fontawesome-all.min.js"></script>
-  <script src="site_libs/font-awesome-5.0.13/js/fa-v4-shims.min.js"></script>
-  <script src="site_libs/headroom-0.9.4/headroom.min.js"></script>
+  <!--radix_placeholder_navigation_in_header-->
   <!--/radix_placeholder_navigation_in_header-->
   <!--radix_placeholder_distill-->
   
@@ -1262,10 +927,10 @@
   </script>
   
   <!--/radix_placeholder_distill-->
-  <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
-  <script src="site_libs/bowser-1.9.3/bowser.min.js"></script>
-  <script src="site_libs/webcomponents-2.0.0/webcomponents.js"></script>
-  <script src="site_libs/distill-2.2.21/template.v2.js"></script>
+  <script src="coding-of-kindness_files/jquery-1.11.3/jquery.min.js"></script>
+  <script src="coding-of-kindness_files/bowser-1.9.3/bowser.min.js"></script>
+  <script src="coding-of-kindness_files/webcomponents-2.0.0/webcomponents.js"></script>
+  <script src="coding-of-kindness_files/distill-2.2.21/template.v2.js"></script>
   <!--radix_placeholder_site_in_header-->
   <!--/radix_placeholder_site_in_header-->
 
@@ -1277,53 +942,78 @@
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"life's work","description":"my bespoke productivity system","authors":[{"author":"Charles T. Gray","authorURL":"#","affiliation":"&nbsp;","affiliationURL":"#"}],"publishedDate":"2019-04-06T00:00:00.000+11:00","citationText":"Gray, 2019"}
+{"title":"A coding of kindness","description":"Perhaps we should opt for a Coding of Kindness, rather than a Code of Conduct.","authors":[{"author":"Charles T. Gray","authorURL":"https://twitter.com/cantabile","affiliation":"&nbsp;","affiliationURL":"#"}],"publishedDate":"2019-04-06T00:00:00.000+11:00","citationText":"Gray, 2019"}
 </script>
 
 <!--/radix_placeholder_front_matter-->
 <!--radix_placeholder_navigation_before_body-->
-<header class="header header--fixed" role="banner">
-<nav class="radix-site-nav radix-site-header">
-<div class="nav-left">
-<a href="index.html" class="title">measured.</a>
-</div>
-<div class="nav-right">
-<a href="index.html">home</a>
-<a href="about.html">about</a>
-<a href="blog.html">blog</a>
-<div class="nav-dropdown">
-<button class="nav-dropbtn">
-talks
- 
-<span class="down-arrow">&#x25BE;</span>
-</button>
-<div class="nav-dropdown-content">
-<a href="talks/replication/talk-nocats.html">unimelb - 2018</a>
-<a href="talks/replication/marseille-2018.html">marseille - 2018</a>
-</div>
-</div>
-<span class="nav-dropdown-header">projects</span>
-<a href="javascript:void(0);" class="nav-toggle">&#9776;</a>
-</div>
-</nav>
-</header>
 <!--/radix_placeholder_navigation_before_body-->
 <!--radix_placeholder_site_before_body-->
 <!--/radix_placeholder_site_before_body-->
 
 <div class="d-title">
-<h1>life’s work</h1>
-<p>my bespoke productivity system</p>
+<h1>A coding of kindness</h1>
+<p>Perhaps we should opt for a Coding of Kindness, rather than a Code of Conduct.</p>
 </div>
 
 <div class="d-byline">
-  Charles T. Gray  
+  Charles T. Gray <a href="https://twitter.com/cantabile" class="uri">https://twitter.com/cantabile</a> 
   
-<br/>2019-04-06
+<br/>04-06-2019
 </div>
 
 <div class="d-article">
-<p><a href="https://lifes-work.netlify.com/">life’s work</a>: ruminations on the inelegant art of failing forwards</p>
+<h3 class="d-toc-header">Table of Contents</h3>
+<nav class="d-toc" id="TOC">
+<ul>
+<li><a href="#police-are-for-crimes">police are for crimes</a></li>
+<li><a href="#you-dont-need-to-ascertain-wrongdoing">you don’t need to ascertain wrongdoing</a></li>
+<li><a href="#a-value-judgement-is-not-required">a value judgement is not required</a></li>
+<li><a href="#not-how-to-handle-it">not how to handle it</a></li>
+<li><a href="#a-coding-of-kindness">a coding of kindness</a></li>
+</ul>
+</nav>
+<hr class="d-toc-separator"/>
+<p>I’m starting to think we should drop the <em>conduct</em> from Code of Conduct.</p>
+<h2 id="police-are-for-crimes">police are for crimes</h2>
+<p>I recently watched a documentary series<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a> about a murder in a tiny community in some remote desert in the US. It detailed how despite overwhelming evidence as to who committed the murder, the murderer was let off by the jury. And it wasn’t because they were his friends, it was because there wasn’t enough CSI-style forensic evidence. There wasn’t really a crime to solve, but merely to adjudicate the outcome. The jury became obsessed with assessing the evidence, to the point where logic was ignored.</p>
+<p>I’m seeing a lot of talk about Code of Conducts in the rstats community, and I think there are a lot of good intentions, that are fundamentally wrongheaded. And I feel that it’s overlooked that these have real consequences. Acknowledging unwanted consequences of decisions does not necessarily imply that people bear ill will. Indeed actions are almost never malicious, everyone is the good guy hero of their own story; almost no one, and I include most abusers in this, <em>intends</em> to be a bad person. But our actions, however well intentioned, can and do have consequences for others.</p>
+<p>I think the focus needs to shift from conduct to community, support, and inclusivity. The problem with the term conduct, is it focussed on the perpetrator’s <em>doing</em>. We are not in the business of policing people. We should support people in making complaints to the police about serious cases of abuse and harassment, rather than trying to do their job for them. Indeed, it is very important that complaints are formal, so that the weight of evidence builds in the public record.</p>
+<h2 id="you-dont-need-to-ascertain-wrongdoing">you don’t need to ascertain wrongdoing</h2>
+<p>Here’s my biggest issue with what I’m seeing and experiencing. Why do you need to ascertain wrongdoing to find someone in distress worthy of empathy? Why do you need a villain?</p>
+<p>If you only take action for the most serious of cases, then you are trying to replace the police.</p>
+<p>I think it’s great how the community have rallied around the woman who was harassed (possibly assaulted, I don’t know details) at Data Camp. But in that case people were able to define a perpetrator and a victim.</p>
+<p>Here’s another scenario, that in my experience is not at all acceptable. It is entirely possible, indeed even probable, that a socially awkward man who is well intentioned can make a woman who has experienced abuse feel uncomfortable. Sometimes there isn’t a villain, only a victim.</p>
+<p>Consider the number of survivors in the community. If we treat all of them as I have been, I think we have ways to go.</p>
+<p>I’m sure everyone in the following story had the best of intentions, but their actions nonetheless have had negative consquences for me.</p>
+<h2 id="a-value-judgement-is-not-required">a value judgement is not required</h2>
+<p>I contacted someone who I thought was a friend on a Code of Conduct Committee. What I requested, I believed was simple.</p>
+<p>I said a co-author was making me uncomfortable; intervening in a way that I found invasive in my professional life, setting meetings, announcing funding publically, turning up uninvited when I was working. That I’d repeatedly asked him to stop, but he kept intervening in ways I found invasive. I said I thought I could navigate the tricky diplomacy of the situation, most importantly saving the paper, if I could avoid having to interact with that person alone. Could I please follow my friend around at the conference for strength in numbers?</p>
+<p>My friend then became very uncomfortable, said he needed to talk to other people. I said,oh, I thought, as friends, we’d be out hanging a lot anyway, this was just to say, this is why I might do it <em>a lot</em>. He didn’t finish the conversation.</p>
+<p>Feeling alone with the problem, I then resigned myself to losing the paper, contacted the person who was making me uncomfortable and told him the simplest thing was to leave me alone, as I couldn’t make him understand how I found his behaviour to be invasive of my professional work.</p>
+<p>I contacted the committee again and told them that I had resolved the situation and no action need be taken. I arrived at the conference to find a lot of people behaving strangely, and even avoiding me entirely. Action was taken by sending a man I didn’t know knew about it to my workshop without informing me, despite me asking no action be taken. And no one seemed to care about the paper, which was all I cared about.</p>
+<p>Since then I haven’t able to get anyone to talk to me sensibly about it; or more to the point, reassure me that they would be polite. When I arrived the conference it became clear lots of people knew about it, and people seemed less friendly than before. I tried to understand what was going on, but it was made clear that the only acceptable behaviour from me was to pretend as if everyone wasn’t behaving strangely with me. It feels as if everyone thought I’d falsely accused someone of misconduct, when I was expressing what I believe is understandable discomfort.</p>
+<p>I can only surmise, given the lack of communication, that this has spread interstate for me. The same unfriendliness and general weirdness has followed me here.</p>
+<p>People appear to me to be behaving as I am in a false accusation of misconduct scandal. All I know was that it was decided for me that I could travel a six-hour round trip to do menial tasks, for my own good, but there was little interest in any professional input I may have. I quit the organisation; I really do have better things to do with my time. I expressed my dismay to someone on the committee, and they said that they hoped I would give them the opportunity to change my mind. Never heard from them again on it, and I quit.</p>
+<h2 id="not-how-to-handle-it">not how to handle it</h2>
+<p>It’s not polite not to respond to someone. It’s not polite to avoid someone. It’s not polite to take something told to you in confidence and share it with others without informing them. And I think it’s really not very kind to treat someone who asked for help like this. It’s not kind to send me on a six-hour round trip to do menial tasks. I don’t feel comfortable around people who feel empowered to make decisions for me like this, and who are not being communicative in general. I don’t feel safe that people will treat me with civility.</p>
+<p>I now feel ostracised in my local professional community and am trying to leave the country. I also now feel particularly isolated with my research.</p>
+<p>As if things weren’t hard enough. I tried to explain that treating someone who is a survivor like this is extraordinarily hurtful, and I have been dismissed repeatedly. It’s not trivial for me to experience what feels like a lot (some truly bizarre) judgements of me. It’s not trivial to appear to be embroiled in a false accusation of misconduct scandal when I accused no one of misconduct. I have now abandoned hope that I will be treated with civility.</p>
+<p>I don’t understand why you need someone to have breached your code to care.</p>
+<p>For someone from my background (I am a <a href="https://en.wikipedia.org/wiki/Forgotten_Australians">textbook case</a>), who was shunned by my friends and family when I experienced family breakdown at 15, to experience shunning all over again causes me ongoing distress that I don’t feel I’ll escape until I leave the country.</p>
+<h2 id="a-coding-of-kindness">a coding of kindness</h2>
+<p>Here’s the kind of committee I’d like to see. A group at a conference or event that is dedicated to supporting people who may not have something serious enough to take time off work for, but have something going on, and need a bit of social or professional support.</p>
+<p>We make allowances for breaches of social mores by neurodiverse people all the time in the community. There is a wonderful acceptance of socially awkward young men who can’t make eye contact in the mathematical science community.</p>
+<p>Why can’t we extend the same support to a woman who is feeling uncomfortable and not sure how to handle a professional situation? Especially if she is a survivor?</p>
+<p>I don’t believe trivialising, dismissing, and shunning is kind or, even, polite. I think the bare minimum of kindness we can afford is civility.</p>
+<p>Rather than a Code of Conduct, I propose we need a Coding, to neologise a collective noun, of Kindness, a collection of ideas and ways we actively acknowledge and support people in the community who have experienced abuse, harassment, and bullying.</p>
+<p>We should <em>encode</em> behaviour of support and empathy, rather than look for crimes to solve and villains to blame. Sometimes there aren’t villains, just someone in need of some empathy.</p>
+<section class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p>I wish I could find the name of the show or the trailer; it had these extraordinary interviews with one-eyed cowboy, who’d gaze across the desert, open another beer, light a smoke, and pontificate. I would love to have a twitterbot delivering me snippets on a daily basis of him.<a href="#fnref1" class="footnote-back">↩</a></p></li>
+</ol>
+</section>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>

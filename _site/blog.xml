@@ -7,7 +7,15 @@
     <description>A one-time trophy bitch screams into the void. 
 </description>
     <generator>Radix</generator>
-    <lastBuildDate>Sat, 30 Mar 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 06 Apr 2019 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>A coding of kindness</title>
+      <dc:creator>Charles T. Gray</dc:creator>
+      <link>https://fervent-hypatia-7b7343.netlify.com/posts/2019-04-06-coding-of-kindness</link>
+      <description>Perhaps we should opt for a Coding of Kindness, rather than a Code of Conduct.</description>
+      <guid>https://fervent-hypatia-7b7343.netlify.com/posts/2019-04-06-coding-of-kindness</guid>
+      <pubDate>Sat, 06 Apr 2019 00:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>batpigday</title>
       <dc:creator>Charles T. Gray</dc:creator>
@@ -24,14 +32,6 @@
       <description>making sense of methods in R</description>
       <guid>https://fervent-hypatia-7b7343.netlify.com/posts/2019-03-28-quack-quack-said-the-duck</guid>
       <pubDate>Thu, 28 Mar 2019 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>does safely play nice with rma?</title>
-      <dc:creator>Charles T. Gray</dc:creator>
-      <link>https://fervent-hypatia-7b7343.netlify.com/posts/2019-02-25-does-safely-play-nice-with-rma</link>
-      <description>unpicking what happened with metafor::rma and purrr::safely</description>
-      <guid>https://fervent-hypatia-7b7343.netlify.com/posts/2019-02-25-does-safely-play-nice-with-rma</guid>
-      <pubDate>Mon, 25 Feb 2019 00:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
