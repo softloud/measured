@@ -1,5 +1,22 @@
 [
   {
+    "path": "posts/2019-04-06-coding-of-kindness/",
+    "title": "A coding of kindness",
+    "description": "Perhaps we should opt for a Coding of Kindness, rather than a Code of Conduct.",
+    "author": [
+      {
+        "name": "Charles T. Gray",
+        "url": "https://twitter.com/cantabile"
+      }
+    ],
+    "date": "2019-04-06",
+    "categories": [
+      "grrr"
+    ],
+    "preview": {},
+    "last_modified": "2019-04-06T13:09:44+11:00"
+  },
+  {
     "path": "posts/2019-03-30-batpigday/",
     "title": "batpigday",
     "description": "a batpigday is the coding equivalent of  groundhogday",
